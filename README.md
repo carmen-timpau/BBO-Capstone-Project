@@ -1,13 +1,15 @@
 **Project Description:**
 
-Black-Box Optimisation (BBO) capstone project, in active development as part of the 6-month Professional Certification in Machine Learning & AI programme at Imperial College London.
+Black-Box Optimisation (BBO) capstone project
 
 
 **Project Status:**
 
-Project currently in development
+The project is in active development as part of the 6-month Professional Certification in Machine Learning & AI joint programme at Imperial College London.
 
 
-**Contact Details:**
+**Developer Contact Details:**
 
-Carmen-Mihaela Timpau, carmen.timpau21@alumni.imperial.ac.uk, Imperial College London.
+Carmen-Mihaela Timpau, carmen.timpau21@alumni.imperial.ac.uk, Imperial College London, London, United Kingdom.
+
+_Please do get in touch if you have any questions or want to discuss this project._
