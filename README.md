@@ -1,6 +1,6 @@
 **Project Description:**
 
-Black-Box Optimisation (BBO) Capstone Project, developed as part of the 6-month Machine Learning and AI Professional Certification Programme at Imperial College London.
+Black-Box Optimisation (BBO) Capstone Project, in active development as part of the 6-month Professional Certification in Machine Learning and AI programme at Imperial College London.
 
 
 **Project Status:**
