@@ -1,7 +1,7 @@
 <ins> **Black-Box Optimisation (BBO) Capstone Project (Bayesian Optimisation)** </ins>
 
 
-**Project Description:**
+<ins> **Project Description:** </ins> 
 
 Given an initial dataset of true datapoints describing 8 different unrelated Black-Box functions of varying dimensionality (2D-8D), each representing practical real-world processes/scenarios within various application industries, this project aims to apply and refine Bayesian Optimisation to identify the global maximum/maxima for each of the 8 Black-Box functions.
 
@@ -17,13 +17,13 @@ Every week until the completion of the project in late August 2026, each functio
 
 ---------------------------------------------------------------------------------------------------------
 
-**Current Project Status:**
+<ins> **Current Project Status:** </ins> 
 
 The project is in active development as part of the 6-month Professional Certification in Machine Learning & AI joint programme at Imperial College London.
 The full project completion date is in late August 2026.
 
 
-**Developer Contact Details:**
+<ins> **Developer Contact Details:** </ins> 
 
 Carmen-Mihaela Timpau, carmen.timpau21@alumni.imperial.ac.uk, Imperial College London, London, United Kingdom.
 
