@@ -8,7 +8,7 @@ from sklearn.gaussian_process.kernels import RBF
 X = data["function_1"]["x"]      #shape (10, 2)
 Y = data["function_1"]["y"]      #shape (10, )
 
-#Defining a Gaussian Process model
+#Defining and fitting the Gaussian Process (GP) model
 kernel = RBF(length_scale=[0.1, 0.1]) #using Automatic Relevance Determination (ARD)
 gp = GaussianProcessRegressor(kernel=kernel, alpha=1e-10)
 
