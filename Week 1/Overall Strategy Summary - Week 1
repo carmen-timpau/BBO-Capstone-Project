@@ -1,13 +1,24 @@
-To decide the first query for each of the 8 given black-box functions, a Bayesian optimisation strategy based on a Gaussian Process (GP) as the surrogate model 
+Overall Initial Strategy for First Set of Query Points Prediction:
+
+To decide the first query for each of the 8 given black-box functions, a Bayesian Optimisation strategy based on a Gaussian Process (GP) as the surrogate model 
 fitted to the data was used. 
+
+
+Acquisition Function:
 
 The Upper Confidence Bound (UCB) was selected as the acquisition function to guide query selection, with β = 1.96 (95% confidence interval), which is balanced 
 between exploitation and exploration. 
+
+
+Kernels:
 
 Similarity between the data points was measured using the Radial Basis Function (RBF) kernel, with a length-scale of 0.1xD (D = no. of dimensions for input variables) 
 for all functions, except for function 8. For the latter, Automatic Relevance Determination (ARD) was applied to the RBF, to assign independent length-scales to each 
 input dimension, because the length-scale of the RBF kernel was pushed to the maximum value (100000) when the standard length-scale of 0.1xD was tried. 
 
+
+Sampling Methods:
+
+For functions 1 and 2 (2D), grid sampling was used to evaluate the acquisition function.
 For all functions with >=3 dimensions (functions 3-8), Sobol sampling was used rather than grid sampling to generate the search space in a uniform, structured, 
-space-filling and highly performing way and support a fast and effective Bayesian optimisation process when working with high-dimensional spaces. For functions 1 and 2 
-(2D), I used a grid to evaluate the acquisition function.
+space-filling and highly performing way and support a fast and effective Bayesian optimisation process when working with high-dimensional spaces.
