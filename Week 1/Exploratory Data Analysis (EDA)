@@ -160,110 +160,395 @@ legend._legend_title_box._text.set_va("top")
 plt.show()
 
 
-#Plotting Function 6's Initial Datapoints in a 6D Plot (3D Scatter + Colour + Size + Alpha Plot)
+#Plotting Function 6's Initial Datapoints in a 6D Plot (3D Scatter + Colour + Alpha + Size Plot)
+import matplotlib.lines as mlines
+import matplotlib.pyplot as plt
+import numpy as np
+
 fig = plt.figure(figsize=(20, 15))
 
-function6_y = data["function_6"]["y"]
+# Load data
+X = data["function_6"]["x"]
+Y = data["function_6"]["y"]
 
-alpha = (function6_y - function6_y.min()) / (function6_y.max() - function6_y.min())
-alpha = 0.2 + 0.8 * alpha
+
+# Alpha from x5
+x5 = X[:, 4]
+alpha = (x5 - x5.min()) / (x5.max() - x5.min())
+alpha = 0.2 + 0.8 * alpha   # scale to [0.2, 1.0]
+
+# Size from y
+size = (Y - Y.min()) / (Y.max() - Y.min())
+size = 200 + size * 1800    # scale to [200, 2000]
+
+# Scatter plot
 
 function6_plot = fig.add_subplot(111, projection='3d')
-f6p = function6_plot.scatter(data["function_6"]["x"][:,0],
-                       data["function_6"]["x"][:,1], 
-                       data["function_6"]["x"][:,2],  
-                       c = data["function_6"]["x"][:,3], #4th dimension -> colour
-                       s = data["function_6"]["x"][:,4]*2000, cmap = 'viridis', #5th dimension -> size
-                       alpha = alpha) #6th dimension -> alpha (outcome)
+f6p = function6_plot.scatter(
+    X[:, 0], X[:, 1], X[:, 2],      # 3D position
+    c=X[:, 3],                      # colour (x4)
+    s=size,                         # size from y
+    cmap='viridis',
+    alpha=alpha                     # alpha from x5
+)
 
-function6_plot.tick_params(labelsize = 15)
-vmax = np.max(np.abs(data["function_6"]["x"][:,3]))
+
+# Colour limits for x4
+vmax = np.max(np.abs(X[:, 3]))
 f6p.set_clim(-vmax, vmax)
 
-function6_plot.set_title('6D Scatter Plot of Function 6 Initial Data Points \n (3D Position + Colour + Size Encoding + Alpha) ', size = 20)
-function6_plot.set_xlabel(r"$x_1$", size = 20)
-function6_plot.set_ylabel(r"$x_2$", size = 20)
-function6_plot.set_zlabel("x3", size = 20)
+# Labels & title
+function6_plot.tick_params(labelsize=15)
+function6_plot.set_title(
+    '6D Scatter Plot of Function 6 Initial Data Points\n'
+    '(3D Position + Colour + Alpha + Size)',
+    size=20
+)
+function6_plot.set_xlabel(r"$x_1$", size=20)
+function6_plot.set_ylabel(r"$x_2$", size=20)
+function6_plot.set_zlabel("x3", size=20)
 
+# Colourbar for x4
 cbar = plt.colorbar(f6p, shrink=0.6)
-cbar.ax.tick_params(labelsize=14)
-cbar.set_label("5th dimension (x5)", fontsize=15)
-
-f6_min_max_y_vals = sorted([min(data["function_6"]["y"]), np.median(data["function_6"]["y"]), max(data["function_6"]["y"])], reverse = True)
-sizes = [abs(v) * 2000 for v in f6_min_max_y_vals]
-
-handles = [mlines.Line2D([], [], color='black', alpha = 0.5, marker='o', linestyle='None',markersize=np.sqrt(s), label=f"{v:.2f}")
-    for v, s in zip(f6_min_max_y_vals, sizes)]
-
-legend = function6_plot.legend(handles=handles, title="Size scale (y)", loc="upper left", bbox_to_anchor=(-0.25, 1.0), fontsize = 15, labelspacing=6.0, handletextpad=5.0, handlelength=5)
-legend.get_title().set_fontsize(15)
-legend._legend_title_box._text.set_va("top")
-plt.show()
-
-
-#Plotting Function 7's Initial Datapoints in a 7D Plot (3D Scatter + Colour + Size + Angle + Alpha Plot)
-from matplotlib.markers import MarkerStyle
-import matplotlib.transforms as transforms
-
-fig = plt.figure(figsize=(20, 15))
-
-#Alpha from y
-function7_y = data["function_7"]["y"]
-alpha = (function7_y - function7_y.min()) / (function7_y.max() - function7_y.min())
-alpha = 0.2 + 0.8 * alpha
-
-X = data["function_7"]["x"]
-Y = data["function_7"]["y"]
-
-#Continuous rotation from x6
-shape_dim = X[:, 5]
-theta = (shape_dim - shape_dim.min()) / (shape_dim.max() - shape_dim.min())
-theta = theta * 180
-
-ax = fig.add_subplot(111, projection='3d')
-
-for i in range(len(X)):
-    f7p = ax.scatter(
-        X[i, 0], X[i, 1], X[i, 2],
-        c=X[i, 3],
-        s=X[i, 4] * 2000,
-        cmap='viridis',
-        alpha=alpha[i],
-        marker=(4, 0, theta[i]),
-        edgecolor='k',
-        linewidth=0.3
-    )
-
-vmax = np.max(np.abs(X[:, 3]))
-f7p.set_clim(-vmax, vmax)
-
-ax.tick_params(labelsize=15)
-ax.set_title('7D Scatter Plot of Function 7 \n(3D Position + Colour + Size + Angle + Alpha + Continuous Shape)', size=20)
-ax.set_xlabel(r"$x_1$", size=20)
-ax.set_ylabel(r"$x_2$", size=20)
-ax.set_zlabel(r"$x_3$", size=20)
-
-cbar = plt.colorbar(f7p, shrink=0.6)
 cbar.ax.tick_params(labelsize=14)
 cbar.set_label("4th dimension (x4)", fontsize=15)
 
-vals = sorted([min(Y), np.median(Y), max(Y)], reverse=True)
-sizes = [abs(v) * 2000 for v in vals]
+# Size legend (based on y)
+size_vals = sorted([min(Y), np.median(Y), max(Y)], reverse=True)
+size_scaled = 200 + (np.array(size_vals) - Y.min()) / (Y.max() - Y.min()) * 1800
 
 handles_size = [
     mlines.Line2D([], [], color='black', alpha=0.5, marker='o',
                   linestyle='None', markersize=np.sqrt(s),
                   label=f"{v:.2f}")
-    for v, s in zip(vals, sizes)
+    for v, s in zip(size_vals, size_scaled)
 ]
 
-legend1 = ax.legend(
+legend_size = function6_plot.legend(
     handles=handles_size,
     title="Size scale (y)",
     loc="upper left",
-    bbox_to_anchor=(-0.25, 1.0),
+    bbox_to_anchor=(0, 1.0),
     fontsize=15
 )
-legend1.get_title().set_fontsize(15)
+legend_size.get_title().set_fontsize(15)
+
+# Alpha legend (based on x5 => alpha)
+alpha_vals = sorted([min(x5), np.median(x5), max(x5)])
+alpha_scaled = (np.array(alpha_vals) - x5.min()) / (x5.max() - x5.min())
+alpha_scaled = 0.2 + 0.8 * alpha_scaled
+
+handles_alpha = [
+    mlines.Line2D([], [], color='black', marker='o',
+                  linestyle='None', markersize=12,
+                  alpha=a, label=f"{v:.2f}")
+    for v, a in zip(alpha_vals, alpha_scaled)
+]
+
+legend_alpha = function6_plot.legend(
+    handles=handles_alpha,
+    title="Alpha scale (x5)",
+    loc="upper left",
+    bbox_to_anchor=(1.05, 1.0),
+    fontsize=15
+)
+legend_alpha.get_title().set_fontsize(15)
+
+# Keep both legends visible
+function6_plot.add_artist(legend_size)
+
+plt.show()
+
+
+
+#Plotting Function 7's Initial Datapoints in a 7D Plot
+# (3D Scatter + Colour + Alpha-from-x5 + Rotation-from-x6 + Size-from-y)
+
+from matplotlib.markers import MarkerStyle
+import matplotlib.transforms as transforms
+import matplotlib.lines as mlines
+import matplotlib.pyplot as plt
+import numpy as np
+
+fig = plt.figure(figsize=(20, 15))
+ax = fig.add_subplot(111, projection='3d')
+
+
+# Load data
+X = data["function_7"]["x"]
+Y = data["function_7"]["y"]
+
+
+# Alpha from x5
+x5 = X[:, 4]
+alpha = (x5 - x5.min()) / (x5.max() - x5.min())
+alpha = 0.2 + 0.8 * alpha   # scale to [0.2, 1.0]
+
+
+# Size from y
+size = (Y - Y.min()) / (Y.max() - Y.min())
+size = 200 + size * 1800    # scale to [200, 2000]
+
+# Continuous rotation from x6
+shape_dim = X[:, 5]
+theta = (shape_dim - shape_dim.min()) / (shape_dim.max() - shape_dim.min())
+theta = theta * 180   # degrees
+
+# Scatter plot (point-by-point)
+for i in range(len(X)):
+    f7p = ax.scatter(
+        X[i, 0], X[i, 1], X[i, 2],     # 3D position
+        c=X[i, 3],                    # colour (x4)
+        s=size[i],                    # size from y
+        cmap='viridis',
+        alpha=alpha[i],               # alpha from x5
+        marker=(4, 0, theta[i]),      # rotated diamond (continuous)
+        edgecolor='k',
+        linewidth=0.3
+    )
+
+
+# Colour limits for x4
+vmax = np.max(np.abs(X[:, 3]))
+f7p.set_clim(-vmax, vmax)
+
+# Axes labels & title
+ax.tick_params(labelsize=15)
+ax.set_title(
+    '7D Scatter Plot of Function 7\n'
+    '(3D Position + Colour + Size-from-y + Rotation-from-x6 + Alpha-from-x5)',
+    size=20
+)
+ax.set_xlabel(r"$x_1$", size=20)
+ax.set_ylabel(r"$x_2$", size=20)
+ax.set_zlabel(r"$x_3$", size=20)
+
+# Colourbar for x4
+cbar = plt.colorbar(f7p, shrink=0.6)
+cbar.ax.tick_params(labelsize=14)
+cbar.set_label("4th dimension (x4)", fontsize=15)
+
+# Size legend (based on y)
+size_vals = sorted([min(Y), np.median(Y), max(Y)], reverse=True)
+size_scaled = 200 + (np.array(size_vals) - Y.min()) / (Y.max() - Y.min()) * 1800
+
+handles_size = [
+    mlines.Line2D([], [], color='black', alpha=0.5, marker='o',
+                  linestyle='None', markersize=np.sqrt(s),
+                  label=f"{v:.2f}")
+    for v, s in zip(size_vals, size_scaled)
+]
+
+legend_size = ax.legend(
+    handles=handles_size,
+    title="Size scale (y)",
+    loc="upper left",
+    bbox_to_anchor=(0, 1.0),
+    fontsize=15
+)
+legend_size.get_title().set_fontsize(15)
+
+# Alpha legend (based on x5 => alpha)
+alpha_vals = sorted([min(x5), np.median(x5), max(x5)])
+alpha_scaled = (np.array(alpha_vals) - x5.min()) / (x5.max() - x5.min())
+alpha_scaled = 0.2 + 0.8 * alpha_scaled
+
+handles_alpha = [
+    mlines.Line2D([], [], color='black', marker='o',
+                  linestyle='None', markersize=12,
+                  alpha=a, label=f"{v:.2f}")
+    for v, a in zip(alpha_vals, alpha_scaled)
+]
+
+legend_alpha = ax.legend(
+    handles=handles_alpha,
+    title="Alpha scale (x5)",
+    loc="upper left",
+    bbox_to_anchor=(1., 1.0),
+    fontsize=15
+)
+legend_alpha.get_title().set_fontsize(15)
+
+# Rotation legend (based on x6 => theta)
+rot_vals = [min(shape_dim), np.median(shape_dim), max(shape_dim)]
+rot_degs = (np.array(rot_vals) - shape_dim.min()) / (shape_dim.max() - shape_dim.min())
+rot_degs = rot_degs * 180
+
+handles_rot = [
+    mlines.Line2D([], [], color='black',
+                  marker=(4, 0, deg), linestyle='None',
+                  markersize=12, label=f"{val:.2f}")
+    for val, deg in zip(rot_vals, rot_degs)
+]
+
+legend_rot = ax.legend(
+    handles=handles_rot,
+    title="Rotation scale (x6)",
+    loc="upper left",
+    bbox_to_anchor=(0.05, 0.1),
+    fontsize=15
+)
+legend_rot.get_title().set_fontsize(15)
+
+# Keep earlier legends visible
+ax.add_artist(legend_size)
+ax.add_artist(legend_alpha)
+
+plt.show()
+
+
+#Plotting Function 8's Initial Datapoints in a 8D Plot
+# (3D Scatter + Colour + Alpha-from-x5 + Rotation-from-x6 + Edge-Colour-from-x7 + Size-from-y)
+from matplotlib.markers import MarkerStyle
+import matplotlib.transforms as transforms
+import matplotlib.lines as mlines
+import matplotlib.pyplot as plt
+import numpy as np
+
+fig = plt.figure(figsize=(20, 15))
+ax = fig.add_subplot(111, projection='3d')
+
+X = data["function_8"]["x"]
+Y = data["function_8"]["y"]     # size comes from y
+
+# ALPHA FROM x5
+x5 = X[:, 4]
+alpha = (x5 - x5.min()) / (x5.max() - x5.min())
+alpha = 0.2 + 0.8 * alpha
+
+# SIZE FROM y (MEDIUM SCALING)
+size = (Y - Y.min()) / (Y.max() - Y.min())
+size = 200 + size * 800     # medium size range
+
+
+# ROTATION FROM x6
+shape_dim = X[:, 5]
+theta = (shape_dim - shape_dim.min()) / (shape_dim.max() - shape_dim.min())
+theta = theta * 180
+
+# EDGE COLOUR FROM x7
+edge_dim = X[:, 6]
+edge_norm = (edge_dim - edge_dim.min()) / (edge_dim.max() - edge_dim.min())
+edge_colors = plt.cm.plasma(edge_norm)
+
+# MAIN COLOUR FROM x4
+main_colors = X[:, 3]
+
+
+# SCATTER PLOT
+for i in range(len(X)):
+    f8p = ax.scatter(
+        X[i, 0], X[i, 1], X[i, 2],
+        c=main_colors[i],
+        s=size[i],
+        cmap='viridis',
+        alpha=alpha[i],
+        marker=(4, 0, theta[i]),
+        edgecolor=edge_colors[i],
+        linewidth=1.5
+    )
+
+
+# COLOUR LIMITS FOR x4
+vmax = np.max(np.abs(X[:, 3]))
+f8p.set_clim(-vmax, vmax)
+
+# LABELS
+ax.tick_params(labelsize=15)
+ax.set_title(
+    '8D Scatter Plot of Function 8\n'
+    '(3D + Colour + Size-from-y + Alpha-from-x5 + Rotation-from-x6 + Edge Colour-from-x7)',
+    size=20
+)
+ax.set_xlabel(r"$x_1$", size=20)
+ax.set_ylabel(r"$x_2$", size=20)
+ax.set_zlabel(r"$x_3$", size=20)
+
+
+# MAIN COLOURBAR (x4)
+cbar_main = plt.colorbar(f8p, shrink=0.6, pad=0)
+cbar_main.ax.tick_params(labelsize=14)
+cbar_main.set_label("4th dimension (x4) — main colour", fontsize=15)
+
+
+# EDGE COLOURBAR (x7)
+sm = plt.cm.ScalarMappable(
+    cmap='plasma',
+    norm=plt.Normalize(vmin=edge_dim.min(), vmax=edge_dim.max())
+)
+sm.set_array([])
+
+cbar_edge = plt.colorbar(sm, ax=ax, shrink=0.6, pad=0.15)
+cbar_edge.ax.tick_params(labelsize=14)
+cbar_edge.set_label("7th dimension (x7) — edge colour", fontsize=15)
+
+# LEGENDS
+
+# SIZE LEGEND (y, medium scaled)
+size_vals = sorted([min(Y), np.median(Y), max(Y)], reverse=True)
+legend_sizes = 200 + (np.array(size_vals) - Y.min()) / (Y.max() - Y.min()) * 800
+
+handles_size = [
+    mlines.Line2D([], [], color='black', alpha=0.5, marker='s',
+                  linestyle='None', markersize=np.sqrt(s),
+                  label=f"{v:.2f}")
+    for v, s in zip(size_vals, legend_sizes)
+]
+
+legend_size = ax.legend(
+    handles=handles_size,
+    title="Size scale (y)",
+    loc="upper left",
+    bbox_to_anchor=(0, 1.0),
+    fontsize=15, 
+)
+legend_size.get_title().set_fontsize(15)
+
+# ALPHA LEGEND (x5)
+alpha_vals = sorted([min(x5), np.median(x5), max(x5)])
+alpha_scaled = (np.array(alpha_vals) - x5.min()) / (x5.max() - x5.min())
+alpha_scaled = 0.2 + 0.8 * alpha_scaled
+
+handles_alpha = [
+    mlines.Line2D([], [], color='black', marker='o',
+                  linestyle='None', markersize=12,
+                  alpha=a, label=f"{v:.2f}")
+    for v, a in zip(alpha_vals, alpha_scaled)
+]
+
+legend_alpha = ax.legend(
+    handles=handles_alpha,
+    title="Alpha scale (x5)",
+    loc="upper left",
+    bbox_to_anchor=(-0.15, 0.2),
+    fontsize=15
+)
+legend_alpha.get_title().set_fontsize(15)
+
+
+# ROTATION LEGEND (x6)
+rot_vals = [min(shape_dim), np.median(shape_dim), max(shape_dim)]
+rot_degs = (np.array(rot_vals) - shape_dim.min()) / (shape_dim.max() - shape_dim.min())
+rot_degs = rot_degs * 180
+
+handles_rot = [
+    mlines.Line2D([], [], color='black',
+                  marker=(4, 0, deg), linestyle='None',
+                  markersize=12, label=f"{val:.2f}")
+    for val, deg in zip(rot_vals, rot_degs)
+]
+
+legend_rot = ax.legend(
+    handles=handles_rot,
+    title="Rotation scale (x6)",
+    loc="upper left",
+    bbox_to_anchor=(-0.15, 0.8),
+    fontsize=15
+)
+legend_rot.get_title().set_fontsize(15)
+
+# Keep earlier legends visible
+ax.add_artist(legend_size)
+ax.add_artist(legend_alpha)
 
 plt.show()
