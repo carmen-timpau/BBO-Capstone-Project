@@ -4,8 +4,8 @@ from sklearn.gaussian_process import GaussianProcessRegressor
 from sklearn.gaussian_process.kernels import RBF
 
 #Loading the data
-X = data["function_2"]["x"]      # shape (10, 2)
-Y = data["function_2"]["y"]      # shape (10, )
+X = data["function_2"]["x"]      #shape (10, 2)
+Y = data["function_2"]["y"]      #shape (10, )
 
 #Defining the Gaussian Process model
 kernel = RBF(length_scale=[0.1, 0.1])
