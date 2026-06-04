@@ -26,7 +26,7 @@ x_grid = np.column_stack([xx1.ravel(), xx2.ravel()])
 #Computing the Gaussian Process (GP) posterior
 post_mean, post_std = gp.predict(x_grid, return_std=True)
 
-#Computing the UCB acquisition function
+#Computing the Upper Confidence Bound (UCB) acquisition function
 beta = 1.96
 ucb_acquisition_function =post_mean + beta * post_std
 
