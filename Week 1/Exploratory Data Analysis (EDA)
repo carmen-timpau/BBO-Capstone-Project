@@ -7,3 +7,198 @@ from pandas.plotting import parallel_coordinates
 
 #Creating a dictionary for the initial datasets of all 8 functions
 data = {}
+
+#Loading all initial data
+
+
+#Printing all initial data (to 6 decimal places) provided for all functions
+
+for i in range (1,9):
+    x = data[f"function_{i}"]["x"]
+    y = data[f"function_{i}"]["y"]
+
+    print(f"\nFunction {i} initial datapoints are:\n")
+    
+    for j, (x,y) in enumerate(zip(x, y), start = 1):
+        print(f"{j}. ({x}, {y:.6f})")
+
+
+#Computing statistical analysis of all functions' initial outputs
+
+for i in range (1,9):
+    min_value = data[f"function_{i}"]["y"].min()
+    max_value = data[f"function_{i}"]["y"].max()
+    mean = data[f"function_{i}"]["y"].mean()
+    std = data[f"function_{i}"]["y"].std()
+    print(f"\nStatistical analysis of Function {i}:")
+    print("-" * 35)
+    print(f"\nMinimum value = {min_value:.6f}")
+    print(f"Maximum value = {max_value:.6f}")
+    print(f"Standard deviation = {std:.6f}")
+    print(f"Mean = {mean:.6f}")
+
+
+#Plotting Function 1's Initial Datapoints in a 3D Scatter Plot
+fig = plt.figure(figsize=(20, 15))
+
+function1_plot = fig.add_subplot(111, projection='3d')
+function1_plot.scatter(data["function_1"]["x"][:,0], data["function_1"]["x"][:,1], data["function_1"]["y"], s = 80)
+
+function1_plot.tick_params(labelsize = 10)
+function1_plot.set_title('3D Scatter Plot of Function 1 Initial Data Points', size = 20)
+function1_plot.set_xlabel(r"$x_1$", size = 15)
+function1_plot.set_ylabel(r"$x_2$", size = 15)
+function1_plot.set_zlabel("y", size = 15)
+plt.show()
+
+
+#Plotting Function 2's Initial Datapoints in a 3D Scatter Plot
+fig = plt.figure(figsize=(20, 15))
+
+function2_plot = fig.add_subplot(111, projection='3d')
+function2_plot.scatter(data["function_2"]["x"][:,0], data["function_2"]["x"][:,1], data["function_2"]["y"], s=80)
+
+function2_plot.tick_params(labelsize = 10)
+function2_plot.set_title('3D Scatter Plot of Function 2 Initial Data Points', size = 20)
+function2_plot.set_xlabel(r"$x_1$", size = 15)
+function2_plot.set_ylabel(r"$x_2$", size = 15)
+function2_plot.set_zlabel("y", size = 15)
+plt.show()
+
+
+#Plotting Function 3's Initial Datapoints in a 4D Scatter Plot (3D Input Positions + Colour Mapped Output)
+fig = plt.figure(figsize=(20, 15))
+
+function3_plot = fig.add_subplot(111, projection='3d')
+f3p = function3_plot.scatter(data["function_3"]["x"][:,0],
+                       data["function_3"]["x"][:,1], 
+                       data["function_3"]["x"][:,2], 
+                       c = data["function_3"]["y"], cmap = 'viridis', s = 80) 
+
+function3_plot.tick_params(labelsize = 15)
+
+function3_plot.set_title('4D Scatter Plot of Function 3 Initial Data Points \n (3D Inputs + Colour Mapped Output) ', size = 20)
+function3_plot.set_xlabel(r"$x_1$", size = 20)
+function3_plot.set_ylabel(r"$x_2$", size = 20)
+function3_plot.set_zlabel("x3", size = 20)
+
+cbar = plt.colorbar(f3p, shrink=0.6)
+cbar.ax.tick_params(labelsize=14)
+cbar.set_label("4th dimension (y)", fontsize=15)
+plt.show()
+
+
+#Plotting Function 4's Initial Datapoints in a 5D Scatter Plot (3D Position + Colour + Size Encoding)
+
+fig = plt.figure(figsize=(20, 15))
+function4_y = data["function_4"]["y"]*(-1) #Turning values of Function 4 outputs into positive values (overall multiplication with (-1)) to turn this into a maximisation problem 
+
+function4_plot = fig.add_subplot(111, projection='3d')
+f4p = function4_plot.scatter(data["function_4"]["x"][:,0],
+                       data["function_4"]["x"][:,1], 
+                       data["function_4"]["x"][:,2], 
+                       c = data["function_4"]["x"][:,3], #4th dimension -> colour
+                       s = function4_y*80, cmap = 'viridis') #5th dimension -> size
+
+function4_plot.tick_params(labelsize = 15)
+vmax = np.max(np.abs(data["function_4"]["x"][:,3]))
+f4p.set_clim(-vmax, vmax)
+
+function4_plot.set_title('5D Scatter Plot of Function 4 Initial Data Points \n (3D Position + Colour + Size Encoding) ', size = 20)
+function4_plot.set_xlabel(r"$x_1$", size = 20)
+function4_plot.set_ylabel(r"$x_2$", size = 20)
+function4_plot.set_zlabel("x3", size = 20)
+
+cbar = plt.colorbar(f4p, shrink=0.6)
+cbar.ax.tick_params(labelsize=14)
+cbar.set_label("4th dimension (x4)", fontsize=15)
+
+f4_min_max_y_vals = [min(function4_y), np.median(function4_y), max(function4_y)]
+sizes = [v * 80 for v in f4_min_max_y_vals] 
+
+handles = [mlines.Line2D([], [], color='black', alpha = 0.5, marker='o', linestyle='None',markersize=np.sqrt(s), label=f"{v:.2f}")
+    for v, s in zip(f4_min_max_y_vals, sizes)]
+
+legend = function4_plot.legend(handles=handles, title="Size scale (y)", loc="upper left", fontsize = 15, labelspacing=3.0, handletextpad=2.0, handlelength=0.5)
+legend.get_title().set_fontsize(15)
+legend._legend_title_box._text.set_va("top")
+plt.show()
+
+
+#Plotting Function 5's Initial Datapoints in a 5D Scatter Plot (3D Position + Colour + Size Encoding)
+
+fig = plt.figure(figsize=(20, 15))
+
+function5_plot = fig.add_subplot(111, projection='3d')
+f5p = function5_plot.scatter(data["function_5"]["x"][:,0],
+                       data["function_5"]["x"][:,1], 
+                       data["function_5"]["x"][:,2], 
+                       c = data["function_5"]["x"][:,3], #4th dimension -> colour
+                       s = data["function_5"]["y"]*20, cmap = 'viridis') #5th dimension -> size
+
+function5_plot.tick_params(labelsize = 15)
+vmax = np.max(np.abs(data["function_5"]["x"][:,3]))
+f5p.set_clim(-vmax, vmax)
+
+function5_plot.set_title('5D Scatter Plot of Function 5 Initial Data Points \n (3D Position + Colour + Size Encoding) ', size = 20)
+function5_plot.set_xlabel(r"$x_1$", size = 20)
+function5_plot.set_ylabel(r"$x_2$", size = 20)
+function5_plot.set_zlabel("x3", size = 20)
+
+cbar = plt.colorbar(f5p, shrink=0.6)
+cbar.ax.tick_params(labelsize=14)
+cbar.set_label("4th dimension (x4)", fontsize=15)
+
+f5_min_max_y_vals = [min(data["function_5"]["y"]), np.median(data["function_5"]["y"]), max(data["function_5"]["y"])]
+f5_min_max_y_vals = f5_min_max_y_vals [::-1]
+sizes = [v * 20 for v in f5_min_max_y_vals] 
+
+handles = [mlines.Line2D([], [], color='black', alpha = 0.5, marker='o', linestyle='None',markersize=np.sqrt(s), label=f"{v:.2f}")
+    for v, s in zip(f5_min_max_y_vals, sizes)]
+
+legend = function5_plot.legend(handles=handles, title="Size scale (y)", loc="upper left", bbox_to_anchor=(-0.25, 1.0), fontsize = 15, labelspacing=6.0, handletextpad=5.0, handlelength=5)
+legend.get_title().set_fontsize(15)
+legend._legend_title_box._text.set_va("top")
+plt.show()
+
+
+#Plotting Function 6's Initial Datapoints in a 6D Plot (3D Scatter + Colour + Size + Alpha Plot)
+fig = plt.figure(figsize=(20, 15))
+
+alpha = (function6_y - function6_y.min()) / (function6_y.max() - function6_y.min())
+alpha = 0.2 + 0.8 * alpha
+
+function6_plot = fig.add_subplot(111, projection='3d')
+f6p = function6_plot.scatter(data["function_6"]["x"][:,0],
+                       data["function_6"]["x"][:,1], 
+                       data["function_6"]["x"][:,2],  
+                       c = data["function_6"]["x"][:,3], #4th dimension -> colour
+                       s = data["function_6"]["x"][:,4]*2000, cmap = 'viridis', #5th dimension -> size
+                       alpha = alpha) #6th dimension -> alpha (outcome)
+
+function6_plot.tick_params(labelsize = 15)
+vmax = np.max(np.abs(data["function_6"]["x"][:,3]))
+f6p.set_clim(-vmax, vmax)
+
+function6_plot.set_title('6D Scatter Plot of Function 6 Initial Data Points \n (3D Position + Colour + Size Encoding + Alpha) ', size = 20)
+function6_plot.set_xlabel(r"$x_1$", size = 20)
+function6_plot.set_ylabel(r"$x_2$", size = 20)
+function6_plot.set_zlabel("x3", size = 20)
+
+cbar = plt.colorbar(f6p, shrink=0.6)
+cbar.ax.tick_params(labelsize=14)
+cbar.set_label("5th dimension (x5)", fontsize=15)
+
+f6_min_max_y_vals = sorted([min(data["function_6"]["y"]), np.median(data["function_6"]["y"]), max(data["function_6"]["y"])], reverse = True)
+sizes = [abs(v) * 2000 for v in f6_min_max_y_vals]
+
+handles = [mlines.Line2D([], [], color='black', alpha = 0.5, marker='o', linestyle='None',markersize=np.sqrt(s), label=f"{v:.2f}")
+    for v, s in zip(f6_min_max_y_vals, sizes)]
+
+legend = function6_plot.legend(handles=handles, title="Size scale (y)", loc="upper left", bbox_to_anchor=(-0.25, 1.0), fontsize = 15, labelspacing=6.0, handletextpad=5.0, handlelength=5)
+legend.get_title().set_fontsize(15)
+legend._legend_title_box._text.set_va("top")
+plt.show()
+
+
+
