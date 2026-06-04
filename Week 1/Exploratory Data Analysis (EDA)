@@ -1,0 +1,9 @@
+import numpy as np
+import pandas as pd
+import matplotlib.pyplot as plt
+from mpl_toolkits.mplot3d import Axes3D
+import matplotlib.lines as mlines
+from pandas.plotting import parallel_coordinates
+
+#Creating a dictionary for the initial datasets of all 8 functions
+data = {}
