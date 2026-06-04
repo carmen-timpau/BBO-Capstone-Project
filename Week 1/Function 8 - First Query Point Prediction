@@ -1,4 +1,5 @@
-#Predicting the first query for black-box Function 8 with Sobol Sampling and using Automatic Relevance Determination (ARD) with wider bounds on the RBF
+#Predicting the first query for black-box Function 8 with Sobol Sampling
+#using high strength Automatic Relevance Determination (ARD) with wider bounds on the RBF
 import numpy as np
 from sklearn.gaussian_process import GaussianProcessRegressor
 from sklearn.gaussian_process.kernels import RBF
@@ -12,7 +13,7 @@ Y = data["function_8"]["y"]      #shape (40, )
 kernel = RBF(
     length_scale=[1.0]*8,
     length_scale_bounds=(1e-6, 1e8)
-) #using Automatic Relevance Determination (ARD) with wider bounds
+) #using high strength Automatic Relevance Determination (ARD) with wider bounds
 gp = GaussianProcessRegressor(kernel=kernel, alpha=1e-10)
 gp.fit(X, Y)
 
