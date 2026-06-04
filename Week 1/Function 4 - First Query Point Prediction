@@ -1,4 +1,4 @@
-#Predicting the first query for black-box Function 4 with Sobol Sampling (better than random sampling)
+#Predicting the first query for black-box Function 4 with Sobol Sampling (more suitable than grid sampling for higher dimensionality functions)
 import numpy as np
 from sklearn.gaussian_process import GaussianProcessRegressor
 from sklearn.gaussian_process.kernels import RBF
