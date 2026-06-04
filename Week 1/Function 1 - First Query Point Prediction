@@ -13,7 +13,7 @@ gp = GaussianProcessRegressor(kernel=kernel, alpha=1e-10)
 
 gp.fit(X, Y)
 
-#Building a grid of candidate points (for 2D input)
+#Building a grid of candidate points (for 2D input) via grid sampling
 x1_min, x1_max = X[:, 0].min(), X[:, 0].max()
 x2_min, x2_max = X[:, 1].min(), X[:, 1].max()
 
