@@ -9,10 +9,10 @@ Every week until the completion of the project in late August 2026, each functio
 
 
 
-**Initial Black-Box Optimisation (BBO) Capstone Project Strategy (Week 1):**
+<ins> **Initial Black-Box Optimisation (BBO) Capstone Project Strategy (Week 1):** </ins> 
 
 
-**Data-driven Modifications in the Black-Box Optimisation (BBO) Capstone Project Strategy (Week 2):**
+<ins> **Data-driven Modifications in the Black-Box Optimisation (BBO) Capstone Project Strategy (Week 2):** </ins> 
 
 
 ---------------------------------------------------------------------------------------------------------
