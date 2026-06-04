@@ -89,7 +89,6 @@ plt.show()
 
 
 #Plotting Function 4's Initial Datapoints in a 5D Scatter Plot (3D Position + Colour + Size Encoding)
-
 fig = plt.figure(figsize=(20, 15))
 function4_y = data["function_4"]["y"]*(-1) #Turning values of Function 4 outputs into positive values (overall multiplication with (-1)) to turn this into a maximisation problem 
 
@@ -126,7 +125,6 @@ plt.show()
 
 
 #Plotting Function 5's Initial Datapoints in a 5D Scatter Plot (3D Position + Colour + Size Encoding)
-
 fig = plt.figure(figsize=(20, 15))
 
 function5_plot = fig.add_subplot(111, projection='3d')
