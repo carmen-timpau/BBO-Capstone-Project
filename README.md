@@ -20,7 +20,7 @@ Every week until the completion of the project in late August 2026, each functio
 <ins> **Current Project Status:** </ins> 
 
 The project is in active development as part of the 6-month Professional Certification in Machine Learning & AI joint programme at Imperial College London.
-The full project completion date is in late August 2026.
+The project will be finalised in late August 2026.
 
 
 <ins> **Developer Contact Details:** </ins> 
