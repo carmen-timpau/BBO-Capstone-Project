@@ -1,0 +1,37 @@
+#Predicting the first query for black-box Function 2
+import numpy as np
+from sklearn.gaussian_process import GaussianProcessRegressor
+from sklearn.gaussian_process.kernels import RBF
+
+#Loading the data
+X = data["function_2"]["x"]      # shape (10, 2)
+Y = data["function_2"]["y"]      # shape (10, )
+
+#Defining the Gaussian Process model
+kernel = RBF(length_scale=[0.1, 0.1])
+gp = GaussianProcessRegressor(kernel=kernel, alpha=1e-10)
+
+gp.fit(X, Y)
+
+#Building a grid of candidate points (for 2D input) via grid sampling
+x1_min, x1_max = X[:, 0].min(), X[:, 0].max()
+x2_min, x2_max = X[:, 1].min(), X[:, 1].max()
+
+grid_x1 = np.linspace(x1_min, x1_max, 100)
+grid_x2 = np.linspace(x2_min, x2_max, 100)
+
+xx1, xx2 = np.meshgrid(grid_x1, grid_x2)
+x_grid = np.column_stack([xx1.ravel(), xx2.ravel()])
+
+#Computing the Gaussian Process (GP) posterior
+post_mean, post_std = gp.predict(x_grid, return_std=True)
+
+#Computing the UCB acquisition function
+beta = 1.96
+ucb_acquisition_function =post_mean + beta * post_std
+
+#Next query => argmax acquisition
+x_next = x_grid[np.argmax(ucb_acquisition_function)]
+
+print("First raw query point for Function 2:", x_next)
+print("First query point for Function 2 rounded to 6 decimal places:", np.round(x_next, 6))
