@@ -163,6 +163,8 @@ plt.show()
 #Plotting Function 6's Initial Datapoints in a 6D Plot (3D Scatter + Colour + Size + Alpha Plot)
 fig = plt.figure(figsize=(20, 15))
 
+function6_y = data["function_6"]["y"]
+
 alpha = (function6_y - function6_y.min()) / (function6_y.max() - function6_y.min())
 alpha = 0.2 + 0.8 * alpha
 
@@ -199,4 +201,76 @@ legend._legend_title_box._text.set_va("top")
 plt.show()
 
 
+#Plotting Function 7's Initial Datapoints in a 7D Plot (3D Scatter + Colour + Size + Angle + Alpha Plot)
+from matplotlib.markers import MarkerStyle
+import matplotlib.transforms as transforms
 
+fig = plt.figure(figsize=(20, 15))
+
+#Alpha from y
+function7_y = data["function_7"]["y"]
+alpha = (function7_y - function7_y.min()) / (function7_y.max() - function7_y.min())
+alpha = 0.2 + 0.8 * alpha
+
+X = data["function_7"]["x"]
+Y = data["function_7"]["y"]
+
+#Continuous rotation from x6
+shape_dim = X[:, 5]
+theta = (shape_dim - shape_dim.min()) / (shape_dim.max() - shape_dim.min())
+theta = theta * 180
+
+ax = fig.add_subplot(111, projection='3d')
+
+for i in range(len(X)):
+    f7p = ax.scatter(
+        X[i, 0], X[i, 1], X[i, 2],
+        c=X[i, 3],
+        s=X[i, 4] * 2000,
+        cmap='viridis',
+        alpha=alpha[i],
+        marker=(4, 0, theta[i]),
+        edgecolor='k',
+        linewidth=0.3
+    )
+
+#Colour
+vmax = np.max(np.abs(X[:, 3]))
+f7p.set_clim(-vmax, vmax)
+
+# Labels
+ax.tick_params(labelsize=15)
+ax.set_title(
+    '7D Scatter Plot of Function 7 \n(3D Position + Colour + Size + Angle + Alpha + Continuous Shape)',
+    size=20
+)
+ax.set_xlabel(r"$x_1$", size=20)
+ax.set_ylabel(r"$x_2$", size=20)
+ax.set_zlabel(r"$x_3$", size=20)
+
+#Colourbar
+cbar = plt.colorbar(f7p, shrink=0.6)
+cbar.ax.tick_params(labelsize=14)
+cbar.set_label("4th dimension (x4)", fontsize=15)
+
+#Size legend
+vals = sorted([min(Y), np.median(Y), max(Y)], reverse=True)
+sizes = [abs(v) * 2000 for v in vals]
+
+handles_size = [
+    mlines.Line2D([], [], color='black', alpha=0.5, marker='o',
+                  linestyle='None', markersize=np.sqrt(s),
+                  label=f"{v:.2f}")
+    for v, s in zip(vals, sizes)
+]
+
+legend1 = ax.legend(
+    handles=handles_size,
+    title="Size scale (y)",
+    loc="upper left",
+    bbox_to_anchor=(-0.25, 1.0),
+    fontsize=15
+)
+legend1.get_title().set_fontsize(15)
+
+plt.show()
