@@ -1,20 +1,24 @@
 Overall Initial Strategy for First Set of Query Points Prediction:
 
-To decide the first query for each of the 8 given black-box functions, a Bayesian Optimisation strategy based on a Gaussian Process (GP) as the surrogate model 
-fitted to the data was used. 
+To decide the first query for each of the 8 given black-box functions, a Bayesian Optimisation strategy based on a Gaussian Process (GP) as the surrogate 
+model fitted to the data was used. 
 
 
 Acquisition Function:
 
-The Upper Confidence Bound (UCB) was selected as the acquisition function to guide query selection, with β = 1.96 (95% confidence interval), which is balanced 
-between exploitation and exploration. 
+The Upper Confidence Bound (UCB) was selected as the acquisition function to guide query selection, with β = 1.96 (95% confidence interval), which is 
+balanced between exploitation and exploration. 
 
 
 Kernels:
 
-Similarity between the data points was measured using the Radial Basis Function (RBF) kernel, with a length-scale of 0.1xD (D = no. of dimensions for input variables) 
-for all functions, except for function 8. For the latter, Automatic Relevance Determination (ARD) was applied to the RBF, to assign independent length-scales to each 
-input dimension, because the length-scale of the RBF kernel was pushed to the maximum value (100000) when the standard length-scale of 0.1xD was tried. 
+Similarity between the data points was measured using Automatic Relevance Determination (ARD) applied to the Radial Basis Function (RBF) kernel, 
+with a length-scale of 0.1xD (D = no. of dimensions for input variables) and default length-scale bounds (1e-05, 100000.0) for all functions, 
+except for function 8. 
+
+For function 8, Automatic Relevance Determination (ARD) with wider length-scale bounds (1e-6, 1e8) was applied to the RBF with a length scale of 1.0xD, 
+to assign independent length-scales to each input dimension, because the length-scale of the RBF kernel was pushed to the maximum value (100000) when 
+ARD with default bounds was tried initially. 
 
 
 Sampling Methods:
