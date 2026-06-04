@@ -234,26 +234,19 @@ for i in range(len(X)):
         linewidth=0.3
     )
 
-#Colour
 vmax = np.max(np.abs(X[:, 3]))
 f7p.set_clim(-vmax, vmax)
 
-# Labels
 ax.tick_params(labelsize=15)
-ax.set_title(
-    '7D Scatter Plot of Function 7 \n(3D Position + Colour + Size + Angle + Alpha + Continuous Shape)',
-    size=20
-)
+ax.set_title('7D Scatter Plot of Function 7 \n(3D Position + Colour + Size + Angle + Alpha + Continuous Shape)', size=20)
 ax.set_xlabel(r"$x_1$", size=20)
 ax.set_ylabel(r"$x_2$", size=20)
 ax.set_zlabel(r"$x_3$", size=20)
 
-#Colourbar
 cbar = plt.colorbar(f7p, shrink=0.6)
 cbar.ax.tick_params(labelsize=14)
 cbar.set_label("4th dimension (x4)", fontsize=15)
 
-#Size legend
 vals = sorted([min(Y), np.median(Y), max(Y)], reverse=True)
 sizes = [abs(v) * 2000 for v in vals]
 
