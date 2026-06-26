@@ -1,0 +1,27 @@
+**Function 1 Investigation of Strategy Optimisation for Week 3 Submission:**
+
+Strategies tested:
+
+- Week 2's strategy used for Function 1
+
+- Week 2's strategy used for Function 1, but using EI instead of UCB as the acqusition function; a small exploration parameter is used for EI, 
+so that we exploit the promising regions, as function 1 is spiky and almost everywhere close to 0 (exploration as we did in Weeks 1-2 
+isn't actually ideal, because the chances are that simple broad exploration is highly unlikely to quickly detect the sparse regions where 
+the output values are high
+
+- Week 2's startegy used for Function 1 + Thompson sampling instead of UCB (or EI) acqusiition function, which is expected to work best, because TS doesn't 
+require any parameter tuning, which in the cases of UCB/EI takes time and consumes valuable queries with no promised improvement being 
+certain (This one was submitted for week 3 submission).
+
+
+**Function 2 Investigation of Strategy Optimisation for Week 3 Submission:**
+
+Strategies tested:
+
+- Week 2's strategy used for Function 2
+
+- Week 2's strategy used for Function 2, but using EI instead of UCB as the acqusition function.
+
+- Week 2's startegy used for Function 2 + Thompson sampling instead of UCB (or EI) acqusiition function, which is expected to work best, because TS doesn't 
+require any parameter tuning, which in the cases of UCB/EI takes time and consumes valuable queries with no promised improvement being 
+certain (This one was submitted for week 3 submission).
