@@ -1,5 +1,5 @@
 #Predicting the first query for black-box Function 5 with Sobol Sampling (more suitable than grid sampling for higher dimensionality functions)
-#using moderate strength Automatic Relevance Determination (ARD) on the RBF kernel
+#using Automatic Relevance Determination (ARD) on the RBF kernel with agressive baseline and default length_scale_bounds(1e-5, 1e5)
 import numpy as np
 from sklearn.gaussian_process import GaussianProcessRegressor
 from sklearn.gaussian_process.kernels import RBF
@@ -10,7 +10,8 @@ X = data["function_5"]["x"]      #shape (20, 4)
 Y = data["function_5"]["y"]      #shape (20, )
 
 #Defining and fitting the Gaussian Process (GP) model
-kernel = RBF(length_scale=[0.1, 0.1, 0.1, 0.1]) #using moderate strength Automatic Relevance Determination (ARD), as length_scale_bounds are left at default
+kernel = RBF(length_scale=[0.1, 0.1, 0.1, 0.1]) #aggresive baseline
+#using Automatic Relevance Determination (ARD) with agressive baseline and default length_scale_bounds= (1e-5, 1e5)
 gp = GaussianProcessRegressor(kernel=kernel, alpha=1e-10)
 gp.fit(X, Y)
 
