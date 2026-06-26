@@ -1,5 +1,6 @@
 #Strategy optimisation 1. for black-box Function 2
-#using high strength Automatic Relevance Determination (ARD) on the RBF kernel with wider length_scale_bounds
+#using Automatic Relevance Determination (ARD) on the RBF kernel with aggresive baseline and wider bounds
+#Sobol sampling and UCB acquisition function, with beta = 1.96 (balance between exploitation and exploration)
 #Week 2's strategy
 
 import numpy as np
@@ -13,9 +14,10 @@ Y = data["function_2"]["y"]      #shape (12, )
 
 #Defining and fitting the Gaussian Process (GP) model
 kernel = RBF(
-    length_scale=[0.1]*2, #Changing length_scale here to [1.0]*2 gives a ConvergenceWarning so the previously used [0.1]*2 is used instead
+    length_scale=[0.1]*2, #ARD, aggresive baseline
+    #Changing length_scale here to [1.0]*2 gives a ConvergenceWarning so the previously used [0.1]*2 (aggresive baseline) is used instead
     length_scale_bounds=(1e-6, 1e8)
-) #using high strength Automatic Relevance Determination (ARD) with wider bounds
+) #using Automatic Relevance Determination (ARD) with aggresive baseline and wider bounds
 gp = GaussianProcessRegressor(kernel=kernel, alpha=1e-10)
 
 gp.fit(X, Y)
@@ -35,7 +37,7 @@ x_grid = minimum + unit_samples * (maximum - minimum)
 post_mean, post_std = gp.predict(x_grid, return_std=True)
 
 #Computing the Upper Confidence Bound (UCB) acquisition function
-beta = 1.96
+beta = 1.96 #balance between exploitation and exploration
 ucb_acquisition_function =post_mean + beta * post_std
 
 #Next query => argmax acquisition
