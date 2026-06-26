@@ -1,5 +1,5 @@
 #Predicting the second query for black-box Function 3 with Sobol Sampling (more suitable than grid sampling for higher dimensionality functions)
-#using high strength Automatic Relevance Determination (ARD) on the RBF kernel with wider length_scale_bounds
+#using medium strength Automatic Relevance Determination (ARD) on the RBF kernel with wider length_scale_bounds
 import numpy as np
 from sklearn.gaussian_process import GaussianProcessRegressor
 from sklearn.gaussian_process.kernels import RBF
@@ -11,7 +11,7 @@ Y = data["function_3"]["y"]      #shape (16, )
 
 #Defining the Gaussian Process model
 kernel = RBF(
-    length_scale=[1.0]*3, #Changing length_scale from [0.1]*3 to [1.0]*3
+    length_scale=[1.0]*3, #Changing length_scale from [0.1]*3 to [1.0]*3 -> ARD becomes medium strength (from high strength)
     length_scale_bounds=(1e-6, 1e8)
 ) #using high strength Automatic Relevance Determination (ARD) with wider bounds
 gp = GaussianProcessRegressor(kernel=kernel, alpha=1e-10)
