@@ -1,5 +1,7 @@
 #Predicting the first query point for black-box Function 1
-#using Automatic Relevance Determination (ARD) on the RBF kernel with aggresive baseline and default length_scale_bounds 
+#using Automatic Relevance Determination (ARD) on the RBF kernel with aggresive baseline and default length_scale_bounds
+#Grid sampling and UCB acquisition function with beta = 1.96 (balance between exploration and exploitation)
+
 import numpy as np
 from sklearn.gaussian_process import GaussianProcessRegressor
 from sklearn.gaussian_process.kernels import RBF
@@ -29,7 +31,7 @@ x_grid = np.column_stack([xx1.ravel(), xx2.ravel()])
 post_mean, post_std = gp.predict(x_grid, return_std=True)
 
 #Computing the Upper Confidence Bound (UCB) acquisition function
-beta = 1.96
+beta = 1.96 #balance between exploration and exploitation
 ucb_acquisition_function =post_mean + beta * post_std
 
 #Next query => argmax acquisition
