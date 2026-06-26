@@ -1,5 +1,9 @@
 #Predicting the second query point for black-box Function 1
-#using a Matern kernel (nu=1.5) as this is a spiky function and RBF is actually not suitable for it (RBF is suitable for smooth functions).
+#using a Matern kernel (nu=1.5) as this is a spiky function and RBF is actually not suitable for it (RBF is suitable for smooth functions),
+#kernel with applied Automatic Relevance Determination (ARD) with aggresive baseline and wider bounds
+#Sobol sampling
+#UCB acquisition function, with beta = 4.0 (more exploration encouraged)
+
 import numpy as np
 from sklearn.gaussian_process import GaussianProcessRegressor
 from sklearn.gaussian_process.kernels import Matern
@@ -10,7 +14,8 @@ X = data["function_1"]["x"]      #shape (11, 2)
 Y = data["function_1"]["y"]      #shape (11, )
 
 #Defining and fitting the Gaussian Process (GP) model
-kernel = Matern(length_scale=[0.1, 0.1], nu=1.5, length_scale_bounds = (1e-6, 1e8)) #using a Matern kernel (nu=1.5) as this is a spiky function 
+kernel = Matern(length_scale=[0.1, 0.1], nu=1.5, length_scale_bounds = (1e-6, 1e8)) #ARD, aggresive baseline and wider bounds
+#using a Matern kernel (nu=1.5) as this is a spiky function with applied Automatic Relevance Determination (ARD) with aggresive baseline and wider bounds
 gp = GaussianProcessRegressor(kernel=kernel, alpha=1e-4, normalize_y=True)
 
 gp.fit(X, Y)
