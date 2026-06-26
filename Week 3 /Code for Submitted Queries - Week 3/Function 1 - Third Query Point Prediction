@@ -1,6 +1,7 @@
 # Strategy optimisation 3. for black-box Function 1 Week 3 Submission
+# Sobol Sampling
 # Using a Matern kernel (nu=1.5) because Function 1 is spiky
-# Using Thompson Sampling instead of EI/UCB
+# Using Thompson Sampling instead of EI/UCB acquisition functions
 # Submitted for Week 3
 
 import numpy as np
