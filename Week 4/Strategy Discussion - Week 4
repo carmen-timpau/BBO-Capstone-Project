@@ -2,18 +2,92 @@
 
 **Strategy Modification for Week 4, based on Week 3 Query Outcomes** (shown above):
 
-For Function 1, Week 3's strategy (Matern kernel with nu=1.5 - because Function 1 is spiky - with applied Automatic Relevance Determination (ARD) with aggresive baseline and wider bounds, Sobol sampling and Thompson Sampling) worked the best so far, as the query submitted for Week 3 gave an output that shows the greatest improvement obtained so far in terms of maximisation. The obtained output for week 3 (4.363936459722764e-23) has not yet exceeded the highest output within Function 1's dataset, but it is very close to it (7.710875114502849e-16). Therefore, for week 4, the same strategy as in Week 3 will be used, which uses Thompson sampling to check if any improvement is achieved. If the output for Week 4 will still be similar to Week 3's output, an Expected Improvement (EI) acquisition function will be used instead of Thompson sampling next time (Week 5). 
+For Function 1, Week 3's strategy (Matern kernel with nu=1.5 - because Function 1 is spiky - with applied Automatic Relevance Determination 
+(ARD) with aggresive baseline and wider bounds, Sobol sampling and Thompson Sampling) worked the best so far, as the query submitted for 
+Week 3 gave an output that shows the greatest improvement obtained so far in terms of maximisation. The obtained output for week 3 
+(4.363936459722764e-23) has not yet exceeded the highest output within Function 1's dataset, but it is very close to it 
+(7.710875114502849e-16). Therefore, for week 4, the same strategy as in Week 3 will be used, which uses Thompson sampling to check if 
+any improvement is achieved. If the output for Week 4 will still be similar to Week 3's output, an Expected Improvement (EI) acquisition 
+function will be used instead of Thompson sampling next time (Week 5). 
 
-For Function 2, Week 3's query gave a very low output (0.09573287982128298), therefore Week 3's strategy for Function 2 (using Automatic Relevance Determination (ARD) with aggressive baseline - length_scale=[0.1]*3 - on the RBF kernel and wider length_scale_bounds=(1e-6, 1e8), Sobol sampling and Thompson sampling instead of UCB/EI) will not be pursued anymore. The best strategy implemented for query prediction so far for Function 2 has been Week 2's strategy (using Automatic Relevance Determination (ARD) on the RBF kernel with aggressive baseline - length_scale=[0.1]*2 - and wider length_scale_bounds=(1e-6, 1e8), Sobol sampling and UCB acquisition function, with beta = 1.96). However, because Week 2's strategy still did not predict a query point for Function 2 whose output exceeded all outputs within the dataset for this function, or be very close to it, a slightly modified strategy will be used this time for Week 4: using Automatic Relevance Determination (ARD) on the RBF kernel with aggressive baseline - length_scale=[0.1]*2 - and wider length_scale_bounds=(1e-6, 1e8), Sobol sampling and Expected Improvement (EI) acqusiiton function, with xi = 0.1 (large), to encourage exploration since this is still an early stage of the Black-Box fucntion optimisation (which is Week 2's strategy with EI instead of UCB as the acquisition function).
+--------------------------------------------------------------------------------------------------------------------------------------------
 
-For Function 3, Week 3's query has yielded the lowest output (-0.2788098929413194) so far out of all the 3 queries submitted for this function so far, therefore Week 3's strategy for Function 3 (using Automatic Relevance Determination (ARD) with aggressive baseline - length_scale=[0.1]*3 - on the RBF kernel and wider length_scale_bounds=(1e-6, 1e8), Sobol sampling and Thompson sampling) will be abandoned at this stage. The highest output obtained from submitted queries so far (-0.07227582343159358) was obtained from Week 2's query submission, therefore Week 2's strategy (Automatic Relevance Determination (ARD) on the RBF kernel with conservative baseline - length_scale=[1.0]*3 - and wider length_scale_bounds=(1e-6, 1e8), Sobol sampling and UCB acquisition function, with beta = 1.96) and this strategy could be adopted again for week 4. However, because Week 2's query submission still did not yield an output which exceeds the highest output within Function 3's dataset (-0.034835313350078584), an EI acquisition function with xi = 0.1 (large), to encourage exploration since this is still an early stage of the Black-Box fucntion optimisation, will be implemented for Week 4 query prediction (instead of using UCB). Because of ConvergenceWarning, had to use a more aggresive length_scale=[0.5]*3 instead of the conservative length_scale=[1.0]*3.
+For Function 2, Week 3's query gave a very low output (0.09573287982128298), therefore Week 3's strategy for Function 2 (using Automatic 
+Relevance Determination (ARD) with aggressive baseline - length_scale=[0.1]*3 - on the RBF kernel and wider length_scale_bounds=(1e-6, 1e8), 
+Sobol sampling and Thompson sampling instead of UCB/EI) will not be pursued anymore. The best strategy implemented for query prediction so 
+far for Function 2 has been Week 2's strategy (using Automatic Relevance Determination (ARD) on the RBF kernel with aggressive baseline - 
+length_scale=[0.1]*2 - and wider length_scale_bounds=(1e-6, 1e8), Sobol sampling and UCB acquisition function, with beta = 1.96). However, 
+because Week 2's strategy still did not predict a query point for Function 2 whose output exceeded all outputs within the dataset for this 
+function, or be very close to it, a slightly modified strategy will be used this time for Week 4: using Automatic Relevance Determination 
+(ARD) on the RBF kernel with aggressive baseline - length_scale=[0.1]*2 - and wider length_scale_bounds=(1e-6, 1e8), Sobol sampling and 
+Expected Improvement (EI) acqusiiton function, with xi = 0.1 (large), to encourage exploration since this is still an early stage of the 
+Black-Box fucntion optimisation (which is Week 2's strategy with EI instead of UCB as the acquisition function).
 
-For Function 4, Week 3's query output (-2.8380127224315106) is the second highest obtained so far for this function, where the highest output obtained so far is Week 2's query output (-2.381858231019844). Week 3's startegy was simply (maintaining) Week 2's strategy (using Automatic Relevance Determination (ARD) with aggressive baseline - length_scale=[0.1]*3 - on the RBF kernel and wider length_scale_bounds=(1e-6, 1e8), Sobol sampling and UCB acquisition function, with beta = 1.96), therefore at this point the algorithm most likely has found a local (or overall) maximum and got stuck there. To help it get unstuck, in case this is only a local maximum, Thompson sampling will be used in Week 4 to predict the next query point for Function 4.
+--------------------------------------------------------------------------------------------------------------------------------------------
 
-For Function 5, Week 3's query output (533.5766421094867) is high, but did not exceed the outputs of any of outputs of previous queries submitted so far. The best strategy used so far for this function is Week 1's strategy (using Automatic Relevance Determination (ARD) on the RBF kernel with agressive baseline - length_scale=[0.1]*4 - and default length_scale_bounds=(1e-5, 1e5), Sobol sampling and UCB acquisition function, with beta = 1.96), whose output was 702.145429225641. However, this still did not exceed the highest output within Function 5's dataset (1088.8596181962705), therefore using the EI acquisition function with xi = 0.1 (large, to encourage exploration) will be used this time to generate Week 4's query prediction, since this is still an early stage in the Black-Box function optimisation process.
+For Function 3, Week 3's query has yielded the lowest output (-0.2788098929413194) so far out of all the 3 queries submitted for this 
+function so far, therefore Week 3's strategy for Function 3 (using Automatic Relevance Determination (ARD) with aggressive baseline - 
+length_scale=[0.1]*3 - on the RBF kernel and wider length_scale_bounds=(1e-6, 1e8), Sobol sampling and Thompson sampling) will be 
+abandoned at this stage. The highest output obtained from submitted queries so far (-0.07227582343159358) was obtained from Week 2's 
+query submission, therefore Week 2's strategy (Automatic Relevance Determination (ARD) on the RBF kernel with conservative baseline - 
+length_scale=[1.0]*3 - and wider length_scale_bounds=(1e-6, 1e8), Sobol sampling and UCB acquisition function, with beta = 1.96) and 
+this strategy could be adopted again for week 4. However, because Week 2's query submission still did not yield an output which exceeds 
+the highest output within Function 3's dataset (-0.034835313350078584), an EI acquisition function with xi = 0.1 (large), to encourage 
+exploration since this is still an early stage of the Black-Box fucntion optimisation, will be implemented for Week 4 query prediction 
+(instead of using UCB). Because of ConvergenceWarning, had to use a more aggresive length_scale=[0.5]*3 instead of the conservative 
+length_scale=[1.0]*3.
 
-For Function 6, Week 3's query output (-1.657132625759834) is the lowest obtained so far out of all the 3 queries submitted for this function so far, therefore Week 3's strategy (using Automatic Relevance Determination (ARD) on the RBF kernel with conservative baseline - length_scale=[1.0]*5 - and wider bounds=(1e-6, 1e8), Sobol sampling, Thompson sampling) will be abandoned at this stage. The best strategy implemented for query prediction so far for Function 6 has been Week 2's strategy (using Automatic Relevance Determination (ARD) on the RBF kernel with conservative baseline - length_scale=[1.0]*5 - and wider bounds=(1e-6, 1e8), Sobol sampling and UCB acquisition function, with beta = 1.96), whose output was -0.9628963754055723. However, because even this output is quite far away from the highest output within Function 6's dataset (-0.7142649478202404), an EI acquisition function with xi = 0.1 (large, to encourage exploration), will be used this time to generate Week 4's query prediction, since this is still an early stage in the Black-Box function optimisation process.
+--------------------------------------------------------------------------------------------------------------------------------------------
 
-For Function 7, Week 3's query output (0.15363966796392775) is greater than Week 2's query output (0.040586716901559135), however it is still lower than the highest query output obtained so far of all 3 submitted queries, which is Week 1's query submission output (0.532195340663087). However, Week 1's output is still far away from the highest output within the dataset of Function 7 (1.3649683044991994). Therefore, Week 3's strategy for Function 7 (using Automatic Relevance Determination (ARD) on the RBF kernel with aggresive baseline - length_scale=[0.1]*6 - and default length_scale_bounds=(1e-5, 1e5), Sobol sampling, Thompson sampling) will be abandoned and a slight modification of Week 1's strategy for Function 7 (which is using Automatic Relevance Determination (ARD) on the RBF kernel with aggresive baseline - length_scale=[0.1]*4 - and default length_scale_bounds=(1e-5, 1e5), Sobol sampling and UCB acquisition function, with beta = 1.96) will be implemented to predict Week 4's query submission for Function 7. Week 4's strategy will be using the EI acquisition function instead of the UCB, with xi = 0.1 (large, to encourage exploration), since this is still an early stage in the Black-Box function optimisation process. Had to use a less aggresive baseline (length_scale=[0.5]*6) than in Week 1 (length_scale=[0.1)*6) due to ConvergenceWarning.
+For Function 4, Week 3's query output (-2.8380127224315106) is the second highest obtained so far for this function, where the highest 
+output obtained so far is Week 2's query output (-2.381858231019844). Week 3's startegy was simply (maintaining) Week 2's strategy 
+(using Automatic Relevance Determination (ARD) with aggressive baseline - length_scale=[0.1]*3 - on the RBF kernel and wider bounds 
+length_scale_bounds=(1e-6, 1e8), Sobol sampling and UCB acquisition function, with beta = 1.96), therefore at this point the algorithm 
+most likely has found a local (or overall) maximum and got stuck there. To help it get unstuck, in case this is only a local maximum, 
+Thompson sampling will be used in Week 4 to predict the next query point for Function 4.
 
-For Function 8, Week 3's query output (9.8938255194366) is slightly lower than but still very close to the highest output obtained so far for this function overall, which is Week 2's query output (9.9561276549796). Week 3's query output (9.8938255194366) is pretty similar to Week 1's query output (9.8658669584059). This makes sense, as the same strategy (using Automatic Relevance Determination (ARD) on the RBF with conservative baseline and wider bounds=(1e-6, 1e8), Sobol sampling and UCB acquisition function, with beta = 1.96) has been maintained for generating all 3 query predictions so far, because the algorithm has successfully identified a local (or overall) maximum. However, as it looks like maintaining the same strategy does not lead to any major improvements (maximisation) in the function's output, the strategy will now be modified for Week 4. Thompson sampling will be tested for generating Week 4's query prediction, as this is a promising path to take at the moment, to help the optimisation algorithm get unstuck from a potential local maximum.
+--------------------------------------------------------------------------------------------------------------------------------------------
+
+For Function 5, Week 3's query output (533.5766421094867) is high, but did not exceed the outputs of any of outputs of previous queries 
+submitted so far. The best strategy used so far for this function is Week 1's strategy (using Automatic Relevance Determination (ARD) on 
+the RBF kernel with agressive baseline - length_scale=[0.1]*4 - and default length_scale_bounds=(1e-5, 1e5), Sobol sampling and UCB 
+acquisition function, with beta = 1.96), whose output was 702.145429225641. However, this still did not exceed the highest output 
+within Function 5's dataset (1088.8596181962705), therefore using the EI acquisition function with xi = 0.1 (large, to encourage exploration) 
+will be used this time to generate Week 4's query prediction, since this is still an early stage in the Black-Box function optimisation process.
+
+--------------------------------------------------------------------------------------------------------------------------------------------
+
+For Function 6, Week 3's query output (-1.657132625759834) is the lowest obtained so far out of all the 3 queries submitted for this 
+function so far, therefore Week 3's strategy (using Automatic Relevance Determination (ARD) on the RBF kernel with conservative baseline 
+- length_scale=[1.0]*5 - and wider bounds=(1e-6, 1e8), Sobol sampling, Thompson sampling) will be abandoned at this stage. The best 
+strategy implemented for query prediction so far for Function 6 has been Week 2's strategy (using Automatic Relevance Determination 
+(ARD) on the RBF kernel with conservative baseline - length_scale=[1.0]*5 - and wider bounds=(1e-6, 1e8), Sobol sampling and UCB 
+acquisition function, with beta = 1.96), whose output was -0.9628963754055723. However, because even this output is quite far away 
+from the highest output within Function 6's dataset (-0.7142649478202404), an EI acquisition function with xi = 0.1 (large, to encourage 
+exploration), will be used this time to generate Week 4's query prediction, since this is still an early stage in the Black-Box function 
+optimisation process.
+
+--------------------------------------------------------------------------------------------------------------------------------------------
+
+For Function 7, Week 3's query output (0.15363966796392775) is greater than Week 2's query output (0.040586716901559135), however it is 
+still lower than the highest query output obtained so far of all 3 submitted queries, which is Week 1's query submission output 
+(0.532195340663087). However, Week 1's output is still far away from the highest output within the dataset of Function 7 
+(1.3649683044991994). Therefore, Week 3's strategy for Function 7 (using Automatic Relevance Determination (ARD) on the RBF kernel 
+with aggresive baseline - length_scale=[0.1]*6 - and default length_scale_bounds=(1e-5, 1e5), Sobol sampling, Thompson sampling) will 
+be abandoned and a slight modification of Week 1's strategy for Function 7 (which is using Automatic Relevance Determination (ARD) on 
+the RBF kernel with aggresive baseline - length_scale=[0.1]*4 - and default length_scale_bounds=(1e-5, 1e5), Sobol sampling and UCB 
+acquisition function, with beta = 1.96) will be implemented to predict Week 4's query submission for Function 7. Week 4's strategy will 
+be using the EI acquisition function instead of the UCB, with xi = 0.1 (large, to encourage exploration), since this is still an early 
+stage in the Black-Box function optimisation process. Had to use a less aggresive baseline (length_scale=[0.5]*6) than in Week 1 
+(length_scale=[0.1)*6) due to ConvergenceWarning.
+
+--------------------------------------------------------------------------------------------------------------------------------------------
+
+For Function 8, Week 3's query output (9.8938255194366) is slightly lower than but still very close to the highest output obtained so 
+far for this function overall, which is Week 2's query output (9.9561276549796). Week 3's query output (9.8938255194366) is pretty 
+similar to Week 1's query output (9.8658669584059). This makes sense, as the same strategy (using Automatic Relevance Determination 
+(ARD) on the RBF with conservative baseline and wider bounds=(1e-6, 1e8), Sobol sampling and UCB acquisition function, with beta = 1.96) 
+has been maintained for generating all 3 query predictions so far, because the algorithm has successfully identified a local (or overall) 
+maximum. However, as it looks like maintaining the same strategy does not lead to any major improvements (maximisation) in the function's 
+output, the strategy will now be modified for Week 4. Thompson sampling will be tested for generating Week 4's query prediction, as this 
+is a promising path to take at the moment, to help the optimisation algorithm get unstuck from a potential local maximum.
