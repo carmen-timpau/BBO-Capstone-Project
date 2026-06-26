@@ -13,7 +13,7 @@ Y = data["function_3"]["y"]      #shape (16, )
 kernel = RBF(
     length_scale=[1.0]*3, #Changing length_scale from [0.1]*3 to [1.0]*3 -> ARD becomes medium strength (from high strength)
     length_scale_bounds=(1e-6, 1e8)
-) #using high strength Automatic Relevance Determination (ARD) with wider bounds
+) #using medium strength Automatic Relevance Determination (ARD) with wider bounds
 gp = GaussianProcessRegressor(kernel=kernel, alpha=1e-10)
 gp.fit(X, Y)
 
