@@ -28,6 +28,6 @@ The project will be finalised in late August 2026.
 
 <ins> **Developer Contact Details:** </ins> 
 
-Carmen-Mihaela Timpau, carmen.timpau21@alumni.imperial.ac.uk, Imperial College London, London, United Kingdom.
+Carmen-Mihaela Timpau, carmen.timpau21@alumni.imperial.ac.uk, Imperial College London, United Kingdom.
 
 _Please do get in touch if you have any questions or want to discuss this project._
