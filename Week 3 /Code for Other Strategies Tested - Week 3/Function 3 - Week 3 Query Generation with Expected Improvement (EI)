@@ -1,0 +1,54 @@
+#Strategy Investigation 2. for Week 3 submission of black-box Function 3 with Sobol Sampling (more suitable than grid sampling for higher dimensionality functions)
+#using high strength Automatic Relevance Determination (ARD) on the RBF kernel with wider length_scale_bounds
+#Week 2's strategy with length_scale changed from [1.0]*3 to [0.1]*3, because of ConvergenceWarning + 
+#using EI instead of UCB as the acquisition function
+import numpy as np
+from sklearn.gaussian_process import GaussianProcessRegressor
+from sklearn.gaussian_process.kernels import RBF
+from scipy.stats.qmc import Sobol
+from scipy.stats import norm
+
+#Loading the data
+X = data["function_3"]["x"]      #shape (17, 3)
+Y = data["function_3"]["y"]      #shape (17, )
+
+#Defining the Gaussian Process model
+kernel = RBF(
+    length_scale=[0.1]*3, #Changing length_scale from [1.0]*3 to [0.1]*3, because otherwise I got a ConvergenceWarning
+    length_scale_bounds=(1e-6, 1e8)
+) #using high strength Automatic Relevance Determination (ARD) with wider bounds
+gp = GaussianProcessRegressor(kernel=kernel, alpha=1e-10)
+gp.fit(X, Y)
+
+#Defining the input bounds
+minimum = X.min(axis=0)
+maximum = X.max(axis=0)
+
+#Sobol sequence (power of 2)
+sobol = Sobol(d=3, scramble=True)
+unit_samples = sobol.random_base2(m=12)
+
+#Scaling Sobol samples to actual bounds
+x_grid = minimum + unit_samples * (maximum - minimum)
+
+#Computing the Gaussian Process (GP) posterior
+post_mean, post_std = gp.predict(x_grid, return_std=True)
+
+#Computing the Expected Improvement (EI) acquisition function
+y_best = Y.max()         
+xi = 0.01                 # exploration parameter
+
+improvement = post_mean - y_best - xi
+with np.errstate(divide='ignore'):
+    Z = improvement / post_std
+    ei_acquisition_function = np.where(
+        post_std > 0,
+        improvement * norm.cdf(Z) + post_std * norm.pdf(Z),
+        0.0
+    )
+
+#Next query => argmax acquisition function
+x_next = x_grid[np.argmax(ei_acquisition_function)]
+
+print("Third raw query point for Function 3:", x_next)
+print("Third query point for Function 3 (6 decimals):", np.round(x_next, 6))
