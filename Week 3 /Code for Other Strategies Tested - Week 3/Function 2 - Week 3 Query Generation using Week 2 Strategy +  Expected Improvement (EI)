@@ -38,8 +38,8 @@ x_grid = minimum + unit_samples * (maximum - minimum)
 post_mean, post_std = gp.predict(x_grid, return_std=True)
 
 #Expected Improvement (EI) acquisition
-y_best = Y.max()     # assuming maximisation
-xi = 0.01            # small exploration parameter
+y_best = Y.max()     #maximisation
+xi = 0.01            #small exploration parameter
 
 improvement = post_mean - y_best - xi
 Z = improvement / post_std
