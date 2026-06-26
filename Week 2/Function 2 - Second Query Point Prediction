@@ -11,7 +11,8 @@ Y = data["function_2"]["y"]      #shape (11, )
 
 #Defining and fitting the Gaussian Process (GP) model
 kernel = RBF(
-    length_scale=[0.1]*2, #Changing length_scale here to [1.0]*2 gives a ConvergenceWarning so the previously used [0.1]*2 (aggressive baseline) is used instead
+    length_scale=[0.1]*2, 
+    #Changing length_scale here to [1.0]*2 gives a ConvergenceWarning so the previously used [0.1]*2 (aggressive baseline) is used instead
     length_scale_bounds=(1e-6, 1e8)
 ) #using Automatic Relevance Determination (ARD) with an aggressive baseline and wider bounds
 gp = GaussianProcessRegressor(kernel=kernel, alpha=1e-10)
