@@ -1,5 +1,5 @@
 #Predicting the first query point for black-box Function 1
-#using moderate strength Automatic Relevance Determination (ARD) on the RBF kernel
+#using Automatic Relevance Determination (ARD) on the RBF kernel with aggresive baseline and default length_scale_bounds 
 import numpy as np
 from sklearn.gaussian_process import GaussianProcessRegressor
 from sklearn.gaussian_process.kernels import RBF
@@ -9,7 +9,8 @@ X = data["function_1"]["x"]      #shape (10, 2)
 Y = data["function_1"]["y"]      #shape (10, )
 
 #Defining and fitting the Gaussian Process (GP) model
-kernel = RBF(length_scale=[0.1, 0.1]) #using moderate strength Automatic Relevance Determination (ARD), as length_scale_bounds are left at default
+kernel = RBF(length_scale=[0.1, 0.1]) #ARD, aggresive baseline
+#using Automatic Relevance Determination (ARD) with aggresive baseline and default length_scale_bounds 
 gp = GaussianProcessRegressor(kernel=kernel, alpha=1e-10)
 
 gp.fit(X, Y)
