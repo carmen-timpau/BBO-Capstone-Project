@@ -1,5 +1,6 @@
 #Strategy optimisation 1. for black-box Function 1 Week 3 Subsmission
-#using a Matern kernel (nu=1.5) as this is a spiky function and RBF is actually not suitable for it (RBF is suitable for smooth functions).
+#using a Matern kernel (nu=1.5) as this is a spiky function and RBF is actually not suitable for it (RBF is suitable for smooth functions),
+#kernel with applied Automatic Relevance Determination (ARD) with aggresive baseline and wider bounds 
 #Sobol sampling
 #UCB acquisition function with beta = 4.0 (more exploration encouraged, because the function is mostly close to 0 except in some spiky, sparse regions which must be found)
 #Using the same strategy as in Week 2
