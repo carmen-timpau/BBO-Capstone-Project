@@ -18,7 +18,7 @@ kernel = RBF(
     length_scale=[0.1]*3, #ARD, aggresive baseline
     #Changing length_scale from [1.0]*3 to [0.1]*3 (aggresive baseline), because otherwise I got a ConvergenceWarning
     length_scale_bounds=(1e-6, 1e8)
-) #using high strength Automatic Relevance Determination (ARD) with aggresive baseline and wider bounds
+) #using Automatic Relevance Determination (ARD) with aggresive baseline and wider bounds
 gp = GaussianProcessRegressor(kernel=kernel, alpha=1e-10)
 gp.fit(X, Y)
 
