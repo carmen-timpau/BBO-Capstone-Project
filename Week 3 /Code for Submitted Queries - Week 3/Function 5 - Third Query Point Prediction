@@ -1,5 +1,5 @@
 #Strategy optimisation 3. for Week 3 for black-box Function 5 with Sobol Sampling (more suitable than grid sampling for higher dimensionality functions)
-#using Automatic Relevance Determination (ARD) on the RBF kernel  with aggresive baseline and default length_scale_bounds (worked better than high strength which was tested in Week 2 query)
+#using Automatic Relevance Determination (ARD) on the RBF kernel with aggresive baseline and default length_scale_bounds (worked better than Automatic Relevance Determination (ARD) with aggresive baseline and wider bounds which was tested in Week 2 query)
 #Using Thompson sampling instead of UCB/EI
 #Submitted for Week 3
 import numpy as np
