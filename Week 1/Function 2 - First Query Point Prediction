@@ -1,6 +1,6 @@
 #Predicting the first query for black-box Function 2
 #using Automatic Relevance Determination (ARD) on the RBF kernel with aggresive baseline and default length_scale_bounds 
-#Grid sampling and Upper Confidence Bound (UCB) acqusiition function with beta = 1.96 (balance between exploitation and exploration)
+#Grid sampling and Upper Confidence Bound (UCB) acqusition function with beta = 1.96 (balance between exploitation and exploration)
 import numpy as np
 from sklearn.gaussian_process import GaussianProcessRegressor
 from sklearn.gaussian_process.kernels import RBF
