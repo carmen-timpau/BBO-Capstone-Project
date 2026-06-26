@@ -1,6 +1,6 @@
 #Predicting the first query for black-box Function 3 with Sobol Sampling (more suitable than grid sampling for higher dimensionality functions)
 #using Automatic Relevance Determination (ARD) on the RBF kernel with aggresive baseline and default length_scale_bounds 
-#
+##UCB acquisition function with beta = 1.96 (balancing exploration with exploitation)
 
 import numpy as np
 from sklearn.gaussian_process import GaussianProcessRegressor
@@ -32,7 +32,7 @@ x_grid = minimum + unit_samples * (maximum - minimum)
 post_mean, post_std = gp.predict(x_grid, return_std=True)
 
 #Computing the Upper Confidence Bound (UCB) acquisition function
-beta = 1.96
+beta = 1.96 #balancing exploration with exploitation
 ucb_acquisition_function = post_mean + beta * post_std
 
 #Next query => argmax acquisition
