@@ -1,0 +1,56 @@
+#Strategy optimisation 2. for black-box Function 2
+#using high strength Automatic Relevance Determination (ARD) on the RBF kernel with wider length_scale_bounds
+#Week 2's strategy, but using EI instead of UCB as the acqusition function.
+
+import numpy as np
+from sklearn.gaussian_process import GaussianProcessRegressor
+from sklearn.gaussian_process.kernels import RBF
+from scipy.stats.qmc import Sobol
+from scipy.stats import norm
+
+#Loading the data
+X = data["function_2"]["x"]      #shape (12, 2)
+Y = data["function_2"]["y"]      #shape (12, )
+
+#Defining and fitting the Gaussian Process (GP) model
+kernel = RBF(
+    length_scale=[0.1]*2, #Changing length_scale here to [1.0]*2 gives a ConvergenceWarning so the previously used [0.1]*2 is used instead
+    length_scale_bounds=(1e-6, 1e8)
+) #using high strength Automatic Relevance Determination (ARD) with wider bounds
+gp = GaussianProcessRegressor(kernel=kernel, alpha=1e-10)
+
+gp.fit(X, Y)
+
+#Defining the input bounds
+minimum = X.min(axis=0)
+maximum = X.max(axis=0)
+
+#Sobol sequence (power of 2)
+sobol = Sobol(d=2, scramble=True)
+unit_samples = sobol.random_base2(m=12)
+
+#Scaling Sobol samples to actual bounds
+x_grid = minimum + unit_samples * (maximum - minimum)
+
+#Computing the Gaussian Process (GP) posterior
+post_mean, post_std = gp.predict(x_grid, return_std=True)
+
+#Expected Improvement (EI) acquisition
+y_best = Y.max()     # assuming maximisation
+xi = 0.01            # small exploration parameter
+
+improvement = post_mean - y_best - xi
+Z = improvement / post_std
+
+# EI formula with safe handling of zero std
+ei_acquisition_function = np.where(
+    post_std > 0,
+    improvement * norm.cdf(Z) + post_std * norm.pdf(Z),
+    0.0
+)
+
+#Next query => argmax acquisition
+x_next = x_grid[np.argmax(ei_acquisition_function)]
+
+print("Third raw query point for Function 2:", x_next)
+print("Third query point for Function 2 rounded to 6 decimal places:", np.round(x_next, 6))
