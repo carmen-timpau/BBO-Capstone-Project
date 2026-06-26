@@ -1,7 +1,8 @@
 #Strategy Investigation 2. for Week 3 submission of black-box Function 3 with Sobol Sampling (more suitable than grid sampling for higher dimensionality functions)
-#using high strength Automatic Relevance Determination (ARD) on the RBF kernel with wider length_scale_bounds
+#using Automatic Relevance Determination (ARD) on the RBF kernel with aggresive baseline and wider bounds
 #Week 2's strategy with length_scale changed from [1.0]*3 to [0.1]*3, because of ConvergenceWarning + 
-#using EI instead of UCB as the acquisition function
+#+ using EI with xi = 0.01 (small exploration parameter) instead of UCB as the acquisition function
+
 import numpy as np
 from sklearn.gaussian_process import GaussianProcessRegressor
 from sklearn.gaussian_process.kernels import RBF
@@ -14,9 +15,10 @@ Y = data["function_3"]["y"]      #shape (17, )
 
 #Defining the Gaussian Process model
 kernel = RBF(
-    length_scale=[0.1]*3, #Changing length_scale from [1.0]*3 to [0.1]*3, because otherwise I got a ConvergenceWarning
+    length_scale=[0.1]*3, #ARD, aggresive baseline
+    #Changing length_scale from [1.0]*3 to [0.1]*3 (aggresive baseline), because otherwise I got a ConvergenceWarning
     length_scale_bounds=(1e-6, 1e8)
-) #using high strength Automatic Relevance Determination (ARD) with wider bounds
+) #using high strength Automatic Relevance Determination (ARD) with aggresive baseline and wider bounds
 gp = GaussianProcessRegressor(kernel=kernel, alpha=1e-10)
 gp.fit(X, Y)
 
@@ -36,7 +38,7 @@ post_mean, post_std = gp.predict(x_grid, return_std=True)
 
 #Computing the Expected Improvement (EI) acquisition function
 y_best = Y.max()         
-xi = 0.01                 # exploration parameter
+xi = 0.01                 #small exploration parameter
 
 improvement = post_mean - y_best - xi
 with np.errstate(divide='ignore'):
