@@ -1,6 +1,7 @@
 #Strategy optimisation 2. for black-box Function 2
-#using high strength Automatic Relevance Determination (ARD) on the RBF kernel with wider length_scale_bounds
-#Week 2's strategy, but using EI instead of UCB as the acqusition function.
+#using Automatic Relevance Determination (ARD) on the RBF kernel with aggresive baseline and wider bounds
+#Sobol sampling
+#Week 2's strategy, but using EI with xi = 0.01 (small exploration parameter) instead of UCB as the acqusition function.
 
 import numpy as np
 from sklearn.gaussian_process import GaussianProcessRegressor
@@ -14,9 +15,10 @@ Y = data["function_2"]["y"]      #shape (12, )
 
 #Defining and fitting the Gaussian Process (GP) model
 kernel = RBF(
-    length_scale=[0.1]*2, #Changing length_scale here to [1.0]*2 gives a ConvergenceWarning so the previously used [0.1]*2 is used instead
+    length_scale=[0.1]*2, #ARD, aggresive baseline
+    #Changing length_scale here to [1.0]*2 gives a ConvergenceWarning so the previously used [0.1]*2 (aggresive baseline) is used instead
     length_scale_bounds=(1e-6, 1e8)
-) #using high strength Automatic Relevance Determination (ARD) with wider bounds
+) #using Automatic Relevance Determination (ARD) with aggresive baseline and wider bounds
 gp = GaussianProcessRegressor(kernel=kernel, alpha=1e-10)
 
 gp.fit(X, Y)
