@@ -1,6 +1,7 @@
 #Strategy optimisation 1. for Week 3 for black-box Function 5 with Sobol Sampling (more suitable than grid sampling for higher dimensionality functions)
 #UCB acquisition function with beta = 1.96 (balance between exploration and exploitation)
-#using Automatic Relevance Determination (ARD) on the RBF kernel with aggresive baseline and default length_scale_bounds (Week 1 strategy worked better than Automatic Relevance Determination (ARD) on the RBF kernel with aggresive baseline and wider bounds which was tested in Week 2 query)
+#using Automatic Relevance Determination (ARD) on the RBF kernel with aggresive baseline and default length_scale_bounds because 
+#because Week 1 strategy [Automatic Relevance Determination (ARD) on the RBF kernel with agressive baseline and default length_scale_bounds(1e-5, 1e5)]worked better than [Automatic Relevance Determination (ARD) on the RBF kernel with aggresive baseline and wider bounds] which was tested in Week 2 query
 
 import numpy as np
 from sklearn.gaussian_process import GaussianProcessRegressor
