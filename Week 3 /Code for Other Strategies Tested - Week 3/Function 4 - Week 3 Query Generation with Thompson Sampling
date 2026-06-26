@@ -1,6 +1,7 @@
 #Strategy optimisation 2. for Week 3 black-box Function 4 with Sobol Sampling (more suitable than grid sampling for higher dimensionality functions)
 #using Automatic Relevance Determination (ARD) on the RBF kernel with aggresive baseline and wider bounds
 #Maintaining the same strategy as in Week 2, but using Thompson sampling instead of UCB acquisition function
+
 import numpy as np
 from sklearn.gaussian_process import GaussianProcessRegressor
 from sklearn.gaussian_process.kernels import RBF
