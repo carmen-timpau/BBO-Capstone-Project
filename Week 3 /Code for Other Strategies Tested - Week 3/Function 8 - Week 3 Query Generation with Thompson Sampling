@@ -1,6 +1,7 @@
 #Strategy optimisation 2. for Week 3 for black-box Function 8 with Sobol Sampling
-#using high strength Automatic Relevance Determination (ARD) with wider bounds on the RBF
+#using Automatic Relevance Determination (ARD) on the RBF with conservative baseline and wider bounds
 #Using Thompson sampling instead of UCB acquisition function 
+
 import numpy as np
 from sklearn.gaussian_process import GaussianProcessRegressor
 from sklearn.gaussian_process.kernels import RBF
@@ -12,9 +13,9 @@ Y = data["function_8"]["y"]      #shape (42, )
 
 #Defining and fitting the Gaussian Process (GP) model
 kernel = RBF(
-    length_scale=[1.0]*8,
+    length_scale=[1.0]*8,#ARD, conservative baseline
     length_scale_bounds=(1e-6, 1e8)
-) #using high strength Automatic Relevance Determination (ARD) with wider bounds
+) #using Automatic Relevance Determination (ARD) with conservative baseline and wider bounds
 gp = GaussianProcessRegressor(kernel=kernel, alpha=1e-10)
 gp.fit(X, Y)
 
