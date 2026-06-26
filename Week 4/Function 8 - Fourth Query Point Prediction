@@ -1,0 +1,45 @@
+#Next Query Prediction for black-box Function 8 Week 4 Submission
+#using Automatic Relevance Determination (ARD) on the RBF with conservative baseline and wider bounds
+#Sobol sampling
+#Using Thompson sampling instead of UCB acquisition function 
+
+import numpy as np
+from sklearn.gaussian_process import GaussianProcessRegressor
+from sklearn.gaussian_process.kernels import RBF
+from scipy.stats.qmc import Sobol
+
+#Loading the data
+X = data["function_8"]["x"]      #shape (43, 8)
+Y = data["function_8"]["y"]      #shape (43, )
+
+#Defining and fitting the Gaussian Process (GP) model
+kernel = RBF(
+    length_scale=[1.0]*8, #ARD, conservative baseline
+    length_scale_bounds=(1e-6, 1e8) #wider bounds
+) #using Automatic Relevance Determination (ARD) with conservative baseline and wider bounds
+gp = GaussianProcessRegressor(kernel=kernel, alpha=1e-10)
+gp.fit(X, Y)
+
+#Defining the input bounds
+minimum = X.min(axis=0)
+maximum = X.max(axis=0)
+
+#Sobol sequence (power of 2)
+sobol = Sobol(d=8, scramble=True)
+unit_samples = sobol.random_base2(m=13)
+
+#Scaling Sobol samples to actual bounds
+x_grid = minimum + unit_samples * (maximum - minimum)
+
+#Computing the Gaussian Process (GP) posterior
+post_mean, post_cov = gp.predict(x_grid, return_cov=True)
+
+#Thompson Sampling
+# Draw one sample from the GP posterior over all Sobol points
+sampled_function = np.random.multivariate_normal(post_mean, post_cov)
+
+#Select the point where the sampled function is maximal
+x_next = x_grid[np.argmax(sampled_function)]
+
+print("Fourth raw query point for Function 8:", x_next)
+print("Fourth query point for Function 8 (6 decimals):", np.round(x_next, 6))
