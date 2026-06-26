@@ -8,7 +8,7 @@ For function 2, Week 2's strategy has yielded a higher output value than Week 1'
 to progress from there.
 
 For function 3, Week 2's strategy has yielded a much higher output value than in Week 1's query, therefore Week 2's strategy 
-will be optimised to progress from there. EI will be tried instead of UCB as the aquisition function for week 3.
+will be optimised to progress from there. EI and Thompson sampling will be investigated instead of UCB as the aquisition function for Week 3.
 
 **For function 4, Week 2's strategy has yielded the highest output value so far, therefore, this strategy will be maintained 
 in Week 3 as well, to keep progressing from here.
