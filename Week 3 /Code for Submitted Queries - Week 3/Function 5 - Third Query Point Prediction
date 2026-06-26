@@ -1,5 +1,5 @@
 #Strategy optimisation 3. for Week 3 for black-box Function 5 with Sobol Sampling (more suitable than grid sampling for higher dimensionality functions)
-#using moderate strength Automatic Relevance Determination (ARD) on the RBF kernel (worked better than high strength which was tested in Week 2 query)
+#using Automatic Relevance Determination (ARD) on the RBF kernel  with aggresive baseline and default length_scale_bounds (worked better than high strength which was tested in Week 2 query)
 #Using Thompson sampling instead of UCB/EI
 #Submitted for Week 3
 import numpy as np
@@ -12,7 +12,8 @@ X = data["function_5"]["x"]      #shape (22, 4)
 Y = data["function_5"]["y"]      #shape (22, )
 
 #Defining and fitting the Gaussian Process (GP) model
-kernel = RBF(length_scale=[0.1]*4) #using moderate strength Automatic Relevance Determination (ARD), as length_scale_bounds are left at default
+kernel = RBF(length_scale=[0.1]*4) #ARD, aggresive baseline
+#using Automatic Relevance Determination (ARD) with aggresive baseline and default length_scale_bounds
 gp = GaussianProcessRegressor(kernel=kernel, alpha=1e-10)
 gp.fit(X, Y)
 
