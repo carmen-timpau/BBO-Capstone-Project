@@ -13,7 +13,7 @@ Y = data["function_6"]["y"]      #shape (22, )
 
 #Defining the Gaussian Process model
 kernel = RBF(
-    length_scale=[1.0]*5, #ARD, Keeping length_scale at [1.0]*3 (conservative baseline) as in Week 2, which worked better than Week 1
+    length_scale=[1.0]*5, #ARD, Keeping length_scale at [1.0]*5 (conservative baseline) as in Week 2, which worked better than Week 1
     length_scale_bounds=(1e-6, 1e8) #wider bounds
 ) #using Automatic Relevance Determination (ARD) with conservative baseline and wider bounds
 gp = GaussianProcessRegressor(kernel=kernel, alpha=1e-10)
