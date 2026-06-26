@@ -1,0 +1,42 @@
+#Predicting the second query for black-box Function 8 with Sobol Sampling
+#using high strength Automatic Relevance Determination (ARD) with wider bounds on the RBF
+import numpy as np
+from sklearn.gaussian_process import GaussianProcessRegressor
+from sklearn.gaussian_process.kernels import RBF
+from scipy.stats.qmc import Sobol
+
+#Loading the data
+X = data["function_8"]["x"]      #shape (41, 8)
+Y = data["function_8"]["y"]      #shape (41, )
+
+#Defining and fitting the Gaussian Process (GP) model
+kernel = RBF(
+    length_scale=[1.0]*8,
+    length_scale_bounds=(1e-6, 1e8)
+) #using high strength Automatic Relevance Determination (ARD) with wider bounds
+gp = GaussianProcessRegressor(kernel=kernel, alpha=1e-10)
+gp.fit(X, Y)
+
+#Defining the input bounds
+minimum = X.min(axis=0)
+maximum = X.max(axis=0)
+
+#Sobol sequence (power of 2)
+sobol = Sobol(d=8, scramble=True)
+unit_samples = sobol.random_base2(m=13)
+
+#Scaling Sobol samples to actual bounds
+x_grid = minimum + unit_samples * (maximum - minimum)
+
+#Computing the Gaussian Process (GP) posterior
+post_mean, post_std = gp.predict(x_grid, return_std=True)
+
+#Computing the Upper Confidence Bound (UCB) acquisition function
+beta = 1.96
+ucb_acquisition_function = post_mean + beta * post_std
+
+#Next query => argmax acquisition
+x_next = x_grid[np.argmax(ucb_acquisition_function)]
+
+print("Second raw query point for Function 8:", x_next)
+print("Second query point for Function 8 (6 decimals):", np.round(x_next, 6))
