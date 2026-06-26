@@ -1,5 +1,5 @@
 #Strategy optimisation 1. for Week 3 for black-box Function 6 with Sobol Sampling
-#using high strength Automatic Relevance Determination (ARD) on the RBF kernel
+#using Automatic Relevance Determination (ARD) on the RBF kernel with conservative baseline and wider bounds
 #Week 2's strategy (that worked better than Week 1's strategy), but using Thompson sampling instead of UCB/EI
 #Submitted for Week 3
 import numpy as np
@@ -13,9 +13,9 @@ Y = data["function_6"]["y"]      #shape (22, )
 
 #Defining the Gaussian Process model
 kernel = RBF(
-    length_scale=[1.0]*5, #Keeping length_scale at [1.0]*3 as in Week 2 which worked better than Week 1
+    length_scale=[1.0]*5, #Keeping initial length_scale at [1.0]*3 (conservative baseline) as in Week 2 which worked better than Week 1
     length_scale_bounds=(1e-6, 1e8)
-) #using high strength Automatic Relevance Determination (ARD) with wider bounds
+) #using Automatic Relevance Determination (ARD) with conservative baseline and wider bounds
 gp = GaussianProcessRegressor(kernel=kernel, alpha=1e-10)
 gp.fit(X, Y)
 
