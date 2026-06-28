@@ -16,7 +16,11 @@ stochastic.
 For Function 2,
 
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-For Function 3,
+
+For Function 3, Week 4's strategy (Automatic Relevance Determination (ARD) on the RBF kernel with more aggressive baseline than in Week 2 - length_scale=[0.5]*3 - 
+and wider length_scale_bounds=(1e-6, 1e8), Sobol sampling and Expected Improvement (EI) acquisiton function, with xi = 0.1 (large), to encourage exploration) 
+yielded a fairly high output (-0.1409899026753862), but it is not the best obtained so far (which is Week 2's -0.07227582343159358) and is far from the highest
+output within the whole existing dataset for this function (-0.034835313350078584). 
 
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
