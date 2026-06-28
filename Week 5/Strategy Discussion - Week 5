@@ -28,7 +28,11 @@ For Function 5,
 
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-For Function 6, 
+For Function 6, Week 4's strategy (Automatic Relevance Determination (ARD) on the RBF kernel with conservative baseline - length_scale=[1.0]*5 - and wider 
+bounds=(1e-6, 1e8), Sobol sampling and Expected Improvement (EI) acquisiton function, with xi = 0.1 (large), to encourage exploration) yielded the highest 
+output so far (-0.5777243911673903) within the whole existing dataset for this function. This shows that using EI as the acqusition function with a high exploration 
+coefficient (xi = 0.1) has successfully identified a region that is above previously known regions for this Black-Box function, which indicates a good 
+strategic direction in terms of the maximisation goal of this project. 
 
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
