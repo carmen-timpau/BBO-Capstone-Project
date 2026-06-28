@@ -20,11 +20,17 @@ For Function 3,
 
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-For Function 4,
+For Function 4, Week 4's strategy (Automatic Relevance Determination (ARD) with aggressive baseline - length_scale=[0.1]*3 - on the RBF kernel and wider bounds 
+length_scale_bounds=(1e-6, 1e8), Sobol sampling and Thompson sampling) yielded the lowest output so far within the total of 4 queries submitted so far 
+(-10.732192296272974). However, despite the fact that this is still a fairly high outcome, it still strongly indicates that Week 4's startegy is not ideal and 
+will be aborted at this stage. The best startegy so far for this fucntion was Week 2's startegy.
 
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-For Function 5, 
+For Function 5, Week 4's startegy (Automatic Relevance Determination (ARD) on the RBF kernel with aggressive baseline - length_scale=[0.1]*4 - and default bounds 
+length_scale_bounds=(1e-5, 1e5), Sobol sampling and Expected Improvement (EI) acquisiton function, with xi = 0.1 (large), to encourage exploration) yielded the 
+lowest output so far within the total of 4 queries submitted so far (271.9356208574997). However, despite the fact that this is still a fairly high outcome, it 
+still strongly indicates that Week 4's startegy is not ideal and will be aborted at this stage. The best startegy so far for this fucntion was Week 1's strategy.
 
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
