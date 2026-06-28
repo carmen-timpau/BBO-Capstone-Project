@@ -64,3 +64,8 @@ of all the other 3 queries that have been previously submitted (Week 1: 9.865866
 hypothesis that the global maximum might have already been identified in Week 2 and this overall identified area of Black-Box Function 8 does not just represent a 
 local maximum, because using both the UCB acquisition function with a balance between exploration and exploitation (Weeks 1-3) and Thompson sampling (Week 4) with 
 Automatic Relevance Determination (ARD) applied on the RBF kernel pointed towards the same area with overall maximised outputs.
+
+For Week 5, for Function 8, an Expected Improvement (EI) acqusition function with a high exploration parameter (xi = 0.1) will be used, so that another areas can be investigated, 
+in case the identified area is just a local maximum and not the global one. Therefore, Week 5's strategy will be: Automatic Relevance Determination (ARD) applied 
+to the RBF kernel with conservative baseline (length_scale=[1.0]*8) and wider bounds (length_scale_bounds=(1e-6, 1e8)), Sobol sampling and Expected Improvement (EI) 
+acquisiton function, with xi = 0.1 (large), to encourage exploration.
