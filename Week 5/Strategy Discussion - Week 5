@@ -11,6 +11,11 @@ output within Function 1's dataset) in terms of the strategy's direction. This w
 as last week, points towards the fact that the Gaussian Process for this function is very high variance at this moment, because Thompson sampling is inherently 
 stochastic.
 
+For Week 5, a sligthly modified version of Week 3's and Week 4's strategy, where the EI acqusition function will be employed instead, using a high exploration 
+coefficient (xi = 0.1), as this acquisition function has not yet been tested for Function 1 and might work very well. Therefore, for Function 1, the strategy for 
+Week 5 will be: Matern kernel with nu=1.5 - because Function 1 is spiky - with applied Automatic Relevance Determination (ARD) with aggresive baseline - 
+length_scale=[0.1]*2 - and wider length_scale_bounds=(1e-6, 1e8), Sobol sampling and EI acqusition function will be employed with a high exploration coefficient (xi = 0.1).
+
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 For Function 2, Week 4's strategy (Automatic Relevance Determination (ARD) on the RBF kernel with aggressive baseline - length_scale=[0.1]*2 - and wider bounds 
