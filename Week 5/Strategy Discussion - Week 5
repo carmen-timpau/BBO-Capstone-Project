@@ -52,6 +52,8 @@ output so far (-0.5777243911673903) within the whole existing dataset for this f
 coefficient (xi = 0.1) has successfully identified a region that is above previously known regions for this Black-Box function, which indicates a good 
 strategic direction in terms of the maximisation goal of this project. 
 
+For Week 5, the same method (Week 4's) will be employed again, to check if it yields any further improvements. If not, a different strategy altogether will be tested.
+
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 For Function 7, Week 4's strategy (Automatic Relevance Determination (ARD) on the RBF kernel with less aggresive baseline than in Week 1 - length_scale=[0.5]*4 - and 
