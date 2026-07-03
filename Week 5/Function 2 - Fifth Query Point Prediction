@@ -1,7 +1,7 @@
 # Predicting the fifth query for black-box Function 2
 # Using Automatic Relevance Determination (ARD) on the RBF kernel with aggressive baseline (length_scale=[0.1]*2) and wider length_scale_bounds (1e-6, 1e8)
 # Starting to use WhiteKernel to estimate noise automatically, by simulating (learning) the noise in the existing data so far; 
-# WhiteKernel parameters are set based on computed std. dev. of the up-to-date dataset
+# WhiteKernel parameters are set based on computed std. dev. of the up-to-date dataset (0.217542)
 # Starting to normalise y values to better assist the optimisation process
 # Sobol Sampling
 # UCB acqusition function with beta = 1.96, balancing exploration with exploitation
