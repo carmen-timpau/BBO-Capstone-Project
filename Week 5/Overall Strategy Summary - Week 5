@@ -1,7 +1,8 @@
 BBO Capstone Project
 Overall Strategy Summary - Week 5
 
-Function 1:
+Function 1: Matern kernel with nu=1.5 - because Function 1 is spiky - with applied Automatic Relevance Determination (ARD) with aggresive baseline - length_scale=[0.1]*2 - 
+and wider length_scale_bounds=(1e-6, 1e8), Sobol sampling and EI acqusition function will be employed with a high exploration coefficient (xi = 0.1).
 
 Function 2: Automatic Relevance Determination (ARD) on the RBF kernel with aggressive baseline - length_scale=[0.1]*2 - and wider length_scale_bounds=(1e-6, 1e8), 
 Sobol sampling, UCB acquisition function with beta = 1.96, balanced exploration with exploitation (Week 2's strategy for Function 2 tested again for Week 5).
