@@ -61,6 +61,8 @@ has been maximised successfully until this point - whether Week 4's input query 
 maximum, will have to be investigated through submission of future queries, where further optimisations of the current working Bayesian optimisation strategy will 
 be attempted.
 
+For Week 5, the same method (Week 4's) will be employed again, to check if it yields any further improvements. If not, a different strategy altogether will be tested.
+
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 For Function 8, Week 4's strategy (Automatic Relevance Determination (ARD) applied to the RBF kernel with conservative baseline (length_scale=[1.0]*8) and wider 
