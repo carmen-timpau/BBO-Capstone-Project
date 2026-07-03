@@ -1,6 +1,8 @@
 #Predicting the third query for black-box Function 4 with Sobol Sampling (more suitable than grid sampling for higher dimensionality functions)
 #using Automatic Relevance Determination (ARD) on the RBF kernel with aggresive baseline (length_scale=[0.1]*4) and wider length_scale_bounds (1e-6, 1e8)
 #Maintaining the same strategy as in Week 2 and this yielded optimal value so far
+#Sobol Sampling
+#UCB acquisition function with beta = 1.96, balancing exploitation with exploration
 #Submitted for Week 3
 
 import numpy as np
@@ -35,7 +37,7 @@ x_grid = minimum + unit_samples * (maximum - minimum)
 post_mean, post_std = gp.predict(x_grid, return_std=True)
 
 #Computing the Upper Confidence Bound (UCB) acquisition function
-beta = 1.96
+beta = 1.96 #balancing exploitation with exploration
 ucb_acquisition_function = post_mean + beta * post_std
 
 #Next query => argmax acquisition
