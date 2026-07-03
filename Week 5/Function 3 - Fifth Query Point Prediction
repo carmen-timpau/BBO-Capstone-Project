@@ -3,6 +3,7 @@
 # UCB acquisition function with beta = 1.96 (balancing exploration with exploitation)
 # Started using WhiteKernel to estimate noise automatically, by simulating (learning) the noise in the existing data so far
 # WhiteKernel parameters are set based on computed std. dev. of the up-to-date dataset (0.088820)
+# Starting to normalise y values to better assist the optimisation process (GP)
 # Sobol Sampling
 
 import numpy as np
