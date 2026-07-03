@@ -30,6 +30,10 @@ and wider length_scale_bounds=(1e-6, 1e8), Sobol sampling and Expected Improveme
 yielded a fairly high output (-0.1409899026753862), but it is not the best obtained so far (which is Week 2's -0.07227582343159358) and is far from the highest
 output within the whole existing dataset for this function (-0.034835313350078584). 
 
+For Week 5, Week 2's strategy for Function 3 (Automatic Relevance Determination (ARD) on the RBF kernel with conservative baseline - length_scale=[1.0]*3 - and wider 
+length_scale_bounds=(1e-6, 1e8), Sobol sampling, UCB acquisition function with beta = 1.96, balancing exploration with exploitation) will be employed again, to check 
+if it yields any further improvements than Week 2's output. If not, a different strategy altogether will be tested next.
+
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 For Function 4, Week 4's strategy (Automatic Relevance Determination (ARD) with aggressive baseline - length_scale=[0.1]*3 - on the RBF kernel and wider bounds 
