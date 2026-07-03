@@ -6,7 +6,9 @@ Function 1:
 Function 2: Automatic Relevance Determination (ARD) on the RBF kernel with aggressive baseline - length_scale=[0.1]*2 - and wider length_scale_bounds=(1e-6, 1e8), 
 Sobol sampling, UCB acquisition function with beta = 1.96, balanced exploration with exploitation (Week 2's strategy for Function 2 tested again for Week 5).
 
-Function 3:
+Function 3: Automatic Relevance Determination (ARD) on the RBF kernel with conservative baseline - length_scale=[1.0]*3 - and wider length_scale_bounds=(1e-6, 1e8), 
+Sobol sampling, UCB acquisition function with beta = 1.96, balancing exploration with exploitation (Week 2's strategy for Function 3 employed again for Week 5, 
+to check if it yields any further optimisation). 
 
 Function 4: Automatic Relevance Determination (ARD) on the RBF kernel with aggresive baseline (length_scale=[0.1]*4) and wider length_scale_bounds (1e-6, 1e8), Sobol 
 sampling and EI acquisition function with large xi = 0.1, to encourage exploration.
