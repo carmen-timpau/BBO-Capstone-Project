@@ -33,7 +33,7 @@ x_grid = minimum + unit_samples * (maximum - minimum)
 post_mean, post_std = gp.predict(x_grid, return_std=True)
 
 #Computing the Upper Confidence Bound (UCB) acquisition function
-beta = 1.96
+beta = 1.96 #balancing exploration with exploitation
 ucb_acquisition_function = post_mean + beta * post_std
 
 #Next query => argmax acquisition
