@@ -1,7 +1,20 @@
 BBO Capstone Project
 Overall Strategy Summary - Week 5
 
+Function 1:
 
+Function 2: Automatic Relevance Determination (ARD) on the RBF kernel with aggressive baseline - length_scale=[0.1]*2 - and wider length_scale_bounds=(1e-6, 1e8), 
+Sobol sampling, UCB acquisition function with beta = 1.96, balanced exploration with exploitation (Week 2's strategy for Function 2 tested again for Week 5).
+
+Function 3:
+
+Function 4:
+
+Function 5:
+
+Function 6:
+
+Function 7:
 
 Function 8: Automatic Relevance Determination (ARD) applied to the RBF kernel with conservative baseline (length_scale=[1.0]*8) and wider bounds 
 (length_scale_bounds=(1e-6, 1e8)), Sobol sampling and Expected Improvement (EI) acquisiton function, with xi = 0.1 (large), to encourage exploration.
