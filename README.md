@@ -7,6 +7,9 @@ Given an initial dataset of true datapoints describing 8 different unrelated Bla
 
 Every week until the completion of the project in late August 2026, each function can only be queried once. The inputs will be processed in the same week and the outputs received will help inform the next steps: informing the coordinates of the next set of queries to be submitted for processing the upcoming week and refining the optimisation startegy for each of the 8 functions in a thoughtful, data-driven and tailored approach.
 
+<ins> **Initial Data for all 8 Black-Box Functions to be Maximised:** </ins> 
+
+Can be found in the _initial_data_ folder attached in this repository.
 
 ---------------------------------------------------------------------------------------------------------
 
