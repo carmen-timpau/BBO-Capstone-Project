@@ -2,6 +2,7 @@
 # Using Automatic Relevance Determination (ARD) on the RBF kernel with aggresive baseline (length_scale=[0.1]*4) and wider length_scale_bounds (1e-6, 1e8)
 # Started using WhiteKernel to estimate noise automatically, by simulating (learning) the noise in the existing data so far
 # WhiteKernel parameters are set based on computed std. dev. of the up-to-date dataset (7.612032)
+# Starting to normalise y values to better assist the optimisation process (GP)
 # Using Expected Improvement (EI) Acquisition Function with high exploration parameter xi = 0.1
 # Z formula was improved to account for post_std = 0, which would cause Z = NaN and lead to numerical instability further down the line, causing meaningless query prediction
 # Sobol Sampling
