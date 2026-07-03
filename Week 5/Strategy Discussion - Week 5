@@ -14,11 +14,13 @@ stochastic.
 For Week 5, a sligthly modified version of Week 3's and Week 4's strategy, where the EI acqusition function will be employed instead, using a high exploration 
 coefficient (xi = 0.1), as this acquisition function has not yet been tested for Function 1 and might work very well. Also, a WhiteKernel will be used instead of 
 manually setting the alpha noise parameter for the kernel, as the alpha =1e-4 used so far is actually assuming that the noise is higher (std = 0.01) than the true std shows 
-at this stage (std = 0.000929). Z formula will also be improved to account for post_std = 0, which would cause Z = NaN and lead to numerical instability further down 
-the line, causing unwanted meaningless query prediction (this has not been implemented so far, but will be from now on, because it is a safer strategy that prevents 
-meaningless query predictions and waste valuable resources). Therefore, for Function 1, the strategy for Week 5 will be: Matern kernel with nu=1.5 - because Function 1 
-is spiky - and WhiteKernel to automatically simulate and learn the noise from existing data, with applied Automatic Relevance Determination (ARD) with aggresive baseline - 
-length_scale=[0.1]*2 - and wider length_scale_bounds=(1e-6, 1e8), Sobol sampling and EI acqusition function will be employed with a high exploration coefficient (xi = 0.1). 
+at this stage (std = 0.000929). The WhiteKernel parameters are set based on computed std. dev. of the up-to-date dataset (0.000929). Z formula will also be 
+improved to account for post_std = 0, which would cause Z = NaN and lead to numerical instability further down the line, causing unwanted meaningless query 
+prediction (this has not been implemented so far, but will be from now on, because it is a safer strategy that prevents meaningless query predictions and waste 
+valuable resources). Therefore, for Function 1, the strategy for Week 5 will be: Matern kernel with nu=1.5 - because Function 1 is spiky - and WhiteKernel to 
+automatically simulate and learn the noise from existing data, with applied Automatic Relevance Determination (ARD) with aggresive baseline - 
+length_scale=[0.1]*2 - and wider length_scale_bounds=(1e-6, 1e8), Sobol sampling and EI acqusition function will be employed with a high exploration 
+coefficient (xi = 0.1). 
 
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -30,7 +32,8 @@ dataset for this function (0.6112052157614438) as well as from the highest outpu
 For Week 5, Week 2's strategy for Function 2 (Automatic Relevance Determination (ARD) on the RBF kernel with aggressive baseline - length_scale=[0.1]*2 - and wider 
 length_scale_bounds=(1e-6, 1e8), Sobol sampling, UCB acquisition function with beta = 1.96, balanced exploration with exploitation) will be employed again to 
 check if this will keep optimising the output, as it was on the right track in Week 2. If this will yield an output that still doesn't maximise the function, 
-an automated parameter tuning method will be tested for generating Week 6's query point prediction.
+an automated parameter tuning method will be tested for generating Week 6's query point prediction. Additionally,a WhiteKernel will also be implemented for Week 5 
+to estimate noise automatically, by simulating (learning) the noise in the existing data so far. The WhiteKernel parameters are set based on the computed std. dev. of the up-to-date dataset (0.217542).
 
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
