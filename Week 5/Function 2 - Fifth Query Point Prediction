@@ -1,0 +1,46 @@
+# Predicting the fifth query for black-box Function 2
+# Using Automatic Relevance Determination (ARD) on the RBF kernel with aggressive baseline (length_scale=[0.1]*2) and wider length_scale_bounds (1e-6, 1e8)
+# Starting to use WhiteKernel to estimate noise automatically, by simulating (learning) the noise in the existing data so far; 
+# WhiteKernel parameters are set based on computed std. dev. of the up-to-date dataset
+# Starting to normalise y values to better assist the optimisation process
+# Sobol Sampling
+# UCB acqusition function with beta = 1.96, balancing exploration with exploitation
+
+import numpy as np
+from sklearn.gaussian_process import GaussianProcessRegressor
+from sklearn.gaussian_process.kernels import RBF
+from scipy.stats.qmc import Sobol
+
+#Loading the data
+X = data["function_2"]["x"]      #shape (14, 2)
+Y = data["function_2"]["y"]      #shape (14, )
+
+#Defining and fitting the Gaussian Process (GP) model
+kernel = RBF(length_scale=[0.1]*2, length_scale_bounds=(1e-6, 1e8)) + WhiteKernel(noise_level=0.05, noise_level_bounds=(1e-4, 1.0))
+gp = GaussianProcessRegressor(kernel=kernel, alpha=0.0, normalize_y=True)
+
+gp.fit(X, Y)
+
+#Defining the input bounds
+minimum = X.min(axis=0)
+maximum = X.max(axis=0)
+
+#Sobol sequence (power of 2)
+sobol = Sobol(d=2, scramble=True)
+unit_samples = sobol.random_base2(m=12)
+
+#Scaling Sobol samples to actual bounds
+x_grid = minimum + unit_samples * (maximum - minimum)
+
+#Computing the Gaussian Process (GP) posterior
+post_mean, post_std = gp.predict(x_grid, return_std=True)
+
+#Computing the Upper Confidence Bound (UCB) acquisition function
+beta = 1.96 # balancing exploration with exploitation
+ucb_acquisition_function =post_mean + beta * post_std
+
+#Next query => argmax acquisition
+x_next = x_grid[np.argmax(ucb_acquisition_function)]
+
+print("Fifth raw query point for Function 2:", x_next)
+print("Fifth query point for Function 2 rounded to 6 decimal places:", np.round(x_next, 6))
