@@ -18,6 +18,11 @@ length_scale_bounds=(1e-6, 1e8), Sobol sampling and Expected Improvement (EI) ac
 fairly low output (0.03302379032626812). It is not the lowest obtained so far from queries, but still far away from the highest output within the whole existing 
 dataset for this function (0.6112052157614438) as well as from the highest output obtained from submitted queries so far (which is Week 2's 0.45089570697699877).
 
+For Week 5, Week 2's strategy for Function 2 (Automatic Relevance Determination (ARD) on the RBF kernel with aggressive baseline - length_scale=[0.1]*2 - and wider 
+length_scale_bounds=(1e-6, 1e8), Sobol sampling, UCB acquisition function with beta = 1.96, balanced exploration with exploitation) will be employed again to 
+check if this will keep optimising the output, as it was on the right track in Week 2. If this will yield an output that still doesn't maximise the function, 
+an automated parameter tuning method will be tested for generating Week 6's query point prediction.
+
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 For Function 3, Week 4's strategy (Automatic Relevance Determination (ARD) on the RBF kernel with more aggressive baseline than in Week 2 - length_scale=[0.5]*3 - 
