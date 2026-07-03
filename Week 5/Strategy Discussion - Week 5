@@ -42,7 +42,13 @@ will be aborted at this stage. The best startegy so far for this fucntion was We
 For Function 5, Week 4's startegy (Automatic Relevance Determination (ARD) on the RBF kernel with aggressive baseline - length_scale=[0.1]*4 - and default bounds 
 length_scale_bounds=(1e-5, 1e5), Sobol sampling and Expected Improvement (EI) acquisiton function, with xi = 0.1 (large), to encourage exploration) yielded the 
 lowest output so far within the total of 4 queries submitted so far (271.9356208574997). However, despite the fact that this is still a fairly high outcome, it 
-still strongly indicates that Week 4's startegy is not ideal and will be aborted at this stage. The best startegy so far for this fucntion was Week 1's strategy.
+still strongly indicates that Week 4's startegy is not ideal and will be aborted at this stage. The best startegy so far for this fucntion was Week 1's strategy 
+(Automatic Relevance Determination (ARD) on the RBF kernel with agressive baseline and default length_scale_bounds(1e-5, 1e5), Sobol sampling, UCB acquisition 
+function with beta = 1.96, balancing exploration with exploitation). 
+
+For Week 5, a slightly modified version of Week 1's strategy for Function 5 will be used, still employing UCB as the acquisition function for the GP, but using a 
+large degree of exploitation by adjusting beta to 0.5. Thus, the strategy for Week 5 for Function 5 will be: Automatic Relevance Determination (ARD) on the RBF kernel 
+with agressive baseline and default length_scale_bounds(1e-5, 1e5), Sobol sampling, UCB acquisition function with beta = 0.5, for strong exploitation).
 
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
