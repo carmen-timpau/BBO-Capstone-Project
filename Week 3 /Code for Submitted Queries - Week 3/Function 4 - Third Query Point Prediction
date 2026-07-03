@@ -2,6 +2,7 @@
 #using Automatic Relevance Determination (ARD) on the RBF kernel with aggresive baseline and wider bounds
 #Maintaining the same strategy as in Week 2 and this yielded optimal value so far
 #Submitted for Week 3
+
 import numpy as np
 from sklearn.gaussian_process import GaussianProcessRegressor
 from sklearn.gaussian_process.kernels import RBF
