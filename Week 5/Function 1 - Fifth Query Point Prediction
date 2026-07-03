@@ -18,7 +18,8 @@ X = data["function_1"]["x"]      # shape (14, 2)
 Y = data["function_1"]["y"]      # shape (14, )
 
 #Defining and fitting the Gaussian Process (GP) model
-kernel = Matern(length_scale=[0.1, 0.1], nu=1.5, length_scale_bounds=(1e-6, 1e8)) + WhiteKernel(noise_level=1e-6, noise_level_bounds=(1e-9, 1e-2)) #WhiteKernel to simulate learnable noise
+kernel = Matern(length_scale=[0.1, 0.1], nu=1.5, length_scale_bounds=(1e-6, 1e8)) + WhiteKernel(noise_level=1e-6, noise_level_bounds=(1e-9, 1e-2)) 
+#WhiteKernel to simulate learnable noise rather than setting alpha manually
 #using a Matern kernel (nu=1.5) as this is a spiky function, with applied Automatic Relevance Determination (ARD) with aggresive baseline and wider bounds 
 gp = GaussianProcessRegressor(kernel=kernel, alpha=0.0, normalize_y=True)
 gp.fit(X, Y)
@@ -42,7 +43,8 @@ y_best = Y.max()
 xi = 0.1             #large exploration parameter
 
 improvement = post_mean - y_best - xi
-Z = np.where(post_std > 0, improvement / post_std, 0.0) #Improvement from previous code versions employed so far, as if post_std=0, Z will be NaN and may result in random query prediction
+Z = np.where(post_std > 0, improvement / post_std, 0.0) 
+#Improvement in Z formula from previous code versions employed so far, as if post_std=0, Z will be NaN and may result in random query prediction due to numerical instability
 
 #EI formula with safe handling of zero std
 ei_acquisition_function = np.where(
