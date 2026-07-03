@@ -1,8 +1,8 @@
 # Next Query Prediction for black-box Function 1 Week 5 Submission
 # Using a Matern kernel (nu=1.5) (because Function 1 is spiky) 
+# Kernel with applied Automatic Relevance Determination (ARD) with aggresive baseline (length_scale=[0.1, 0.1]) and wider length_scale_bounds=(1e-6, 1e8)
 # Started using WhiteKernel to estimate noise automatically, by simulating (learning) the noise in the existing data so far
 # WhiteKernel parameters are set based on computed std. dev. of the up-to-date dataset (0.000929)
-# Kernel with applied Automatic Relevance Determination (ARD) with aggresive baseline (length_scale=[0.1, 0.1]) and wider length_scale_bounds=(1e-6, 1e8)
 # Using Sobol Sampling
 # Expected Improvement (EI) acquisition function with large exploration parameter xi = 0.1
 # Z formula was improved to account for post_std = 0, which would cause Z = NaN and lead to numerical instability further down the line, causing meaningless query prediction
