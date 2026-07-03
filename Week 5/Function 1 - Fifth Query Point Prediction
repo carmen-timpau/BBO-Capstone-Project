@@ -4,7 +4,7 @@
 # Using Sobol Sampling
 # Expected Improvement (EI) acquisition function with large exploration parameter xi = 0.1
 # Using WhiteKernel to estimate noise automatically, by simulating (learning) the noise in the existing data so far
-# Z formula improved to account for post_std = 0, which would cause Z = NaN and lead to a random query prediction which must be avoided
+# Z formula improved to account for post_std = 0, which would cause Z = NaN and lead to numerical instability further down the line, causing unwanted random query prediction
 
 import numpy as np
 from sklearn.gaussian_process import GaussianProcessRegressor
