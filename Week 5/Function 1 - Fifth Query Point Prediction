@@ -3,21 +3,23 @@
 # Kernel with applied Automatic Relevance Determination (ARD) with aggresive baseline (length_scale=[0.1, 0.1]) and wider length_scale_bounds=(1e-6, 1e8)
 # Using Sobol Sampling
 # Expected Improvement (EI) acquisition function with large exploration parameter xi = 0.1
+# Using WhiteKernel to estimate noise automatically, by simulating (learning) the noise in the existing data so far
 
 import numpy as np
 from sklearn.gaussian_process import GaussianProcessRegressor
 from sklearn.gaussian_process.kernels import Matern
 from scipy.stats.qmc import Sobol
 from scipy.stats import norm
+from sklearn.gaussian_process.kernels import Matern, WhiteKernel
 
 #Loading the data
 X = data["function_1"]["x"]      # shape (14, 2)
 Y = data["function_1"]["y"]      # shape (14, )
 
 #Defining and fitting the Gaussian Process (GP) model
-kernel = Matern(length_scale=[0.1, 0.1], nu=1.5, length_scale_bounds=(1e-6, 1e8)) #ARD, aggresive baseline and wider bounds
+kernel = Matern(length_scale=[0.1, 0.1], nu=1.5, length_scale_bounds=(1e-6, 1e8)) + WhiteKernel(noise_level=1e-6, noise_level_bounds=(1e-9, 1e-2)) #WhiteKernel to simulate learnable noise
 #using a Matern kernel (nu=1.5) as this is a spiky function, with applied Automatic Relevance Determination (ARD) with aggresive baseline and wider bounds 
-gp = GaussianProcessRegressor(kernel=kernel, alpha=1e-4, normalize_y=True)
+gp = GaussianProcessRegressor(kernel=kernel, alpha=0.0, normalize_y=True)
 gp.fit(X, Y)
 
 #Defining the input bounds
