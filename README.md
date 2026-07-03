@@ -8,18 +8,6 @@ Given an initial dataset of true datapoints describing 8 different unrelated Bla
 Every week until the completion of the project in late August 2026, each function can only be queried once. The inputs will be processed in the same week and the outputs received will help inform the next steps: informing the coordinates of the next set of queries to be submitted for processing the upcoming week and refining the optimisation startegy for each of the 8 functions in a thoughtful, data-driven and tailored approach.
 
 
-
-<ins> **Initial Black-Box Optimisation (BBO) Capstone Project Strategy (Week 1):** </ins> 
-
-
-<ins> **Data-driven Modifications in the Black-Box Optimisation (BBO) Capstone Project Strategy (Week 2):** </ins> 
-
-<ins> **Data-driven Modifications in the Black-Box Optimisation (BBO) Capstone Project Strategy (Week 3):** </ins> 
-
-<ins> **Data-driven Modifications in the Black-Box Optimisation (BBO) Capstone Project Strategy (Week 4):** </ins> 
-
-<ins> **Data-driven Modifications in the Black-Box Optimisation (BBO) Capstone Project Strategy (Week 5):** </ins> 
-
 ---------------------------------------------------------------------------------------------------------
 
 <ins> **Current Project Status:** </ins> 
