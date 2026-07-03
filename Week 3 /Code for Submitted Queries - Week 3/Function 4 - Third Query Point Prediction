@@ -16,7 +16,7 @@ Y = data["function_4"]["y"]      #shape (32, )
 
 #Defining and fitting the Gaussian Process model
 kernel = RBF(
-    length_scale=[0.1]*4, #Keeping length_scale at [0.1]*2 as used in Week 2 (aggresive baseline
+    length_scale=[0.1]*4, #Keeping length_scale at [0.1]*2 as used in Week 2 (aggresive baseline)
     length_scale_bounds=(1e-6, 1e8)
 ) #using Automatic Relevance Determination (ARD) with aggresive baseline and wider bounds
 gp = GaussianProcessRegressor(kernel=kernel, alpha=1e-10)
