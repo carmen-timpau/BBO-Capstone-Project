@@ -8,7 +8,8 @@ Sobol sampling, UCB acquisition function with beta = 1.96, balanced exploration 
 
 Function 3:
 
-Function 4:
+Function 4: Automatic Relevance Determination (ARD) on the RBF kernel with aggresive baseline (length_scale=[0.1]*4) and wider length_scale_bounds (1e-6, 1e8), Sobol 
+sampling and EI acquisition function with large xi = 0.1, to encourage exploration.
 
 Function 5: Automatic Relevance Determination (ARD) on the RBF kernel with agressive baseline and default length_scale_bounds(1e-5, 1e5), Sobol sampling, UCB acquisition 
 function with beta = 0.5, for strong exploitation (A slightly modified version of Week 1's strategy that worked best so far, that employs heavy exploitation, i.e. beta = 0.5).
