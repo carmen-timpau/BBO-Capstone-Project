@@ -29,9 +29,9 @@ exploration (Week 4's strategy for Function 6 employed again for Week 5, as it m
 addition for this week).
 
 Function 7: Automatic Relevance Determination (ARD) on the RBF kernel with less aggresive baseline than in Week 1 - length_scale=[0.5]*4 - and default 
-length_scale_bounds=(1e-5, 1e5), Sobol sampling and Expected Improvement (EI) acquisiton function, with xi = 0.1 (large), to encourage exploration 
-(Week 4's strategy for Function 7 employed again for Week 5, as it maximised the Black-Box function surprisingly well in Week 4; WhiteKernel use is an addition 
-for this week).
+length_scale_bounds=(1e-5, 1e5), WhiteKernel(noise_level=0.12, noise_level_bounds=(1e-3, 3.0)), Sobol sampling and Expected Improvement (EI) acquisiton function, 
+with xi = 0.1 (large), to encourage exploration (Week 4's strategy for Function 7 employed again for Week 5, as it maximised the Black-Box function surprisingly 
+well in Week 4; WhiteKernel use is an addition for this week).
 
 Function 8: Automatic Relevance Determination (ARD) applied to the RBF kernel with conservative baseline (length_scale=[1.0]*8) and wider bounds 
 (length_scale_bounds=(1e-6, 1e8)), Sobol sampling and Expected Improvement (EI) acquisiton function, with xi = 0.1 (large), to encourage exploration.
