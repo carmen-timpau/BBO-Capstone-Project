@@ -1,6 +1,9 @@
 # Predicting the fifth query for black-box Function 5 
 # Using Automatic Relevance Determination (ARD) on the RBF kernel with agressive baseline (length_scale=[0.1]*4) and default length_scale_bounds(1e-5, 1e5)
 # UCB acquisition function with beta = 0.5, strong exploitation
+# Started using WhiteKernel to estimate noise automatically, by simulating (learning) the noise in the existing data so far
+# WhiteKernel parameters are set based on computed std. dev. of the up-to-date dataset (271.712127)
+# Starting to normalise y values to better assist the optimisation process (GP)
 # Sobol Sampling
 
 import numpy as np
