@@ -1,6 +1,7 @@
-# Predicting the fifth query for black-box Function 5 with Sobol Sampling (more suitable than grid sampling for higher dimensionality functions)
+# Predicting the fifth query for black-box Function 5 
 # Using Automatic Relevance Determination (ARD) on the RBF kernel with agressive baseline (length_scale=[0.1]*4) and default length_scale_bounds(1e-5, 1e5)
 # UCB acquisition function with beta = 0.5, strong exploitation
+# Sobol Sampling
 
 import numpy as np
 from sklearn.gaussian_process import GaussianProcessRegressor
