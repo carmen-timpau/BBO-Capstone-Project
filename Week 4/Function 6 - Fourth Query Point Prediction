@@ -1,6 +1,6 @@
-#Next Query Prediction for black-box Function 6 Week 4 Submission
-#using Automatic Relevance Determination (ARD) on the RBF kernel with conservative baseline and wider bounds
-#Week 2's strategy, but using EI with xi = 0.1 (large exploration parameter) instead of UCB as the acquisition function
+# Next Query Prediction for black-box Function 6 Week 4 Submission
+# Using Automatic Relevance Determination (ARD) on the RBF kernel with conservative baseline and wider bounds
+# Week 2's strategy, but using EI with xi = 0.1 (large exploration parameter) instead of UCB as the acquisition function
 
 import numpy as np
 from sklearn.gaussian_process import GaussianProcessRegressor
