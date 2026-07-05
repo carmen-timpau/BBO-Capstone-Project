@@ -3,6 +3,8 @@
 # Starting to use WhiteKernel to estimate noise automatically, by simulating (learning) the noise in the existing data so far; 
 # WhiteKernel parameters are set based on computed std. dev. of the up-to-date dataset (1.083139)
 # Starting to normalise y values to better assist the optimisation process (GP)
+# Expected Improvement (EI) acquisition function with large exploration parameter xi = 0.1
+# Z formula was improved to account for post_std = 0, which would cause Z = NaN and lead to numerical instability further down the line, causing meaningless query prediction
 # Sobol Sampling
 
 import numpy as np
