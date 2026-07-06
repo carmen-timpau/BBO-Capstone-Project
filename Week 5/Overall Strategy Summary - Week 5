@@ -3,7 +3,8 @@ Overall Strategy Summary - Week 5
 
 Function 1: Matern kernel with nu=1.5 - because Function 1 is spiky - and WhiteKernel(noise_level=1e-6, noise_level_bounds=(1e-9, 1e-2)) to automatically 
 simulate and learn the noise from existing data, with applied Automatic Relevance Determination (ARD) with aggresive baseline - length_scale=[0.1]*2 - and 
-wider length_scale_bounds=(1e-6, 1e8), Sobol sampling and EI acqusition function will be employed with a high exploration coefficient (xi = 0.1).
+wider length_scale_bounds=(1e-6, 1e8), WhiteKernel(noise_level=1e-6, noise_level_bounds=(1e-16, 1e-2)), Sobol sampling and EI acqusition function will be employed 
+with a high exploration coefficient (xi = 0.1).
 
 Function 2: Automatic Relevance Determination (ARD) on the RBF kernel with aggressive baseline - length_scale=[0.1]*2 - and wider length_scale_bounds=(1e-6, 1e8), 
 WhiteKernel(noise_level=0.05, noise_level_bounds=(1e-4, 1.0)) to automatically simulate and learn the noise from existing data, Sobol sampling, UCB acquisition 
