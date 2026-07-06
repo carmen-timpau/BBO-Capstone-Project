@@ -92,7 +92,7 @@ For Week 5, the same method (Week 4's) will be employed again, to check if it yi
 Also starting to normalise y values to better assist the optimisation process (GP) and starting to use WhiteKernel to estimate noise automatically, by simulating (learning) 
 the noise in the existing data so far. WhiteKernel parameters are set based on computed std. dev. of the up-to-date dataset (0.467309). Therefore, for Week 5, the Bayesian 
 optimisation strategy for Function 6 will be: Automatic Relevance Determination (ARD) on the RBF kernel with conservative baseline - length_scale=[1.0]*5 - and wider 
-bounds=(1e-6, 1e8), WhiteKernel(noise_level=0.2, noise_level_bounds=(1e-3, 5.0)), Sobol sampling and Expected Improvement (EI) acquisiton function, with xi = 0.1 (large), 
+bounds=(1e-6, 1e8), WhiteKernel(noise_level=0.2, noise_level_bounds=(1e-8, 5.0)), Sobol sampling and Expected Improvement (EI) acquisiton function, with xi = 0.1 (large), 
 to encourage exploration.
 
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
