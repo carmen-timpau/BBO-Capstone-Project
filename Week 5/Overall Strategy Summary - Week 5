@@ -20,7 +20,7 @@ WhiteKernel(noise_level=60.0, noise_level_bounds=(1e-3, 1e4)) to automatically s
 function with large xi = 0.1, to encourage exploration.
 
 Function 5: Automatic Relevance Determination (ARD) on the RBF kernel with agressive baseline and default length_scale_bounds(1e-5, 1e5), 
-WhiteKernel(noise_level=7.4e4, noise_level_bounds=(1e2, 1e7)), Sobol sampling, UCB acquisition function with beta = 0.5, for strong exploitation (A slightly 
+WhiteKernel(noise_level=7.4e4, noise_level_bounds=(1e-3, 1e7)), Sobol sampling, UCB acquisition function with beta = 0.5, for strong exploitation (A slightly 
 modified version of Week 1's strategy that worked best so far, that employs heavy exploitation, i.e. beta = 0.5; WhiteKernel use is also an extra addition for 
 this week).
 
