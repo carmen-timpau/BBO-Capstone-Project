@@ -17,7 +17,7 @@ X = data["function_6"]["x"]      #shape (24, 5)
 Y = data["function_6"]["y"]      #shape (24, )
 
 #Defining the Gaussian Process model
-kernel = RBF(length_scale=[1.0]*5, length_scale_bounds=(1e-6, 1e8)) + WhiteKernel(noise_level=0.2, noise_level_bounds=(1e-3, 5.0))
+kernel = RBF(length_scale=[1.0]*5, length_scale_bounds=(1e-6, 1e8)) + WhiteKernel(noise_level=0.2, noise_level_bounds=(1e-8, 5.0))
 gp = GaussianProcessRegressor(kernel=kernel, alpha=0.0, normalize_y=True)
 gp.fit(X, Y)
 
