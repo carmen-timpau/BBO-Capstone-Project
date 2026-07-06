@@ -1,5 +1,5 @@
 Week 5 - BBO Capstone Project
-Discussion of Week 4's Strategy and Modifications for Week 5, based on Week 4 Query Outcomes:
+Discussion of Week 4's Strategy and Strategy Modifications for Week 5, based on Week 4 Query Outcomes:
 
 
 For Function 1, Week 4's strategy (Matern kernel with nu=1.5 - because Function 1 is spiky - with applied Automatic Relevance Determination (ARD) with aggresive 
