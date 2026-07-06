@@ -77,7 +77,7 @@ For Week 5, a slightly modified version of Week 1's strategy for Function 5 will
 a large degree of exploitation by adjusting beta to 0.5. Also starting to normalise y values to better assist the optimisation process (GP) and starting to use 
 WhiteKernel to estimate noise automatically, by simulating (learning) the noise in the existing data so far. WhiteKernel parameters are set based on computed 
 std. dev. of the up-to-date dataset (271.712127). Thus, the strategy for Week 5 for Function 5 will be: Automatic Relevance Determination (ARD) on the RBF 
-kernel with agressive baseline - length_scale=[0.1]*4 - and default length_scale_bounds(1e-5, 1e5), WhiteKernel(noise_level=7.4e4, noise_level_bounds=(1e2, 1e7)),
+kernel with agressive baseline - length_scale=[0.1]*4 - and default length_scale_bounds(1e-5, 1e5), WhiteKernel(noise_level=7.4e4, noise_level_bounds=(1e-3, 1e7)),
 Sobol sampling, UCB acquisition function with beta = 0.5, for strong exploitation.
 
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
