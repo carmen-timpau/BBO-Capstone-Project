@@ -19,7 +19,7 @@ X = data["function_1"]["x"]      # shape (14, 2)
 Y = data["function_1"]["y"]      # shape (14, )
 
 #Defining and fitting the Gaussian Process (GP) model
-kernel = Matern(length_scale=[0.1, 0.1], nu=1.5, length_scale_bounds=(1e-6, 1e8)) + WhiteKernel(noise_level=1e-6, noise_level_bounds=(1e-9, 1e-2)) 
+kernel = Matern(length_scale=[0.1, 0.1], nu=1.5, length_scale_bounds=(1e-6, 1e8)) + WhiteKernel(noise_level=1e-6, noise_level_bounds=(1e-16, 1e-2)) 
 #WhiteKernel to simulate learnable noise rather than setting alpha manually
 #using a Matern kernel (nu=1.5) as this is a spiky function, with applied Automatic Relevance Determination (ARD) with aggresive baseline and wider bounds 
 gp = GaussianProcessRegressor(kernel=kernel, alpha=0.0, normalize_y=True)
