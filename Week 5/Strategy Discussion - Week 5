@@ -124,5 +124,5 @@ For Week 5, for Function 8, an Expected Improvement (EI) acqusition function wit
 investigated, in case the identified area is just a local maximum and not the global one. Also starting to normalise y values to better assist the optimisation process 
 (GP) and starting to use WhiteKernel to estimate noise automatically, by simulating (learning) the noise in the existing data so far. WhiteKernel parameters are set based 
 on computed std. dev. of the up-to-date dataset (1.083139). Therefore, Week 5's strategy for Function 8 will be: Automatic Relevance Determination (ARD) applied to the RBF 
-kernel with conservative baseline (length_scale=[1.0]*8) and wider bounds (length_scale_bounds=(1e-6, 1e8)), WhiteKernel(noise_level=1.2, noise_level_bounds=(1e-3, 10.0)), 
+kernel with conservative baseline (length_scale=[1.0]*8) and wider bounds (length_scale_bounds=(1e-6, 1e8)), WhiteKernel(noise_level=0.3, noise_level_bounds=(1e-12, 10.0)), 
 Sobol sampling and Expected Improvement (EI) acquisiton function, with xi = 0.1 (large), to encourage exploration.
