@@ -19,8 +19,8 @@ improved to account for post_std = 0, which would cause Z = NaN and lead to nume
 prediction (this has not been implemented so far, but will be from now on, because it is a safer strategy that prevents meaningless query predictions and waste 
 valuable resources). Therefore, for Function 1, the strategy for Week 5 will be: Matern kernel with nu=1.5 - because Function 1 is spiky - and WhiteKernel to 
 automatically simulate and learn the noise from existing data, with applied Automatic Relevance Determination (ARD) with aggresive baseline - 
-length_scale=[0.1]*2 - and wider length_scale_bounds=(1e-6, 1e8), Sobol sampling and EI acqusition function will be employed with a high exploration 
-coefficient (xi = 0.1). 
+length_scale=[0.1]*2 - and wider length_scale_bounds=(1e-6, 1e8), WhiteKernel(noise_level=1e-6, noise_level_bounds=(1e-16, 1e-2)), Sobol sampling and EI acqusition 
+function will be employed with a high exploration coefficient (xi = 0.1). 
 
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -30,10 +30,11 @@ fairly low output (0.03302379032626812). It is not the lowest obtained so far fr
 dataset for this function (0.6112052157614438) as well as from the highest output obtained from submitted queries so far (which is Week 2's 0.45089570697699877).
 
 For Week 5, Week 2's strategy for Function 2 (Automatic Relevance Determination (ARD) on the RBF kernel with aggressive baseline - length_scale=[0.1]*2 - and wider 
-length_scale_bounds=(1e-6, 1e8), Sobol sampling, UCB acquisition function with beta = 1.96, balanced exploration with exploitation) will be employed again to 
-check if this will keep optimising the output, as it was on the right track in Week 2. If this will yield an output that still doesn't maximise the function, 
-an automated parameter tuning method will be tested for generating Week 6's query point prediction. Additionally,a WhiteKernel will also be implemented for Week 5 
-to estimate noise automatically, by simulating (learning) the noise in the existing data so far. The WhiteKernel parameters are set based on the computed std. dev. of the up-to-date dataset (0.217542).
+length_scale_bounds=(1e-6, 1e8), Sobol sampling, UCB acquisition function with beta = 1.96, balanced exploration with exploitation) will be employed again to check if 
+this will keep optimising the output. If this will yield an output that still doesn't maximise the function, an automated parameter tuning method will be tested for 
+generating Week 6's query point prediction. Also starting to normalise y values to better assist the optimisation process (GP) and starting to use WhiteKernel to 
+estimate noise automatically, by simulating (learning) the noise in the existing data so far. WhiteKernel parameters are set based on computed std. dev. of the 
+up-to-date dataset (0.217542), as follows: WhiteKernel(noise_level=0.05, noise_level_bounds=(1e-4, 1.0)).
 
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -43,8 +44,10 @@ yielded a fairly high output (-0.1409899026753862), but it is not the best obtai
 output within the whole existing dataset for this function (-0.034835313350078584). 
 
 For Week 5, Week 2's strategy for Function 3 (Automatic Relevance Determination (ARD) on the RBF kernel with conservative baseline - length_scale=[1.0]*3 - and wider 
-length_scale_bounds=(1e-6, 1e8), Sobol sampling, UCB acquisition function with beta = 1.96, balancing exploration with exploitation) will be employed again, to check 
-if it yields any further improvements than Week 2's output. If not, a different strategy altogether will be tested next.
+length_scale_bounds=(1e-6, 1e8), Sobol sampling, UCB acquisition function with beta = 1.96, balancing exploration with exploitation)) will be employed again, to check 
+if it yields any further improvements than Week 2's output. If not, a different strategy altogether will be tested next. Also starting to normalise y values to better 
+assist the optimisation process (GP) and started using WhiteKernel to estimate noise automatically, by simulating (learning) the noise in the existing data so far. 
+WhiteKernel parameters are set based on computed std. dev. of the up-to-date dataset (0.088820), as follows: WhiteKernel(noise_level=0.5, noise_level_bounds=(1e-4, 1.0)).
 
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
