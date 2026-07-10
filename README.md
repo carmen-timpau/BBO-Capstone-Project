@@ -13,9 +13,12 @@ Can be found in the _initial_data_ folder attached in this repository.
 
 ---------------------------------------------------------------------------------------------------------
 
-<ins> **Current Project Status:** </ins> 
+<ins> **🛠️ Current Project Status:** </ins> 
 
 The project is in active development as part of the 6-month Professional Certification in Machine Learning & AI joint programme at Imperial College London and will be finalised in late August 2026.
+
+* **Current State:** Functional research code.
+* **Next Steps:** Refactoring the codebase to eliminate repetitive functions
 
 
 <ins> **Developer Contact Details:** </ins> 
