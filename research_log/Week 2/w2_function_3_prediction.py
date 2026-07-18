@@ -1,6 +1,6 @@
-#Predicting the second query for black-box Function 3 with Sobol Sampling (more suitable than grid sampling for higher dimensionality functions)
-#using Automatic Relevance Determination (ARD) on the RBF kernel with conservative baseline and wider length_scale_bounds
-#UCB acquisition function with beta = 1.96 (balancing exploration with exploitation)
+# Predicting the second query for black-box Function 3 with Sobol Sampling (more suitable than grid sampling for higher dimensionality functions)
+# Using Automatic Relevance Determination (ARD) on the RBF kernel with conservative baseline and wider length_scale_bounds
+# UCB acquisition function with beta = 1.96 (balancing exploration with exploitation)
 
 import numpy as np
 from sklearn.gaussian_process import GaussianProcessRegressor
