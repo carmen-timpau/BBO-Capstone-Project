@@ -5,7 +5,7 @@ _**Overall Strategy Summary - Week 6**_
 
 Before moving further, the homo/heteroscedasticity of each of the 8 functions modelled by Gaussian Processes was assessed, by plotting the residuals against the predictions of the GP surrogate model and conducting corresponding **Breusch-Pagan tests** (the latest GP hyperparameters from Week 5's strategies will be used for this). The code for this can be found in the `w6_Breusch_Pagan_tests` folder. 
 
-For the functions found to be heteroscedatic, a multi-objective acqusition strategy with evolutionary optimizers [1] will be implemented, as deployed by Noah's Ark Lab at Huawei, in their Heteroscedastic Evolutionary Bayesian Optimization (HEBO) algorithm, to deal with non-constant noise variance (heteroscedasticity). This method was developed by the team as part of the 34th Conference on Neural Information Processing Systems (NeurIPS 2020) conference that took place in Vancouver, Canada in 2020. [1,2] 
+For the functions found to be heteroscedatic, a multi-objective acqusition strategy with evolutionary optimizers <sup>1</sup> will be implemented, as deployed by Noah's Ark Lab at Huawei, in their Heteroscedastic Evolutionary Bayesian Optimization (HEBO) algorithm, to deal with non-constant noise variance (heteroscedasticity). This method was developed by the team as part of the 34th Conference on Neural Information Processing Systems (NeurIPS 2020) conference that took place in Vancouver, Canada in 2020.<sup>1,2</sup>
 
 <ins>References<ins>:
 
