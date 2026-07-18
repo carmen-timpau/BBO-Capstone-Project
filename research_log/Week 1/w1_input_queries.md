@@ -1,4 +1,4 @@
-Summary of Input Queries Submitted for Week 1:
+**Summary of Input Queries Submitted for Week 1:**
 
 Function 1: [0.082507, 0.127279]
 
