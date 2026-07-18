@@ -1,4 +1,4 @@
-Summary of Input Queries Submitted for Week 6:
+**Summary of Input Queries Submitted for Week 6:**
 
 Function 1: 
 
