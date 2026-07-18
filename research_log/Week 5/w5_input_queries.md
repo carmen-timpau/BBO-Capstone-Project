@@ -1,4 +1,4 @@
-_**Summary of Input Queries Submitted for Week 5:**_
+**Summary of Input Queries Submitted for Week 5:**
 
 Function 1: `[0.110349 0.652552]`
 
