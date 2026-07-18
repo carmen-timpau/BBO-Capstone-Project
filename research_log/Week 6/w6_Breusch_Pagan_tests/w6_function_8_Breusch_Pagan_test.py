@@ -5,16 +5,15 @@
 import numpy as np
 import matplotlib.pyplot as plt
 import statsmodels.api as sm
+import warnings
 from sklearn.gaussian_process import GaussianProcessRegressor
 from sklearn.gaussian_process.kernels import RBF, WhiteKernel
 from sklearn.metrics import root_mean_squared_error
 from sklearn.metrics import r2_score
 from statsmodels.stats.diagnostic import het_breuschpagan
-
-import warnings
 from sklearn.exceptions import ConvergenceWarning
 
-# Filter out ConvergenceWarning specifically
+# Filtering out ConvergenceWarning 
 warnings.filterwarnings("ignore", category=ConvergenceWarning)
 
 # Pulling updated Function 8 data (45 points, Week 5)
