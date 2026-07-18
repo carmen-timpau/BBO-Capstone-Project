@@ -1,5 +1,5 @@
-BBO Capstone Project
-Overall Strategy Summary - Week 5
+**BBO Capstone Project** <br />
+_**Overall Strategy Summary - Week 5**_
 
 Function 1: Matern kernel with nu=1.5 - because Function 1 is spiky - and WhiteKernel(noise_level=1e-6, noise_level_bounds=(1e-9, 1e-2)) to automatically 
 simulate and learn the noise from existing data, with applied Automatic Relevance Determination (ARD) with aggresive baseline - length_scale=[0.1]*2 - and 
