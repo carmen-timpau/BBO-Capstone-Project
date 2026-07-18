@@ -5,10 +5,16 @@
 import numpy as np
 import matplotlib.pyplot as plt
 import statsmodels.api as sm
+import warnings
 from sklearn.gaussian_process import GaussianProcessRegressor
 from sklearn.gaussian_process.kernels import RBF, WhiteKernel
 from sklearn.metrics import root_mean_squared_error
+from sklearn.metrics import r2_score
 from statsmodels.stats.diagnostic import het_breuschpagan
+from sklearn.exceptions import ConvergenceWarning
+
+# Filtering out ConvergenceWarning
+warnings.filterwarnings("ignore", category=ConvergenceWarning)
 
 # Pulling updated Function 6 data (25 points, Week 5)
 X = np.array(data["function_6"]["x"])  # shape (25, 5)
@@ -48,6 +54,9 @@ f6_residuals = np.array(f6_residuals)
 # Calculating RMSE
 f6_rmse = root_mean_squared_error(Y, f6_predictions)
 
+# Calculating R-squared score using true Y values and LOOCV predictions
+f6_r2 = r2_score(Y, f6_predictions)
+
 # Performing a Breusch-Pagan test to assess Homo/Heteroscedasticity - Checking if the residuals can be predicted by the model's predictions
 # Adding a constant (intercept) term for the linear regression check
 X_test_matrix = sm.add_constant(f6_predictions)
@@ -59,7 +68,7 @@ plt.scatter(f6_predictions, f6_residuals, color='forestgreen', alpha=0.7, edgeco
 plt.axhline(y=0, color='crimson', linestyle='--', linewidth=2, zorder=1)
 
 plt.title(f'Function 6: LOOCV Residuals vs. Predictions (N={n_samples})\n'
-          f'RMSE: {f6_rmse:.4f}  |  Breusch-Pagan p-value: {p_value:.5f}', 
+          f'RMSE: {f6_rmse:.4f}   | LOOCV R-squared Score: {f6_r2:.4f} |  Breusch-Pagan p-value: {p_value:.5f}', 
           fontsize=11, fontweight='bold')
 plt.xlabel('Predicted Value ($\hat{y}$)', fontsize=10)
 plt.ylabel('Residual ($y - \hat{y}$)', fontsize=10)
