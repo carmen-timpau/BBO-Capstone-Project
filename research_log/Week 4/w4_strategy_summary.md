@@ -1,4 +1,4 @@
-**BBO Capstone Project**
+**BBO Capstone Project** <br />
 **_Overall Strategy Summary - Week 4_**
 
 
