@@ -1,8 +1,8 @@
-#Predicting the second query point for black-box Function 1
-#using a Matern kernel (nu=1.5) as this is a spiky function and RBF is actually not suitable for it (RBF is suitable for smooth functions),
-#kernel with applied Automatic Relevance Determination (ARD) with aggresive baseline and wider bounds
-#Sobol sampling
-#UCB acquisition function, with beta = 4.0 (more exploration encouraged)
+# Predicting the second query point for black-box Function 1
+# Using a Matern kernel (nu=1.5) as this is a spiky function and RBF is actually not suitable for it (RBF is suitable for smooth functions),
+# Kernel with applied Automatic Relevance Determination (ARD) with aggresive baseline and wider bounds
+# Sobol sampling
+# UCB acquisition function, with beta = 4.0 (more exploration encouraged)
 
 import numpy as np
 from sklearn.gaussian_process import GaussianProcessRegressor
