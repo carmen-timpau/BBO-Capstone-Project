@@ -8,7 +8,14 @@ import statsmodels.api as sm
 from sklearn.gaussian_process import GaussianProcessRegressor
 from sklearn.gaussian_process.kernels import RBF, WhiteKernel
 from sklearn.metrics import root_mean_squared_error
+from sklearn.metrics import r2_score
 from statsmodels.stats.diagnostic import het_breuschpagan
+
+import warnings
+from sklearn.exceptions import ConvergenceWarning
+
+# Filter out ConvergenceWarning specifically
+warnings.filterwarnings("ignore", category=ConvergenceWarning)
 
 # Pulling updated Function 8 data (45 points, Week 5)
 X = np.array(data["function_8"]["x"])  # shape (45, 8)
@@ -48,6 +55,9 @@ f8_residuals = np.array(f8_residuals)
 # Calculating RMSE
 f8_rmse = root_mean_squared_error(Y, f8_predictions)
 
+# Calculating R-squared score using true Y values and LOOCV predictions
+f8_r2 = r2_score(Y, f8_predictions)
+
 # Performing a Breusch-Pagan test to assess Homo/Heteroscedasticity - Checking if the residuals can be predicted by the model's predictions
 # Adding a constant (intercept) term for the linear regression check
 X_test_matrix = sm.add_constant(f8_predictions)
@@ -59,7 +69,7 @@ plt.scatter(f8_predictions, f8_residuals, color='teal', alpha=0.7, edgecolors='k
 plt.axhline(y=0, color='crimson', linestyle='--', linewidth=2, zorder=1)
 
 plt.title(f'Function 8: LOOCV Residuals vs. Predictions (N={n_samples})\n'
-          f'RMSE: {f8_rmse:.4f}  |  Breusch-Pagan p-value: {p_value:.5f}', 
+          f'RMSE: {f8_rmse:.4f}   | LOOCV R-squared Score: {f8_r2:.4f}  |  Breusch-Pagan p-value: {p_value:.5f}', 
           fontsize=11, fontweight='bold')
 plt.xlabel('Predicted Value ($\hat{y}$)', fontsize=10)
 plt.ylabel('Residual ($y - \hat{y}$)', fontsize=10)
