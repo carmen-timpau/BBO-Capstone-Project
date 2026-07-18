@@ -1,5 +1,6 @@
-#Predicting the second query for black-box Function 2
-#using Automatic Relevance Determination (ARD) on the RBF kernel with aggressive baseline and wider length_scale_bounds
+# Predicting the second query for black-box Function 2
+# Using Automatic Relevance Determination (ARD) on the RBF kernel with aggressive baseline and wider length_scale_bounds
+
 import numpy as np
 from sklearn.gaussian_process import GaussianProcessRegressor
 from sklearn.gaussian_process.kernels import RBF
