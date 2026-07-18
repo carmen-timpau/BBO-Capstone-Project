@@ -1,5 +1,6 @@
-Week 3 - BBO Capstone Project
-Strategy Modification for Week 3, based on Week 2 Queries Outcomes:
+**Week 3 - BBO Capstone Project**
+
+_**Strategy Modification for Week 3, based on Week 2 Queries Outcomes:**_
 
 For function 1, Week 2's strategy has yielded a higher value than the one obtained following Week 1's strategy, 
 therefore Week 2's strategy will be further optimised to progress from here.
