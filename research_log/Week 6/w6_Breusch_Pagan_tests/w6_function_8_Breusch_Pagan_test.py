@@ -65,11 +65,7 @@ plt.tight_layout()
 plt.show()
 
 # Performing a Breusch-Pagan test to assess Homo/Heteroscedasticity - Checking if the residuals can be predicted by the model's predictions
-
-# Adding a constant (intercept) term for the linear regression check
 X_test_matrix = sm.add_constant(f8_predictions)
-
-# Running the Breusch-Pagan test
 lm_stat, p_value, f_stat, f_p_value = het_breuschpagan(f8_residuals, X_test_matrix)
 
 print(f"Breusch-Pagan Test p-value: {p_value:.5f}")
