@@ -7,7 +7,7 @@ Before moving further, the homo/heteroscedasticity of each of the 8 functions mo
 
 For the functions found to be heteroscedatic, a multi-objective acqusition strategy with evolutionary optimizers will be implemented, as deployed by Noah's Ark Lab at Huawei, in their Heteroscedastic Evolutionary Bayesian Optimization (HEBO) algorithm, to deal with non-constant noise variance (heteroscedasticity). This method was developed by the team as part of the 34th Conference on Neural Information Processing Systems (NeurIPS 2020) conference that took place in Vancouver, Canada in 2020. 
 
-<ins> References <ins>:
+<ins>References<ins>:
 
 [1]. Cowen-Rivers, A. I., Lyu, W., Wang, Z., Tutunov, R., Jianye, H., Wang, J., & Ammar, H. B. (n.d.). HEBO: Heteroscedastic Evolutionary Bayesian Optimisation.
 
