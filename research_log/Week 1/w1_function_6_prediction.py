@@ -1,41 +1,40 @@
-#Predicting the first query for black-box Function 6 with Sobol Sampling
-#using Automatic Relevance Determination (ARD) on the RBF kernel with aggresive baseline and default length_scale_bounds 
-#UCB acquisition function with beta = 1.96 (balance between exploitation and exploration)
+# Predicting the first query for black-box Function 6 with Sobol Sampling
+# Using Automatic Relevance Determination (ARD) on the RBF kernel with aggresive baseline and default length_scale_bounds 
+# UCB acquisition function with beta = 1.96 (balance between exploitation and exploration)
 
 import numpy as np
 from sklearn.gaussian_process import GaussianProcessRegressor
 from sklearn.gaussian_process.kernels import RBF
 from scipy.stats.qmc import Sobol
 
-#Loading the data
+# Loading the data
 X = data["function_6"]["x"]      #shape (20, 5)
 Y = data["function_6"]["y"]      #shape (20, )
 
-#Defining and fitting a Gaussian Process (GP) model
-kernel = RBF(length_scale=[0.1, 0.1, 0.1, 0.1, 0.1]) #ARD, aggresive baseline
-#using moderate strength Automatic Relevance Determination (ARD) with aggresive baseline and default length_scale_bounds 
+# Defining and fitting a Gaussian Process (GP) model
+kernel = RBF(length_scale=[0.1, 0.1, 0.1, 0.1, 0.1]) #ARD, aggresive baseline; Using moderate strength Automatic Relevance Determination (ARD) with aggresive baseline and default length_scale_bounds 
 gp = GaussianProcessRegressor(kernel=kernel, alpha=1e-10)
 gp.fit(X, Y)
 
-#Defining the input bounds
+# Defining the input bounds
 minimum = X.min(axis=0)
 maximum = X.max(axis=0)
 
-#Sobol sequence (power of 2)
+# Sobol sequence (power of 2)
 sobol = Sobol(d=5, scramble=True)
 unit_samples = sobol.random_base2(m=13)
 
-#Scale to actual bounds
+# Scale to actual bounds
 x_grid = minimum + unit_samples * (maximum - minimum)
 
-#Computing the Gaussian Process (GP) posterior
+# Computing the Gaussian Process (GP) posterior
 post_mean, post_std = gp.predict(x_grid, return_std=True)
 
-#Computing the Upper Confidence Bound (UCB) acquisition function
+# Computing the Upper Confidence Bound (UCB) acquisition function
 beta = 1.96 #balance between exploitation and exploration
 ucb_acquisition_function = post_mean + beta * post_std
 
-#Next query => argmax acquisition
+# Next query => argmax acquisition
 x_next = x_grid[np.argmax(ucb_acquisition_function)]
 
 print("Next raw query point for Function 6:", x_next)
