@@ -1,4 +1,4 @@
-Summary of Outputs Obtained in Week 6 for Sixth Query Submissions:
+**Summary of Outputs Obtained in Week 6 for Sixth Query Submissions:**
 
 Function 1: 
 
