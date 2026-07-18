@@ -1,46 +1,44 @@
-#Strategy optimisation 3. for black-box Function 2
-#using Automatic Relevance Determination (ARD) on the RBF kernel with aggresive baseline and wider length_scale_bounds
-#Week 2's startegy + Thompson sampling instead of UCB (or EI) acqusiition function
-#Submitted for Week 3
+# Strategy optimisation 3. for black-box Function 2, Week 3
+# Using Automatic Relevance Determination (ARD) on the RBF kernel with aggresive baseline and wider length_scale_bounds
+# Week 2's startegy + Thompson sampling instead of UCB (or EI) acqusiition function
+# Submitted for Week 3
 
 import numpy as np
 from sklearn.gaussian_process import GaussianProcessRegressor
 from sklearn.gaussian_process.kernels import RBF
 from scipy.stats.qmc import Sobol
 
-#Loading the data
+# Loading the data
 X = data["function_2"]["x"]      #shape (12, 2)
 Y = data["function_2"]["y"]      #shape (12, )
 
-#Defining and fitting the Gaussian Process (GP) model
+# Defining and fitting the Gaussian Process (GP) model
 kernel = RBF(
-    length_scale=[0.1]*2, #aggresive baseline
-    #Changing length_scale here to [1.0]*2 gives a ConvergenceWarning so the previously used [0.1]*2 (aggresive baseline) is used instead
-    length_scale_bounds=(1e-6, 1e8)
-) #using Automatic Relevance Determination (ARD) with aggresive baseline and wider bounds
+    length_scale=[0.1]*2, # Aggresive baseline; Changing length_scale here to [1.0]*2 gives a ConvergenceWarning so the previously used [0.1]*2 (aggresive baseline) is used instead
+    length_scale_bounds=(1e-6, 1e8)) # Using Automatic Relevance Determination (ARD) with aggresive baseline and wider bounds
 gp = GaussianProcessRegressor(kernel=kernel, alpha=1e-10)
 
 gp.fit(X, Y)
 
-#Defining the input bounds
+# Defining the input bounds
 minimum = X.min(axis=0)
 maximum = X.max(axis=0)
 
-#Sobol sequence (power of 2)
+# Sobol sequence (power of 2)
 sobol = Sobol(d=2, scramble=True)
 unit_samples = sobol.random_base2(m=12)
 
-#Scaling Sobol samples to actual bounds
+# Scaling Sobol samples to actual bounds
 x_grid = minimum + unit_samples * (maximum - minimum)
 
-#Computing the Gaussian Process (GP) posterior
+# Computing the Gaussian Process (GP) posterior
 post_mean, post_std = gp.predict(x_grid, return_std=True)
 
-#Thompson Sampling
+# Thompson Sampling
 # Draw one sample from the GP posterior over all Sobol points
 sampled_function = np.random.multivariate_normal(post_mean, post_cov)
 
-#Selecting the point where the sampled function is maximal
+# Selecting the point where the sampled function is maximal
 x_next = x_grid[np.argmax(sampled_function)]
 
 print("Third raw query point for Function 2:", x_next)
