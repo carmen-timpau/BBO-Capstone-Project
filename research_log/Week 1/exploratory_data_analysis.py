@@ -8,7 +8,7 @@ from pandas.plotting import parallel_coordinates
 # Creating a dictionary for the initial datasets of all 8 functions
 data = {}
 
-# Loading all initial data
+# Loading all initial data (found in initial_data folder within repo)
 
 # Printing all initial data (to 6 decimal places) provided for all functions
 
