@@ -18,16 +18,15 @@ n_samples = len(X)
 f8_predictions = []
 f8_residuals = []
 
-# Running Leave-One-Out Cross-Validation (LOOCV) Loop across all 45 points
-
+# Running LOOCV Loop across all 45 points using Week 5's GP for Function 8
 for j in range(n_samples):
     X_train = np.delete(X, j, axis=0)
     Y_train = np.delete(Y, j, axis=0)
     X_test = X[j].reshape(1, -1)
     Y_test = Y[j]
     
-    # Using Week 5's Startegy GP settings for Function 8
-    kernel = RBF(length_scale=[1.0]*8, length_scale_bounds=(1e-6, 1e8)) + WhiteKernel(noise_level=0.3, noise_level_bounds=(1e-12, 10.0))
+    kernel = RBF(length_scale=[1.0]*8, length_scale_bounds=(1e-6, 1e8)) + \
+             WhiteKernel(noise_level=0.3, noise_level_bounds=(1e-12, 10.0))
     
     gp = GaussianProcessRegressor(
         kernel=kernel, 
@@ -46,32 +45,32 @@ for j in range(n_samples):
 f8_predictions = np.array(f8_predictions)
 f8_residuals = np.array(f8_residuals)
 
-# Calculating global validation score
-
+# Calculating RMSE
 f8_rmse = root_mean_squared_error(Y, f8_predictions)
-print(f"Function 8 LOOCV Root Mean Squared Error: {f8_rmse:.4f}")
 
-# Plotting the Residuals vs GP Predictions (generated using LOOCV) for Function 8 
+# Performing a Breusch-Pagan test to assess Homo/Heteroscedasticity - Checking if the residuals can be predicted by the model's predictions
+# Adding a constant (intercept) term for the linear regression check
+X_test_matrix = sm.add_constant(f8_predictions)
+lm_stat, p_value, f_stat, f_p_value = het_breuschpagan(f8_residuals, X_test_matrix)
 
+# Plotting the Residuals vs GP Predictions (generated using LOOCV) for Function 8
 plt.figure(figsize=(8, 5))
 plt.scatter(f8_predictions, f8_residuals, color='teal', alpha=0.7, edgecolors='k', s=50, zorder=2)
 plt.axhline(y=0, color='crimson', linestyle='--', linewidth=2, zorder=1)
 
-plt.title(f'Function 8 (Week 5): Residuals vs. Predictions (N={n_samples})\nLOOCV RMSE: {f8_rmse:.4f}', fontsize=12, fontweight='bold')
+plt.title(f'Function 8: LOOCV Residuals vs. Predictions (N={n_samples})\n'
+          f'RMSE: {f8_rmse:.4f}  |  Breusch-Pagan p-value: {p_value:.5f}', 
+          fontsize=11, fontweight='bold')
 plt.xlabel('Predicted Value ($\hat{y}$)', fontsize=10)
 plt.ylabel('Residual ($y - \hat{y}$)', fontsize=10)
 plt.grid(True, linestyle=':', alpha=0.6)
 plt.tight_layout()
 plt.show()
 
-# Performing a Breusch-Pagan test to assess Homo/Heteroscedasticity - Checking if the residuals can be predicted by the model's predictions
-X_test_matrix = sm.add_constant(f8_predictions)
-lm_stat, p_value, f_stat, f_p_value = het_breuschpagan(f8_residuals, X_test_matrix)
-
+# Printing Breusch-Pagan Test Outcome
 print(f"Breusch-Pagan Test p-value: {p_value:.5f}")
 
-# Printing direct outcome based on the computed p valued(Homo/Heteroscedastic)
 if p_value < 0.05:
     print("Verdict for Function 8 (45 datapoints, Week 5): Statistically HETEROSCEDASTIC (Variance changes significantly)")
 else:
-    print("Verdict for Function 8 (45 datapoints, Week 5): Statistically HOMOSCEDASTIC (Variance is sufficiently constant)")
+    print("Verdict for Function 8 (45 datapoints, Week 5): Statistically HOMOSCEDASTIC (Variance is stable across predictions)")
