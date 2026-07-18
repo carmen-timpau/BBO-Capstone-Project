@@ -1,4 +1,6 @@
-
+# Week 6 BBO - Breusch-Pagan test to assess Homo/Heteroscedasticity for Function 6
+# Using Function 6 dataset of 25 points collected after obtaining Week 5's query output 
+# Performed before submitting Week 6 query to inform future strategic changes
 
 import numpy as np
 import matplotlib.pyplot as plt
