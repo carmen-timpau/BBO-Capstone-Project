@@ -1,5 +1,5 @@
-BBO Capstone Project
-Overall Strategy Summary - Week 4
+**BBO Capstone Project**
+**_Overall Strategy Summary - Week 4_**
 
 
 Function 1 Query Prediction Strategy for Week 4:
