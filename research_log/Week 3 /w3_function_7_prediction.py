@@ -1,0 +1,42 @@
+# Strategy optimisation 3. for Week 3 for black-box Function 7 with Sobol Sampling
+# Using Automatic Relevance Determination (ARD) on the RBF kernel with aggresive baseline and default length_scale_bounds  
+# Week 1's Strategy which worked much better than Week 2's strategy + using Thompson sampling instead of UCB/EI
+# Submitted for Week 3
+
+import numpy as np
+from sklearn.gaussian_process import GaussianProcessRegressor
+from sklearn.gaussian_process.kernels import RBF
+from scipy.stats.qmc import Sobol
+
+# Loading the data
+X = data["function_7"]["x"]      #shape (32, 6)
+Y = data["function_7"]["y"]      #shape (32, )
+
+# Defining and fitting a Gaussian Process (GP) model
+kernel = RBF(length_scale=[0.1, 0.1, 0.1, 0.1, 0.1, 0.1]) # Aggresive baseline; Using Automatic Relevance Determination (ARD) with aggresive baseline and default length_scale_bounds 
+gp = GaussianProcessRegressor(kernel=kernel, alpha=1e-10)
+gp.fit(X, Y)
+
+# Defining the input bounds
+minimum = X.min(axis=0)
+maximum = X.max(axis=0)
+
+# Sobol sequence (power of 2)
+sobol = Sobol(d=6, scramble=True)
+unit_samples = sobol.random_base2(m=13)
+
+# Scale Sobol samples to actual bounds
+x_grid = minimum + unit_samples * (maximum - minimum)
+
+# Computing GP posterior mean + covariance (required for TS)
+post_mean, post_cov = gp.predict(x_grid, return_cov=True)
+
+# Thompson Sampling
+# Drawing one sample from the GP posterior over all Sobol points
+sampled_function = np.random.multivariate_normal(post_mean, post_cov)
+
+# Selecting the point where the sampled function is maximal
+x_next = x_grid[np.argmax(sampled_function)]
+
+print("Third raw query point for Function 7:", x_next)
+print("Third query point for Function 7 (6 decimals):", np.round(x_next, 6))
