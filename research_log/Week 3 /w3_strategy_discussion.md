@@ -1,4 +1,4 @@
-* Function 1 Investigation of Strategy Optimisation for Week 3 Submission:
+**Function 1 Investigation of Strategy Optimisation for Week 3 Submission:**
 
 Strategies tested:
 
@@ -15,7 +15,7 @@ certain (This one was submitted for week 3 submission).
 
 ----------------------------------------------------------------------------------------------------------------------------------------------
 
-* Function 2 Investigation of Strategy Optimisation for Week 3 Submission:
+**Function 2 Investigation of Strategy Optimisation for Week 3 Submission:**
 
 Strategies tested:
 
@@ -29,7 +29,7 @@ certain (This one was submitted for week 3 submission).
 
 ----------------------------------------------------------------------------------------------------------------------------------------------
 
-* Function 3 Investigation of Strategy Optimisation for Week 3 Submission:
+**Function 3 Investigation of Strategy Optimisation for Week 3 Submission:**
 
 Strategies tested:
 
@@ -44,14 +44,14 @@ UCB/EI takes time and consumes valuable queries with no promised improvement bei
 
 ----------------------------------------------------------------------------------------------------------------------------------------------
 
-* Function 4 Prediction Week 3 (using the same strategy as in Week 2 because this led to effective function maximisation so far)
+**Function 4 Prediction Week 3** (using the same strategy as in Week 2 because this led to effective function maximisation so far)
 
 Also trying Thompson sampling instead of UCB acquisition function as strategy optimisation 2. to see how this performs. Depending on the 
 results that I will get as output from the week 3's submission, I'll decide if I'll implement Thompson sampling for functon 8 in Week 4.
 
 ----------------------------------------------------------------------------------------------------------------------------------------------
 
-* Function 5 Investigation of Strategy Optimisation for Week 3 Submission:
+**Function 5 Investigation of Strategy Optimisation for Week 3 Submission:**
 
 Strategies tested:
 
@@ -65,7 +65,7 @@ certain (This one was submitted for week 3 submission).
 
 ----------------------------------------------------------------------------------------------------------------------------------------------
 
-* Function 6 Investigation of Strategy Optimisation for Week 3 Submission:
+**Function 6 Investigation of Strategy Optimisation for Week 3 Submission:**
 
 Strategies tested:
 
@@ -79,7 +79,7 @@ certain (This one was submitted for week 3 submission).
 
 ----------------------------------------------------------------------------------------------------------------------------------------------
 
-* Function 7 Investigation of Strategy Optimisation for Week 3 Submission:
+**Function 7 Investigation of Strategy Optimisation for Week 3 Submission:**
 
 Strategies tested:
 
@@ -93,7 +93,7 @@ certain (This one was submitted for week 3 submission).
 
 ----------------------------------------------------------------------------------------------------------------------------------------------
 
-* Function 8 Prediction Week 3 (using same strategy as in Weeks 1 & 2 because this led to effective maximisation so far)
+**Function 8 Prediction Week 3 (using same strategy as in Weeks 1 & 2 because this led to effective maximisation so far)**
 
 Also trying Thompson sampling instead of UCB acquisition function as strategy optimisation 2. to see how this performs. Depending on the 
 results that I will get as output from the week 3's submission, I'll decide if I'll implement Thompson sampling for functon 8 in Week 4.
