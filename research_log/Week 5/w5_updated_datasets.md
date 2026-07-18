@@ -1,5 +1,5 @@
-Full Datasets for all 8 Black-Box Functions (updated with week 5's obtained query output)
-Data Format: #. ([inputs separated by space], output)
+**Full Datasets for all 8 Black-Box Functions (updated with week 5's obtained query output)** <br />
+Data Format: #. ([inputs separated by space], output) <br />
 
 Function 1 datapoints after week 5 are:
 
