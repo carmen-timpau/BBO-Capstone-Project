@@ -5,13 +5,12 @@ from mpl_toolkits.mplot3d import Axes3D
 import matplotlib.lines as mlines
 from pandas.plotting import parallel_coordinates
 
-#Creating a dictionary for the initial datasets of all 8 functions
+# Creating a dictionary for the initial datasets of all 8 functions
 data = {}
 
-#Loading all initial data
+# Loading all initial data
 
-
-#Printing all initial data (to 6 decimal places) provided for all functions
+# Printing all initial data (to 6 decimal places) provided for all functions
 
 for i in range (1,9):
     x = data[f"function_{i}"]["x"]
@@ -23,7 +22,7 @@ for i in range (1,9):
         print(f"{j}. ({x}, {y:.6f})")
 
 
-#Computing statistical analysis of all functions' initial outputs
+# Computing statistical analysis of all functions' initial outputs
 
 for i in range (1,9):
     min_value = data[f"function_{i}"]["y"].min()
@@ -38,7 +37,7 @@ for i in range (1,9):
     print(f"Mean = {mean:.6f}")
 
 
-#Plotting Function 1's Initial Datapoints in a 3D Scatter Plot
+# Plotting Function 1's Initial Datapoints in a 3D Scatter Plot
 fig = plt.figure(figsize=(20, 15))
 
 function1_plot = fig.add_subplot(111, projection='3d')
@@ -52,7 +51,7 @@ function1_plot.set_zlabel("y", size = 15)
 plt.show()
 
 
-#Plotting Function 2's Initial Datapoints in a 3D Scatter Plot
+# Plotting Function 2's Initial Datapoints in a 3D Scatter Plot
 fig = plt.figure(figsize=(20, 15))
 
 function2_plot = fig.add_subplot(111, projection='3d')
@@ -66,7 +65,7 @@ function2_plot.set_zlabel("y", size = 15)
 plt.show()
 
 
-#Plotting Function 3's Initial Datapoints in a 4D Scatter Plot (3D Input Positions + Colour Mapped Output)
+# Plotting Function 3's Initial Datapoints in a 4D Scatter Plot (3D Input Positions + Colour Mapped Output)
 fig = plt.figure(figsize=(20, 15))
 
 function3_plot = fig.add_subplot(111, projection='3d')
@@ -88,7 +87,7 @@ cbar.set_label("4th dimension (y)", fontsize=15)
 plt.show()
 
 
-#Plotting Function 4's Initial Datapoints in a 5D Scatter Plot (3D Position + Colour + Size Encoding)
+# Plotting Function 4's Initial Datapoints in a 5D Scatter Plot (3D Position + Colour + Size Encoding)
 fig = plt.figure(figsize=(20, 15))
 function4_y = data["function_4"]["y"]*(-1) #Turning values of Function 4 outputs into positive values (overall multiplication with (-1)) to turn this into a maximisation problem 
 
@@ -124,7 +123,7 @@ legend._legend_title_box._text.set_va("top")
 plt.show()
 
 
-#Plotting Function 5's Initial Datapoints in a 5D Scatter Plot (3D Position + Colour + Size Encoding)
+# Plotting Function 5's Initial Datapoints in a 5D Scatter Plot (3D Position + Colour + Size Encoding)
 fig = plt.figure(figsize=(20, 15))
 
 function5_plot = fig.add_subplot(111, projection='3d')
@@ -160,7 +159,7 @@ legend._legend_title_box._text.set_va("top")
 plt.show()
 
 
-#Plotting Function 6's Initial Datapoints in a 6D Plot (3D Scatter + Colour + Alpha + Size Plot)
+# Plotting Function 6's Initial Datapoints in a 6D Plot (3D Scatter + Colour + Alpha + Size Plot)
 import matplotlib.lines as mlines
 import matplotlib.pyplot as plt
 import numpy as np
@@ -261,7 +260,7 @@ plt.show()
 
 
 
-#Plotting Function 7's Initial Datapoints in a 7D Plot
+# Plotting Function 7's Initial Datapoints in a 7D Plot
 # (3D Scatter + Colour + Alpha-from-x5 + Rotation-from-x6 + Size-from-y)
 
 from matplotlib.markers import MarkerStyle
@@ -397,7 +396,7 @@ ax.add_artist(legend_alpha)
 plt.show()
 
 
-#Plotting Function 8's Initial Datapoints in a 8D Plot
+# Plotting Function 8's Initial Datapoints in a 8D Plot
 # (3D Scatter + Colour + Alpha-from-x5 + Rotation-from-x6 + Edge-Colour-from-x7 + Size-from-y)
 from matplotlib.markers import MarkerStyle
 import matplotlib.transforms as transforms
