@@ -1,6 +1,6 @@
-Week 4 - BBO Capstone Project
+**Week 4 - BBO Capstone Project** <br />
 
-Week 3's Strategy Discussion and Strategy Modifications for Week 4, based on Week 3 Query Outcomes:
+_**Week 3's Strategy Discussion and Strategy Modifications for Week 4, based on Week 3 Query Outcomes:**_
 
 For Function 1, Week 3's strategy (Matern kernel with nu=1.5 - because Function 1 is spiky - with applied Automatic Relevance Determination 
 (ARD) with aggresive baseline and wider bounds, Sobol sampling and Thompson Sampling) worked the best so far, as the query submitted for 
