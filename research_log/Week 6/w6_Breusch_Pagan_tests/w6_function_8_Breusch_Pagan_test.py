@@ -67,7 +67,7 @@ plt.figure(figsize=(8, 5))
 plt.scatter(f8_predictions, f8_residuals, color='teal', alpha=0.7, edgecolors='k', s=50, zorder=2)
 plt.axhline(y=0, color='crimson', linestyle='--', linewidth=2, zorder=1)
 
-plt.title(f'Function 8: LOOCV Residuals vs. Predictions (N={n_samples})\n'
+plt.title(f'Function 8, Week 5: LOOCV Residuals vs. Predictions (N={n_samples})\n'
           f'RMSE: {f8_rmse:.4f}   | LOOCV R-squared Score: {f8_r2:.4f}  |  Breusch-Pagan p-value: {p_value:.5f}', 
           fontsize=11, fontweight='bold')
 plt.xlabel('Predicted Value ($\hat{y}$)', fontsize=10)
