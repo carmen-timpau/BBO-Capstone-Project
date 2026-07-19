@@ -9,7 +9,7 @@ Every week until the completion of the project in late August 2026, each functio
 
 <ins> **Initial Data for all 8 Black-Box Functions to be Maximised:** </ins> 
 
-Can be found in the _initial_data_ folder attached to this repository.
+Can be found in the `initial_data` folder attached to this repository.
 
 ---------------------------------------------------------------------------------------------------------
 
