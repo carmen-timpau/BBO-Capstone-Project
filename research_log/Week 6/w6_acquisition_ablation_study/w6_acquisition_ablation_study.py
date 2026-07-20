@@ -1,4 +1,5 @@
 # Week 6 BBO - LOOCV Acquisition Function Ablation Study (Functions 1-8)
+# Using best performing kernels found for each function through the Kernel Ablation Study ran beforehand
 
 import numpy as np
 import pandas as pd
