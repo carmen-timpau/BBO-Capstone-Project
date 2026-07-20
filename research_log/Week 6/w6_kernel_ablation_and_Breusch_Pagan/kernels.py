@@ -1,11 +1,9 @@
-# 'get_kernel_suite' function for Kernel Ablation Study for Functions 2-8
+from sklearn.gaussian_process.kernels import Matern, RBF, RationalQuadratic, WhiteKernel
 
 def get_kernel_suite(n_dims, ls_bounds=(1e-2, 1e4), noise_bounds=(1e-6, 1e2)):
-    """
-    Dynamically creates an ablation kernel dictionary adapted to input dimension (n_dims)
-    """
+    """Dynamically creates an ablation kernel dictionary for Functions 2-8."""
     init_ls_ard = [0.1] * n_dims
-    
+
     return {
         "Baseline: Matern 2.5 + WhiteNoise (ARD)": (
             Matern(length_scale=init_ls_ard, nu=2.5, length_scale_bounds=ls_bounds) +
@@ -31,3 +29,7 @@ def get_kernel_suite(n_dims, ls_bounds=(1e-2, 1e4), noise_bounds=(1e-6, 1e2)):
             WhiteKernel(noise_level=1e-3, noise_level_bounds=noise_bounds)
         )
     }
+
+def get_kernel_suite_f1(n_dims, ls_bounds=(1e-3, 1e8), noise_bounds=(1e-10, 1e2)):
+    """Wrapper function that passes Function 1 specific bounds into the main suite."""
+    return get_kernel_suite(n_dims, ls_bounds=ls_bounds, noise_bounds=noise_bounds)
