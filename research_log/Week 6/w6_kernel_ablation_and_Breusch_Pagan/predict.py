@@ -1,5 +1,6 @@
 # Week 6 BBO - Unified Next Query Prediction (Functions 1-8)
 # Using winning kernel and acquisition configurations determined by ablation studies beforehand
+# Implementing Dynamic Sobol sampling resolution based on dimensionality to ensure high candidate resolution for high-dimensional spaces
 
 import warnings
 import numpy as np
