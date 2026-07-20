@@ -44,9 +44,7 @@ for j in range(n_samples):
     gp = GaussianProcessRegressor(
         kernel=kernel, 
         alpha=0.0, 
-        normalize_y=True, 
-        n_restarts_optimizer=5, 
-        random_state=42
+        normalize_y=True
     )
     
     gp.fit(X_train_scaled, Y_train)
