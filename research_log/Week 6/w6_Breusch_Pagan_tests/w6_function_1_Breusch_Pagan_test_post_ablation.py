@@ -22,7 +22,7 @@ warnings.filterwarnings("ignore", category=ConvergenceWarning)
 X = np.array(data["function_1"]["x"])  # shape (15, 2)
 Y = np.array(data["function_1"]["y"]).flatten()  # shape (15,)
 
-# Transforming Y to log10 space to avoid numerical underflow issues
+# Transforming Y to log10 space to avoid numerical underflow issues and clipping to prevent log10(0) from producing NaN
 Y_safe = np.clip(Y, 1e-300, None)
 Y_log = np.log10(Y_safe)
 
