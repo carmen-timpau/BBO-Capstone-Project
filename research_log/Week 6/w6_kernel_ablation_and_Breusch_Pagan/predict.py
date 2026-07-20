@@ -26,7 +26,6 @@ for fn_idx in range(1, 9):
 
 
     # Loading Data and Targeted Preprocessing
-
     X = np.array(data[fn_key]["x"])
     Y = np.array(data[fn_key]["y"]).flatten()
     n_samples, n_dims = X.shape
@@ -44,7 +43,6 @@ for fn_idx in range(1, 9):
 
 
     # Re-instantiating Winning Kernel from Kernel Ablation
-
     winning_variant_name = top_kernels_summary[fn_key]["Best Variant"]
     kernel_suite = get_kernel_suite_f1(n_dims) if fn_idx == 1 else get_kernel_suite(n_dims)
     best_kernel = kernel_suite[winning_variant_name]
@@ -58,7 +56,6 @@ for fn_idx in range(1, 9):
         random_state=42
     )
     gp.fit(X_scaled, Y_target)
-
 
     # Generating Candidate Space via Sobol Quasi-Random Sampling
     minimum = X.min(axis=0)
@@ -79,9 +76,7 @@ for fn_idx in range(1, 9):
     x_grid = minimum + unit_samples * (maximum - minimum)
     x_grid_scaled = scaler.transform(x_grid)
 
-
     # Computing Acquisition Scores via Winning Strategy
-
     winning_acq_str = acq_ablation_summary[fn_key]["Best Acquisition"]
     
     # Parsing acquisition function name and parameter value
