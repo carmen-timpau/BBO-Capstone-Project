@@ -9,6 +9,8 @@ from sklearn.preprocessing import StandardScaler
 from sklearn.gaussian_process import GaussianProcessRegressor
 from sklearn.exceptions import ConvergenceWarning
 
+from kernels import get_kernel_suite, get_kernel_suite_f1
+
 warnings.filterwarnings("ignore", category=ConvergenceWarning)
 warnings.filterwarnings("ignore", message="Predicted variances smaller than 0", category=UserWarning,)
 
