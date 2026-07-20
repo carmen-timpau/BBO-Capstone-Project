@@ -1,4 +1,4 @@
-# get_kernel_suite_f1 for Function 1 Kernel Ablation Study
+# 'get_kernel_suite_f1' function Kernel Ablation Study for Function 1 
 
 def get_kernel_suite_f1(n_dims, ls_bounds=(1e-3, 1e8), noise_bounds=(1e-10, 1e2)):
     """
