@@ -90,7 +90,6 @@ for fn_idx in range(1, 9):
         param=param_val
     )
 
-
     # Extracting Next Query Point (Argmax Acquisition)
     best_candidate_idx = np.argmax(acq_scores)
     x_next = x_grid[best_candidate_idx]
