@@ -24,7 +24,6 @@ for fn_idx in range(1, 9):
         print(f"Skipping {fn_key}: Not found in data dictionary.")
         continue
 
-
     # Loading Data and Targeted Preprocessing
     X = np.array(data[fn_key]["x"])
     Y = np.array(data[fn_key]["y"]).flatten()
