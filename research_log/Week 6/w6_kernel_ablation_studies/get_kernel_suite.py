@@ -1,4 +1,4 @@
-
+# 'get_kernel_suite' function for Kernel Ablation Study for Functions 2-8
 
 def get_kernel_suite(n_dims, ls_bounds=(1e-2, 1e4), noise_bounds=(1e-6, 1e2)):
     """
