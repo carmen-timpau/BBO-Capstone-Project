@@ -11,7 +11,7 @@ In the case of functions that showed a linear relationship between the plotted r
 
 For the functions found to be _heteroscedatic_, a **non-linear output warping startegy**<sup>1</sup> will be implemented, as deployed by Noah's Ark Lab at Huawei, in their _Heteroscedastic Evolutionary Bayesian Optimization (HEBO)_ algorithm, to deal with non-constant noise variance (heteroscedasticity). This method was developed by the team as part of the _34<sup>th</sup> Conference on Neural Information Processing Systems (NeurIPS 2020)_ that took place in Vancouver, Canada in 2020.<sup>1,2</sup>
 
-Note: Homo/heteroscedasticity testing was performed both using Week 5's strategy GP hyperparameters and post-ablation optimised kernel for behaviour/results observation.
+Note: Homo/heteroscedasticity testing was performed both using Week 5's strategy GP hyperparameters and post-ablation optimised kernel for behaviour/results observation for each function.
 
 <ins>References<ins>:
 
