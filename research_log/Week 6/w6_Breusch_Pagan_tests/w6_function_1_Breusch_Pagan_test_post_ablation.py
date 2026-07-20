@@ -2,7 +2,7 @@
 # Using Function 1 dataset of 15 points collected after obtaining Week 5's query output 
 # Performed before submitting Week 6 query to inform future strategic changes
 # Using log10 to scale Function 1 outputs within LOOCV as they are extremely low values
-# Using newfound GP hyperparameters that improve R-squared value compared to the GP that was used in Week 5 for Function 1
+# Using newfound GP hyperparameters from a kernel ablation study that improve R-squared value compared to the GP that was used in Week 5 for Function 1
 
 import numpy as np
 import matplotlib.pyplot as plt
@@ -39,8 +39,8 @@ for j in range(n_samples):
     X_test_scaled = scaler.transform(X_test)
     
     # Kernel noise bounds adjusted for log-scale values
-    kernel = Matern(length_scale=[0.1, 0.1], nu=2.5, length_scale_bounds=(1e-6, 1e8)) + \
-             WhiteKernel(noise_level=1e-3, noise_level_bounds=(1e-6, 1e2))
+    kernel = Matern(length_scale=[100, 0.1], nu=2.5, length_scale_bounds=(1e-3, 1e8)) + \
+             WhiteKernel(noise_level=1e-6, noise_level_bounds=(1e-10, 1e2))
     
     gp = GaussianProcessRegressor(
         kernel=kernel, 
