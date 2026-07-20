@@ -60,13 +60,20 @@ for fn_idx in range(1, 9):
 
 
     # Generating Candidate Space via Sobol Quasi-Random Sampling
-
     minimum = X.min(axis=0)
     maximum = X.max(axis=0)
 
-    # 2^12 = 4096 quasi-random candidates across input bounds
+    # Dynamic Sobol sample resolution based on dimensionality
+    if n_dims >= 6:
+        m_samples = 14  # 2^14 = 16,384 points
+    elif n_dims >= 4:
+        m_samples = 13  # 2^13 = 8,192 points
+    else:
+        m_samples = 12  # 2^12 = 4,096 points
+
+    # Sobol sequence (power of 2)
     sobol = Sobol(d=n_dims, scramble=True, seed=42)
-    unit_samples = sobol.random_base2(m=12)
+    unit_samples = sobol.random_base2(m=m_samples)
     
     x_grid = minimum + unit_samples * (maximum - minimum)
     x_grid_scaled = scaler.transform(x_grid)
