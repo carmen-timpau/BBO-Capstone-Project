@@ -1,4 +1,4 @@
-
+Week 6 BBO - Kernel Ablation Study Results (Pre-Query 6th Prediction Generation)
 ```text
 ----------------------------------------------------------------------------------------------------
                      FUNCTION 1 (Dim=2, N=15) - KERNEL ABLATION STUDY
