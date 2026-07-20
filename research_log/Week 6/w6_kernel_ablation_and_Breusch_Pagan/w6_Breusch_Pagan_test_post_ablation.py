@@ -14,10 +14,9 @@ from sklearn.preprocessing import StandardScaler
 from statsmodels.stats.diagnostic import het_breuschpagan
 from sklearn.exceptions import ConvergenceWarning
 
-warnings.filterwarnings("ignore", category=ConvergenceWarning)
+from kernels import get_kernel_suite, get_kernel_suite_f1
 
-# Using `get_kernel_suite_f1` function defined in `get_kernel_suite_f1.py`
-# Using `get_kernel_suite` function defined in `get_kernel_suite.py`
+warnings.filterwarnings("ignore", category=ConvergenceWarning)
 
 # Running Diagnostics and Breusch-Pagan Test across Functions 1 to 8
 for fn_idx in range(1, 9):
