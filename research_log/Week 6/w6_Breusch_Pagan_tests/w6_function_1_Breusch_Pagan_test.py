@@ -2,7 +2,7 @@
 # Using Function 1 dataset of 15 points collected after obtaining Week 5's query output 
 # Performed before submitting Week 6 query to inform future strategic changes
 # Using log10 to scale Function 1 outputs within LOOCV as they are extremely low values
-# Using GP hyperparameters used in Week 5 for Function 1
+# Using GP hyperparameters used in Week 5 for Function 1 query predictions
 
 import numpy as np
 import matplotlib.pyplot as plt
