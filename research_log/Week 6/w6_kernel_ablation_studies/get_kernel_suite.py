@@ -1,4 +1,5 @@
-def get_kernel_suite(n_dims, ls_bounds=(1e-2, 1e4), noise_bounds=(1e-6, 1e2)):
+
+def get_kernel_suite(n_dims, ls_bounds=(1e-3, 1e8), noise_bounds=(1e-10, 1e2)):
     """
     Dynamically creating an ablation kernel dictionary adapted to input dimension (n_dims)
     """
