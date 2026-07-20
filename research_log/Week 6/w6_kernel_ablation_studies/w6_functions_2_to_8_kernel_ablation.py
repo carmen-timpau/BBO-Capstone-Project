@@ -7,7 +7,7 @@ from sklearn.gaussian_process.kernels import Matern, RBF, RationalQuadratic, Whi
 from sklearn.metrics import root_mean_squared_error, r2_score
 from sklearn.preprocessing import StandardScaler
 
-#
+# Using `get_kernel_suite` function defined in `get_kernel_suite.py`
 
 # Storing winning configs for Functions 2-8 in a dictionary
 top_kernels_summary = {}
