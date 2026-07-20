@@ -7,7 +7,7 @@ from sklearn.gaussian_process.kernels import Matern, RBF, RationalQuadratic, Whi
 from sklearn.metrics import root_mean_squared_error, r2_score
 from sklearn.preprocessing import StandardScaler
 
-# Using `get_kernel_suite` function defined in `get_kernel_suite.py`
+# Using `get_kernel_suite_f1` function defined in `get_kernel_suite_f1.py`
 
 # Pulling Data for Function 1
 X = np.array(data["function_1"]["x"])
@@ -20,7 +20,7 @@ Y_log = np.log10(Y_safe)
 n_samples, n_dims = X.shape
 
 # Dynamically generating kernels matching Function 1's dimension
-kernels_to_test = get_kernel_suite(n_dims)
+kernels_to_test = get_kernel_suite_f1(n_dims)
 ablation_results = []
 
 # Running LOOCV loop for each candidate kernel
