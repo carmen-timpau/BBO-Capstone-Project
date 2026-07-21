@@ -1,7 +1,7 @@
 **BBO Capstone Project** <br />
 _**Overall Strategy Summary - Week 6**_
 
-This week, compared to the previous 5 weeks, which consisted of a lot of human intervention to individually tune the Bayesian Optimisation (BO) ML models, an automated, more comprehensive and robust approach will be taken to try and optimise each GP and acquisition function and test this strategy to see if a significant improvement in predictive model performance (in terms of generating queries that consist of significant output maximisation) will be observed.
+This week, compared to the previous 5 weeks, which consisted of a lot of human intervention to individually tune the Bayesian Optimisation (BO) ML models, an automated, more comprehensive, robust and stable approach will be taken to try and optimise each GP and acquisition function and test this strategy to see if a significant improvement in predictive model performance (in terms of generating queries that consist of significant output maximisation) will be observed.
 
 In this sense, **Kernel Ablation Studies** were performed for all functions to identify best-performing GP surrogate models for the 8 Black-Box functions. This was done using **Leave-One-Out Cross-Validation (LOOCV)** to ensure good generalisation and avoid overfitting, while making efficient use of the limited data available that describes each Black-Box function. The out-of-sample (generalization) predictive performance metric used to rank the tested ML models was the LOOCV R². **Log Marginal Likelihood (LML)** was used as a secondary diagnostic to check for/prevent overfitting. 
 
