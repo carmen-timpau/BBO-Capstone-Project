@@ -20,15 +20,6 @@ def run_acq_ablation(data, top_kernels_summary):
     # LOOCV Acquisition Function Ablation Study
     acq_ablation_summary = {}
 
-    # Defining candidate acquisition strategies to evaluate
-    acq_strategies = {
-        "EI (xi=0.01)": ("EI", 0.01),
-        "EI (Exploration, xi=0.1)": ("EI", 0.10),
-        "UCB (beta=1.96)": ("UCB", 1.96),
-        "UCB (beta=2.58)": ("UCB", 2.58),
-        "PI (xi=0.01)": ("PI", 0.01),
-    }
-
     for fn_idx in range(1, 9):
         fn_key = f"function_{fn_idx}"
 
