@@ -17,7 +17,7 @@ def run_kernel_ablation(data):
     for fn_idx in range(1, 9):
         fn_key = f"function_{fn_idx}"
         
-        # Check if function exists in data dictionary
+        # Checking if function exists in data dictionary
         if fn_key not in data:
             print(f"Skipping {fn_key}: Not found in data dictionary.")
             continue
