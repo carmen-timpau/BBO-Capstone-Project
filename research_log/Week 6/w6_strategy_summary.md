@@ -5,7 +5,7 @@ This week, compared to the previous 5 weeks, which consisted of a lot of human i
 
 In this sense, **Kernel Ablation Studies** were performed for all functions to identify best-performing GP surrogate models for the 8 Black-Box functions. This was done using **Leave-One-Out Cross-Validation (LOOCV)**. The out-of-sample (generalization) predictive performance metric used to rank the tested ML models was the LOOCV R². **Log Marginal Likelihood (LML)** was used as a secondary diagnostic to check for/prevent overfitting. 
 
-**Acquisition Ablation Studies** were performed for all functions to identify best-performing acqusition function and respective hyperparameters using LOOCV. 
+**Acquisition Ablation Studies** were performed for all functions using known maximisation acquisition functions (EI, UCB, PI) and LOOCV to identify the acqusition functions (and their respective hyperparameters) that heavily reward unseen space. The main reason for employing this strategy is that by coupling the best-performing acquisition functions selected in this manner with the accuracy of an optimised GP (found previously via Kernel Ablation Study), the Bayesian Optimisation algorithm can escape any potential local maxima it might have gotten trapped in at this point in the project, by penalising already-explored regions and actually allow it to achieve global maximum identification successfully. 
 
 A **Dynamic Sobol Sampling Resolution strategy based on dimensionality** was also implemented this week to ensure high candidate resolution for high-dimensional spaces.
 
