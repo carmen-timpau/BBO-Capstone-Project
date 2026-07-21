@@ -29,4 +29,4 @@ Breusch Pagan testing (pre-kernel ablation) using GPs deployed during Week 5 que
 
 Breusch Pagan testing post-kernel ablation studies concluded that Functions 3, 4 and 5 are Heteroscedastic.
 
-Heteroscedasticity will not be adressed this week, to allow the performance of ablated models to be assessed independent of noise variance-adressing methods. This issue will however be dealt with immediately after in Week 7.
+Heteroscedasticity will not be adressed this week, as knowing which functions are heteroscedastic before tackling this problem will allow the performance of fully ablated models to be assessed independently of noise variance-adressing methods, which will reveal important insights. However, function heteroscedasticity will be dealt with immediately after, in Week 7.
