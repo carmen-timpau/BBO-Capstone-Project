@@ -1,15 +1,19 @@
 **BBO Capstone Project** <br />
 _**Overall Strategy Summary - Week 6**_
 
-**Kernel Ablation Studies** were performed for all functions to identify best-performing GP surrogate models for the 8 Black-Box functions. This was done using **Leave-One-Out Cross-Validation (LOOCV)**. The out-of-sample (generalization) predictive performance metric used to rank the tested ML models was the LOOCV R². **Log Marginal Likelihood (LML)** was used as a secondary diagnostic to check for/prevent overfitting. 
+This week, compared to the previous 5 weeks, which consisted of a lot of human intervention to individually tune the Bayesian Optimisation (BO) ML models, an automated, more comprehensive and robust approach will be taken to try and optimise each GP and acquisition function and test this strategy to see if a significant improvement in performance (in terms of generating queries that consist of significant output maximisation) will be observed.
 
-Before moving further, the **homo/heteroscedasticity** of each of the 8 functions modelled by Gaussian Processes was assessed, by plotting the residuals against the predictions of the GP surrogate model and conducting corresponding **Breusch-Pagan tests**. These were performed both pre- (using the latest GP hyperparameters from Week 5's strategies) and post-kernel ablation (using the optimsied kernels) for comparative purposes. Only post-ablation results are taken into consideration.
+In this sense, **Kernel Ablation Studies** were performed for all functions to identify best-performing GP surrogate models for the 8 Black-Box functions. This was done using **Leave-One-Out Cross-Validation (LOOCV)**. The out-of-sample (generalization) predictive performance metric used to rank the tested ML models was the LOOCV R². **Log Marginal Likelihood (LML)** was used as a secondary diagnostic to check for/prevent overfitting. 
 
 **Acquisition Ablation Studies** were performed for all functions to identify best-performing acqusition function and respective hyperparameters using LOOCV. 
 
 A **Dynamic Sobol Sampling Resolution strategy based on dimensionality** was also implemented this week to ensure high candidate resolution for high-dimensional spaces.
 
-For the functions found to be _heteroscedatic_, a **non-linear output warping strategy**<sup>1</sup> will be implemented next week (Week 7), as deployed by Noah's Ark Lab at Huawei, in their _Heteroscedastic Evolutionary Bayesian Optimization (HEBO)_ algorithm, to deal with non-constant noise variance (heteroscedasticity). This method was developed by the team as part of the _34<sup>th</sup> Conference on Neural Information Processing Systems (NeurIPS 2020)_ that took place in Vancouver, Canada in 2020.<sup>1,2</sup> For this week the optimised GPs and acquisition functions (via ablation studies) will be tested to assess performance independent of any measures taken to account for (or despite) function heteroscedaticity.
+The **homo/heteroscedasticity** of each of the 8 functions modelled by Gaussian Processes was also assessed, by plotting the residuals against the predictions of the GP surrogate model and conducting corresponding **Breusch-Pagan tests**. These were performed both pre- (using the latest GP hyperparameters from Week 5's strategies) and post-kernel ablation (using the optimsied kernels) for comparative purposes. Only post-ablation results are taken into consideration.
+
+For the functions found to be _heteroscedatic_, a **non-linear output warping strategy**<sup>1</sup> will be implemented next week (Week 7), as deployed by Noah's Ark Lab at Huawei, in their _Heteroscedastic Evolutionary Bayesian Optimization (HEBO)_ algorithm, to deal with non-constant noise variance (heteroscedasticity). This method was developed by the team as part of the _34<sup>th</sup> Conference on Neural Information Processing Systems (NeurIPS 2020)_ that took place in Vancouver, Canada in 2020.<sup>1,2</sup> For this week the optimised GPs and acquisition functions (via ablation studies) will be tested to assess performance independent of any measures taken to account for (or despite) function heteroscedaticity. 
+
+However, for this week (6), the optimised GPs and acquisition functions (via ablation studies) will be tested to assess performance independent of any measures taken to account for (or despite) function heteroscedaticity.
 
 <ins>References<ins>:
 
