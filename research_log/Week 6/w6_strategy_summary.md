@@ -9,7 +9,7 @@ Before moving further, the **homo/heteroscedasticity** of each of the 8 function
 
 A **Dynamic Sobol Sampling Resolution strategy based on dimensionality** was also implemented this week to ensure high candidate resolution for high-dimensional spaces.
 
-For the functions found to be _heteroscedatic_, a **non-linear output warping strategy**<sup>1</sup> will be implemented, as deployed by Noah's Ark Lab at Huawei, in their _Heteroscedastic Evolutionary Bayesian Optimization (HEBO)_ algorithm, to deal with non-constant noise variance (heteroscedasticity). This method was developed by the team as part of the _34<sup>th</sup> Conference on Neural Information Processing Systems (NeurIPS 2020)_ that took place in Vancouver, Canada in 2020.<sup>1,2</sup>
+For the functions found to be _heteroscedatic_, a **non-linear output warping strategy**<sup>1</sup> will be implemented next week (Week 7), as deployed by Noah's Ark Lab at Huawei, in their _Heteroscedastic Evolutionary Bayesian Optimization (HEBO)_ algorithm, to deal with non-constant noise variance (heteroscedasticity). This method was developed by the team as part of the _34<sup>th</sup> Conference on Neural Information Processing Systems (NeurIPS 2020)_ that took place in Vancouver, Canada in 2020.<sup>1,2</sup> For this week the optimised GPs and acquisition functions (via ablation studies) will be tested to assess performance independent of any measures taken to account for (or despite) function heteroscedaticity.
 
 <ins>References<ins>:
 
