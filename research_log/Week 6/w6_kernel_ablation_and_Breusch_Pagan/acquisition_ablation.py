@@ -10,6 +10,7 @@ from sklearn.gaussian_process import GaussianProcessRegressor
 from sklearn.exceptions import ConvergenceWarning
 
 from kernels import get_kernel_suite, get_kernel_suite_f1
+from acq_strategies import acq_strategies
 from acquisition import compute_acquisition_scores
 
 warnings.filterwarnings("ignore", category=ConvergenceWarning)
