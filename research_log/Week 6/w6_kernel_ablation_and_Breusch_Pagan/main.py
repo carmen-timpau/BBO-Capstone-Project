@@ -6,9 +6,9 @@ from acquisition_ablation import run_acq_ablation
 from query_predict import run_predictions
 
 def main():
-    print("Loading data snapshot...")
+    print("Loading Week 6 full input data snapshot...") # All data collected so far till Week 6 (initial data + 5 submitted queries)
     with open("wk6_input_data.pkl", "rb") as file:
-        data = pickle.load(file)
+        data = pickle.load(file) 
 
     print("\n[STEP 1] Running Pre-Kernel Ablation Breusch-Pagan Test...")
     run_pre_bp(data)
