@@ -10,21 +10,13 @@ from sklearn.gaussian_process import GaussianProcessRegressor
 from sklearn.preprocessing import StandardScaler
 
 from kernels import get_kernel_suite, get_kernel_suite_f1
+from acq_strategies import acq_strategies
 from acquisition import compute_acquisition_scores
 
 warnings.filterwarnings("ignore", message="Predicted variances smaller than 0", category=UserWarning)
 
 def run_predictions(data, top_kernels_summary, acq_ablation_summary):
-    # Mapping table to convert strategy string names back into function inputs
-    acq_strategies = {
-        "EI (xi=0.01)": ("EI", 0.01),
-        "EI (Exploration, xi=0.1)": ("EI", 0.10),
-        "UCB (beta=1.96)": ("UCB", 1.96),
-        "UCB (beta=2.58)": ("UCB", 2.58),
-        "PI (xi=0.01)": ("PI", 0.01),
-    }
-
-    # Store next query predictions for Functions 1 through 8
+    
     next_queries_summary = {}
 
     for fn_idx in range(1, 9):
