@@ -1,4 +1,4 @@
-**Updated Statistical Analysis of all 8 Black-Box Function Datasets (after including week 5's obtained query output):**
+***Updated Statistical Analysis of all 8 Black-Box Function Datasets (after including week 5's obtained query output):***
 
 Statistical analysis of Function 1 after week 5:
 -----------------------------------
