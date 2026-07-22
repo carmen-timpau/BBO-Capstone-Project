@@ -6,7 +6,7 @@
 [FUNCTION_1] (Dim=2)
   • Kernel      : Ablation 2: RBF + WhiteNoise (Smooth Gaussian)
   • Acquisition : EI (xi=0.01)
-  • Next Query  : [`0.641187`, `0.456961`]
+  • Next Query  : [0.641187, 0.456961]
 --------------------------------------------------------------------------------------------------------------
 [FUNCTION_2] (Dim=2)
   • Kernel      : Ablation 3: Rational Quadratic + WhiteNoise
