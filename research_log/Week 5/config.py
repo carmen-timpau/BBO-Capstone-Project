@@ -1,4 +1,5 @@
-# Kernel Configurations for each Black-Box function used to generate query predicitions in Week 5 BBO
+# Kernel and Acquisition Configurations for each Black-Box function 
+# used to generate query predicitions in Week 5 BBO
 
 from sklearn.gaussian_process.kernels import RBF, Matern, WhiteKernel
 
