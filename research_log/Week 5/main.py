@@ -5,7 +5,7 @@ Sequential Bayesian Optimisation using Gaussian Processe (GP) surrogate models
 Generating the 5th query points to be submitted for each of the 8 Black-Box functions
 Overall Aim: Global Function Maximisation
 
-Input: w5_input_data.pkl
+Input: w5_input_data.pkl (containing full initial data + 4 submitted queries)
 Output: Printed 5th query coordinates (raw and 6-decimal rounded)
 """
 
@@ -51,7 +51,7 @@ def run_all_functions(data: dict):
     return query_results
 
 if __name__ == "__main__":
-    # Loading pickle data file (full initial data + 4 queries)
+    # Loading pickle data file 
     print("Locating Week 5 input dataset...")
     file_path = "w5_input_data.pkl"
     
