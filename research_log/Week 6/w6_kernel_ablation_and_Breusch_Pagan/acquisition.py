@@ -1,5 +1,5 @@
-# Acquisition Functions (Designed for Batch/Vector Inputs)
-# Tested in Acquisition Ablation Study
+# Computing Scores for Acquisition Functions (Designed for Batch/Vector Inputs)
+# Contains the Acquisition Functions Tested in Acquisition Ablation Study conducted in Week 6 BBO
 
 def compute_acquisition_scores(X_cand, gp, y_best, acq_type, param=0.01):
     """Computes acquisition scores for a given GP and candidate points."""
