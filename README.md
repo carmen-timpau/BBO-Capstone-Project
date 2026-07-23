@@ -1,5 +1,6 @@
  **Black-Box Optimisation (BBO) Capstone Project - Bayesian Optimisation**
 
+<br>
 
 📝 <ins> **Project Description:** </ins> 
 
@@ -29,6 +30,7 @@ The project is in active development as part of the 6-month Professional Certifi
                
 * **Next Steps:** Refactoring the codebase to eliminate repetitive functions within Weeks 1-3 folders.
 
+<br>
 
 ✉️ <ins> **Project Developer Contact:** </ins> 
 
