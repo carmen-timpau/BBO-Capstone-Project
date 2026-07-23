@@ -1,5 +1,7 @@
-# Scrambled Sobol Sampling used to map the search space with low-discrepancy sequences for high-dimensional problems
-# = A type of Randomised Quasi-Monte Carlo (RQMC) sampling
+"""
+Scrambled Sobol Sampling used to map the search space with low-discrepancy sequences for high-dimensional 
+problems. This is a type of Randomised Quasi-Monte Carlo (RQMC) sampling.
+"""
 
 import numpy as np
 from scipy.stats.qmc import Sobol
