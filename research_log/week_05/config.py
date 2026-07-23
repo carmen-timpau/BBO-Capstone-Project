@@ -1,6 +1,6 @@
 """
 Week 5 BBO - Configurations Module
-=================================
+
 Hyperparameter configurations, kernel selections, and acquisition strategies for black-box 
 functions 1 through 8. Used to generate query predicitions in Week 5 of the BBO Capstone Project.
 """
