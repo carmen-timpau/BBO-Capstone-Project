@@ -7,7 +7,6 @@ import numpy as np
 from scipy.stats.qmc import Sobol
 
 def generate_sobol_grid(
-  
     bounds_min: np.ndarray, bounds_max: np.ndarray, m_samples: int = 12
 ) -> np.ndarray:
   
