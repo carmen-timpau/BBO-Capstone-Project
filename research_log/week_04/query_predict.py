@@ -27,7 +27,7 @@ def compute_next_query(
     b_min, b_max = X.min(axis=0), X.max(axis=0)
     x_grid = generate_sobol_grid(b_min, b_max, m_samples=sobol_m)
 
-    # Computing GP posteriors and acquisition scores based on acquisition function type
+    # Computing GP posterior predictions and acquisition scores based on acquisition function type
     if acq_type.upper() == "EI":
         post_mean, post_std = gp.predict(x_grid, return_std=True)
         scores = expected_improvement(
