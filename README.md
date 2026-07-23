@@ -9,7 +9,7 @@ Every week until the completion of the project in late August 2026, each functio
 
 <ins> **Initial Data for all 8 Black-Box Functions to be Maximised:** </ins> 
 
-Can be found in the `initial_data/` folder attached to this repository as `.npy` files. The full initial data formatted as a dictionary can also be accessed via the pickle file `wk1_input_data.pkl` inside the same folder.
+Can be found in the `initial_data/` folder attached to this repository as `.npy` files. Additionally, the full initial dataset formatted as a dictionary is accessible via `wk1_input_data.pkl` inside the same directory.
 
 Research documentation and dicussions are logged in `strategy_discussion.md` and `strategy_summary.md` files within each week's folder.
 
