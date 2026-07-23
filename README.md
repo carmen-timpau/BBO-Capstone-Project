@@ -19,7 +19,7 @@ Research documentation and dicussions are logged in `strategy_discussion.md` and
 
 The project is in active development as part of the 6-month Professional Certification in Machine Learning & AI joint programme at Imperial College London and will be finalised in late August 2026.
 
-* **Current State:** Functional research code logged in `research_log/`. Ongoing Bayesian Optimisation research. 
+* **Current State:** Functional research code logged in `research_log/`; Ongoing Bayesian Optimisation research. 
                
 * **Next Steps:** Refactoring the codebase to eliminate repetitive functions within Weeks 1-3 folders.
 
