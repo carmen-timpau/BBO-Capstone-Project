@@ -21,7 +21,7 @@ def get_function_configs():
             + WhiteKernel(
                 noise_level=1e-6, noise_level_bounds=(1e-16, 1e-2)
             ),
-            "acq_type": "EI",
+            "acq_type": "EI",        # Expected Improvement
             "acq_param": 0.1,
             "sobol_m": 12,
         },
@@ -32,7 +32,7 @@ def get_function_configs():
             + WhiteKernel(
                 noise_level=0.05, noise_level_bounds=(1e-4, 1.0)
             ),
-            "acq_type": "UCB",
+            "acq_type": "UCB",        # Upper Confidence Bound
             "acq_param": 1.96,
             "sobol_m": 12,
         },
