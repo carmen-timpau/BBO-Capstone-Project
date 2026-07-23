@@ -16,6 +16,7 @@ def compute_next_query(
     normalize_y: bool = True,
 ) -> np.ndarray:
     """Fitting GP surrogate and calculating the next optimal query point."""
+    
     # Fitting Gaussian Process (GP)
     gp = GaussianProcessRegressor(
         kernel=kernel, alpha=alpha, normalize_y=normalize_y
