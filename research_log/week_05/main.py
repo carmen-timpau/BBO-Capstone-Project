@@ -1,6 +1,6 @@
 """
 Week 5 Black-Box Optimisation (BBO) Capstone Project 
-Sequential Bayesian Optimisation using Gaussian Processe (GP) surrogate models
+Sequential Bayesian Optimisation using Gaussian Processes (GP) surrogate models
 
 Generating the 5th query points to be submitted for each of the 8 Black-Box functions
 Overall Aim: Global Function Maximisation
