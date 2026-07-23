@@ -17,8 +17,7 @@ Can be found in the `initial_data` folder attached to this repository.
 
 The project is in active development as part of the 6-month Professional Certification in Machine Learning & AI joint programme at Imperial College London and will be finalised in late August 2026.
 
-* **Current State:** Functional research code logged on the `research_log` folder;
-                     Ongoing documented and discussed Bayesian Optimisation research.
+* **Current State:** Functional research code logged on the `research_log` folder; Ongoing Bayesian Optimisation research. Documentations and dicussions are logged in `strategy_discussion.md` and `strategy_summary.md` files within each week's folder.
                
 * **Next Steps:** Refactoring the codebase to eliminate repetitive functions within Weeks 1-3 folders.
 
