@@ -26,7 +26,7 @@ The project is in active development as part of the 6-month Professional Certifi
 * **Next Steps:** Refactoring the codebase to eliminate repetitive functions within Weeks 1-3 folders.
 
 
-✉️ <ins> **Project Developer Contact Details:** </ins> 
+✉️ <ins> **Project Developer Contact:** </ins> 
 
 Carmen-Mihaela Timpau, carmen.timpau21@alumni.imperial.ac.uk, Imperial College London, United Kingdom.
 
