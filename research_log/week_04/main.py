@@ -40,6 +40,7 @@ def run_all_functions(data: dict):
             acq_param=cfg["acq_param"],
             sobol_m=cfg["sobol_m"],
             alpha=cfg["alpha"],
+            normalize_y=cfg["normalize_y"],
         )
 
         query_results[fn_key] = x_next
