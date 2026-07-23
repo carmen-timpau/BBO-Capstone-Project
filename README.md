@@ -30,4 +30,4 @@ The project is in active development as part of the 6-month Professional Certifi
 
 Carmen-Mihaela Timpau, carmen.timpau21@alumni.imperial.ac.uk, Imperial College London, United Kingdom.
 
-_Please do get in touch if you have any questions or want to discuss this project._
+_Please feel free to reach out with any questions, feedback, or ideas for dicussion._
