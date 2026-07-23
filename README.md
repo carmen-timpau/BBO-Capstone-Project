@@ -7,9 +7,9 @@ Given an initial dataset of true datapoints describing 8 different unrelated Bla
 
 Every week until the completion of the project in late August 2026, each function can only be queried once. The inputs will be processed in the same week and the outputs received will help inform the next steps: informing the coordinates of the next set of queries to be submitted for processing the upcoming week and refining the optimisation startegy for each of the 8 functions in a thoughtful, data-driven and tailored approach.
 
-<ins> **Initial Data:** </ins> 
+<ins> **Initial Datasets:** </ins> 
 
-Initial Data for all 8 Black-Box functions to be maximised can be found in the `initial_data/` folder attached to this repository as `.npy` files. Additionally, the full initial dataset formatted as a dictionary is accessible via `wk1_input_data.pkl` inside the same directory.
+Initial datasets for all 8 Black-Box functions to be maximised can be found in the `initial_data/` folder attached to this repository as `.npy` files. Additionally, the full initial dataset formatted as a dictionary is accessible via `wk1_input_data.pkl` inside the same directory.
 
 <ins> **Research Documentation & Dicussion:** </ins> 
 
