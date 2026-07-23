@@ -11,7 +11,7 @@ Every week until the completion of the project in late August 2026, each functio
 
 Can be found in the `initial_data/` folder attached to this repository as `.npy` files. Additionally, the full initial dataset formatted as a dictionary is accessible via `wk1_input_data.pkl` inside the same directory.
 
-</ins> **Research Documentation and Dicussion:** </ins> 
+<ins> **Research Documentation and Dicussion:** </ins> 
 
 Can be found in `strategy_discussion.md` and `strategy_summary.md` files within each week's directory.
 
