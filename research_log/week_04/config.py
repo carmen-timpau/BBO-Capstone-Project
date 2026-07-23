@@ -1,16 +1,15 @@
 """
-Week 4 BBO - Configuration Module
+Week 4 BBO - Configurations Module
 =================================
 Hyperparameter configurations, kernel selections, and acquisition strategies for black-box 
 functions 1 through 8. Used to generate query predicitions in Week 4 of the BBO Capstone Project.
 """
 
-
 from sklearn.gaussian_process.kernels import RBF, Matern
 
 def get_function_configs():
   
-    """Returning configuration dictionary for each of the 8 Black-Box functions (Week 4)."""
+    """Returning configurations dictionary for each of the 8 Black-Box functions (Week 4)."""
   
     return {
         1: {
