@@ -1,5 +1,10 @@
+import sys
+import os
 import pickle
-from kernel_ablation import run_kernel_ablation
+
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
+
+from kernel_ablation.kernel_ablation import run_kernel_ablation
 from breusch_pagan import run_bp
 
 def main():
