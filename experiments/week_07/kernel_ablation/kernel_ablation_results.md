@@ -1,4 +1,5 @@
-
+**Week 7 BBO - Kernel Ablation Study Results **
+```text
 ----------------------------------------------------------------------------------------------------
                      FUNCTION 1 (Dim=2, N=16) - KERNEL ABLATION STUDY
 ----------------------------------------------------------------------------------------------------
@@ -131,3 +132,4 @@ function_5            Ablation 3: Rational Quadratic + WhiteNoise   0.61389  Rat
 function_6            Ablation 3: Rational Quadratic + WhiteNoise   0.77273   RationalQuadratic(alpha=0.894, length_scale=2.01) + WhiteKernel(noise_level=1e-06)
 function_7  Ablation 4: Matern 2.5 WITHOUT WhiteNoise (Noiseless)   0.74216                   Matern(length_scale=[4.16, 1.41, 1e+04, 2.46, 1.17, 2.23], nu=2.5)
 function_8  Ablation 4: Matern 2.5 WITHOUT WhiteNoise (Noiseless)   0.98088          Matern(length_scale=[4.14, 6.41, 3.31, 10.4, 17, 162, 4.33, 1e+04], nu=2.5)
+```
