@@ -18,7 +18,7 @@ from kernels import get_kernel_suite, get_kernel_suite_f1
 
 warnings.filterwarnings("ignore", category=ConvergenceWarning)
 
-def run_post_bp(data, top_kernels_summary):
+def run_bp(data, top_kernels_summary):
     # Setup subplots for Functions 1 to 8 (2 rows, 4 columns) in a single figure
     fig, axes = plt.subplots(2, 4, figsize=(24, 12))
     axes = axes.flatten()
