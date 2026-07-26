@@ -181,7 +181,7 @@ def run_bp(data, top_kernels_summary):
 
     # Saving the combined multi-panel plot and displaying it
     plt.tight_layout()
-    output_filename = 'wk7_post_ablation_breusch_pagan_all_functions.png'
+    output_filename = 'wk7_breusch_pagan_all_functions.png'
     fig.savefig(output_filename, dpi=300, bbox_inches='tight')
     print(f"All residual plots successfully saved to '{output_filename}'")
     plt.show()
