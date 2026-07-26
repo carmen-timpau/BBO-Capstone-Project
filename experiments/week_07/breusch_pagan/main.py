@@ -11,7 +11,7 @@ def main():
     print("Loading Week 7 full input data snapshot...") # All data collected so far till Week 7 (initial data + 6 submitted queries)
     data_path = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', 'wk7_input_data.pkl'))
     with open(data_path, "rb") as file:
-    data = pickle.load(file)
+        data = pickle.load(file)
 
     print("\n[STEP 1] Running Kernel Ablation Study...")
     top_kernels = run_kernel_ablation(data)
