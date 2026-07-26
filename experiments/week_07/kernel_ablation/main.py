@@ -1,0 +1,21 @@
+import sys
+import os
+import pickle
+
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
+
+from kernel_ablation import run_kernel_ablation
+
+def main():
+    print("Loading Week 7 full input data snapshot...")
+    data_path = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', 'wk7_input_data.pkl'))
+    with open(data_path, "rb") as file:
+        data = pickle.load(file)
+
+    print("\n[STEP 1] Running Kernel Ablation Study...")
+    top_kernels = run_kernel_ablation(data)
+
+    print("\nKernel Ablation Study execution complete!")
+
+if __name__ == "__main__":
+    main()
