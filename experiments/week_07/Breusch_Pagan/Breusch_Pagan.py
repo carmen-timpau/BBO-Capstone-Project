@@ -1,4 +1,3 @@
-
 # Week 7 BBO - Breusch-Pagan Homoscedasticity Analysis & Diagnostics for Functions 1-8
 # Using the winning kernel objects dynamically retrieved from the previously completed Kernel Ablation Study
 
