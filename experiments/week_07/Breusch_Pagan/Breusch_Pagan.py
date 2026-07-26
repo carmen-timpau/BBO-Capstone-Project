@@ -110,6 +110,9 @@ def run_bp(data, top_kernels_summary):
             fn_residuals, X_test_matrix
         )
 
+        # Dynamically determining the label tag based on the Breusch-Pagan p-value verdict
+        hetero_label = "Heteroscedastic" if p_value < 0.05 else "Homoscedastic"
+
         # Plotting Residuals vs GP Predictions into the shared multi-panel layout
         ax.scatter(
             fn_predictions,
@@ -126,8 +129,8 @@ def run_bp(data, top_kernels_summary):
         ylabel_target = "Residual" if fn_idx != 1 else "Residual ($\log_{10}$)"
 
         ax.set_title(
-            f"Function {fn_idx} (N={n_samples})\nRMSE: {fn_rmse:.3f} | R²: {fn_r2:.3f} | BP p: {p_value:.4f}",
-            fontsize=13,
+            f"Function {fn_idx} — {hetero_label} (N={n_samples})\nRMSE: {fn_rmse:.3f} | R²: {fn_r2:.3f} | BP p: {p_value:.4f}",
+            fontsize=11,
             fontweight="bold",
         )
         ax.set_xlabel(f"Predicted Value (${title_target_label}$)", fontsize=8)
