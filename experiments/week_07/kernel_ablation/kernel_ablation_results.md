@@ -1,4 +1,4 @@
-**Week 7 BBO - Kernel Ablation Study Results **
+**Week 7 BBO - Kernel Ablation Study Results**
 ```text
 ----------------------------------------------------------------------------------------------------
                      FUNCTION 1 (Dim=2, N=16) - KERNEL ABLATION STUDY
