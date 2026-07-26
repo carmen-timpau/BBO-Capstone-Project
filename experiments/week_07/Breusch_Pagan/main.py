@@ -1,6 +1,6 @@
 import pickle
 from kernel_ablation import run_kernel_ablation
-from Breusch_Pagan import run_bp
+from breusch_pagan import run_bp
 
 def main():
     print("Loading Week 7 full input data snapshot...") # All data collected so far till Week 7 (initial data + 6 submitted queries)
