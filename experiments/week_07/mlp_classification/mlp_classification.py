@@ -1,4 +1,6 @@
-"""Using Multilayer Perceptrons (MLPs) to classify the outputs of the 8 small-dataset Black-Box functions
+"""Data Quality Control: Using Neural Network (MLP) Classification for Bayesian Optimisation
+
+Using Multilayer Perceptrons (MLPs) to classify the outputs of the 8 small-dataset Black-Box functions.
 
 Their classification performance will be compared with that of NuSVMs for each function, using 
 the ROC-AUC (Receiver Operating Characteristic - Area Under Curve) performance metric.
