@@ -19,5 +19,7 @@ def main():
     print("\n[STEP 2] Performing Target Classification on Each Function (Top 25% NuSVM)...")
     run_svm_classification(data, top_kernels)
 
+    print("\nWeek 7 SVM Classification Pipeline execution complete!")
+
 if __name__ == "__main__":
     main()
