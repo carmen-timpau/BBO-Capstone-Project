@@ -10,6 +10,8 @@ _Evaluation Methodology:_
   
 - **Performance Metric**: Out-of-sample Root Mean Squared Error (RMSE) evaluated across unseen test folds to measure generalisation capability and prediction accuracy.
 
+_Results Summary:_
+
 ```text
 ==============================================================================================================
         SURROGATE MODELING PERFORMANCE COMPARISON (LOOCV: GP vs. Deep Ensemble RMSE)
