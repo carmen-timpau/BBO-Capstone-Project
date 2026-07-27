@@ -3,7 +3,7 @@ Main Execution Script: Week 07 Full Machine Learning Pipeline
 -----------------------------------------------------------
 Coordinates the end-to-end execution of:
 1. Kernel Ablation Study (Gaussian Process Regression optimization)
-2. Breusch-Pagan Homoscedasticity Analysis & Diagnostics
+2. Breusch-Pagan Homo/heteroscedasticity Analysis & Diagnostics
 3. SVM Classification (NuSVC modeling for top-25% acquisition filtering)
 4. MLP Classification (MLPClassifier modeling for top-25% acquisition filtering)
 5. Classifier Selection Summary (Comparative analysis and optimal model routing)
@@ -45,7 +45,7 @@ def main():
     top_kernels = run_kernel_ablation(data)
     print("\n[SUCCESS] Kernel ablation study execution complete!")
 
-    # Step 3. Executing Breusch-Pagan Homoscedasticity Analysis (Part 2)
+    # Step 3. Executing Breusch-Pagan Homo/heteroscedasticity Analysis (Part 2)
     print("\n" + "=" * 100)
     print(" [STEP 2] Running Breusch-Pagan Homo/Heteroscedasticity Analysis...")
     print("=" * 100)
