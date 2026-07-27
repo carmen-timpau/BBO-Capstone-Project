@@ -64,7 +64,7 @@ def run_single_seed_rollout(seed, X_full, Y_target, true_global_max, best_kernel
                 normalize_y=True, 
                 n_restarts_optimizer=10, 
                 optimizer="fmin_l_bfgs_b", 
-                random_state=seed
+                random_state=gp_random_state
             )
             
             with warnings.catch_warnings():
