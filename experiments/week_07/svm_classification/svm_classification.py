@@ -3,6 +3,9 @@
 Training NuSVM classifiers on Week 7 input data (top 25% highest output datapoints within each functions' dataset) 
 to establish a boundary between high-quality and low-quality data points. This evaluation was conducted to potentially 
 better inform query selection via Bayesian Optimization.
+
+Using Stratified 3-Fold Cross-Validation ROC-AUC (Receiver Operating Characteristic - Area Under Curve) as a classification performance metric
+for comparison of SVM classification performance with that of Neural Networks (MLPs). 
 """
 
 import numpy as np
@@ -10,12 +13,17 @@ import matplotlib.pyplot as plt
 from sklearn.decomposition import PCA
 from sklearn.preprocessing import StandardScaler
 from sklearn.svm import NuSVC
+from sklearn.model_selection import StratifiedKFold
+from sklearn.metrics import roc_auc_score
 
 def run_svm_classification(data, top_kernels):
     """
     Training a NuSVC classifier on the top 25% target region for each of the 8 black-box functions, 
     using winning kernels for labeling (from previous kernel ablation study), and plotting their 2D PCA decision boundaries.
     """
+    # Setting up Stratified 3-Fold Cross-Validation for robust classification performance evaluation
+    cv = StratifiedKFold(n_splits=3, shuffle=True, random_state=42)
+
     # Setting up subplots for Functions 1 to 8 (2 rows, 4 columns)
     fig, axes = plt.subplots(2, 4, figsize=(24, 12))
     axes = axes.flatten()
@@ -60,6 +68,18 @@ def run_svm_classification(data, top_kernels):
                     horizontalalignment='center', verticalalignment='center')
             ax.set_title(f"Func {fn_idx}")
             continue
+
+        # Out-of-Sample CV Evaluation for Robust ROC-AUC using NuSVC
+        oof_preds = np.zeros(n_samples)
+        for train_idx, test_idx in cv.split(X_pca, Y_binary):
+            X_train, X_test = X_pca[train_idx], X_pca[test_idx]
+            y_train, y_test = Y_binary[train_idx], Y_binary[test_idx]
+            
+            fold_svm = NuSVC(nu=0.25, kernel="rbf", gamma="scale", probability=True, random_state=42)
+            fold_svm.fit(X_train, y_train)
+            oof_preds[test_idx] = fold_svm.predict_proba(X_test)[:, 1]
+
+        cv_auc_score = roc_auc_score(Y_binary, oof_preds)
 
         # Fitting NuSVC with nu=0.25 to target the top 25% fraction
         svm = NuSVC(nu=0.25, kernel="rbf", gamma="scale", probability=True, random_state=42)
@@ -112,7 +132,7 @@ def run_svm_classification(data, top_kernels):
         var_exp = pca.explained_variance_ratio_ * 100
         ax.set_xlabel(f'PC1 ({var_exp[0]:.2f}%)', fontsize=9)
         ax.set_ylabel(f'PC2 ({var_exp[1]:.2f}%)', fontsize=9)
-        ax.set_title(f'Func {fn_idx} | {kernel_short_name}\nPCA + NuSVC (Top 25%)', fontsize=9, fontweight='bold')
+        ax.set_title(f'Function {fn_idx} (NuSVC Top 25%), PCA Projection Space\nStratified 3-Fold Cross-Validation ROC-AUC: {cv_auc_score:.3f}', fontsize=13, fontweight='bold')
         ax.grid(True, linestyle=':', alpha=0.4)
 
     plt.tight_layout()
