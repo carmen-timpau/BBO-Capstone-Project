@@ -4,8 +4,8 @@ Training NuSVM classifiers on Week 7 input data (top 25% highest output datapoin
 to establish a boundary between high-quality and low-quality data points. This evaluation was conducted to potentially 
 better inform query selection via Bayesian Optimization.
 
-Using Stratified 3-Fold Cross-Validation ROC-AUC (Receiver Operating Characteristic - Area Under Curve) as a classification performance metric
-for comparison of SVM classification performance with that of Neural Networks (MLPs). 
+Using Stratified 3-Fold Cross-Validation ROC-AUC (Receiver Operating Characteristic - Area Under Curve) as a 
+classification performance metric for comparison of SVM classification performance with that of Neural Networks (MLPs). 
 """
 
 import os
