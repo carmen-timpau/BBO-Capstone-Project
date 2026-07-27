@@ -57,7 +57,10 @@ def run_single_seed_rollout(seed, X_full, Y_target, true_global_max, best_kernel
 
             scaler = StandardScaler()
             X_train_scaled = scaler.fit_transform(X_train)
-            
+
+
+            # Explicitly passing an integer seed to random_state (using deterministic offset based on seed prevents core collisions)
+            gp_random_state = int(seed) + 42
             gp = GaussianProcessRegressor(
                 kernel=best_kernel, 
                 alpha=1e-6, 
