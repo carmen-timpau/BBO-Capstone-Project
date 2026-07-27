@@ -8,8 +8,8 @@ Main strategies used:
 - Offline Rollout Simulation: Iteratively selects points from pre-computed pools (X_full, Y_target) 
   using diverse acquisition strategies (e.g., EI, UCB, PI) to track simple regret trajectories.
   
-- GP Surrogate Modeling: Fits Gaussian Process Regressors with optimized kernels using 
-  gradient-based L-BFGS-B optimization (`optimizer="fmin_l_bfgs_b"`, `n_restarts_optimizer=10`) 
+- GP Surrogate Modeling: Fits Gaussian Process Regressors with optimized kernels (from prior kernel ablation study) 
+  using gradient-based L-BFGS-B optimization (`optimizer="fmin_l_bfgs_b"`, `n_restarts_optimizer=10`) 
   to maximize Log Marginal Likelihood and ensure reliable uncertainty estimates.
   
 - Multi-Seed Parallelization: Runs rollouts across multiple random seeds in (20) parallel via Joblib 
