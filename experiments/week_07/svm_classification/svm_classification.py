@@ -138,7 +138,7 @@ def run_svm_classification(data, top_kernels):
     plt.tight_layout()
 
     # Saving the multi-panel figure as a high-resolution PNG file
-    output_filename = 'wk7inputdata_svm_boundaries_all_functions.png'
+    output_filename = 'wk7_inputdata_svm_boundaries_all_functions.png'
     fig.savefig(output_filename, dpi=300, bbox_inches='tight')
     print(f"NuSVC classification boundary plots successfully saved to '{output_filename}'")
     
