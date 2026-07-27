@@ -1,3 +1,15 @@
+"""Surrogate Modeling: Evaluation of Gaussian Processes for Bayesian Optimization
+
+Training and evaluating Gaussian Process Regressors using ablation-tuned kernels for Black-Box function surrogate 
+modelling in Bayesian Optimisation, to capture aleatoric and epistemic uncertainty and provide robust predictive distributions.
+
+This experiment was conducted on Week 7 input data to assess model accuracy and performance before potential deployment in
+Bayesian Optimization loop for next query prediction.
+
+The performance metric for surrogate modeling that will be used to compare Gaussian Processes with Deep Ensembles of Neural Networks as
+surrogate models for the Bayesian Optimisation of the 8 Black-Box functions will be Root Mean Squared Error (RMSE).
+"""
+
 from sklearn.gaussian_process import GaussianProcessRegressor
 
 def evaluate_gaussian_process(X_train, y_train, X_test, best_kernel):
