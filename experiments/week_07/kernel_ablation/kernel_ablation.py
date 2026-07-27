@@ -28,7 +28,7 @@ def run_kernel_ablation(data):
         
         n_samples, n_dims = X.shape
 
-        # Apply special target preprocessing and kernel suite for Function 1
+        # Applying special target preprocessing and kernel suite for Function 1
         if fn_idx == 1:
             # Preprocessing target for Function 1 (safe clipping + log10 scale)
             Y_safe = np.clip(Y, 1e-300, None)
