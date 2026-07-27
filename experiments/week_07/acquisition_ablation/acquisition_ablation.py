@@ -1,7 +1,22 @@
-"""Robust Multi-Step Sequential Offline Bayesian Optimization Rollout Ablation Study 
+"""Robust Multi-Step Sequential Offline Bayesian Optimization Rollout Ablation Study (Functions 1–8)
 
-This robust acquisition ablation study runs entirely on pre-collected datasets (X_full and Y_target) without 
-querying a live, physical black-box function in real-time, functioning as an offline sequential optimization process.
+This robust acquisition ablation study runs entirely on pre-existing datasets (X_full and Y_target) without querying 
+a live, physical black-box function in real-time, functioning as an offline sequential optimization process.
+
+Main strategies used:
+
+- Offline Rollout Simulation: Iteratively selects points from pre-computed pools (X_full, Y_target) 
+  using diverse acquisition strategies (e.g., EI, UCB, PI) to track simple regret trajectories.
+  
+- GP Surrogate Modeling: Fits Gaussian Process Regressors with optimized kernels using 
+  gradient-based L-BFGS-B optimization (`optimizer="fmin_l_bfgs_b"`, `n_restarts_optimizer=10`) 
+  to maximize Log Marginal Likelihood and ensure reliable uncertainty estimates.
+  
+- Multi-Seed Parallelization: Runs rollouts across multiple random seeds in (20) parallel via Joblib 
+  to eliminate stochastic initialization bias.
+  
+- Comprehensive Performance Metrics Evaluation: Computes final simple regret and Area Under the Regret Curve (AURC) 
+  to rigorously rank acquisition strategies based on both ultimate accuracy (final regret) and convergence speed.
 """
 
 import os
