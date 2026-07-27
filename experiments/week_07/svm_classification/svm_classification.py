@@ -24,6 +24,9 @@ def run_svm_classification(data, top_kernels):
     # Setting up Stratified 3-Fold Cross-Validation for robust classification performance evaluation
     cv = StratifiedKFold(n_splits=3, shuffle=True, random_state=42)
 
+    # List to keep track of ROC-AUC scores for each function to calculate the mean later
+    auc_scores = []
+
     # Setting up subplots for Functions 1 to 8 (2 rows, 4 columns)
     fig, axes = plt.subplots(2, 4, figsize=(24, 12))
     axes = axes.flatten()
@@ -80,6 +83,9 @@ def run_svm_classification(data, top_kernels):
             oof_preds[test_idx] = fold_svm.predict_proba(X_test)[:, 1]
 
         cv_auc_score = roc_auc_score(Y_binary, oof_preds)
+        
+        # Storing the score for the final mean calculation
+        auc_scores.append(cv_auc_score)
 
         # Fitting NuSVC with nu=0.25 to target the top 25% fraction
         svm = NuSVC(nu=0.25, kernel="rbf", gamma="scale", probability=True, random_state=42)
@@ -136,6 +142,11 @@ def run_svm_classification(data, top_kernels):
         ax.grid(True, linestyle=':', alpha=0.4)
 
     plt.tight_layout()
+
+    # Calculating and printing the mean ROC-AUC across all successfully evaluated functions
+    if auc_scores:
+        mean_auc = np.mean(auc_scores)
+        print(f"\nMean Stratified 3-Fold CV ROC-AUC across evaluated functions: {mean_auc:.3f}")
 
     # Saving the multi-panel figure as a high-resolution PNG file
     output_filename = 'wk7_inputdata_svm_boundaries_all_functions.png'
