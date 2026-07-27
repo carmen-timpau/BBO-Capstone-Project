@@ -1,5 +1,5 @@
 """
-Classifier Selection and Comparison Module
+NuSVM vs MLP Classifier Selection and Comparison Module
 ------------------------------------------
 Comparing out-of-sample Stratified K-Fold CV ROC-AUC scores between NuSVC and MLPClassifier 
 across all valid dataset functions to determine the optimal winning classifier for top-25% 
