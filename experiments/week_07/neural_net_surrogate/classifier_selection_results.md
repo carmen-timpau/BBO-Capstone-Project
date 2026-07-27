@@ -1,11 +1,13 @@
-# NuSVM vs MLP Classifier Selection Results Summary
+# Personalised NuSVM vs MLP Classifier Selection for Acquisition Filtering Strategy Selection for Each Function
 Comparative evaluation of **NuSVC** (Support Vector Classifier) and **MLPClassifier** (Multilayer Perceptron Neural Network) 
 across all 8 Black-Box functions. 
 
 ## Evaluation Methodology
-* **Task:** Binary classification to identify the top 25% highest-performing target regions ($75^{\text{th}}$ percentile threshold) for each black-box function dataset.
+* **Task:** Binary classification to identify the top 25% highest-performing target regions ($75^{\text{th}}$ percentile threshold) for each black-box function dataset. The winning classifier for each function will be used for acquistion filtering in the Bayesian Optimisation query prediction pipeline for Week 7.
 * **Validation Strategy:** Stratified 3-Fold Cross-Validation.
 * **Performance Metric:** Out-of-sample Receiver Operating Characteristic Area Under the Curve (ROC-AUC) evaluated across unseen test folds to prevent data leakage and measure generalization capability.
+
+## Results
 
 ```text
 ==========================================================================================
