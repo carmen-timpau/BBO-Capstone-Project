@@ -22,7 +22,7 @@ def run_kernel_ablation(data):
             print(f"Skipping {fn_key}: Not found in data dictionary.")
             continue
 
-        # Extract X and Y
+        # Extracting X and Y
         X = np.array(data[fn_key]["x"])
         Y = np.array(data[fn_key]["y"]).flatten()
         
