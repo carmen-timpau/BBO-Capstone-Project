@@ -24,6 +24,8 @@ def run_bp(data, top_kernels_summary):
     fig, axes = plt.subplots(2, 4, figsize=(24, 12))
     axes = axes.flatten()
 
+    breusch_pagan_summary = {}
+
     # Running Diagnostics and Breusch-Pagan Test across Functions 1 to 8
     for fn_idx in range(1, 9):
         fn_key = f"function_{fn_idx}"
@@ -111,8 +113,20 @@ def run_bp(data, top_kernels_summary):
             fn_residuals, X_test_matrix
         )
 
-        # Dynamically determining the label tag based on the Breusch-Pagan p-value verdict
+        # Dynamically determine the label tag based on the Breusch-Pagan p-value verdict
         hetero_label = "Heteroscedastic" if p_value < 0.05 else "Homoscedastic"
+
+        # Saving the results inside the dictionary for this function (in memory)
+        breusch_pagan_summary[fn_key] = {
+            "Dim": n_dims,
+            "N_Samples": n_samples,
+            "Winning Kernel": winning_variant_name,
+            "RMSE": fn_rmse,
+            "R2": fn_r2,
+            "BP_Lagrange_Multiplier": lm_stat,
+            "BP_P_Value": p_value,
+            "Verdict": hetero_label
+        }
 
         # Plotting Residuals vs GP Predictions into the shared multi-panel layout
         ax.scatter(
@@ -146,41 +160,25 @@ def run_bp(data, top_kernels_summary):
         )
 
         # Printing Diagnostics and Results
-        print(
-            "=========================================================================="
-        )
-        print(
-            f"    FUNCTION {fn_idx} DIAGNOSTICS — WINNING CONFIG: {winning_title}"
-        )
-        print(
-            "=========================================================================="
-        )
+        print("==========================================================================")
+        print(f"    FUNCTION {fn_idx} DIAGNOSTICS — WINNING CONFIG: {winning_title}")
+        print("==========================================================================")
         print(f"Full Dataset Log Marginal Likelihood (LML) : {full_lml:.3f}")
         print(f"Mean LOOCV Fold Log Marginal Likelihood    : {mean_loocv_lml:.3f}")
         print(f"LOOCV Root Mean Squared Error (RMSE)       : {fn_rmse:.4f}")
         print(f"LOOCV R-squared Score                      : {fn_r2:.4f}")
         print(f"Breusch-Pagan Test p-value                 : {p_value:.5f}")
-        print(
-            "--------------------------------------------------------------------------"
-        )
+        print("--------------------------------------------------------------------------")
         print(f"Learned Kernel Parameters:\n{gp_full.kernel_}")
-        print(
-            "--------------------------------------------------------------------------"
-        )
+        print("--------------------------------------------------------------------------")
 
         if p_value < 0.05:
-            print(
-                f"Verdict for Function {fn_idx} ({n_samples} datapoints, Week 7): Statistically HETEROSCEDASTIC"
-            )
+            print(f"Verdict for Function {fn_idx} ({n_samples} datapoints, Week 7): Statistically HETEROSCEDASTIC")
         else:
-            print(
-                f"Verdict for Function {fn_idx} ({n_samples} datapoints, Week 7): Statistically HOMOSCEDASTIC"
-            )
-        print(
-            "==========================================================================\n"
-        )
+            print(f"Verdict for Function {fn_idx} ({n_samples} datapoints, Week 7): Statistically HOMOSCEDASTIC")
+        print("==========================================================================\n")
 
-    # Automatically routing output into week_07/diagnostics_results folder
+    # Automatically routing output plot into week_07/diagnostics_results folder
     output_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', 'diagnostics_results'))
     os.makedirs(output_dir, exist_ok=True)
 
@@ -189,3 +187,5 @@ def run_bp(data, top_kernels_summary):
     fig.savefig(output_filename, dpi=300, bbox_inches='tight')
     print(f"All residual plots successfully saved to '{output_filename}'")
     plt.show()
+
+    return breusch_pagan_summary
