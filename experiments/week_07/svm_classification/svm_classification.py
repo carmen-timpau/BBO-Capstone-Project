@@ -8,6 +8,7 @@ Using Stratified 3-Fold Cross-Validation ROC-AUC (Receiver Operating Characteris
 for comparison of SVM classification performance with that of Neural Networks (MLPs). 
 """
 
+import os
 import numpy as np
 import matplotlib.pyplot as plt
 from sklearn.decomposition import PCA
@@ -148,8 +149,11 @@ def run_svm_classification(data, top_kernels):
         mean_auc = np.mean(svm_auc_scores)
         print(f"\nMean Stratified 3-Fold CV ROC-AUC across evaluated functions: {mean_auc:.3f}")
 
-    # Saving the multi-panel figure as a high-resolution PNG file
-    output_filename = 'wk7_inputdata_svm_boundaries_all_functions.png'
+    # Automatically routing output into week_07/diagnostics_results folder
+    output_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', 'diagnostics_results'))
+    os.makedirs(output_dir, exist_ok=True)
+
+    output_filename = os.path.join(output_dir, 'wk7_inputdata_svm_boundaries_all_functions.png')
     fig.savefig(output_filename, dpi=300, bbox_inches='tight')
     print(f"NuSVC classification boundary plots successfully saved to '{output_filename}'")
     
