@@ -1,3 +1,15 @@
+**Personalised Ablation-Tuned GP vs. Deep Ensemble Surrogate Selection**
+
+Comparative evaluation of ablation-tuned Gaussian Processes (GPs) and Deep Ensembles of Multi-Layer Perceptrons across all 8 Black-Box functions for robust surrogate modelling and uncertainty quantification in the Bayesian Optimisation pipeline.
+
+_Evaluation Methodology:_
+
+- **Task**: Regression to model and predict black-box objective values for each function dataset. The winning surrogate model for each function will be used for objective function approximation and next query prediction in the Bayesian Optimisation loop for Week 7.
+  
+- **Validation Strategy**: Leave-One-Out Cross-Validation (LOOCV).
+  
+- **Performance Metric**: Out-of-sample Root Mean Squared Error (RMSE) evaluated across unseen test folds to measure generalisation capability and prediction accuracy.
+
 ```text
 ==============================================================================================================
         SURROGATE MODELING PERFORMANCE COMPARISON (LOOCV: GP vs. Deep Ensemble RMSE)
