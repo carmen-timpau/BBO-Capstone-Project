@@ -1,6 +1,6 @@
 def unwarp_predictions_and_values(predictions, fn_key, warpers):
     """
-    Transforms the warped predictions back to the original objective scale 
+    Transforming the warped predictions back to the original objective scale 
     using the stored HEBO warper instance if applicable.
     """
     warper = warpers.get(fn_key, None)
