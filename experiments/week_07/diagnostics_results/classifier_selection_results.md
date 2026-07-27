@@ -9,7 +9,7 @@ _Evaluation Methodology:_
 * **Validation Strategy:** Stratified 3-Fold Cross-Validation.
 * **Performance Metric:** Out-of-sample Receiver Operating Characteristic Area Under the Curve (ROC-AUC) evaluated across unseen test folds to prevent data leakage and measure generalization capability.
 
-## Results Summary
+_Results Summary:_
 
 ```text
 ==========================================================================================
