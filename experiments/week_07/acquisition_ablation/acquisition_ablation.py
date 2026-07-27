@@ -231,6 +231,6 @@ def run_sequential_acq_ablation(data, top_kernels_summary, n_init=5, n_iteration
         print(f"{fn_k.upper()}: {res['Best Acquisition']} (Final Regret: {res['Mean Final Regret']}, AURC: {res['Mean AURC']})")
     print("=" * 80)
 
-    plot_master_convergence_grid(all_functions_regrets, output_dir="week_07/diagnostics_results", filename="wk7_acquisition_ablation_all_functions.png")
+    plot_master_convergence_grid(all_functions_regrets, output_dir="week_07/diagnostics_results", filename="wk7_acquisition_ablation_results_all_functions.png")
 
     return sequential_ablation_summary
