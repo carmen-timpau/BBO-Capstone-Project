@@ -1,6 +1,7 @@
 # Week 7 BBO - Breusch-Pagan Homoscedasticity Analysis & Diagnostics for Functions 1-8
 # Using the winning kernel objects dynamically retrieved from the previously completed Kernel Ablation Study
 
+import os
 import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
@@ -179,9 +180,12 @@ def run_bp(data, top_kernels_summary):
             "==========================================================================\n"
         )
 
-    # Saving the combined multi-panel plot and displaying it
+    # Automatically routing output into week_07/diagnostics_results folder
+    output_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', 'diagnostics_results'))
+    os.makedirs(output_dir, exist_ok=True)
+
     plt.tight_layout()
-    output_filename = 'wk7_breusch_pagan_all_functions.png'
+    output_filename = os.path.join(output_dir, 'wk7_breusch_pagan_all_functions.png')
     fig.savefig(output_filename, dpi=300, bbox_inches='tight')
     print(f"All residual plots successfully saved to '{output_filename}'")
     plt.show()
