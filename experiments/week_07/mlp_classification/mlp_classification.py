@@ -1,4 +1,4 @@
-"""Using Multilayer Perceptrons (MLP) (MLPs) to classify the outputs of the 8 small-dataset Black-Box functions
+"""Using Multilayer Perceptrons (MLPs) to classify the outputs of the 8 small-dataset Black-Box functions
 
 Their classification performance will be compared with that of NuSVMs for each function, using 
 the ROC-AUC (Receiver Operating Characteristic - Area Under Curve) performance metric.
