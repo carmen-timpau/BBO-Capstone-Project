@@ -4,10 +4,11 @@ Training MLPClassifier models on Week 7 input data (top 25% highest output datap
 to establish a boundary between high-quality and low-quality data points. This evaluation was conducted to potentially 
 better inform query selection via Bayesian Optimization.
 
-Using Stratified 3-Fold Cross-Validation ROC-AUC (Receiver Operating Characteristic - Area Under Curve) as a classification performance metric
-for comparison of MLP classification performance with that of NuSVC models. 
+Using Stratified 3-Fold Cross-Validation ROC-AUC (Receiver Operating Characteristic - Area Under Curve) as a classification 
+performance metric for comparison of MLP classification performance with that of NuSVC models. 
 """
 
+import os
 import numpy as np
 import matplotlib.pyplot as plt
 from sklearn.decomposition import PCA
@@ -100,7 +101,7 @@ def run_mlp_classification(data):
         mlp.fit(X_pca, Y_binary)
 
         # Creating grid for plotting decision probability landscape
-        padding = 0.8  
+        padding = 0.8 
         x_min, x_max = X_pca[:, 0].min() - padding, X_pca[:, 0].max() + padding
         y_min, y_max = X_pca[:, 1].min() - padding, X_pca[:, 1].max() + padding
 
@@ -169,8 +170,11 @@ def run_mlp_classification(data):
         mean_auc = np.mean(mlp_auc_scores)
         print(f"\nMean Stratified 3-Fold CV ROC-AUC across evaluated functions: {mean_auc:.3f}")
 
-    # Saving the multi-panel figure as a high-resolution PNG file
-    output_filename = 'wk7_inputdata_mlp_boundaries_all_functions.png'
+    # Automatically routing output into week_07/diagnostics_results folder
+    output_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', 'diagnostics_results'))
+    os.makedirs(output_dir, exist_ok=True)
+
+    output_filename = os.path.join(output_dir, 'wk7_inputdata_mlp_boundaries_all_functions.png')
     fig.savefig(output_filename, dpi=300, bbox_inches='tight')
     print(f"MLP classification boundary plots successfully saved to '{output_filename}'")
     
