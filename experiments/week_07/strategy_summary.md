@@ -6,7 +6,7 @@
 
 3. Performed a robust **Acquisition Function Ablation Study** via **Robust Multi-Step Sequential Offline Bayesian Optimization Rollout**, using **Long-Term Cumulative Regret** as the acquisition function's performance metric.
 
-4. Performed a **Binary Classifier Architecture Comparison Study**, benchmarking **NuSVC** against **MLP** for each Black-Box function, using the **Out-of-Sample Stratified 3-Fold Cross Validation Receiver Operating Characteristic - Area Under the Curve (ROC-AUC)** scores to assess their performance at correctly classifying the top-25% best-performing datapoints.
+4. Performed a **Binary Classifier Architecture Comparison Study**, benchmarking **NuSVC** against **MLP**, using the **Out-of-Sample Stratified 3-Fold Cross Validation Receiver Operating Characteristic - Area Under the Curve (ROC-AUC)** scores to assess their performance at correctly classifying the top-25% highest-output datapoints within the dataset of each Black-Box function.
    
 5. **HEBO-inspired Non-linear Output Warping** 
    
