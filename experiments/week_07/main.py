@@ -23,6 +23,9 @@ from sklearn.neural_network import MLPClassifier
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 
 from kernel_ablation.kernel_ablation import run_kernel_ablation
+from kernel_ablation.kernels import get_kernel_suite, get_kernel_suite_f1
+from surrogate_selection.surrogate_selection import run_surrogate_comparison
+from acquisition_ablation.acquisition_ablation import run_sequential_acq_ablation
 from svm_classification.svm_classification import run_svm_classification
 from mlp_classifier.mlp_classification import run_mlp_classification
 from breusch_pagan.breusch_pagan import run_bp
@@ -53,30 +56,55 @@ def main():
     top_kernels = run_kernel_ablation(data)
     print("\n[SUCCESS] Kernel ablation study execution complete!")
 
-    # Step 3. Executing SVM Classification (Part 3A) - Updated to match clean function signature
+    # Step 3. Executing Surrogate Model Selection (GP vs Deep Ensemble)
     print("\n" + "=" * 100)
-    print(" [STEP 3A] Running NuSVC Classification & 3-Fold CV Evaluation...")
+    print(" [STEP 2] Running Surrogate Model LOOCV Comparison...")
+    print("=" * 100)
+    surrogate_evaluation_summary = run_surrogate_comparison(
+        data=data, 
+        top_kernels_summary=top_kernels, 
+        get_kernel_suite=get_kernel_suite, 
+        get_kernel_suite_f1=get_kernel_suite_f1
+    )
+    print("\n[SUCCESS] Surrogate model comparison complete!")
+
+    # Step 4. Executing Sequential Acquisition Ablation Study
+    print("\n" + "=" * 100)
+    print(" [STEP 3] Running Sequential Acquisition Rollout Ablation Study...")
+    print("=" * 100)
+    sequential_ablation_summary = run_sequential_acq_ablation(
+        data=data, 
+        top_kernels_summary=top_kernels, 
+        n_init=5, 
+        n_iterations=15, 
+        n_seeds=20
+    )
+    print("\n[SUCCESS] Acquisition ablation study complete!")
+
+    # Step 5. Executing SVM Classification (Part 3A) - Updated to match clean function signature
+    print("\n" + "=" * 100)
+    print(" [STEP 4A] Running NuSVC Classification & 3-Fold CV Evaluation...")
     print("=" * 100)
     svm_auc_scores = run_svm_classification(data)
     print("\n[SUCCESS] NuSVC classification evaluation complete!")
 
-    # Step 4. Executing MLP Classification (Part 3B)
+    # Step 6. Executing MLP Classification (Part 3B)
     print("\n" + "=" * 100)
-    print(" [STEP 3B] Running MLPClassifier & 3-Fold CV Evaluation...")
+    print(" [STEP 4B] Running MLPClassifier & 3-Fold CV Evaluation...")
     print("=" * 100)
     mlp_auc_scores = run_mlp_classification(data)
     print("\n[SUCCESS] MLPClassifier evaluation complete!")
 
-    # Step 5. Executing Final Classifier Selection & Comparison Summary (Part 4)
+    # Step 7. Executing Final Classifier Selection & Comparison Summary (Part 4)
     print("\n" + "=" * 100)
-    print(" [STEP 4] Generating Classifier Comparative Summary & Acquisition Filtering Decisions...")
+    print(" [STEP 5] Generating Classifier Comparative Summary & Acquisition Filtering Decisions...")
     print("=" * 100)
     comparison_summary = generate_comparison_summary(data, svm_auc_scores, mlp_auc_scores)
     print("\n[SUCCESS] Classifier comparison summary generated!")
 
-    # Step 6. Building Trained Classifiers Dictionary for Active Filtering in Next Query Prediction
+    # Step 8. Building Trained Classifiers Dictionary for Active Filtering in Next Query Prediction
     print("\n" + "=" * 100)
-    print(" [STEP 5] Training Final Winning Classifiers for Sobol Candidate Filtering...")
+    print(" [STEP 6] Training Final Winning Classifiers for Sobol Candidate Filtering...")
     print("=" * 100)
     
     trained_classifiers_dict = {}
@@ -120,10 +148,21 @@ def main():
 
     print("[SUCCESS] Winning classifiers fitted and cached successfully!")
 
-    # Step 7. Executing Final Next Query Predictions (Part 5)
+    # Step 9. Executing Final Next Query Predictions (Part 5)
     print("\n" + "=" * 100)
-    print(" [STEP 6] Executing Final HEBO & Classifier-Filtered Next Query Predictions...")
+    print(" [STEP 7] Executing Final HEBO & Classifier-Filtered Next Query Predictions...")
     print("=" * 100)
+
+    # Dynamically defining kernel suites dictionary required for candidate scoring
+    kernel_suites_dict = {}
+    for fn_idx in range(1, 9):
+        fn_key = f"function_{fn_idx}"
+        if fn_key in data:
+            n_dims = data[fn_key]["x"].shape[1]
+            if fn_idx == 1:
+                kernel_suites_dict[fn_key] = get_kernel_suite_f1(n_dims)
+            else:
+                kernel_suites_dict[fn_key] = get_kernel_suite(n_dims)
 
     next_queries_results = run_next_query_prediction(
         data=data,
