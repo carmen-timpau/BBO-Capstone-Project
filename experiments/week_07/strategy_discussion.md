@@ -1,11 +1,15 @@
 
 **Week 7 - BBO Capstone Project**
 
-**Discussion of Week 6 Bayesian Optimisation Strategy and Query Outcomes:**
+**Discussion of Week 6 Bayesian Optimisation Strategy**
 
 _Week 6 Startegy Summary_: Kernel Ablation Study (primary performance metric = LOOCV R²); Acqusition Ablation Study (primary performance metric = LOOCV R²) and a Dynamic Sobol Sampling Resolution strategy based on dimensionality.
 
+While there were some functions that achieved their highest outputs so far within their individual datasets following Week 6's strategy (Functions 2, 4, 5, 6), this represents only half of all 8 Black-Box functions to be globally maximised, leaving the other 4 functions on an unclear path towards potential optimisation. This points towards the need for a more robust, optimised and automated approach to be implemented in Week 7.
+
 ---------------------
+
+**Discussion of Week 6 Individual Query Outcomes:**
 
 For Function 1, the output obtained following Week 6's Strategy (3.960113549565293e-21) is the second highest value within the full dataset for this function. While this is the best result so far obtained from query submissions for this function, the strategy still did not manage to override the current and pre-existent maximum value within the initial (and current) dataset which is 7.710875114502849e-16. Therefore, Week 6's strategy is not yet ideal or optimised enough to have the ability to lead towards global function maximisation. This makes sense, however, as the acquisition ablation study done during Week 6 did not employ the best optimisation strategy  that could have been used for function maximisation (using LOOCV). However, this was fully optimised for function maximisation in Week 7 (this week), by utilising Robust Multi-Step Sequential Offline Bayesian Optimization Rollout.
 
@@ -22,7 +26,3 @@ For Function 6, Week 6's strategy successfully yielded the higehst output value 
 For Function 7, the output obtained following Week 6's Strategy (0.48694095920026037) is low compared to the highest output within the dataset for this function obtained last week through manual BO strategy tuning (1.53655724155759). Therefore, Week 6's strategy is not yet ideal or optimised enough to have the ability to further lead towards global function maximisation. This makes sense, however, as the acquisition ablation study done during Week 6 did not employ the best optimisation strategy that could have been used for function maximisation (using LOOCV). However, the acquisition ablation study was now fully optimised for function maximisation in Week 7 (this week), by utilising Robust Multi-Step Sequential Offline Bayesian Optimization Rollout.
 
 For Function 8, the output obtained following Week 6's Strategy (9.7024334454286) is high for this function, however it does not override the existing maximum achieved 4 weeks ago (9.9561276549796). Therefore, Week 6's strategy is not yet ideal or optimised enough to have the ability to further lead towards global function maximisation. This makes sense, however, as the acquisition ablation study done during Week 6 did not employ the best optimisation strategy that could have been used for function maximisation (using LOOCV). However, the acquisition ablation study was now fully optimised for function maximisation in Week 7 (this week), by utilising Robust Multi-Step Sequential Offline Bayesian Optimization Rollout.
-
---------------------------
-
-**While there were some functions that achieved their highest outputs so far within their individual datasets following Week 6's strategy (Functions 2, 4, 5, 6), this represents only half of all 8 Black-Box functions to be globally maximised, leaving the other 4 functions on an unclear path towards potential optimisation. This points towards the need for a more robust, optimised and automated approach to be implemented in Week 7.**
