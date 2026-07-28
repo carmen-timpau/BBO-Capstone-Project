@@ -17,10 +17,10 @@ from sklearn.svm import NuSVC
 from sklearn.model_selection import StratifiedKFold
 from sklearn.metrics import roc_auc_score
 
-def run_svm_classification(data, top_kernels):
+def run_svm_classification(data):
     """
-    Training a NuSVC classifier on the top 25% target region for each of the 8 black-box functions, 
-    using winning kernels for labeling (from previous kernel ablation study), and plotting their 2D PCA decision boundaries.
+    Training a NuSVC classifier on the top 25% target region for each of the 8 black-box functions 
+    for binary labeling, and plotting their 2D PCA decision boundaries.
     """
     # Setting up Stratified 3-Fold Cross-Validation for robust classification performance evaluation
     cv = StratifiedKFold(n_splits=3, shuffle=True, random_state=42)
@@ -51,10 +51,6 @@ def run_svm_classification(data, top_kernels):
             Y_target = np.log10(np.clip(Y, 1e-300, None))
         else:
             Y_target = Y
-
-        # Retrieving winning kernel name from Step 1 dictionary for dynamic labeling
-        kernel_info = top_kernels.get(fn_key, {}).get('Best Variant', 'Standard RBF')
-        kernel_short_name = kernel_info.split(':')[0] 
 
         # Scaling features and project high-D space -> 2D via PCA
         scaler = StandardScaler()
@@ -88,7 +84,7 @@ def run_svm_classification(data, top_kernels):
         # Storing the score for the final mean calculation
         svm_auc_scores.append(cv_auc_score)
 
-        # Fitting NuSVC with nu=0.25 to target the top 25% fraction
+        # Fitting NuSVC with nu=0.25 to target the  25% fraction
         svm = NuSVC(nu=0.25, kernel="rbf", gamma="scale", probability=True, random_state=42)
         svm.fit(X_pca, Y_binary)
 
