@@ -1,4 +1,4 @@
-**BBO Week 7 - Predicted Queries**
+**BBO Week 7 - Predicted Queries Generated Using Week 7's Bayesian Optimisation Strategy**
 
 ```text
 ==========================================================================================================================================================================================
