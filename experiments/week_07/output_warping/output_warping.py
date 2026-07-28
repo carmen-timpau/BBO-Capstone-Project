@@ -28,8 +28,8 @@ class HEBOStyleWarper:
 
 def apply_output_warping_to_dataset(data):
     """
-    Applies HEBO-style parametric output warping uniformly to all functions 
-    without relying on an external Breusch-Pagan test.
+    Applying HEBO-style parametric output warping uniformly to all functions 
+    without relying on an external Breusch-Pagan test (to avoid limit cases).
     """
     warped_data = {}
     warpers = {}
