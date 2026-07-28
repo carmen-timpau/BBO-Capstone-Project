@@ -37,7 +37,7 @@ def apply_output_warping_to_dataset(data):
     for fn_key, content in data.items():
         Y = np.array(content["y"]).flatten()
         
-        # Always instantiate and apply a parametric warper
+        # Always instantiating and applying a parametric warper
         warper = HEBOStyleWarper()
         Y_target = warper.fit_transform(Y)
         
