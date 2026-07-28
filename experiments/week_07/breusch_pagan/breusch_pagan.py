@@ -1,6 +1,9 @@
 # Week 7 BBO - Breusch-Pagan Homoscedasticity Analysis & Diagnostics for Functions 1-8
 # Using the winning kernel objects dynamically retrieved from the previously completed Kernel Ablation Study
 
+# BP Test only carried out for informational purposes, but was not implemented in the main pipeline for Week 7
+# As the HEBO-inspired output warping was implemented instead and it is applied regardless of BP test results.
+
 import os
 import numpy as np
 import pandas as pd
