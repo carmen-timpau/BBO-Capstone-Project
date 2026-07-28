@@ -3,7 +3,7 @@
 
 ---------------------------
 
-**Discussion of Week 6 Bayesian Optimisation Strategy and Changes Required**
+**Discussion of Week 6 Bayesian Optimisation Strategy and Required Changes:**
 
 _Week 6 Startegy Summary_: **Kernel Ablation Study** (robust primary performance metric = LOOCV R²); Attempted Acqusition Ablation Study (used non-ideal primary performance metric = LOOCV R², more about this discussed below) and a **Dynamic Sobol Sampling Resolution strategy based on dimensionality**. 
 
