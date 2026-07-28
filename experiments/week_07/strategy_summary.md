@@ -1,1 +1,2 @@
-**BBO Week 7 - Strategy Summary**
+**BBO Week 7 - Bayesian Optimisation Strategy Summary**
+
