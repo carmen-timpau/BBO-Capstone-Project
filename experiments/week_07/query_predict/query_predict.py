@@ -14,24 +14,25 @@ def run_next_query_prediction(
     surrogate_evaluation_summary, 
     sequential_ablation_summary, 
     comparison_summary, 
-    kernel_suites_dict
+    kernel_suites_dict,
+    trained_classifiers_dict=None
 ):
     """
-    Executing the comprehensive HEBO & Dynamic Sobol-Sampled Bayesian Optimization Pipeline:
+    Executing the comprehensive HEBO, Dynamic Sobol-Sampled, & Classifier-Filtered Bayesian Optimization Pipeline:
     1. Parametric Output Warping (Box-Cox / Yeo-Johnson)
-    2. Winning Surrogate Model Fitting (GP / Deep Ensembles)
+    2. Winning Surrogate Model Fitting (GP / Deep Ensembles, optimised previously)
     3. Dynamic Sobol Quasi-Random Candidate Generation (Continuous Space Exploration)
-    4. Classifier-Based Candidate Filtering (SVM / MLP)
-    5. Acquisition Function Optimization (via imported acq_strategies & acquisition)
+    4. Classifier-Based Sobol Candidate Filtering (Active SVM / MLP Filtering, optimised previously)
+    5. Acquisition Function (optimised previously) Evaluation and Scoring of SVM/MLP Filtered Sobol Samples
     6. Output Unwarping to Original Scale
     """
     # Applying HEBO-style output warping uniformly across all functions
     warped_data, warpers = apply_output_warping_to_dataset(data)
     next_queries_results = {}
 
-    print("\n" + "=" * 105)
-    print(" COMPILING FINAL HEBO & SOBOL NEXT QUERY PREDICTIONS ACROSS FUNCTIONS 1–8")
-    print("=" * 105)
+    print("\n" + "=" * 115)
+    print(" COMPILING FINAL HEBO, SOBOL, & CLASSIFIER-FILTERED NEXT QUERY PREDICTIONS ACROSS FUNCTIONS 1–8")
+    print("=" * 115)
 
     for fn_idx in range(1, 9):
         fn_key = f"function_{fn_idx}"
@@ -92,17 +93,30 @@ def run_next_query_prediction(
         x_grid = minimum + unit_samples * (maximum - minimum)
         x_grid_scaled = scaler.transform(x_grid)
 
-        # Performing classifier-based candidate filtering
-        # (Falling back to full Sobol pool if classifier pre-filtering mask isn't indexed yet)
-        eval_indices = list(range(len(x_grid_scaled)))
+        # Performing active classifier-based candidate filtering
+        eval_indices = []
+        if trained_classifiers_dict is not None and fn_key in trained_classifiers_dict:
+            classifier_model, pca_transformer = trained_classifiers_dict[fn_key]
+            
+            # Projecting Sobol points into the same PCA space used during classification training
+            x_grid_pca = pca_transformer.transform(x_grid_scaled)
+            
+            # Predicting classes for all Sobol candidates (Class 1 = top 25% promising region)
+            class_predictions = classifier_model.predict(x_grid_pca)
+            eval_indices = np.where(class_predictions == 1)[0]
 
-        # Computing acquisition scores on the dynamic candidate subspace
+        # Falling back to full Sobol pool if no classifier is passed or filter returns an empty set
+        if len(eval_indices) == 0:
+            eval_indices = list(range(len(x_grid_scaled)))
+
+        # Computing acquisition scores on the filtered dynamic candidate subspace
         y_best_current = np.max(Y_target)
         scores = compute_acquisition_scores(x_grid_scaled[eval_indices], gp, y_best_current, acq_type, param)
 
         best_local_idx = np.argmax(scores)
         chosen_global_idx = eval_indices[best_local_idx]
         
+        # Capturing brand-new, unvisited global coordinates
         next_query_coords = x_grid[chosen_global_idx]
 
         # Predicting warped value at the chosen new coordinate and unwarping to original scale
@@ -120,5 +134,5 @@ def run_next_query_prediction(
 
         print(f"Function {fn_idx} | Surrogate: {winning_surrogate:<12} | Classifier: {winning_classifier:<5} | Acq: {best_acq_variant:<35} | Next Query: {np.round(next_query_coords, 4)}")
 
-    print("=" * 105)
+    print("=" * 115)
     return next_queries_results
