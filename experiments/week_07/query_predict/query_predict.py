@@ -3,6 +3,7 @@ import pandas as pd
 from scipy.stats.qmc import Sobol
 from sklearn.preprocessing import StandardScaler
 from sklearn.gaussian_process import GaussianProcessRegressor
+from sklearn.neural_network import MLPRegressor
 
 from output_warping.output_warping import apply_output_warping_to_dataset
 from output_unwarping.output_unwarping import unwarp_predictions_and_values
@@ -15,7 +16,8 @@ def run_next_query_prediction(
     sequential_ablation_summary, 
     comparison_summary, 
     kernel_suites_dict,
-    trained_classifiers_dict=None
+    trained_classifiers_dict=None,
+    n_ensemble_members=5
 ):
     """
     Executing the comprehensive HEBO, Dynamic Sobol-Sampled, & Classifier-Filtered Bayesian Optimization Pipeline:
@@ -70,9 +72,48 @@ def run_next_query_prediction(
             
             # Predicting mean across the historical space for unwarping reference later
             mu_full = gp.predict(X_scaled)
+
+            class GPDuckTypeWrapper:
+                def __init__(self, gp_model):
+                    self.gp_model = gp_model
+                def predict(self, X, return_std=False):
+                    return self.gp_model.predict(X, return_std=return_std)
+
+            active_surrogate = GPDuckTypeWrapper(gp)
+
+            def predict_single(X_cand_2d):
+                return gp.predict(X_cand_2d)[0]
         else:
-            # Using placeholder hook if Deep Ensemble wins
-            mu_full = np.zeros(n_samples)
+            # Training an ensemble of MLP regressors to capture epistemic uncertainty if Deep Ensemble wins
+            ensemble_models = []
+            for member_idx in range(n_ensemble_members):
+                mlp = MLPRegressor(
+                    hidden_layer_sizes=(32, 16),
+                    activation='relu',
+                    solver='adam',
+                    max_iter=1000,
+                    random_state=42 + member_idx
+                )
+                mlp.fit(X_scaled, Y_target)
+                ensemble_models.append(mlp)
+
+            class DeepEnsembleDuckTypeWrapper:
+                def __init__(self, models):
+                    self.models = models
+                def predict(self, X, return_std=False):
+                    preds = np.array([m.predict(X) for m in self.models])
+                    mu = np.mean(preds, axis=0)
+                    if return_std:
+                        sigma = np.std(preds, axis=0)
+                        return mu, sigma
+                    return mu
+
+            active_surrogate = DeepEnsembleDuckTypeWrapper(ensemble_models)
+            mu_full = active_surrogate.predict(X_scaled)
+
+            def predict_single(X_cand_2d):
+                preds = np.array([m.predict(X_cand_2d) for m in ensemble_models])
+                return np.mean(preds, axis=0)[0]
 
         # Generating brand-new candidate space via Sobol quasi-random sampling
         minimum = X_full.min(axis=0)
@@ -111,7 +152,7 @@ def run_next_query_prediction(
 
         # Computing acquisition scores on the filtered dynamic candidate subspace
         y_best_current = np.max(Y_target)
-        scores = compute_acquisition_scores(x_grid_scaled[eval_indices], gp, y_best_current, acq_type, param)
+        scores = compute_acquisition_scores(x_grid_scaled[eval_indices], active_surrogate, y_best_current, acq_type, param)
 
         best_local_idx = np.argmax(scores)
         chosen_global_idx = eval_indices[best_local_idx]
@@ -121,7 +162,7 @@ def run_next_query_prediction(
 
         # Predicting warped value at the chosen new coordinate and unwarping to original scale
         next_query_scaled_2d = x_grid_scaled[chosen_global_idx].reshape(1, -1)
-        predicted_warped_value = gp.predict(next_query_scaled_2d)[0] if winning_surrogate == "GP" else 0.0
+        predicted_warped_value = predict_single(next_query_scaled_2d)
         predicted_original_value = unwarp_predictions_and_values(predicted_warped_value, fn_key, warpers)
 
         next_queries_results[fn_key] = {
