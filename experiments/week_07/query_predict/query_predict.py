@@ -173,7 +173,7 @@ def run_next_query_prediction(
             "Predicted Original Scale Value": predicted_original_value
         }
 
-        print(f"Function {fn_idx} | Surrogate: {winning_surrogate:<12} | Classifier: {winning_classifier:<5} | Acq: {best_acq_variant:<35} | Next Query: {np.round(next_query_coords, 6)}")
+        print(f"Function {fn_idx} | Next Query: {np.round(next_query_coords, 6)} | Surrogate: {winning_surrogate:<12} | Classifier: {winning_classifier:<5} | Acq: {best_acq_variant:<35}")
 
     print("=" * 115)
     return next_queries_results
