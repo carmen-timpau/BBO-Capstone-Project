@@ -1,6 +1,8 @@
 
 **Week 7 - BBO Capstone Project**
 
+---------------------------
+
 **Discussion of Week 6 Bayesian Optimisation Strategy**
 
 _Week 6 Startegy Summary_: Kernel Ablation Study (primary performance metric = LOOCV R²); Acqusition Ablation Study (primary performance metric = LOOCV R²) and a Dynamic Sobol Sampling Resolution strategy based on dimensionality.
