@@ -10,10 +10,7 @@ import pickle
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 
 from kernel_ablation.kernel_ablation import run_kernel_ablation
-from svm_classification.svm_classification import run_svm_classification
-from mlp_classifier.mlp_classification import run_mlp_classification
 from breusch_pagan.breusch_pagan import run_bp
-from classifier_selection.classifier_selection import generate_comparison_summary
 
 def main():
 
