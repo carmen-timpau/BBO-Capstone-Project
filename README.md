@@ -18,7 +18,7 @@ Initial datasets for all 8 Black-Box functions to be maximised can be found in t
 
 **Machine Learning Bayesian Optimisation (BO) Pipelines**
 
-An evolving framework designed to tackle expensive, opaque Black-Box function optimisation. This project bridges the gap between manual, intuitive strategy tuning and fully automated, robust ML workflows-leveraging state-of-the-art practices to deliver fast, reliable, and high-quality optimisation results.
+An evolving framework designed to tackle expensive, opaque Black-Box function optimisation. This project bridges the gap between manual, intuitive strategy tuning and fully automated, robust ML workflows leveraging state-of-the-art practices to deliver fast, reliable, and high-quality optimisation results.
 
 <br>
 
