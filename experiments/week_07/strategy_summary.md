@@ -6,10 +6,9 @@
 
 3. Performed a robust **Acquisition Function Ablation Study** via **Robust Multi-Step Sequential Offline Bayesian Optimization Rollout**, using **Long-Term Cumulative Regret** as the acquisition function's performance metric.
 
-4. Performed a **Binary Classifier Architecture Comparison Study**, benchmarking **NuSVC** against **MLP**, using the **Out-of-Sample Stratified 3-Fold Cross Validation Receiver Operating Characteristic - Area Under the Curve (ROC-AUC)** scores to assess their performance at correctly classifying the top-25% highest-output datapoints within the dataset of each Black-Box function.
+4. Performed a **Binary Classifier Architecture Comparison Study**, benchmarking **NuSVC** against **MLP**, using the **Out-of-Sample Stratified 3-Fold Cross Validation Receiver Operating Characteristic - Area Under the Curve (ROC-AUC)** scores to assess their performance at correctly classifying the top-25% highest-output datapoints within the dataset of each Black-Box function. The best-performing classifier for each function was used for **Classifier-informed Space Reduction and Acquisition Filtering**. 
    
 5. **HEBO-inspired Non-linear Output Warping** 
    
-6. Dynamic Sobol Sampling, SVM/MLP Sobol Candidate Classification
-   
-7. **Classifier-informed Space Reduction and Acquisition Filtering** 
+6. **Dynamic Sobol Sampling Resolution strategy based on dimensionality**
+
