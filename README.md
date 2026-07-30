@@ -12,7 +12,7 @@ Every week until the completion of the project in late August 2026, each functio
 
 <ins>⚙️**Bayesian Optimisation (BO) ML Pipelines**</ins>:
 
-This framework transitions the approach from manual, intuitive strategy tuning to fully automated, robust and optimised machine learning workflows. By leveraging state-of-the-art practices, like HEBO, the project delivers fast, reliable, and high-quality Bayesian Optimisation results to tackle expensive, opaque Black-Box process optimisation in as few attempts as possible.
+This framework transitions the approach from manual, intuitive strategy tuning to fully automated, robust and optimised machine learning workflows. By leveraging state-of-the-art practices, like HEBO, the project delivers fast, reliable, and high-quality Bayesian Optimisation results to tackle expensive, opaque Black-Box process optimisation across various industries in as few attempts as possible.
 
 <br>
 
