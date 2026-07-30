@@ -2,7 +2,7 @@
 
 <br>
 
-📝 <ins> **Project Description:** </ins> 
+📝 <ins> **Project Introduction:** </ins> 
 
 Given an initial dataset of true datapoints describing 8 different unrelated Black-Box functions of varying dimensionality (2D-8D), each representing practical real-world processes/scenarios within various application industries, this project aims to apply and refine Bayesian Optimisation to identify the global maximum or maxima for each function.
 
