@@ -1,3 +1,6 @@
+# Exploratory Data Analysis (EDA)
+
+import pickle
 import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
@@ -5,22 +8,21 @@ from mpl_toolkits.mplot3d import Axes3D
 import matplotlib.lines as mlines
 from pandas.plotting import parallel_coordinates
 
-# Creating a dictionary for the initial datasets of all 8 functions
-data = {}
-
-# Loading all initial data (found in initial_data folder within repo)
+# Loading all initial data
+file_path = "wk1_input_data.pkl"
+with open(file_path, "rb") as f:
+    data = pickle.load(f)
 
 # Printing all initial data (to 6 decimal places) provided for all functions
-
-for i in range (1,9):
+for i in range(1, 9):
     x = data[f"function_{i}"]["x"]
     y = data[f"function_{i}"]["y"]
 
     print(f"\nFunction {i} initial datapoints are:\n")
     
-    for j, (x,y) in enumerate(zip(x, y), start = 1):
-        print(f"{j}. ({x}, {y:.6f})")
-
+    for j, (x_val, y_val) in enumerate(zip(x, y), start=1):
+        formatted_x = [f"{coord:.6f}" for coord in x_val] if isinstance(x_val, (list, np.ndarray)) else f"{x_val:.6f}"
+        print(f"{j}. ({formatted_x}, {y_val:.6f})")
 
 # Computing statistical analysis of all functions' initial outputs
 
