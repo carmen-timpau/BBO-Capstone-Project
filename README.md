@@ -10,7 +10,7 @@ Every week until the completion of the project in late August 2026, each functio
 
 <br>
 
-<ins>**Machine Learning Bayesian Optimisation (BO) Pipelines**</ins>:
+<ins>⚙️**Machine Learning Bayesian Optimisation (BO) Pipelines**</ins>:
 
 This framework transitions the approach from manual, intuitive strategy tuning to fully automated, robust machine learning workflows. By leveraging state-of-the-art practices, the project delivers fast, reliable, and high-quality optimisation results to tackle expensive, opaque black-box function optimisation.
 
