@@ -1,4 +1,4 @@
-# Functions computing the acquisition function score
+# Function computing the acquisition function score
 
 import numpy as np
 
