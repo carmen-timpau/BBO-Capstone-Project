@@ -36,9 +36,7 @@ Research documentation and the dicussion of strategies used at each stage can be
 
 The project is in active development as part of the 6-month _Professional Certificate in Machine Learning & Artificial Intelligence_ joint programme at Imperial College London and will be finalised in late August 2026.
 
-* **Current State:** Functional research code logged in `experiments/` organised in separate directories for each week, documenting optimisation strategy evolution over time; Ongoing Bayesian Optimisation research. 
-               
-* **Next Steps:** Refactoring the codebase to eliminate repetitive functions within Weeks 1-3 folders.
+* **Current State:** Functional research code logged in `experiments/` organised in separate directories for each week, documenting the Bayesian Optimisation ML pipeline evolving over time; Ongoing research. 
 
 <br>
 
