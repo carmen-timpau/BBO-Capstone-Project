@@ -1,6 +1,20 @@
 **Summary of Input Queries Submitted for Week 7:**
 
+Function 1:	`[0.879759, 0.876073]`
 
+Function 2:	`[0.706826, 0.285985]`
+
+Function 3:	`[0.054826, 0.910375, 0.691019]`
+
+Function 4:	`[0.082182, 0.492727, 0.624749, 0.527943]`
+
+Function 5:	`[0.826892, 0.824090, 0.873481, 0.937759]`
+
+Function 6:	`[0.113577, 0.346073, 0.670768, 0.878207, 0.056234]`
+
+Function 7:	`[0.060390, 0.094933, 0.515061, 0.149735, 0.221472, 0.912906]`
+
+Function 8:	`[0.036794, 0.357325, 0.110939, 0.518570, 0.942869, 0.854455, 0.069592, 0.384581]`
 
 **BBO Week 7 - Predicted Input Queries Generated Using Week 7's Bayesian Optimisation Strategy**
 
