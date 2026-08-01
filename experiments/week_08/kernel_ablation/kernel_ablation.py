@@ -2,12 +2,16 @@
 
 import numpy as np
 import pandas as pd
+import warnings
 from sklearn.gaussian_process import GaussianProcessRegressor
 from sklearn.gaussian_process.kernels import Matern, RBF, RationalQuadratic, WhiteKernel
 from sklearn.metrics import root_mean_squared_error, r2_score
 from sklearn.preprocessing import StandardScaler
 
 from kernels import get_kernel_suite, get_kernel_suite_f1
+
+from sklearn.exceptions import ConvergenceWarning
+warnings.filterwarnings("ignore", category=ConvergenceWarning)
 
 NOISELESS_ALPHA = 1e-8  # small fixed jitter, not a learned hyperparameter
 
