@@ -35,10 +35,6 @@ def get_kernel_suite(n_dims, ls_bounds=(1e-2, 1e4), noise_bounds=(1e-6, 1e2)):
         "Ablation 7: RBF with Unit Lengthscales (ARD) + WhiteNoise": (
             RBF(length_scale=[1.0] * n_dims, length_scale_bounds=ls_bounds) +
             WhiteKernel(noise_level=1e-3, noise_level_bounds=noise_bounds)
-        ),
-        "Ablation 8: Rational Quadratic ARD + WhiteNoise": (
-            RationalQuadratic(length_scale=init_ls_ard, alpha=1.0, length_scale_bounds=ls_bounds) +
-            WhiteKernel(noise_level=1e-3, noise_level_bounds=noise_bounds)
         )
     }
 
