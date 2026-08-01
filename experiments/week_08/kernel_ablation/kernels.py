@@ -24,7 +24,7 @@ def get_kernel_suite(n_dims, ls_bounds=(1e-2, 1e4), noise_bounds=(1e-6, 1e2)):
         "Ablation 4: Matern 2.5 WITHOUT WhiteNoise (Noiseless)": (
             Matern(length_scale=init_ls_ard, nu=2.5, length_scale_bounds=ls_bounds)
         ),
-        "Ablation 5: Matern 2.5 Isotropic (Shared Lengthscale)": (
+        "Ablation 5: Matern 2.5 Isotropic (Shared Lengthscale) + WhiteNoise": (
             Matern(length_scale=0.1, nu=2.5, length_scale_bounds=ls_bounds) +
             WhiteKernel(noise_level=1e-3, noise_level_bounds=noise_bounds)
         ),
