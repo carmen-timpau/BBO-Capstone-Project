@@ -1,6 +1,6 @@
 **BBO Week 8 - Bayesian Optimisation Strategy Summary**
 
-1. Perfomed a <ins>larger</ins> (8 kernel types tested) and robust **Kernel Ablation Study** for Gaussian Process surrogate modelling optimisation (performed individually for each Black-Box function), using [**Leave-One-Out Cross-Validation**] LOOCV R² as an out-of-sample (generalization) predictive performance metric to rank the tested kernels.
+1. Perfomed a <ins>larger</ins> (7 kernel types tested) and robust **Kernel Ablation Study** for Gaussian Process surrogate modelling optimisation (performed individually for each Black-Box function), using [**Leave-One-Out Cross-Validation**] LOOCV R² as an out-of-sample (generalization) predictive performance metric to rank the tested kernels.
 
 2. Performed a **Surrogate Model Architecture Comparison Study** to evaluate whether a _Gaussian Process_ or _Deep Ensemble of Neural Networks_ (Multi-Layer Perceptrons, MLPs) better models each of the Black-Box functions (performed individually for each function), using **Root Mean Squared Error (RMSE)** as a surrogate model performance metric, evaluated out-of-sample via **Leave-One-Out Cross-Validation (LOOCV)**.
 
