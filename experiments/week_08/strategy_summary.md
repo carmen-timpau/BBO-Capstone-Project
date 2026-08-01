@@ -10,4 +10,4 @@
 
 5. Implemented **HEBO-inspired Non-linear Output Warping** to stabilize target variance and mitigate heteroscedasticity, improving the surrogate model's predictive accuracy during hyperparameter optimization.
 
-<u>Note</u>: The Classifier-informed Space Reduction and Acquisition Filtering strategy from the previous week's strategy was dropped, because it restricted the acquisition process too much and to poor query predictions.
+<und>Note</und>: The Classifier-informed Space Reduction and Acquisition Filtering strategy from the previous week's strategy was dropped, because it restricted the acquisition process too much and to poor query predictions.
