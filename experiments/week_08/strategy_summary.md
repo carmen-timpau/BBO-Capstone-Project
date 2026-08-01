@@ -6,7 +6,7 @@
 
 3. Performed a <ins>larger</ins> (6 acquisition process types tested) and robust **Acquisition Function Ablation Study** _via_ **Robust Multi-Step Sequential Offline Bayesian Optimization Rollout**, using **Long-Term Cumulative Regret** as the acquisition function's performance metric.
    
-4. Implemented **Dynamic Sobol Sampling Resolution strategy based on dimensionality** to ensure high candidate resolution for high-dimensional spaces.
+4. Used **Dynamic Sobol Sampling Resolution strategy based on dimensionality** to ensure high candidate resolution for high-dimensional spaces.
 
 5. Implemented **HEBO-inspired Non-linear Output Warping** to stabilize target variance and mitigate heteroscedasticity, improving the surrogate model's predictive accuracy during hyperparameter optimization.
 
