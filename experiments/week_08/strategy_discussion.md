@@ -1,4 +1,4 @@
-**Discussion of Week 7 Query Outcomes (shown above):**
+**Discussion of Week 7 Query Outcomes:**
 
 Week 7's Strategy did not lead to any outputs higher than the pre-existent function maxima, therefore this strategy was especially unproductive with relation to the aims of this project. The suspected cause for this underperformance is attributed to the implemented Classifier-informed Space Reduction and Acquisition Filtering, which has restricted the space too aggresively, and consequently the acqusition process, which led to poor-quality query predictions. 
 
