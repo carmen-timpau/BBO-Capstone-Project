@@ -96,7 +96,7 @@ def run_single_seed_rollout(seed, X_full, Y_target, true_global_max, best_kernel
 
     return seed_trajectories
 
-def plot_master_convergence_grid(all_functions_regrets, output_dir="week_07/diagnostics_results", filename="wk7_acquisition_ablation_results_all_functions.png"):
+def plot_master_convergence_grid(all_functions_regrets, output_dir="week_08/diagnostics_results", filename="wk8_acquisition_ablation_results_all_functions.png"):
     """Plotting a consolidated 2x4 grid of convergence trajectories for Functions 1 to 8, saving it to the target directory, and displaying it."""
     os.makedirs(output_dir, exist_ok=True)
     filepath = os.path.join(output_dir, filename)
@@ -232,6 +232,6 @@ def run_sequential_acq_ablation(data, top_kernels_summary, n_init=5, n_iteration
         print(f"{fn_k.upper()}: {res['Best Acquisition']} (Final Regret: {res['Mean Final Regret']}, AURC: {res['Mean AURC']})")
     print("=" * 80)
 
-    plot_master_convergence_grid(all_functions_regrets, output_dir="week_07/diagnostics_results", filename="wk7_acquisition_ablation_results_all_functions.png")
+    plot_master_convergence_grid(all_functions_regrets, output_dir="week_08/diagnostics_results", filename="wk8_acquisition_ablation_results_all_functions.png")
 
     return sequential_ablation_summary
