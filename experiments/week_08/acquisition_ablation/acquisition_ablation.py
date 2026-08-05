@@ -60,9 +60,11 @@ def run_single_seed_rollout(seed, X_full, Y_target, true_global_max, best_kernel
 
             # Explicitly passing an integer seed to random_state (using deterministic offset based on seed prevents core collisions)
             gp_random_state = int(seed) + 42
+
+            alpha_value = 1e-8 if is_noiseless_kernel(best_kernel) else 0.0
             gp = GaussianProcessRegressor(
                 kernel=best_kernel, 
-                alpha=1e-6, 
+                alpha=alpha_value, 
                 normalize_y=True, 
                 n_restarts_optimizer=10, 
                 optimizer="fmin_l_bfgs_b", 
