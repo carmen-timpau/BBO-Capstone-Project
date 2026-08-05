@@ -36,6 +36,10 @@ from ..kernel_ablation.kernels import get_kernel_suite, get_kernel_suite_f1
 warnings.filterwarnings("ignore", category=ConvergenceWarning)
 warnings.filterwarnings("ignore", message="Predicted variances smaller than 0", category=UserWarning)
 
+def is_noiseless_kernel(kernel):
+    """Returns True if the kernel has no WhiteKernel component."""
+    return "WhiteKernel" not in str(kernel)
+
 def run_single_seed_rollout(seed, X_full, Y_target, true_global_max, best_kernel, n_init, n_iterations):
     """Simulates a complete sequential rollout for all strategies on a single random seed."""
     rng = np.random.default_rng(seed)
