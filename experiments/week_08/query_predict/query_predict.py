@@ -9,6 +9,9 @@ from output_unwarping.output_unwarping import unwarp_predictions_and_values
 from acquisition_ablation.acq_strategies import acq_strategies
 from acquisition_ablation.acquisition import compute_acquisition_scores
 
+def is_noiseless_kernel(kernel):
+    """Returns True if the kernel has no WhiteKernel component."""
+    return "WhiteKernel" not in str(kernel)
 
 def run_next_query_prediction(
     data,
@@ -57,7 +60,8 @@ def run_next_query_prediction(
             kernel_suite = kernel_suites_dict.get(fn_key, {})
             best_kernel = kernel_suite.get(winning_kernel_name, list(kernel_suite.values())[0])
 
-            gp = GaussianProcessRegressor(kernel=best_kernel, alpha=0.0, normalize_y=True, n_restarts_optimizer=10, random_state=42)
+            alpha_value = 1e-8 if is_noiseless_kernel(best_kernel) else 0.0
+            gp = GaussianProcessRegressor(kernel=best_kernel, alpha=alpha_value, normalize_y=True, n_restarts_optimizer=10, random_state=42)
             gp.fit(X_scaled, Y_target)
 
             class GPDuckTypeWrapper:
