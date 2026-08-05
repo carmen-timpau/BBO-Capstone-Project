@@ -21,9 +21,9 @@ from kernel_ablation.kernels import get_kernel_suite, get_kernel_suite_f1
 
 warnings.filterwarnings("ignore", category=ConvergenceWarning)
 
-def is_noiseless_kernel(kernel):
-    """Returns True if the kernel has no WhiteKernel component."""
-    return "WhiteKernel" not in str(kernel)
+def is_noiseless_kernel_name(kernel_name):
+    """Returns True if the kernel name indicates a noiseless GP (Week 8 rule)."""
+    return "Noiseless" in kernel_name
 
 def run_bp(data, top_kernels_summary):
 
@@ -41,6 +41,7 @@ def run_bp(data, top_kernels_summary):
             ax.axis('off')
             continue
 
+        # Extracting data
         X = np.array(data[fn_key]["x"])
         Y_raw = np.array(data[fn_key]["y"]).flatten()
         n_samples, n_dims = X.shape
@@ -55,15 +56,14 @@ def run_bp(data, top_kernels_summary):
         else:
             Y_target = Y_raw
 
-        # Retrieve winning kernel from Week 8 kernel ablation
+        # Retrieving winning kernel from Week 8 kernel ablation
         winning_variant_name = top_kernels_summary[fn_key]["Best Variant"]
 
-        # Rebuild kernel suite (Week 8)
+        # Rebuilding kernel suite (Week 8)
         kernel_suite = get_kernel_suite_f1(n_dims) if fn_idx == 1 else get_kernel_suite(n_dims)
         best_kernel = kernel_suite[winning_variant_name]
 
-        # Week 8 jitter rule
-        alpha_value = 1e-8 if is_noiseless_kernel(best_kernel) else 0.0
+        alpha_value = 1e-8 if is_noiseless_kernel_name(winning_variant_name) else 0.0
 
         fn_predictions = []
         fn_residuals = []
@@ -163,7 +163,7 @@ def run_bp(data, top_kernels_summary):
         print(f"Learned Kernel:\n{gp_full.kernel_}")
         print("=" * 75, "\n")
 
-    # Save plot into diagnostics_results folder
+    # Saving plot into diagnostics_results folder
     output_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', 'diagnostics_results'))
     os.makedirs(output_dir, exist_ok=True)
 
