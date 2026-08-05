@@ -51,13 +51,12 @@ def run_single_seed_rollout(seed, X_full, Y_target, true_global_max, best_kernel
         
         regret_trajectory = []
 
-        for _ in range(n_iterations):
+        for iteration_idx in range(n_iterations):
             if len(remaining_indices) == 0:
                 break
 
             scaler = StandardScaler()
             X_train_scaled = scaler.fit_transform(X_train)
-
 
             # Explicitly passing an integer seed to random_state (using deterministic offset based on seed prevents core collisions)
             gp_random_state = int(seed) + 42
@@ -77,7 +76,12 @@ def run_single_seed_rollout(seed, X_full, Y_target, true_global_max, best_kernel
             X_rem_scaled = scaler.transform(X_full[remaining_indices])
             y_best_current = np.max(Y_train)
             
-            scores = compute_acquisition_scores(X_rem_scaled, gp, y_best_current, acq_type, param)
+            # Deterministic per-seed, per-iteration offset so Thompson Sampling draws
+            # are reproducible across runs (EI/UCB/PI are deterministic and ignore this).
+            ts_random_state = int(seed) + iteration_idx * 1000
+            scores = compute_acquisition_scores(
+                X_rem_scaled, gp, y_best_current, acq_type, param, random_state=ts_random_state
+            )
             
             best_candidate_local_idx = np.argmax(scores)
             chosen_global_idx = remaining_indices[best_candidate_local_idx]
