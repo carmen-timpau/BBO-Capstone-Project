@@ -8,7 +8,7 @@ from sklearn.gaussian_process.kernels import Matern, RBF, RationalQuadratic, Whi
 from sklearn.metrics import root_mean_squared_error, r2_score
 from sklearn.preprocessing import StandardScaler
 
-from kernels import get_kernel_suite, get_kernel_suite_f1
+from .kernels import get_kernel_suite, get_kernel_suite_f1
 
 from sklearn.exceptions import ConvergenceWarning
 warnings.filterwarnings("ignore", category=ConvergenceWarning)
