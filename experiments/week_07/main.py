@@ -3,10 +3,12 @@ Main Execution Script: Week 07 Full Machine Learning Pipeline
 -----------------------------------------------------------
 Coordinates the end-to-end execution of:
 1. Kernel Ablation Study (Gaussian Process Regression optimization)
-2. SVM Classification (NuSVC modeling for top-25% acquisition filtering)
-3. MLP Classification (MLPClassifier modeling for top-25% acquisition filtering)
-4. Classifier Selection Summary (Comparative analysis and optimal model routing)
-5. Next Query Prediction (Including HEBO Output Warping, GP/NN Surrogate Modeling, 
+2. Surrogate Model Selection (GP or Deep Ensemble)
+3. Sequential Acquisition Ablation Study
+4. SVM Classification (NuSVC modeling for top-25% acquisition filtering)
+5. MLP Classification (MLPClassifier modeling for top-25% acquisition filtering)
+6. Classifier Selection Summary (Comparative analysis and optimal model routing)
+7. Next Query Prediction (Including HEBO Output Warping, GP/NN Surrogate Modeling, 
    Dynamic Sobol Sampling, SVM/MLP Sobol Candidate Classification and Acquisition Function 
    (optimised) Evaluation and Scoring, Output Unwarping of Best Query)
 """
