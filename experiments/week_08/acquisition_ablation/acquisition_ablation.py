@@ -6,13 +6,13 @@ a live, physical black-box function in real-time, functioning as an offline sequ
 Main strategies used:
 
 - Offline Rollout Simulation: Iteratively selects points from pre-computed pools (X_full, Y_target) 
-  using diverse acquisition strategies (e.g., EI, UCB, PI, Thompson Sampling) to track simple regret trajectories.
+  using diverse acquisition strategies (e.g., EI, UCB, PI) to track simple regret trajectories.
   
 - GP Surrogate Modeling: Fits Gaussian Process Regressors with optimized kernels (from prior kernel ablation study) 
   using gradient-based L-BFGS-B optimization (`optimizer="fmin_l_bfgs_b"`, `n_restarts_optimizer=10`) 
   to maximize Log Marginal Likelihood and ensure reliable uncertainty estimates.
   
-- Multi-Seed Parallelization: Runs rollouts across multiple random seeds in parallel via Joblib 
+- Multi-Seed Parallelization: Runs rollouts across multiple random seeds in (20) parallel via Joblib 
   to eliminate stochastic initialization bias.
   
 - Comprehensive Performance Metrics Evaluation: Computes final simple regret and Area Under the Regret Curve (AURC) 
@@ -51,12 +51,13 @@ def run_single_seed_rollout(seed, X_full, Y_target, true_global_max, best_kernel
         
         regret_trajectory = []
 
-        for iteration_idx in range(n_iterations):
+        for _ in range(n_iterations):
             if len(remaining_indices) == 0:
                 break
 
             scaler = StandardScaler()
             X_train_scaled = scaler.fit_transform(X_train)
+
 
             # Explicitly passing an integer seed to random_state (using deterministic offset based on seed prevents core collisions)
             gp_random_state = int(seed) + 42
@@ -76,11 +77,7 @@ def run_single_seed_rollout(seed, X_full, Y_target, true_global_max, best_kernel
             X_rem_scaled = scaler.transform(X_full[remaining_indices])
             y_best_current = np.max(Y_train)
             
-            # Pass a unique deterministic seed for Thompson Sampling generation per iteration if applicable
-            ts_random_state = int(seed) + iteration_idx * 1000
-            scores = compute_acquisition_scores(
-                X_rem_scaled, gp, y_best_current, acq_type, param, random_state=ts_random_state
-            )
+            scores = compute_acquisition_scores(X_rem_scaled, gp, y_best_current, acq_type, param)
             
             best_candidate_local_idx = np.argmax(scores)
             chosen_global_idx = remaining_indices[best_candidate_local_idx]
@@ -98,6 +95,7 @@ def run_single_seed_rollout(seed, X_full, Y_target, true_global_max, best_kernel
 
 def plot_master_convergence_grid(all_functions_regrets, output_dir="week_08/diagnostics_results", filename="wk8_acquisition_ablation_results_all_functions.png"):
     """Plotting a consolidated 2x4 grid of convergence trajectories for Functions 1 to 8, saving it to the target directory, and displaying it."""
+    # Ensuring the target directory exists automatically
     os.makedirs(output_dir, exist_ok=True)
     filepath = os.path.join(output_dir, filename)
 
@@ -135,6 +133,7 @@ def plot_master_convergence_grid(all_functions_regrets, output_dir="week_08/diag
     plt.suptitle("Multi-Step Rollout and Acquisition Ablation via Offline Bayesian Optimization: Simple Regret Trajectories Across Datasets of Black-Box Functions 1–8", fontsize=15, fontweight='bold', y=0.98)
     plt.tight_layout(rect=[0, 0, 1, 0.96])
     
+    # Save the figure to the specified diagnostics results folder
     plt.savefig(filepath, dpi=300, bbox_inches='tight')
     print(f"Master plot successfully saved to '{filepath}'")
     
@@ -161,7 +160,13 @@ def run_sequential_acq_ablation(data, top_kernels_summary, n_init=5, n_iteration
         n_samples, n_dims = X_full.shape
 
         if fn_idx == 1:
-            Y_target = np.log10(np.maximum(Y_raw, 1e-300))
+            # Data-driven floor: use the smallest genuine positive reading in this
+            # function's own data (matches the kernel ablation study), instead of an
+            # arbitrary 1e-300 that could produce an extreme, unphysical outlier.
+            positive_Y = Y_raw[Y_raw > 0]
+            noise_floor = positive_Y.min()
+            Y_safe = np.clip(Y_raw, noise_floor, None)
+            Y_target = np.log10(Y_safe)
         else:
             Y_target = Y_raw
 
@@ -213,7 +218,7 @@ def run_sequential_acq_ablation(data, top_kernels_summary, n_init=5, n_iteration
         acq_df = acq_df.sort_values(by=["Mean Final Regret", "Mean AURC (Convergence Speed)"], ascending=[True, True]).reset_index(drop=True)
 
         print("=" * 115)
-        print(f"        FUNCTION {fn_idx} — WEEK 7 ROBUST SEQUENTIAL ROLLOUT ABLATION (N_seeds={n_seeds})")
+        print(f"        FUNCTION {fn_idx} — WEEK 8 ROBUST SEQUENTIAL ROLLOUT ABLATION (N_seeds={n_seeds})")
         print("=" * 115)
         print(acq_df.to_string(index=False))
         print("-" * 115)
