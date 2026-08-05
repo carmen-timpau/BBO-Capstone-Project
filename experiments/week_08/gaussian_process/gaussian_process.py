@@ -22,13 +22,14 @@ def evaluate_gaussian_process(X_train, y_train, X_test, best_kernel):
     """
 
     alpha_value = 1e-8 if is_noiseless_kernel(best_kernel) else 0.0
-    
+
     gp = GaussianProcessRegressor(
         kernel=best_kernel,
-        alpha=0.0,
+        alpha=alpha_value,
         normalize_y=True,
         n_restarts_optimizer=10,
         random_state=42
     )
+    
     gp.fit(X_train, y_train)
     return gp.predict(X_test)
