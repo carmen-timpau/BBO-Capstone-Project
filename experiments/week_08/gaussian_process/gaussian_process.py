@@ -12,10 +12,17 @@ surrogate models for the Bayesian Optimisation of the 8 Black-Box functions will
 
 from sklearn.gaussian_process import GaussianProcessRegressor
 
+def is_noiseless_kernel(kernel):
+    """Returns True if the kernel has no WhiteKernel component."""
+    return "WhiteKernel" not in str(kernel)
+
 def evaluate_gaussian_process(X_train, y_train, X_test, best_kernel):
     """
     Fitting a Gaussian Process Regressor using the winning kernel and predicting on the test set.
     """
+
+    alpha_value = 1e-8 if is_noiseless_kernel(best_kernel) else 0.0
+    
     gp = GaussianProcessRegressor(
         kernel=best_kernel,
         alpha=0.0,
