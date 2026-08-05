@@ -12,24 +12,26 @@ import statsmodels.api as sm
 import warnings
 
 from sklearn.gaussian_process import GaussianProcessRegressor
-from sklearn.gaussian_process.kernels import Matern, RBF, RationalQuadratic, WhiteKernel
-from sklearn.metrics import root_mean_squared_error, r2_score
 from sklearn.preprocessing import StandardScaler
+from sklearn.metrics import root_mean_squared_error, r2_score
 from statsmodels.stats.diagnostic import het_breuschpagan
 from sklearn.exceptions import ConvergenceWarning
 
-from kernels import get_kernel_suite, get_kernel_suite_f1
+from kernel_ablation.kernels import get_kernel_suite, get_kernel_suite_f1
 
 warnings.filterwarnings("ignore", category=ConvergenceWarning)
 
+def is_noiseless_kernel(kernel):
+    """Returns True if the kernel has no WhiteKernel component."""
+    return "WhiteKernel" not in str(kernel)
+
 def run_bp(data, top_kernels_summary):
-    # Setup subplots for Functions 1 to 8 (2 rows, 4 columns) in a single figure
+
     fig, axes = plt.subplots(2, 4, figsize=(24, 12))
     axes = axes.flatten()
 
     breusch_pagan_summary = {}
 
-    # Running Diagnostics and Breusch-Pagan Test across Functions 1 to 8
     for fn_idx in range(1, 9):
         fn_key = f"function_{fn_idx}"
         ax = axes[fn_idx - 1]
@@ -39,30 +41,35 @@ def run_bp(data, top_kernels_summary):
             ax.axis('off')
             continue
 
-        # Extracting Data
         X = np.array(data[fn_key]["x"])
-        Y = np.array(data[fn_key]["y"]).flatten()
+        Y_raw = np.array(data[fn_key]["y"]).flatten()
         n_samples, n_dims = X.shape
 
-        # Preprocessing target for Function 1 (safe clipping + log10 scale)
+        # Week 8 Function 1 preprocessing (data-driven floor + log10)
         if fn_idx == 1:
-            Y_safe = np.clip(Y, 1e-300, None)
-            Y_target = np.log10(Y_safe)
+            positive_Y = Y_raw[Y_raw > 0]
+            if positive_Y.size == 0:
+                raise ValueError("Function 1 contains no positive Y values; cannot apply log10 transform.")
+            noise_floor = positive_Y.min()
+            Y_target = np.log10(np.clip(Y_raw, noise_floor, None))
         else:
-            Y_target = Y
+            Y_target = Y_raw
 
-        # Retrieving the winning kernel variant name stored in top_kernels_summary
+        # Retrieve winning kernel from Week 8 kernel ablation
         winning_variant_name = top_kernels_summary[fn_key]["Best Variant"]
 
-        # Re-instantiating a fresh instance of the winning kernel configuration from the suite
+        # Rebuild kernel suite (Week 8)
         kernel_suite = get_kernel_suite_f1(n_dims) if fn_idx == 1 else get_kernel_suite(n_dims)
         best_kernel = kernel_suite[winning_variant_name]
+
+        # Week 8 jitter rule
+        alpha_value = 1e-8 if is_noiseless_kernel(best_kernel) else 0.0
 
         fn_predictions = []
         fn_residuals = []
         fn_fold_lmls = []
 
-        # Running LOOCV Loop across all points using the winning GP configuration
+        # LOOCV loop (Week 8: per-fold scaling)
         for j in range(n_samples):
             X_train = np.delete(X, j, axis=0)
             Y_train = np.delete(Y_target, j, axis=0)
@@ -75,7 +82,7 @@ def run_bp(data, top_kernels_summary):
 
             gp = GaussianProcessRegressor(
                 kernel=best_kernel,
-                alpha=0.0,
+                alpha=alpha_value,
                 normalize_y=True,
                 n_restarts_optimizer=5,
                 random_state=42,
@@ -91,17 +98,17 @@ def run_bp(data, top_kernels_summary):
         fn_predictions = np.array(fn_predictions)
         fn_residuals = np.array(fn_residuals)
 
-        # Calculating RMSE & R²
+        # RMSE & R²
         fn_rmse = root_mean_squared_error(Y_target, fn_predictions)
         fn_r2 = r2_score(Y_target, fn_predictions)
 
-        # Fitting Full Dataset for Log Marginal Likelihood and Learned Kernel Parameters
+        # Full fit for LML
         scaler_full = StandardScaler()
         X_full_scaled = scaler_full.fit_transform(X)
 
         gp_full = GaussianProcessRegressor(
             kernel=best_kernel,
-            alpha=0.0,
+            alpha=alpha_value,
             normalize_y=True,
             n_restarts_optimizer=5,
             random_state=42,
@@ -110,16 +117,12 @@ def run_bp(data, top_kernels_summary):
         full_lml = gp_full.log_marginal_likelihood(gp_full.kernel_.theta)
         mean_loocv_lml = np.mean(fn_fold_lmls)
 
-        # Performing Breusch-Pagan test
+        # Breusch-Pagan test
         X_test_matrix = sm.add_constant(fn_predictions)
-        lm_stat, p_value, f_stat, f_p_value = het_breuschpagan(
-            fn_residuals, X_test_matrix
-        )
+        lm_stat, p_value, f_stat, f_p_value = het_breuschpagan(fn_residuals, X_test_matrix)
 
-        # Dynamically determine the label tag based on the Breusch-Pagan p-value verdict
         hetero_label = "Heteroscedastic" if p_value < 0.05 else "Homoscedastic"
 
-        # Saving the results inside the dictionary for this function (in memory)
         breusch_pagan_summary[fn_key] = {
             "Dim": n_dims,
             "N_Samples": n_samples,
@@ -131,17 +134,9 @@ def run_bp(data, top_kernels_summary):
             "Verdict": hetero_label
         }
 
-        # Plotting Residuals vs GP Predictions into the shared multi-panel layout
-        ax.scatter(
-            fn_predictions,
-            fn_residuals,
-            color="darkviolet",
-            alpha=0.7,
-            edgecolors="k",
-            s=50,
-            zorder=2,
-        )
-        ax.axhline(y=0, color="black", linestyle="--", linewidth=2, zorder=1)
+        # Plot residuals
+        ax.scatter(fn_predictions, fn_residuals, color="darkviolet", alpha=0.7, edgecolors="k", s=50)
+        ax.axhline(y=0, color="black", linestyle="--", linewidth=2)
 
         title_target_label = r"\hat{y}" if fn_idx != 1 else r"\hat{\log_{10}(y)}"
         ylabel_target = "Residual" if fn_idx != 1 else "Residual ($\log_{10}$)"
@@ -155,33 +150,20 @@ def run_bp(data, top_kernels_summary):
         ax.set_ylabel(ylabel_target, fontsize=8)
         ax.grid(True, linestyle=":", alpha=0.6)
 
-        # Formatting display title for winning variant
-        winning_title = (
-            winning_variant_name.split(":")[1].strip().upper()
-            if ":" in winning_variant_name
-            else winning_variant_name.upper()
-        )
+        print("=" * 75)
+        print(f"FUNCTION {fn_idx} — Week 8 Breusch-Pagan Diagnostics")
+        print("=" * 75)
+        print(f"Full LML: {full_lml:.3f}")
+        print(f"Mean LOOCV LML: {mean_loocv_lml:.3f}")
+        print(f"RMSE: {fn_rmse:.4f}")
+        print(f"R²: {fn_r2:.4f}")
+        print(f"BP p-value: {p_value:.5f}")
+        print(f"Verdict: {hetero_label}")
+        print("-" * 75)
+        print(f"Learned Kernel:\n{gp_full.kernel_}")
+        print("=" * 75, "\n")
 
-        # Printing Diagnostics and Results
-        print("==========================================================================")
-        print(f"    FUNCTION {fn_idx} DIAGNOSTICS — WINNING CONFIG: {winning_title}")
-        print("==========================================================================")
-        print(f"Full Dataset Log Marginal Likelihood (LML) : {full_lml:.3f}")
-        print(f"Mean LOOCV Fold Log Marginal Likelihood    : {mean_loocv_lml:.3f}")
-        print(f"LOOCV Root Mean Squared Error (RMSE)       : {fn_rmse:.4f}")
-        print(f"LOOCV R-squared Score                      : {fn_r2:.4f}")
-        print(f"Breusch-Pagan Test p-value                 : {p_value:.5f}")
-        print("--------------------------------------------------------------------------")
-        print(f"Learned Kernel Parameters:\n{gp_full.kernel_}")
-        print("--------------------------------------------------------------------------")
-
-        if p_value < 0.05:
-            print(f"Verdict for Function {fn_idx} ({n_samples} datapoints, Week 8): Statistically HETEROSCEDASTIC")
-        else:
-            print(f"Verdict for Function {fn_idx} ({n_samples} datapoints, Week 8): Statistically HOMOSCEDASTIC")
-        print("==========================================================================\n")
-
-    # Automatically routing output plot into week_08/diagnostics_results folder
+    # Save plot into diagnostics_results folder
     output_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', 'diagnostics_results'))
     os.makedirs(output_dir, exist_ok=True)
 
