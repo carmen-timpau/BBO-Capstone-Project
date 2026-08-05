@@ -1,6 +1,6 @@
 ```text
 ===========================================================================================================================================================================
- COMPILING FINAL HEBO & SOBOL-BASED NEXT QUERY PREDICTIONS ACROSS FUNCTIONS 1–8
+             WEEK 8 NEXT QUERY PREDICTIONS ACROSS FUNCTIONS 1–8
 ===========================================================================================================================================================================
 Function 1 | Next Query: [0.620101 0.082174] | Surrogate: Deep Ensemble | Acq: Upper Confidence Bound (beta=2.58) 
 Function 2 | Next Query: [0.813601 0.378871] | Surrogate: Gaussian Process | Acq: Upper Confidence Bound (beta=1.96) 
