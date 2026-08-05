@@ -64,7 +64,7 @@ def run_next_query_prediction(
         X_scaled = scaler.fit_transform(X_full)
 
         if winning_surrogate == "GP":
-            kernel_suite = kernel_suites_dict.get(fn_idx, {})
+            kernel_suite = kernel_suites_dict.get(fn_key, {})
             best_kernel = kernel_suite.get(winning_kernel_name, list(kernel_suite.values())[0])
             
             gp = GaussianProcessRegressor(kernel=best_kernel, alpha=0.0, normalize_y=True, n_restarts_optimizer=10, random_state=42)
