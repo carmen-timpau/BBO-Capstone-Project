@@ -1,5 +1,5 @@
 # Computing Scores for Acquisition Functions (Designed for Batch/Vector Inputs)
-# Contains the Acquisition Functions Tested in Acquisition Ablation Study conducted in Week 6 BBO
+# Contains the Acquisition Functions Tested in Acquisition Ablation Study conducted in Week 8 BBO
 
 import numpy as np
 from scipy.stats import norm
