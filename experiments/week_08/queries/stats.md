@@ -1,4 +1,4 @@
-```text
+```
 Statistical analysis of Function 1 after week 8:
 -----------------------------------
 
