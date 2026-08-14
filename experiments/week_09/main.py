@@ -8,14 +8,17 @@ Coordinates the end-to-end execution of:
 2. Next Query Prediction (HEBO output warping, GP surrogate using the jointly-chosen kernel,
    Dynamic Sobol Sampling, jointly-chosen acquisition scoring, output unwarping).
 """
+
 import sys
 import os
 import pickle
 import numpy as np
+
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
+
 from kernel_ablation.kernels import get_kernel_suite, get_kernel_suite_f1
 from acquisition_ablation.full_joint_ablation import run_full_joint_ablation
-from query_predict.query_predict_v2 import run_next_query_prediction
+from query_predict.query_predict import run_next_query_prediction
 
 def main():
     print("=" * 100)
