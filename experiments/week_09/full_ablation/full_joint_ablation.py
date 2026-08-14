@@ -100,42 +100,84 @@ def run_single_seed_rollout(seed, X_full, Y_target, true_global_max, kernel, n_i
     return seed_trajectories
 
 
-def plot_master_convergence_grid(all_functions_regrets, output_dir="week_09/diagnostics_results",
+def abbreviate_acq_name(acq_name):
+    """Shortening acquisition variant names for printing shorter legend labels."""
+    replacements = {
+        "Upper Confidence Bound": "UCB",
+        "Expected Improvement": "EI",
+        "Probability of Improvement": "PI",
+        "Thompson Sampling": "TS",
+    }
+    for full, short in replacements.items():
+        if acq_name.startswith(full):
+            return acq_name.replace(full, short)
+    return acq_name 
+
+
+def plot_master_convergence_grid(all_functions_regrets, all_functions_full_tables=None,
+                                  top_n_labeled=5, output_dir="week_09/diagnostics_results",
                                   filename="full_joint_ablation_all_functions.png"):
     """Plotting 2x4 grid of convergence trajectories per function, using all 
-    (kernel, acquisition) combinations swept for each function."""
+    (kernel, acquisition) combinations swept for each function.
+    """
     os.makedirs(output_dir, exist_ok=True)
     filepath = os.path.join(output_dir, filename)
-
+ 
     fig, axes = plt.subplots(2, 4, figsize=(22, 11), sharey=False)
     axes = axes.flatten()
-
+ 
+    highlight_colors = plt.cm.tab10.colors 
+ 
     for idx in range(8):
         fn_idx = idx + 1
         fn_key = f"function_{fn_idx}"
         ax = axes[idx]
-
+ 
         if fn_key not in all_functions_regrets:
             ax.set_visible(False)
             continue
-
+ 
         combo_regrets = all_functions_regrets[fn_key]
-
+ 
+        top_combo_labels = {}
+        if all_functions_full_tables is not None and fn_key in all_functions_full_tables:
+            ranked_df = all_functions_full_tables[fn_key]
+            for _, row in ranked_df.head(top_n_labeled).iterrows():
+                combo_name = f"{row['Kernel']} + {row['Acquisition Variant']}"
+                kernel_short = row['Kernel'].split(":")[-1].strip() if ":" in row['Kernel'] else row['Kernel']
+                acq_short = abbreviate_acq_name(row['Acquisition Variant'])
+                top_combo_labels[combo_name] = f"{kernel_short} + {acq_short}"
+ 
+        # Plotting unlabeled/background combos first (greyed out).
         for combo_name, trajectories in combo_regrets.items():
+            if len(trajectories) == 0 or combo_name in top_combo_labels:
+                continue
+            traj_array = np.array(trajectories)
+            mean_traj = np.mean(traj_array, axis=0)
+            iterations = range(1, len(mean_traj) + 1)
+            ax.plot(iterations, mean_traj, linewidth=0.8, alpha=0.15, color="gray")
+ 
+        # Plotting highlighted top-N combos on top, in color, with abbreviated legend labels. 
+        for rank, (combo_name, short_label) in enumerate(top_combo_labels.items()):
+            trajectories = combo_regrets.get(combo_name, [])
             if len(trajectories) == 0:
                 continue
             traj_array = np.array(trajectories)
             mean_traj = np.mean(traj_array, axis=0)
             iterations = range(1, len(mean_traj) + 1)
-            ax.plot(iterations, mean_traj, linewidth=1.0, alpha=0.6)
-
+            ax.plot(iterations, mean_traj, linewidth=2.0, alpha=0.95,
+                     color=highlight_colors[rank % len(highlight_colors)], label=short_label)
+ 
         ax.set_title(f"Function {fn_idx}", fontsize=14, fontweight='bold')
         ax.set_xlabel("Iteration", fontsize=11)
         ax.set_ylabel("Simple Regret", fontsize=11)
         ax.grid(True, linestyle="--", alpha=0.5)
-
+        if top_combo_labels:
+            ax.legend(loc='upper right', fontsize=6.5, framealpha=0.8, title=f"Top {top_n_labeled}",
+                       title_fontsize=7)
+ 
     plt.suptitle(
-        "Full Joint Kernel x Acquisition Sweep (all combos, incl. Random Baseline): "
+        f"Full Joint Kernel x Acquisition Sweep (top {top_n_labeled} highlighted, incl. Random Baseline): "
         "Simple Regret Trajectories, Functions 1-8",
         fontsize=15, fontweight='bold', y=0.98
     )
@@ -313,7 +355,8 @@ def run_full_joint_ablation(data, n_init_base=5, init_per_dim=2, n_iterations=15
         print(f"    Vs random baseline    : {res['Vs Random Baseline']}")
     print("=" * 100)
 
-    plot_master_convergence_grid(all_functions_regrets, output_dir="week_09/diagnostics_results",
-                                  filename="full_joint_ablation_all_functions.png")
+    plot_master_convergence_grid(all_functions_regrets, all_functions_full_tables=all_functions_full_tables,
+                                  top_n_labeled=5, output_dir="week_09/diagnostics_results",
+                                  filename="full_joint_ablation_all_functions_legend.png")
 
     return sequential_ablation_summary
