@@ -1,4 +1,5 @@
-**Full Joint Gaussian Process Surrogate Model Kernel x Acquisition Function Ablation Study Results (Week 9 BBO)**
+**Week 9 BBO Capstone Project**
+**Full Joint Gaussian Process Surrogate Model Kernel x Acquisition Function Ablation Study Results**
 
 ```text
 ====================================================================================================
