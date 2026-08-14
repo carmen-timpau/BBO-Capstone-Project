@@ -1,6 +1,5 @@
 """
-Main Execution Script: BBO Capstone Project Week 9 
-Full Machine Learning Pipeline (GP-only)
+Main Execution Script: BBO Capstone Project Week 9 - Full Machine Learning Pipeline
 --------------------------------------------------------------------------------------
 Coordinates the end-to-end execution of:
 1. Full Joint Kernel x Acquisition Rollout Ablation Study: picks kernel and acquisition
