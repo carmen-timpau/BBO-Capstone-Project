@@ -38,6 +38,8 @@ def run_next_query_prediction(
  
     - Candidates within `min_distance_to_existing` of any existing training point (in scaled space) are 
       excluded from the Sobol pool before acquisition scoring, so the already-measured point (and near-duplicates of it) can no longer win.
+      This was tested intitially with 0.01 but was then implemented as 0.0 (i.e. no use of min_distance_to_existing essentially), as it was 
+      observed to not be required this time based on compared query predictions. 
       
     - Sobol seed tied to the current sample count (`sobol_seed_base + n_samples`) instead of a hardcoded 42, 
       so the candidate grid itself changes whenever the dataset grows.
