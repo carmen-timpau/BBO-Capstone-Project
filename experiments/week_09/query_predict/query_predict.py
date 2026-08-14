@@ -142,7 +142,6 @@ def run_next_query_prediction(
         predicted_std = float(predicted_std[0])
 
         predicted_original_value = unwarp_predictions_and_values(predicted_warped_value, fn_key, warpers)
-        # unwarp_predictions_and_values expects array-like; ensure scalar output for printing
         predicted_original_value = float(np.ravel(predicted_original_value)[0])
 
         next_queries_results[fn_key] = {
