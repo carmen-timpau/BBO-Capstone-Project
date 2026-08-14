@@ -12,6 +12,7 @@ Executing the HEBO-inspired, Dynamic Sobol-Sampled Bayesian Optimization next-qu
 
 import numpy as np
 from scipy.stats.qmc import Sobol
+from scipy.spatial.distance import cdist
 from sklearn.preprocessing import StandardScaler
 from sklearn.gaussian_process import GaussianProcessRegressor
 
@@ -28,51 +29,49 @@ def run_next_query_prediction(
     data,
     sequential_ablation_summary,
     kernel_suites_dict,
-    on_random_baseline="sample_random"
+    on_random_baseline="sample_random",
+    min_distance_to_existing=0.01,
+    sobol_seed_base=42
 ):
     """
     Predicting the next query point per function.
-    
-    Args:
-        data: raw {"function_k": {"x": ..., "y": ...}} dataset dict.
-        sequential_ablation_summary: output of full_joint_ablation.run_full_joint_ablation -
-            must contain, per function, "Best Kernel" and "Best Acquisition".
-        kernel_suites_dict: {fn_key: {kernel_name: kernel_object}} - used to look up the
-            actual (unfitted) kernel object matching the winning kernel name.
-        on_random_baseline: "sample_random" (default) draws a genuine random Sobol candidate
-            when the ablation winner was "Random Baseline" (faithful to that finding).
-            "fallback_best_nonrandom" instead uses EI(xi=0.01) with an explicit warning.
-
+ 
+    - Candidates within `min_distance_to_existing` of any existing training point (in scaled space) are 
+      excluded from the Sobol pool before acquisition scoring, so the already-measured point (and near-duplicates of it) can no longer win.
+      
+    - Sobol seed tied to the current sample count (`sobol_seed_base + n_samples`) instead of a hardcoded 42, 
+      so the candidate grid itself changes whenever the dataset grows.
+ 
     Returns: {fn_key: {"Next Query Coordinates", "Winning Kernel", "Winning Acquisition",
                         "Predicted Original Scale Value", "Predicted Std (warped scale)"}}
     """
     warped_data, warpers = apply_output_warping_to_dataset(data)
     next_queries_results = {}
-
+ 
     print("\n" + "=" * 115)
     print(" COMPILING FINAL HEBO & SOBOL-BASED NEXT QUERY PREDICTIONS ACROSS FUNCTIONS 1-8")
     print("=" * 115)
-
+ 
     for fn_idx in range(1, 9):
         fn_key = f"function_{fn_idx}"
         if fn_key not in warped_data:
             continue
-
+ 
         X_full = np.array(warped_data[fn_key]["x"])
         Y_target = np.array(warped_data[fn_key]["y_target"])
         n_samples, n_dims = X_full.shape
-
+ 
         ablation_info = sequential_ablation_summary.get(fn_key, {})
         winning_kernel_name = ablation_info.get("Best Kernel")
         best_acq_variant = ablation_info.get("Best Acquisition", "Expected Improvement (xi=0.01)")
-
+ 
         if winning_kernel_name is None:
             print(f"  [WARNING] No 'Best Kernel' found in sequential_ablation_summary for {fn_key} "
                   f"-- make sure run_full_joint_ablation was run for this function.")
-
+ 
         is_random_baseline = (best_acq_variant == "Random Baseline")
         acq_warning = None
-
+ 
         if is_random_baseline:
             if on_random_baseline == "sample_random":
                 acq_type, param = "random", None
@@ -88,14 +87,14 @@ def run_next_query_prediction(
                             f"acq_strategies -- falling back to EI(xi=0.01).")
         else:
             acq_type, param = acq_strategies[best_acq_variant]
-
+ 
         if acq_warning:
             print(f"  [WARNING] {acq_warning}")
-
+ 
         # GP fitting using the jointly-chosen kernel on the full dataset
         scaler = StandardScaler()
         X_scaled = scaler.fit_transform(X_full)
-
+ 
         kernel_suite = kernel_suites_dict.get(fn_key, {})
         best_kernel = kernel_suite.get(winning_kernel_name)
         if best_kernel is None:
@@ -103,7 +102,7 @@ def run_next_query_prediction(
                   f"{fn_key} -- falling back to first available kernel.")
             best_kernel = list(kernel_suite.values())[0]
             winning_kernel_name = list(kernel_suite.keys())[0]
-
+ 
         alpha_value = 1e-8 if is_noiseless_kernel(best_kernel) else 0.0
         gp = GaussianProcessRegressor(
             kernel=best_kernel,
@@ -113,42 +112,65 @@ def run_next_query_prediction(
             random_state=42
         )
         gp.fit(X_scaled, Y_target)
-
+ 
         # Sobol candidate generation over the continuous input domain
         minimum = X_full.min(axis=0)
         maximum = X_full.max(axis=0)
-
+ 
         if n_dims >= 6:
             m_samples = 14
         elif n_dims >= 4:
             m_samples = 13
         else:
             m_samples = 12
-
-        sobol = Sobol(d=n_dims, scramble=True, seed=42)
+ 
+        # Seed shifts with dataset size, so the candidate grid changes as new points are added
+        # instead of regenerating the exact same grid every run.
+        sobol_seed = sobol_seed_base + n_samples
+        sobol = Sobol(d=n_dims, scramble=True, seed=sobol_seed)
         unit_samples = sobol.random_base2(m=m_samples)
         x_grid = minimum + unit_samples * (maximum - minimum)
         x_grid_scaled = scaler.transform(x_grid)
-
+ 
+        # Excluding candidates too close to already-evaluated points
+        # So that the acquisition function cannot predict the same query points  (which was happening for Function 5) 
+        if min_distance_to_existing > 0:
+            dist_to_existing = cdist(x_grid_scaled, X_scaled)  # (n_candidates, n_train)
+            min_dist_per_candidate = dist_to_existing.min(axis=1)
+            keep_mask = min_dist_per_candidate >= min_distance_to_existing
+ 
+            if keep_mask.sum() == 0:
+                print(f"  [WARNING] All Sobol candidates for {fn_key} were within "
+                      f"min_distance_to_existing={min_distance_to_existing} of an existing point "
+                      f"-- domain may be densely sampled relative to this threshold. "
+                      f"Falling back to the unfiltered pool for this function.")
+            else:
+                n_excluded = len(x_grid) - keep_mask.sum()
+                if n_excluded > 0:
+                    print(f"  [INFO] {fn_key}: excluded {n_excluded} of {len(x_grid)} Sobol "
+                          f"candidates as too close to already-evaluated points.")
+                x_grid = x_grid[keep_mask]
+                x_grid_scaled = x_grid_scaled[keep_mask]
+ 
         y_best_current = np.max(Y_target)
-
+ 
         if acq_type == "random":
-            rng = np.random.default_rng(42 + fn_idx)
+            rng = np.random.default_rng(sobol_seed_base + n_samples + fn_idx)
             chosen_global_idx = int(rng.integers(0, len(x_grid)))
         else:
             scores = compute_acquisition_scores(x_grid_scaled, gp, y_best_current, acq_type, param)
             chosen_global_idx = np.argmax(scores)
-
+ 
         next_query_coords = x_grid[chosen_global_idx]
         next_query_scaled_2d = x_grid_scaled[chosen_global_idx].reshape(1, -1)
-
+ 
         predicted_warped_value, predicted_std = gp.predict(next_query_scaled_2d, return_std=True)
         predicted_warped_value = predicted_warped_value[0]
         predicted_std = float(predicted_std[0])
-
+ 
         predicted_original_value = unwarp_predictions_and_values(predicted_warped_value, fn_key, warpers)
         predicted_original_value = float(np.ravel(predicted_original_value)[0])
-
+ 
         next_queries_results[fn_key] = {
             "Next Query Coordinates": next_query_coords,
             "Winning Kernel": winning_kernel_name,
@@ -156,10 +178,10 @@ def run_next_query_prediction(
             "Predicted Original Scale Value": predicted_original_value,
             "Predicted Std (warped scale)": predicted_std
         }
-
+ 
         print(f"Function {fn_idx} | Next Query: {np.round(next_query_coords, 6)} | "
               f"Kernel: {winning_kernel_name} | Acq: {best_acq_variant:<20} | "
               f"Predicted Value: {predicted_original_value:.6f} | Pred Std (warped): {predicted_std:.4f}")
-
+ 
     print("=" * 115)
     return next_queries_results
