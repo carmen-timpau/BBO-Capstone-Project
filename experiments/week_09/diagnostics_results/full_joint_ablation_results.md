@@ -224,4 +224,6 @@ FUNCTION_8: Ablation 5: Matern 2.5 Isotropic (Shared Lengthscale) + WhiteNoise +
     Vs random baseline    : WINS on final regret
 ====================================================================================================
 Master plot successfully saved to 'week_09/diagnostics_results/full_joint_ablation_all_functions.png'
+
+[SUCCESS] Joint kernel x acquisition ablation study complete!
 ```
