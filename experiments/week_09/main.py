@@ -81,7 +81,7 @@ def main():
         print(f"    Next Query Coordinates : {np.round(res['Next Query Coordinates'], 6)}")
         print(f"    Kernel Used            : {res['Winning Kernel']}")
         print(f"    Acquisition Used       : {res['Winning Acquisition']}")
-        print(f"    Predicted Value        : {res['Predicted Original Scale Value']:.6f}")
+        print(f"    Predicted Value        : {res['Predicted Original Scale Value']}")
         print(f"    Predicted Std (warped) : {res['Predicted Std (warped scale)']:.4f}")
         print("-" * 100)
 
