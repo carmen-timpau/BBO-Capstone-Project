@@ -36,7 +36,7 @@ def main():
     print("[INFO] Dataset successfully loaded into memory.")
 
     # Step 2. Executing Full Joint Kernel x Acquisition Rollout Ablation Study.
-    # Picking best kernel and acquisition pair per function.
+    # Picking the best kernel and acquisition pair per function.
     print("\n" + "=" * 100)
     print(" [STEP 1] Running Full Joint Kernel x Acquisition Rollout Ablation Study...")
     print("=" * 100)
@@ -50,7 +50,7 @@ def main():
     )
     print("\n[SUCCESS] Joint kernel x acquisition ablation study complete!")
 
-    # Step 3. Executing Final Next Query Predictions.
+    # Step 3. Executing the Final Next Query Predictions.
     print("\n" + "=" * 100)
     print(" [STEP 2] Executing Final HEBO-Based Next Query Predictions...")
     print("=" * 100)
