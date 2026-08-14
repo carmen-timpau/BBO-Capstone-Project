@@ -4,16 +4,14 @@ _**Week 9 BBO Capstone Project**_
 
 ```text
 ====================================================================================================
- [STEP 2] Executing Final HEBO-Based Next Query Predictions...
+ [STEP 2] Executing Final HEBO-Based Next Query Predictions (GP-only)...
 ====================================================================================================
 
 ===================================================================================================================
  COMPILING FINAL HEBO & SOBOL-BASED NEXT QUERY PREDICTIONS ACROSS FUNCTIONS 1-8
 ===================================================================================================================
-  [INFO] function_1: excluded 2 of 4096 Sobol candidates as too close to already-evaluated points.
 Function 1 | Next Query: [0.177698 0.446721] | Kernel: Ablation 4: Matern 2.5 WITHOUT WhiteNoise (Noiseless) | Acq: Upper Confidence Bound (beta=2.58) | Predicted Value: 0.000000 | Pred Std (warped): 0.8465
-  [INFO] function_2: excluded 4 of 4096 Sobol candidates as too close to already-evaluated points.
-Function 2 | Next Query: [0.280143 0.365069] | Kernel: Ablation 7: RBF with Unit Lengthscales (ARD) + WhiteNoise | Acq: Thompson Sampling    | Predicted Value: 0.104030 | Pred Std (warped): 1.0109
+Function 2 | Next Query: [0.231846 0.465131] | Kernel: Ablation 7: RBF with Unit Lengthscales (ARD) + WhiteNoise | Acq: Thompson Sampling    | Predicted Value: 0.136107 | Pred Std (warped): 1.0963
 Function 3 | Next Query: [0.176732 0.765677 0.378288] | Kernel: Ablation 7: RBF with Unit Lengthscales (ARD) + WhiteNoise | Acq: Upper Confidence Bound (beta=0.5) | Predicted Value: -0.034770 | Pred Std (warped): 0.2230
 Function 4 | Next Query: [0.392974 0.405785 0.33596  0.406421] | Kernel: Ablation 5: Matern 2.5 Isotropic (Shared Lengthscale) + WhiteNoise | Acq: Upper Confidence Bound (beta=0.5) | Predicted Value: -1.054739 | Pred Std (warped): 0.1304
 Function 5 | Next Query: [0.831048 0.737492 0.858515 0.955716] | Kernel: Ablation 1: Matern 1.5 + WhiteNoise (Rougher/Spiky) | Acq: Upper Confidence Bound (beta=1.0) | Predicted Value: 1703.469591 | Pred Std (warped): 0.2280
@@ -33,11 +31,11 @@ FUNCTION_1:
     Predicted Std (warped) : 0.8465
 ----------------------------------------------------------------------------------------------------
 FUNCTION_2:
-    Next Query Coordinates : [0.280143 0.365069]
+    Next Query Coordinates : [0.231846 0.465131]
     Kernel Used            : Ablation 7: RBF with Unit Lengthscales (ARD) + WhiteNoise
     Acquisition Used       : Thompson Sampling
-    Predicted Value        : 0.1040304091196056
-    Predicted Std (warped) : 1.0109
+    Predicted Value        : 0.13610723000067804
+    Predicted Std (warped) : 1.0963
 ----------------------------------------------------------------------------------------------------
 FUNCTION_3:
     Next Query Coordinates : [0.176732 0.765677 0.378288]
