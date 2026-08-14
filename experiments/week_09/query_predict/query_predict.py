@@ -15,6 +15,11 @@ from scipy.stats.qmc import Sobol
 from sklearn.preprocessing import StandardScaler
 from sklearn.gaussian_process import GaussianProcessRegressor
 
+from output_warping.output_warping import apply_output_warping_to_dataset
+from output_unwarping.output_unwarping import unwarp_predictions_and_values
+from full_ablation.acq_strategies import acq_strategies
+from full_ablation.acquisition import compute_acquisition_scores
+
 def is_noiseless_kernel(kernel):
     """Returning True if the kernel has no WhiteKernel component."""
     return "WhiteKernel" not in str(kernel)
