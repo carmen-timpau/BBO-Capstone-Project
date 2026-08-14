@@ -1,3 +1,5 @@
+**Full Joint Gaussian Process Surrogate Model Kernel x Acquisition Function Ablation Study**
+
 ```text
 ====================================================================================================
                     WEEK 09 BBO PIPELINE: EXECUTION & EVALUATION START
