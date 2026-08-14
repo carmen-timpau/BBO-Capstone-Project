@@ -135,7 +135,7 @@ def run_next_query_prediction(
         x_grid_scaled = scaler.transform(x_grid)
  
         # Excluding candidates too close to already-evaluated points so that the acquisition function cannot predict the same query points 
-        # !Not actually implemented here (min_distance_to_existing = 0.0), as not actually required after testing post-implementation of Sobol seed shifting, see below 
+        # !Not actually implemented here (min_distance_to_existing = 0.0), as no longer required after testing post-implementation of Sobol seed shifting, see below 
         # min_distance_to_existing was set to 0.0 in Week 9's BO pipeline, i.e. this idea was essentially not actively implemented this time
         # Because it was intially implemented to prevent the acquisition function from predicting the same query point for Function 5 as in Weeks 7 and 8 
         # However, this issue was solved solely by setting a different starting seed for Sobol sampling (using sobol_seed = sobol_seed_base + n_samples)
