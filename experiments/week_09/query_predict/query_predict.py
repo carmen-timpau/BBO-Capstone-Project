@@ -30,7 +30,7 @@ def run_next_query_prediction(
     sequential_ablation_summary,
     kernel_suites_dict,
     on_random_baseline="sample_random",
-    min_distance_to_existing=0.01,
+    min_distance_to_existing=0.0,
     sobol_seed_base=42
 ):
     """
