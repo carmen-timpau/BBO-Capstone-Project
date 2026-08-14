@@ -135,7 +135,12 @@ def run_next_query_prediction(
         x_grid_scaled = scaler.transform(x_grid)
  
         # Excluding candidates too close to already-evaluated points
-        # So that the acquisition function cannot predict the same query points  (which was happening for Function 5) 
+        # So that the acquisition function cannot predict the same query points 
+        # *Not actually implemented here, as min_distance_to_existing=0.0
+        # min_distance_to_existing was set to 0.0 in Week 9's BO pipeline, i.e. this idea was essentially not actively implemented this time
+        # Because it was intially implemented to prevent the acquisition function from predicting the same query point for Function 5 as in Weeks 7 and 8 
+        # However, this issue was solved solely by setting a different starting seed for Sobol sampling (using sobol_seed = sobol_seed_base + n_samples)
+        # The code was still kept in case this will be implemented in future pipelines, using a min_distance_to_existing > 0
         if min_distance_to_existing > 0:
             dist_to_existing = cdist(x_grid_scaled, X_scaled)  # (n_candidates, n_train)
             min_dist_per_candidate = dist_to_existing.min(axis=1)
