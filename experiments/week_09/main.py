@@ -69,7 +69,7 @@ def main():
         sequential_ablation_summary=sequential_ablation_summary,
         kernel_suites_dict=kernel_suites_dict,
         on_random_baseline="sample_random",
-        min_distance_to_existing=0.0,
+        min_distance_to_existing=0.0, # i.e. excluding candidates too close to already-evaluated points not actually implemented here as it was no longer required after testing (see comments in query_predict.py)
         sobol_seed_base=42
     )
 
