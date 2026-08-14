@@ -68,7 +68,9 @@ def main():
         data=data,
         sequential_ablation_summary=sequential_ablation_summary,
         kernel_suites_dict=kernel_suites_dict,
-        on_random_baseline="sample_random"
+        on_random_baseline="sample_random",
+        min_distance_to_existing=0.01,
+        sobol_seed_base=42
     )
 
     print("\n" + "=" * 100)
