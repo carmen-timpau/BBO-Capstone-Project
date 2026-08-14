@@ -15,8 +15,8 @@ import numpy as np
 
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 
-from kernel_ablation.kernels import get_kernel_suite, get_kernel_suite_f1
-from acquisition_ablation.full_joint_ablation import run_full_joint_ablation
+from full_ablation.kernels import get_kernel_suite, get_kernel_suite_f1
+from full_ablation.full_joint_ablation import run_full_joint_ablation
 from query_predict.query_predict import run_next_query_prediction
 
 def main():
