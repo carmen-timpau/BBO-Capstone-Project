@@ -6,8 +6,8 @@ Executing the HEBO-inspired, Dynamic Sobol-Sampled Bayesian Optimization next-qu
 2. GP Surrogate Fitting using the kernel chosen jointly with acquisition by the full kernel x
    acquisition ablation sweep (full_joint_ablation.run_full_joint_ablation).
 3. Dynamic Sobol Quasi-Random Candidate Generation (continuous input-space exploration)
-4. Acquisition Function (jointly-chosen) Evaluation and Scoring of Sobol candidates => Next Query Prediction
-5. Output Unwarping back to the original objective scale
+4. Acquisition Function (jointly-chosen) Evaluation and Scoring of Sobol candidates => Next Query Prediction (Warped)
+5. Output Unwarping back to the original objective scale => Next Query Prediction (Unwarped)
 """
 
 import numpy as np
