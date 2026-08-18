@@ -22,7 +22,7 @@ Initial datasets for all 8 Black-Box functions to be maximised can be found in t
 
 <br>
 
-_Individual Function Descriptions:_
+**Individual Function Descriptions:**
 
 
 <br>
