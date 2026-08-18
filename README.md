@@ -22,6 +22,10 @@ Initial datasets for all 8 Black-Box functions to be maximised can be found in t
 
 <br>
 
+_**Individual Function Descriptions:**_
+
+
+
 📑 <ins> **Research Documentation & Dicussion:** </ins> 
 
 Research documentation and the dicussion of strategies used at each stage can be found in `strategy_discussion.md` and `strategy_summary.md` files within each week's directory.
