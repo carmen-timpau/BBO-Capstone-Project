@@ -4,7 +4,7 @@
 
 2. Performed a **Surrogate Model Architecture Comparison Study** to evaluate whether a _Gaussian Process_ or _Deep Ensemble of Neural Networks_ (Multi-Layer Perceptrons, MLPs) better models each of the Black-Box functions (performed individually for each function), using **Root Mean Squared Error (RMSE)** as a surrogate model performance metric, evaluated out-of-sample via **Leave-One-Out Cross-Validation (LOOCV)**.
 
-3. Performed a <ins>larger</ins> (6 acquisition process types tested) and robust **Acquisition Function Ablation Study** _via_ **Robust Multi-Step Sequential Offline Bayesian Optimization Rollout**, using **Long-Term Cumulative Regret** as the acquisition function's performance metric.
+3. Performed a <ins>larger</ins> (6 acquisition process types tested) and robust **Acquisition Function Ablation Study** _via_ **Robust Multi-Step Sequential Offline Bayesian Optimization Rollout**, using **Mean Final Simple Regret** as the acquisition function's performance metric.
    
 4. Used **Dynamic Sobol Sampling Resolution strategy based on dimensionality** to ensure high candidate resolution for high-dimensional spaces.
 
