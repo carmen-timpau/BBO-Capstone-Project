@@ -1,3 +1,4 @@
+```text
 Statistical analysis of Function 1 after week 9:
 -----------------------------------
 
@@ -61,3 +62,4 @@ Minimum value = 5.5921933895401965
 Maximum value = 9.9561276549796
 Standard deviation = 1.144085625670292
 Mean = 8.174430455915624
+```
