@@ -1,6 +1,6 @@
 **Discussion of Week 9 Query Outcomes:**
 
-_The aim of this discussion is to inform a data-driven upgrade in Week 10's BBO pipeline._
+_The aim of this discussion is to inform a data-driven strategy upgrade for generating Week 10's BBO pipeline._
 
 ----------------------------------------------------------------------------------------------------------------------
 
