@@ -20,7 +20,7 @@ For Function 7, Week 9's BBO ML pipeline predicted the ninth query which gave th
 
 For Function 8, Week 9's BBO ML pipeline predicted the ninth query which gave the following output: 9.8563360207179. This is fairly close to the current maximum within the dataset for this function (9.9561276549796, which may very well be the global maximum for this function). Week 9's output is not setting a new maximum output value, but it may likely be because this function may have already been successfully globally maximised in a prior week. Nonetheless, this fairly high result shows that Week 9's BBO pipeline is performing equitably well for this function, giving a reasonable good-quality next query prediction. 
 
-**Discussion Summary:**
+**<ins>Discussion Summary:</ins>**
 
 - Week 9's BBO ML Pipeline managed to maximise half (4 out of 8) of the Black-Box functions, specifically Functions 3,4,6,7. 
 
