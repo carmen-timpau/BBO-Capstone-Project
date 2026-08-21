@@ -2,6 +2,8 @@
 
 _The aim of this discussion is to inform a data-driven upgrade in Week 10's BBO pipeline._
 
+----------------------------------------------------------------------------------------------------------------------
+
 For Function 1, Week 9's BBO ML pipeline predicted the ninth query which gave the following output: -9.31950900543268e-43.
 
 For Function 2, Week 9's BBO ML pipeline predicted the ninth query which gave the following output: -0.030911919477611877.
