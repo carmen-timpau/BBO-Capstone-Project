@@ -15,8 +15,13 @@ import os
 import pickle
 import numpy as np
 
-# Importing configuration overrides
-from overrides_config import (
+# Importing configurations: global defaults and function-specific overrides
+from config_overrides import (
+    n_init_base,
+    init_per_dim,
+    n_iterations,
+    n_seeds,
+    holdout_fraction,
     n_init_base_overrides,
     init_per_dim_overrides,
     holdout_fraction_overrides,
@@ -33,11 +38,11 @@ def main():
   
     sequential_ablation_summary = run_full_joint_ablation(
         data=data,
-        n_init_base=5,
-        init_per_dim=2,
-        n_iterations=15,
-        n_seeds=500,
-        holdout_fraction=0.3,
+        n_init_base=n_init_base,
+        init_per_dim=init_per_dim,
+        n_iterations=n_iterations,
+        n_seeds=n_seeds,
+        holdout_fraction=holdout_fraction,
         n_init_base_overrides=n_init_base_overrides,
         init_per_dim_overrides=init_per_dim_overrides,
         holdout_fraction_overrides=holdout_fraction_overrides,
