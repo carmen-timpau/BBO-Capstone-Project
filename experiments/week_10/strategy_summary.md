@@ -16,8 +16,8 @@ Added **Uncertainty Quantification** to the Kernel x Acquisition Combo Ranking -
 - init_per_dim was lowered (2→1) for Functions 4–8 to stop the initial draw from over-consuming higher-dimensional pools;
 - raised holdout to 0.6 for Functions 1/2 for more usable iterations on their small 19-point pools;
 - lowered holdout to 0.15 to Functions 5/8 to fix early pool exhaustion.
-- For Functions 1/2, n_seeds was raised to 1000 seeds, since small-pool functions need many more seeds than large-pool ones to meaningfully tighten their CIs (since SEM ∝ std/√n_seeds);
-- For Functions 3–8, n_seeds was raised to 500 seeds, based on diagnostics from a prior run using n_seeds=100.
+- n_seeds was raised to 1000 seeds for Functions 1/2, since small-pool functions need many more seeds than large-pool ones to meaningfully tighten their CIs (since SEM ∝ std/√n_seeds);
+- n_seeds was raised to 500 seeds for Functions 3–8, based on diagnostics from a prior run using n_seeds=100.
 
 Added a **[Diagnostic] Flag for when n_init alone consumes a disproportionate share (>25%) of a function's pool**, since that lets the initial random draw "accidentally" capture the max before acquisition ever runs. As a result:
 - n_init_base lowered for Functions 1/2 (5→4) to stay under the 25% pool-fraction threshold;
