@@ -31,11 +31,5 @@ holdout_fraction_overrides={
 
 n_seeds_overrides={
             "function_1": 1000, 
-            "function_2": 1000,
-            "function_3": 500, 
-            "function_4": 500, 
-            "function_5": 500,
-            "function_6": 500, 
-            "function_7": 500, 
-            "function_8": 500
+            "function_2": 1000
         }
