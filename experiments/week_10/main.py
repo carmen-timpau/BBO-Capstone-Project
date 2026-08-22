@@ -8,6 +8,10 @@ Main Execution Script: BBO Week 10 Full ML Bayesian Optimisation Pipeline
    
 2. Next Query Prediction (HEBO output warping, GP surrogate, Dynamic Sobol Sampling,
    jointly-chosen acquisition scoring, output unwarping).
+
+Note: The BBO Week 10 Full ML Bayesian Optimisation Pipeline is computationally heavy.
+      Runtime to completion is expected to be around 2h if 14-16 CPUs are available, 
+      but it may take slightly/significantly longer if not.
 """
 
 import sys
@@ -89,6 +93,7 @@ def main():
 # Redirecting prints to disk so the browser doesn't memory-crash 
 log_file = "execution_output.log"
 print(f"Starting execution... streaming all logs to '{log_file}' to protect browser memory.")
+print("Note: Runtime is expected to be around ~2 hours on 14-16 CPU cores.")
 
 original_stdout = sys.stdout
 with open(log_file, "w") as f:
