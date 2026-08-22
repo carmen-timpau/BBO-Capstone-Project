@@ -4,6 +4,13 @@ Upgraded Full Joint Kernel x Acquisition Rollout Ablation (Functions 1-8)
 This module gives for each function, the (kernel, acquisition) combination that
 found the highest output during the rollout study - i.e. ranked directly for the 
 global function maximization goal, not just for GP fit quality.
+
+Each combo's Mean Simple Final Regret is now accompanied by a Standard Error (SEM) and a 95% Confidence Interval 
+(via the t-distribution, computed per-seed across the n_seeds rollouts). A "Vs #1 Ranked" column flags whether a 
+combo's CI overlaps the #1-ranked combo's CI, so the ranking reflects statistical confidence rather than a bare 
+point-estimate comparison — surfacing when the reported "winner" is genuinely distinguishable from the runner-ups 
+versus merely ahead by an amount within noise.
+  
 """
 
 import os
@@ -186,8 +193,8 @@ def plot_master_convergence_grid(all_functions_regrets, all_functions_full_table
 
 def run_full_joint_ablation(data, n_init_base=5, init_per_dim=2, n_iterations=15,
                              n_seeds=20, n_jobs=-1, holdout_fraction=0.3, regret_tie_tol=1e-9,
-                             n_init_base_overrides=None, init_per_dim_overrides=None,
-                             holdout_fraction_overrides=None, n_seeds_overrides=None):
+                             n_init_base_s=None, init_per_dim_s=None,
+                             holdout_fraction_s=None, n_seeds_overrides=None):
     """
     Running the FULL kernel x acquisition sweep for every function, ranked by lowest mean final
     regret (ties broken by AURC). AN reports SEM + 95% CI (t-distribution) per combo, and
