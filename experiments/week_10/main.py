@@ -20,7 +20,7 @@ import pickle
 import numpy as np
 
 # Importing configurations: global defaults and function-specific overrides
-from config_overrides import (
+from full_ablation.config_overrides import (
     n_init_base,
     init_per_dim,
     n_iterations,
