@@ -6,7 +6,7 @@ import numpy as np
 from scipy.stats import norm
 
 def compute_acquisition_scores(X_candidates, gp, y_best, acq_type, param, random_state=None):
-    """Computes rigorous acquisition values using GP posterior mean and std."""
+    """Computing acquisition values using GP posterior mean and std."""
     mu, sigma = gp.predict(X_candidates, return_std=True)
     sigma = np.maximum(sigma, 1e-9)
     
