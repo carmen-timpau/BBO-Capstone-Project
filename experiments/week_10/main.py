@@ -19,6 +19,12 @@ import os
 import pickle
 import numpy as np
 
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
+
+from full_ablation.full_joint_ablation import run_full_joint_ablation
+from query_predict.query_predict import run_next_query_prediction
+from full_ablation.kernels import get_kernel_suite, get_kernel_suite_f1
+
 # Importing configurations: global defaults and function-specific overrides
 from full_ablation.config_overrides import (
     n_init_base,
@@ -36,6 +42,17 @@ def main():
     print("=" * 100)
     print("                    WEEK 10 BBO PIPELINE: EXECUTION & EVALUATION START")
     print("=" * 100)
+
+    # Loading the unified input dataset snapshot
+    data_path = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', 'wk10_input_data.pkl'))
+    print(f"\n[INFO] Loading dataset from: {data_path}")
+    if not os.path.exists(data_path):
+        print(f"[ERROR] Dataset file not found at '{data_path}'. Please ensure 'wk10_input_data.pkl' is present.")
+        return
+    with open(data_path, "rb") as file:
+        data = pickle.load(file)
+    print("[INFO] Dataset successfully loaded into memory.")
+   
     print("\n" + "=" * 100)
     print(" [STEP 1] Running FULL JOINT Kernel x Acquisition Rollout Ablation Study...")
     print("=" * 100)
