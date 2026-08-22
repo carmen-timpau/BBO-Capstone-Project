@@ -6,7 +6,7 @@
 
 3. Kept **Mean Final Simple Regret** as the _primary ranking metric_ and **AURC** as the _secondary tiebreaker capturing convergence speed_ [preserved from Week 9].
 
-Added **Uncertainty Quantification to the Kernel x Acquisition Combo Ranking** - **Standard Errors (SEM)** and **95% Confidence Intervals** (t-distribution, computed across seeds) were added to the **Mean Simple Final Regret** combo scoring system, plus a _"Vs #1 Ranked" flag showing whether a combo's CI overlaps the #1-ranked combo's_, so near-ties are surfaced explicitly instead of the ranking being read as fully settled. 
+Added **Uncertainty Quantification** to the Kernel x Acquisition Combo Ranking - **Standard Errors (SEM)** and **95% Confidence Intervals** (t-distribution, computed across seeds) were added to the **Mean Simple Final Regret** combo scoring system, plus a _"Vs #1 Ranked" flag showing whether a combo's CI overlaps the #1-ranked combo's_, so near-ties are surfaced explicitly instead of the ranking being read as fully settled. 
 
 **Extended this same 95% CI/SEM treatment to AURC** as well, with **degenerate-regret detection**: when final regret collapses to near-identical values across the top 10 combos (e.g. from ties at the exact max, or a large initial draw already capturing it, making final regret uninformative as a discriminator for meaningful ranking), the "Vs #1 Ranked" flag automatically switches to checking AURC's own CI overlap instead, since _AURC is still capturing genuine differences in convergence speed even when final regret no longer can_ and still leads to a meaningful ranking in that case.
 
