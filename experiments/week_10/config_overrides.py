@@ -1,6 +1,14 @@
-# Config file with function-specific overrides used in Week 10 BBO Pipeline
-# Configs identified in pre-production, during manual pipeline troubleshooting, evaluation and tuning
+# Configurations file with global defaults and function-specific overrides used in Week 10 BBO Pipeline
+# Overrides identified in pre-production, during manual pipeline troubleshooting, evaluation and tuning
 
+# Global Defaults
+n_init_base = 5
+init_per_dim = 2
+n_iterations = 15
+n_seeds = 500
+holdout_fraction = 0.3
+
+# Function-specific Overrides
 n_init_base_overrides={
             "function_1": 4, 
             "function_2": 4
