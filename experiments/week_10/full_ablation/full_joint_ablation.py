@@ -9,8 +9,7 @@ Each combo's Mean Simple Final Regret is now accompanied by a Standard Error (SE
 (via the t-distribution, computed per-seed across the n_seeds rollouts). A "Vs #1 Ranked" column flags whether a 
 combo's CI overlaps the #1-ranked combo's CI, so the ranking reflects statistical confidence rather than a bare 
 point-estimate comparison — surfacing when the reported "winner" is genuinely distinguishable from the runner-ups 
-versus merely ahead by an amount within noise.
-  
+versus merely ahead by an amount within noise. 
 """
 
 import os
