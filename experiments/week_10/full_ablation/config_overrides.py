@@ -1,4 +1,4 @@
-# Configurations file with global defaults and function-specific overrides used in Week 10 BBO Pipeline
+# Configurations file with global ablation defaults and function-specific overrides used in Week 10 BBO Pipeline
 # Overrides were identified in pre-production, during manual pipeline evaluation and troubleshooting
 # More details on this can be found in week_10/strategy_summary.md
 
