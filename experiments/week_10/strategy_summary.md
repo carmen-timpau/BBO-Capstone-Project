@@ -22,9 +22,9 @@ Added **Uncertainty Quantification** to the Kernel x Acquisition Combo Ranking -
 Added a **[Diagnostic] Flag for when n_init alone consumes a disproportionate share (>25%) of a function's pool**, since that lets the initial random draw "accidentally" capture the max before acquisition ever runs. As a result, the following overrides emerged:
 - n_init_base lowered for Functions 1/2 (5→4) to stay under the 25% pool-fraction threshold;
 
-6. **Fixed a previously missed reproducibility bug** where Thompson Sampling's (TS) random_state was defaulting to 'None' during next-query scoring (caught on Function 5). TS now uses a deterministic seed for next-query scoring and the prediction is fully reproducible, matching EI/UCB/PI.
+6. Added a **[Diagnostic] Flag for when multiple points share the exact global max value within the dataset** (as it was the case for Function 5, for which the maximum was most likely already identified based on repetitive past query predictions saved to the dataset), since that trivially inflates how "discriminating" regret-based ranking appears regardless of actual strategy quality, and therefore some caution is required when interpreting results for such functions.
 
-7. Added a **[Diagnostic] Flag for when multiple points share the exact global max value within the dataset** (as it was the case for Function 5, for which the maximum was most likely already identified based on repetitive past query predictions saved to the dataset), since that trivially inflates how "discriminating" regret-based ranking appears regardless of actual strategy quality, and therefore some caution is required when interpreting results for such functions.
+7. **Fixed a previously missed reproducibility bug** where Thompson Sampling's (TS) random_state was defaulting to 'None' during next-query scoring (caught on Function 5). TS now uses a deterministic seed for next-query scoring and the prediction is fully reproducible, matching EI/UCB/PI.
 
 8. Kept **Dynamic Sobol Sampling Resolution Scaled to Input Dimensionality** for continuous-domain next-query candidate generation, with the _Sobol seed tied to the current dataset size_ (rather than a fixed seed).
    
