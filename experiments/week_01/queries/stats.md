@@ -1,4 +1,4 @@
-**Statistical Analysis of all 8 Black-Box Function Datasets after Including Week 1's Obtained Query Output:**
+**Statistical Analysis of all 8 Black-Box Function Datasets after Including Week 1's Obtained Query Outputs:**
 
 ```text
 Statistical analysis of Function 1:
