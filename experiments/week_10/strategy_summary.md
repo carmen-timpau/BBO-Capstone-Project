@@ -2,7 +2,7 @@
 
 1. Kept the **single Full Joint Kernel × Acquisition Rollout Ablation Study** as the core of the pipeline — sweeping all 8 kernel variants against all 10 acquisition strategies plus a Random Baseline (88 kernel x acquisition combinations per function) _via_ **Robust Multi-Step Sequential Offline Bayesian Optimization Rollout**, rather than selecting kernel and acquisition separately [preserved from Week 9].
 
-2. Kept **Gaussian Processes (GPs)** as the **surrogate models for all functions**, having previously already dropped the Deep Ensemble comparison, as it led to overparameterized models for such small sample sizes which would generalise poorly [preserved from Week 9].
+2. Kept **Gaussian Processes (GPs)** as the **surrogate models for all functions**, having previously already dropped the Deep Ensemble comparison, as it led to overparameterized models for such small sample sizes and thus poor generalisation [preserved from Week 9].
 
 3. Kept **Mean Final Simple Regret** as the _primary ranking metric_ and **AURC** as the _secondary tiebreaker capturing convergence speed_ [preserved from Week 9].
 
