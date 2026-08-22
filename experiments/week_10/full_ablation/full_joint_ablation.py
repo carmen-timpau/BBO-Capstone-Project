@@ -1,3 +1,11 @@
+"""
+Upgraded Full Joint Kernel x Acquisition Rollout Ablation (Functions 1-8)
+----------------------------------------------------------------------------
+This module gives for each function, the (kernel, acquisition) combination that
+found the highest output during the rollout study - i.e. ranked directly for the 
+global function maximization goal, not just for GP fit quality.
+"""
+
 import os
 import warnings
 import numpy as np
