@@ -12,14 +12,14 @@ Added **Uncertainty Quantification** to the Kernel x Acquisition Combo Ranking -
 
 4. Kept the **Holdout Fraction Cap on Rollout Iterations** _to stop every strategy (including random) from being forced to exhaust the candidate pool and collapsing to an artificial 0.0 regret_ [preserved from Week 9].
 
-5. Implemented **Tuned Per-function Overrides** regarding _n_init_base/init_per_dim/holdout_fraction/n_seeds_ accordingly, based on pre-production diagnostics, as a mechanism for _handling how much functions differ in dimensionality and pool size_ by the pipeline.
+5. Implemented **Tuned Per-function Overrides** regarding _n_init_base/init_per_dim/holdout_fraction/n_seeds_ accordingly, based on pre-production diagnostics, as a mechanism for _handling how much functions differ in dimensionality and pool size_ by the pipeline. As a result, the following overrides emerged:
 - init_per_dim was lowered (2→1) for Functions 4–8 to stop the initial draw from over-consuming higher-dimensional pools;
 - raised holdout to 0.6 for Functions 1/2 for more usable iterations on their small 19-point pools;
 - lowered holdout to 0.15 to Functions 5/8 to fix early pool exhaustion.
 - n_seeds was raised to 1000 seeds for Functions 1/2, since small-pool functions need many more seeds than large-pool ones to meaningfully tighten their CIs (since SEM ∝ std/√n_seeds);
 - n_seeds was raised to 500 seeds for Functions 3–8, based on diagnostics from a prior run using n_seeds=100.
 
-Added a **[Diagnostic] Flag for when n_init alone consumes a disproportionate share (>25%) of a function's pool**, since that lets the initial random draw "accidentally" capture the max before acquisition ever runs. As a result:
+Added a **[Diagnostic] Flag for when n_init alone consumes a disproportionate share (>25%) of a function's pool**, since that lets the initial random draw "accidentally" capture the max before acquisition ever runs. As a result, the following overrides emerged:
 - n_init_base lowered for Functions 1/2 (5→4) to stay under the 25% pool-fraction threshold;
 
 6. **Fixed a previously missed reproducibility bug** where Thompson Sampling's (TS) random_state was defaulting to 'None' during next-query scoring (caught on Function 5). TS now uses a deterministic seed for next-query scoring and the prediction is fully reproducible, matching EI/UCB/PI.
