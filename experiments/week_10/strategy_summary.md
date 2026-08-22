@@ -13,7 +13,7 @@ Added **Uncertainty Quantification** to the Kernel x Acquisition Combo Ranking -
 4. Kept the **Holdout Fraction Cap on Rollout Iterations** _to stop every strategy (including random) from being forced to exhaust the candidate pool and collapsing to an artificial 0.0 regret_ [preserved from Week 9].
 
 5. Implemented **Tuned Per-function Overrides** regarding _n_init_base/init_per_dim/holdout_fraction/n_seeds_ accordingly, based on pre-production diagnostics, as a mechanism for _handling how much functions differ in dimensionality and pool size_ by the pipeline. As a result, the following overrides emerged:
-- init_per_dim was lowered (2→1) for Functions 4–8 to stop the initial draw from over-consuming higher-dimensional pools;
+- init_per_dim was lowered (2→1) for Functions 4–8 to stop the initial draw from over-consuming higher-dimensional pools and lead to early pool exhaustion and 0.0 regret (which halts meaningful combo ranking);
 - raised holdout to 0.6 for Functions 1/2 for more usable iterations on their small 19-point pools;
 - lowered holdout to 0.15 to Functions 5/8 to fix early pool exhaustion.
 - n_seeds was raised to 1000 seeds for Functions 1/2, since small-pool functions need many more seeds than large-pool ones to meaningfully tighten their CIs (since SEM ∝ std/√n_seeds);
