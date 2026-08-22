@@ -1,1 +1,94 @@
+"""
+Main Execution Script: BBO Week 10 Full ML Bayesian Optimisation Pipeline
+--------------------------------------------------------------------------------------
+1. Full Joint Kernel x Acquisition Rollout Ablation Study, with added 95% CI uncertainty
+   reporting on the Mean Simple Final Regret ranking, and adjusted per-function n_seeds, 
+   so that small-pool functions get enough seeds to meaningfully tighten their CIs for 
+   a more confident kernel x acquisition combo ranking for each 'Black-Box' function.
+2. Next Query Prediction (HEBO output warping, GP surrogate, Dynamic Sobol Sampling,
+   jointly-chosen acquisition scoring, output unwarping).
+"""
+import sys
+import os
+import pickle
+import numpy as np
 
+# Importing configuration overrides
+from overrides_config import (
+    n_init_base_overrides,
+    init_per_dim_overrides,
+    holdout_fraction_overrides,
+    n_seeds_overrides,
+)
+
+def main():
+    print("=" * 100)
+    print("                    WEEK 10 BBO PIPELINE: EXECUTION & EVALUATION START")
+    print("=" * 100)
+    print("\n" + "=" * 100)
+    print(" [STEP 1] Running FULL JOINT Kernel x Acquisition Rollout Ablation Study...")
+    print("=" * 100)
+  
+    sequential_ablation_summary = run_full_joint_ablation(
+        data=data,
+        n_init_base=5,
+        init_per_dim=2,
+        n_iterations=15,
+        n_seeds=500,
+        holdout_fraction=0.3,
+        n_init_base_overrides=n_init_base_overrides,
+        init_per_dim_overrides=init_per_dim_overrides,
+        holdout_fraction_overrides=holdout_fraction_overrides,
+        n_seeds_overrides=n_seeds_overrides
+    )
+    print("\n[SUCCESS] Joint kernel x acquisition ablation study complete!")
+
+    print("\n" + "=" * 100)
+    print(" [STEP 2] Executing Final HEBO-Based Next Query Predictions (GP-only)...")
+    print("=" * 100)
+    kernel_suites_dict = {}
+    for fn_idx in range(1, 9):
+        fn_key = f"function_{fn_idx}"
+        if fn_key in data:
+            n_dims = data[fn_key]["x"].shape[1]
+            if fn_idx == 1:
+                kernel_suites_dict[fn_key] = get_kernel_suite_f1(n_dims)
+            else:
+                kernel_suites_dict[fn_key] = get_kernel_suite(n_dims)
+    next_queries_results = run_next_query_prediction(
+        data=data,
+        sequential_ablation_summary=sequential_ablation_summary,
+        kernel_suites_dict=kernel_suites_dict,
+        on_random_baseline="sample_random",
+        min_distance_to_existing=0.0,
+        sobol_seed_base=42
+    )
+    print("\n" + "=" * 100)
+    print(" FINAL NEXT-QUERY SUMMARY")
+    print("=" * 100)
+    for fn_key, res in next_queries_results.items():
+        print(f"{fn_key.upper()}:")
+        print(f"    Next Query Coordinates : {np.round(res['Next Query Coordinates'], 6)}")
+        print(f"    Kernel Used            : {res['Winning Kernel']}")
+        print(f"    Acquisition Used       : {res['Winning Acquisition']}")
+        print(f"    Predicted Value        : {res['Predicted Original Scale Value']}")
+        print(f"    Predicted Std (warped) : {res['Predicted Std (warped scale)']:.4f}")
+        print("-" * 100)
+    print("\n" + "=" * 100)
+    print("                    WEEK 10 BBO PIPELINE: ALL TASKS COMPLETED SUCCESSFULLY")
+    print("=" * 100)
+
+
+# Redirecting prints to disk so the browser doesn't memory-crash 
+log_file = "execution_output.log"
+print(f"Starting execution... streaming all logs to '{log_file}' to protect browser memory.")
+
+original_stdout = sys.stdout
+with open(log_file, "w") as f:
+    sys.stdout = f
+    try:
+        main() 
+    finally:
+        sys.stdout = original_stdout
+
+print(f"Completed! Check '{log_file}' for full results.")
