@@ -5,7 +5,7 @@ This module gives for each function, the (kernel, acquisition) combination that
 found the highest output during the rollout study - i.e. ranked directly for the 
 global function maximization goal, not just for GP fit quality.
 
-Each combo's Mean Simple Final Regret is now accompanied by a Standard Error (SEM) and a 95% Confidence Interval 
+Note: Each combo's Mean Simple Final Regret is now accompanied by a Standard Error (SEM) and a 95% Confidence Interval 
 (via the t-distribution, computed per-seed across the n_seeds rollouts). A "Vs #1 Ranked" column flags whether a 
 combo's CI overlaps the #1-ranked combo's CI, so the ranking reflects statistical confidence rather than a bare 
 point-estimate comparison — surfacing when the reported "winner" is genuinely distinguishable from the runner-ups 
