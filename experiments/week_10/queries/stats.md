@@ -1,4 +1,4 @@
-**Statistical Analysis of Full Function Datasets after Appending Week 10 Query:**
+**Statistical Analysis of all 8 Black-Box Function Datasets after Including Week 10's Obtained Query Outputs:**
 
 ```text
 Statistical analysis of Function 1 dataset after Week 10:
