@@ -14,9 +14,9 @@ Added **Uncertainty Quantification** to the Kernel x Acquisition Combo Ranking -
 
 Added a **[Diagnostic] Flag for when n_init alone consumes a disproportionate share (>25%) of a function's pool**, since that lets the initial random draw "accidentally" capture the max before acquisition ever runs. **Tuned the per-function override values** (n_init_base/init_per_dim/holdout_fraction overrides) accordingly, based on pre-production diagnostics:
 - n_init_base lowered for Functions 1/2 (5→4) to stay under the 25% pool-fraction threshold;
-- init_per_dim was lowered (2→1) for Functions 4–8 to stop the initial draw from over-consuming higher-dimensional pools.
+- init_per_dim was lowered (2→1) for Functions 4–8 to stop the initial draw from over-consuming higher-dimensional pools;
 - raised holdout to 0.6 for Functions 1/2 for more usable iterations on their small 19-point pools;
-- lowered holdout to 0.15 to Functions 5/8 to fix early pool exhaustion;
+- lowered holdout to 0.15 to Functions 5/8 to fix early pool exhaustion.
 
 5. Kept **Per-function Overrides** (n_init_base, init_per_dim, holdout_fraction) as the mechanism for _handling how much functions differ in dimensionality and pool size_ by the pipeline [preserved from Week 9].
 
