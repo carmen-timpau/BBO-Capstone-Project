@@ -1,5 +1,5 @@
 # Configurations file with global defaults and function-specific overrides used in Week 10 BBO Pipeline
-# Overrides identified in pre-production, during manual pipeline troubleshooting, evaluation and tuning
+# Overrides were identified in pre-production, during manual pipeline evaluation and troubleshooting
 
 # Global Defaults
 n_init_base = 5
