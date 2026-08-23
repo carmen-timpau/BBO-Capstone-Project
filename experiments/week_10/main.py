@@ -10,7 +10,7 @@ Main Execution Script: BBO Week 10 Full ML Bayesian Optimisation Pipeline
    jointly-chosen acquisition scoring, output unwarping).
 
 !Note: The BBO Week 10 Full ML Bayesian Optimisation Pipeline is computationally heavy.
-       Runtime to completion is expected to be around ~2h if 14-16 CPU cores are available, 
+       Runtime to completion is expected to be around ~2h if 16 CPU cores are available, 
        but it may take slightly/significantly longer if not.
 """
 
