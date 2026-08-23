@@ -1,4 +1,4 @@
-# Configurations file with global defaults and function-specific overrides used in Week 11 Full Ablation
+# Configurations file with global defaults and function-specific overrides used in Week 11 Full Kernel x Acquisition Ablation
 # Overrides were identified in pre-production, during manual pipeline evaluation and troubleshooting
 # More details on this can be found in week_10/strategy_summary.md, as these were set up in Week 10 of the BBO capstone project
 
