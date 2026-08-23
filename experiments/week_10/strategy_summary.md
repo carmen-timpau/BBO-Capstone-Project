@@ -34,6 +34,6 @@ Added a **[Diagnostic] Flag for when n_init alone consumes a disproportionate sh
 
 **<ins>Note 1:</ins>** As with Week 9's BBO Pipeline (and in general, as it is always the case with Bayesian Optimisation), the resulting next-query predictions remain exploratory estimates, not guarantees of beating the current known maximum for each function. The CI/SEM reporting added this week is meant to make explicit how much uncertainty still surrounds the "winning" kernel x acquisition combo per function, rather than presenting a single point-estimate ranking as more settled than it is.
 
-**<ins>Note 2:</ins>** The BBO Week 10 Full ML Bayesian Optimisation Pipeline is **computationally heavy**. _Runtime to completion_ is expected to be around **~2h if 14-16 CPUs are available** (as used here), but it may take slightly/significantly longer if not.
+**<ins>Note 2:</ins>** The BBO Week 10 Full ML Bayesian Optimisation Pipeline is **computationally heavy**. _Runtime to completion_ is expected to be around **~2h if 14-16 CPU cores are available** (as used here), but it may take slightly/significantly longer if not.
 
 **Technical Modification for Running Script:** Switched execution logging to stream all prints to a log file (execution_output.log) instead of the browser console, after prior runs crashed the browser tab and 2+ hours of progress were lost in pre-production before this change was implemented.
