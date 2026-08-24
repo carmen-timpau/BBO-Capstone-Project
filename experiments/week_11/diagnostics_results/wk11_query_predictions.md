@@ -104,4 +104,4 @@ FUNCTION_8:
 ----------------------------------------------------------------------------------------------------
 ```
 
-Note: The coordinates and predicted outputs of next query candidates selected from both the **full-domain** space, as well as the **local-box** space have been printed, along with their std. dev., for comparison and transparency purposes. The candidate which the algorithm selected is indicated by 'Chosen From Pool'.
+<ins>Note:</ins> The coordinates and predicted outputs of next query candidates selected from both the **full-domain** space, as well as the **local-box** space have been printed, along with their std. dev., for comparison and transparency purposes. The candidate which the algorithm selected is indicated by 'Chosen From Pool'.
