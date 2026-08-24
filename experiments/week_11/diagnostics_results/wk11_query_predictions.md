@@ -103,3 +103,5 @@ FUNCTION_8:
     Local-box best candidate    : coords=[0.169129 0.094089 0.179808 0.020334 0.94492  0.5084   0.183455 0.630586] | predicted value=9.990786 | predicted std=0.0553
 ----------------------------------------------------------------------------------------------------
 ```
+
+Note: The coordinates and predicted outputs of next query candidates selected from both the **full-domain** space, as well as the **local-box** space have been printed, along with their std. dev., for comparison and transparency purposes. The candidate which the algorithm selected is indicated by 'Chosen From Pool'.
