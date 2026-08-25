@@ -4,5 +4,5 @@ Week 13 BBO Bayesian Optimisation ML pipeline (for predicting the final set of n
 acq_strategies = {
     "Expected Improvement (xi=0.001)": ("EI", 0.001),
     "Upper Confidence Bound (beta=0.5)": ("UCB", 0.5),
-    "Probability of Improvement (xi=0.01)": ("PI", 0.01),
+    "Probability of Improvement (xi=0.01)": ("PI", 0.01)
 }
