@@ -4,9 +4,9 @@ _The aim of this discussion is to inform a data-driven strategy upgrade for gene
 
 ----------------------------------------------------------------------------------------------------------------------
 
-For Function 1, Week 10's BBO ML pipeline predicted the tenth query which gave the following output: 1.7960297527814237e-10.
+For Function 1, Week 10's BBO ML pipeline predicted the tenth query which gave the following output: 1.7960297527814237e-10. This is highest output value within the whole dataset for this function, indicating that Week 10's BBO ML pipeline worked very well for this function and is moving towards a very favourable direction. This is also the very first time a higher output value than those already existing within the initial dataset for this function was obtained through a Bayesian Optimisation pipeline tested during the course of this project for this function specifically (which proved to be the most difficult one to maximise), therefore this represents a great success. 
 
-For Function 2, Week 10's BBO ML pipeline predicted the tenth query which gave the following output: 0.5157367667960586.
+For Function 2, Week 10's BBO ML pipeline predicted the tenth query which gave the following output: 0.5157367667960586. 
 
 For Function 3, Week 10's BBO ML pipeline predicted the tenth query which gave the following output: -0.03175722788506985.
 
