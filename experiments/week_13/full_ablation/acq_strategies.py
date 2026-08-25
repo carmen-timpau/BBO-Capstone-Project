@@ -1,4 +1,5 @@
-"""Centralized acquisition function strategy configurations for a highly-exploitative Bayesian Optimisation pipeline (Week 13 BBO, final submission)."""
+"""Centralized acquisition function configurations for a highly-exploitative kernel x acqusition joint ablation, 
+part of the Week 13 BBO Bayesian Optimisation ML pipeline (for predicting the final set of next queries in this project)."""
 
 acq_strategies = {
     "Expected Improvement (xi=0.001)": ("EI", 0.001),
