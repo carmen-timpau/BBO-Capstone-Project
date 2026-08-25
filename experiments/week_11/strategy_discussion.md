@@ -21,3 +21,9 @@ For Function 7, Week 10's BBO ML pipeline predicted the tenth query which gave t
 For Function 8, Week 10's BBO ML pipeline predicted the tenth query which gave the following output: 9.8304718114551. This output value is very close to the current maximum achieved for this function so far (9.9561276549796). Week 10's pipeline is not setting a new maximum output value for this function, but this may likely be because this function may have already been successfully globally maximised in prior weeks. Nonetheless, this fairly high result shows that Week 10's BBO pipeline is performing equitably well for this function, giving a reasonable good-quality next query prediction.
 
 ------------------------------------------------------------------------
+
+**<ins>Discussion Summary:</ins>**
+
+- Week 10's BBO ML Pipeline managed to maximise 3 out of 8 Black-Box functions, specifically Functions 1, 4 and 6. While Functions 4 and 6 have been maximised before, Function 1 has been maximised for the first time since the start of this project, which proves that this ML pipeline is performing extremely well and represents a great improvement from previous versions.
+
+- While this pipeline has not managed to further maximise other functions (Functions 2,3,5,7,8), this does not reflect on the quality or performance of the pipeline itself, as some of these functions may have already been globally maximised by now, in previous weeks.
