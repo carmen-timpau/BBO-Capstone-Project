@@ -1,0 +1,465 @@
+====================================================================================================
+                    WEEK 13 BBO FINAL HIGHLY-EXPLOITATIVE PIPELINE (density-matched local pool): EXECUTION START
+====================================================================================================
+
+====================================================================================================
+ [STEP 1] Running FULL JOINT Kernel x Acquisition Rollout Ablation Study...
+====================================================================================================
+Running Function 1: 22 samples, 2D -> n_init=4, 10 iterations (holdout_fraction=0.6, 8 points held out) x 1000 seeds x 8 kernels x 4 strategies (32000 total rollouts)...
+=======================================================================================================================================
+        FUNCTION 1 — FULL JOINT KERNEL x ACQUISITION SWEEP (N_seeds=1000, n_init=4)
+=======================================================================================================================================
+                                                   Kernel                  Acquisition Variant  Mean Final Regret  SEM (Final Regret)  95% CI Lower  95% CI Upper  Mean AURC (Convergence Speed)              Vs #1 Ranked
+Ablation 7: RBF with Unit Lengthscales (ARD) + WhiteNoise    Upper Confidence Bound (beta=0.5)             0.7612            0.077886      0.608409      0.914088                        42.3879            - (top ranked)
+Ablation 7: RBF with Unit Lengthscales (ARD) + WhiteNoise Probability of Improvement (xi=0.01)             0.9711            0.094896      0.784919      1.157355                        42.3845 Tied with #1 (CI overlap)
+           Ablation 2: RBF + WhiteNoise (Smooth Gaussian)    Upper Confidence Bound (beta=0.5)             1.0809            0.099161      0.886261      1.275439                        43.9452 Tied with #1 (CI overlap)
+    Ablation 4: Matern 2.5 WITHOUT WhiteNoise (Noiseless)    Upper Confidence Bound (beta=0.5)             1.2499            0.106554      1.040802      1.458992                        44.4255   Distinguishable from #1
+                  Baseline: Matern 2.5 + WhiteNoise (ARD)    Upper Confidence Bound (beta=0.5)             1.2724            0.107945      1.060533      1.484182                        45.4281   Distinguishable from #1
+           Ablation 2: RBF + WhiteNoise (Smooth Gaussian) Probability of Improvement (xi=0.01)             1.3760            0.115776      1.148760      1.603145                        44.2047   Distinguishable from #1
+      Ablation 1: Matern 1.5 + WhiteNoise (Rougher/Spiky)    Upper Confidence Bound (beta=0.5)             1.3761            0.114267      1.151848      1.600310                        44.9051   Distinguishable from #1
+      Ablation 1: Matern 1.5 + WhiteNoise (Rougher/Spiky) Probability of Improvement (xi=0.01)             1.5655            0.127543      1.315243      1.815808                        44.9026   Distinguishable from #1
+                  Baseline: Matern 2.5 + WhiteNoise (ARD) Probability of Improvement (xi=0.01)             1.6712            0.130958      1.414258      1.928228                        47.4114   Distinguishable from #1
+    Ablation 4: Matern 2.5 WITHOUT WhiteNoise (Noiseless) Probability of Improvement (xi=0.01)             1.7158            0.126564      1.467453      1.964176                        46.3603   Distinguishable from #1
+(showing top 10 of 32 combos)
+  [NOTE] 2 of the top 10 combos have a 95% CI (final regret) overlapping the #1-ranked combo's CI - they are statistically indistinguishable from the reported 'winner' given 1000 seeds, not genuinely worse.
+Best random-baseline: Mean Final Regret=2.4317, Mean AURC=56.5454
+Best overall combo:   Mean Final Regret=0.7612, Mean AURC=42.3879
+Best combo vs random baseline: WINS on final regret
+---------------------------------------------------------------------------------------------------------------------------------------
+Running Function 2: 22 samples, 2D -> n_init=4, 10 iterations (holdout_fraction=0.6, 8 points held out) x 1000 seeds x 8 kernels x 4 strategies (32000 total rollouts)...
+=======================================================================================================================================
+        FUNCTION 2 — FULL JOINT KERNEL x ACQUISITION SWEEP (N_seeds=1000, n_init=4)
+=======================================================================================================================================
+                                                   Kernel                  Acquisition Variant  Mean Final Regret  SEM (Final Regret)  95% CI Lower  95% CI Upper  Mean AURC (Convergence Speed)              Vs #1 Ranked
+Ablation 7: RBF with Unit Lengthscales (ARD) + WhiteNoise    Upper Confidence Bound (beta=0.5)             0.0035            0.000577      0.002417      0.004680                         0.3457            - (top ranked)
+                  Baseline: Matern 2.5 + WhiteNoise (ARD)    Upper Confidence Bound (beta=0.5)             0.0036            0.000595      0.002447      0.004781                         0.3168 Tied with #1 (CI overlap)
+    Ablation 4: Matern 2.5 WITHOUT WhiteNoise (Noiseless)    Upper Confidence Bound (beta=0.5)             0.0038            0.000704      0.002438      0.005199                         0.3299 Tied with #1 (CI overlap)
+      Ablation 1: Matern 1.5 + WhiteNoise (Rougher/Spiky)    Upper Confidence Bound (beta=0.5)             0.0039            0.000646      0.002612      0.005149                         0.3188 Tied with #1 (CI overlap)
+           Ablation 2: RBF + WhiteNoise (Smooth Gaussian)    Upper Confidence Bound (beta=0.5)             0.0042            0.000624      0.002927      0.005376                         0.3498 Tied with #1 (CI overlap)
+                  Baseline: Matern 2.5 + WhiteNoise (ARD)      Expected Improvement (xi=0.001)             0.0071            0.000821      0.005501      0.008721                         0.4847   Distinguishable from #1
+                  Baseline: Matern 2.5 + WhiteNoise (ARD) Probability of Improvement (xi=0.01)             0.0074            0.000848      0.005700      0.009027                         0.4116   Distinguishable from #1
+      Ablation 1: Matern 1.5 + WhiteNoise (Rougher/Spiky) Probability of Improvement (xi=0.01)             0.0105            0.000973      0.008560      0.012380                         0.4032   Distinguishable from #1
+      Ablation 1: Matern 1.5 + WhiteNoise (Rougher/Spiky)      Expected Improvement (xi=0.001)             0.0108            0.001025      0.008789      0.012811                         0.4981   Distinguishable from #1
+           Ablation 2: RBF + WhiteNoise (Smooth Gaussian)      Expected Improvement (xi=0.001)             0.0111            0.000976      0.009209      0.013039                         0.5420   Distinguishable from #1
+(showing top 10 of 32 combos)
+  [NOTE] 4 of the top 10 combos have a 95% CI (final regret) overlapping the #1-ranked combo's CI - they are statistically indistinguishable from the reported 'winner' given 1000 seeds, not genuinely worse.
+Best random-baseline: Mean Final Regret=0.0352, Mean AURC=0.6293
+Best overall combo:   Mean Final Regret=0.0035, Mean AURC=0.3457
+Best combo vs random baseline: WINS on final regret
+---------------------------------------------------------------------------------------------------------------------------------------
+Running Function 3: 27 samples, 3D -> n_init=6, 6 iterations (holdout_fraction=0.3, 15 points held out) x 500 seeds x 8 kernels x 4 strategies (16000 total rollouts)...
+=======================================================================================================================================
+        FUNCTION 3 — FULL JOINT KERNEL x ACQUISITION SWEEP (N_seeds=500, n_init=6)
+=======================================================================================================================================
+                                                            Kernel                  Acquisition Variant  Mean Final Regret  SEM (Final Regret)  95% CI Lower  95% CI Upper  Mean AURC (Convergence Speed)              Vs #1 Ranked
+               Ablation 1: Matern 1.5 + WhiteNoise (Rougher/Spiky)    Upper Confidence Bound (beta=0.5)             0.0023            0.000196      0.001945      0.002715                         0.0326            - (top ranked)
+                           Baseline: Matern 2.5 + WhiteNoise (ARD)    Upper Confidence Bound (beta=0.5)             0.0024            0.000201      0.002043      0.002834                         0.0325 Tied with #1 (CI overlap)
+             Ablation 4: Matern 2.5 WITHOUT WhiteNoise (Noiseless)    Upper Confidence Bound (beta=0.5)             0.0027            0.000220      0.002310      0.003176                         0.0334 Tied with #1 (CI overlap)
+         Ablation 7: RBF with Unit Lengthscales (ARD) + WhiteNoise    Upper Confidence Bound (beta=0.5)             0.0027            0.000207      0.002251      0.003064                         0.0340 Tied with #1 (CI overlap)
+                    Ablation 2: RBF + WhiteNoise (Smooth Gaussian)    Upper Confidence Bound (beta=0.5)             0.0028            0.000211      0.002343      0.003172                         0.0342 Tied with #1 (CI overlap)
+                       Ablation 3: Rational Quadratic + WhiteNoise    Upper Confidence Bound (beta=0.5)             0.0057            0.000285      0.005163      0.006281                         0.0421   Distinguishable from #1
+   Ablation 6: RBF Isotropic (Shared Lengthscale 0.5) + WhiteNoise    Upper Confidence Bound (beta=0.5)             0.0059            0.000287      0.005288      0.006417                         0.0417   Distinguishable from #1
+Ablation 5: Matern 2.5 Isotropic (Shared Lengthscale) + WhiteNoise    Upper Confidence Bound (beta=0.5)             0.0060            0.000290      0.005437      0.006579                         0.0412   Distinguishable from #1
+Ablation 5: Matern 2.5 Isotropic (Shared Lengthscale) + WhiteNoise Probability of Improvement (xi=0.01)             0.0062            0.000298      0.005570      0.006741                         0.0424   Distinguishable from #1
+   Ablation 6: RBF Isotropic (Shared Lengthscale 0.5) + WhiteNoise Probability of Improvement (xi=0.01)             0.0062            0.000293      0.005611      0.006761                         0.0431   Distinguishable from #1
+(showing top 10 of 32 combos)
+  [NOTE] 4 of the top 10 combos have a 95% CI (final regret) overlapping the #1-ranked combo's CI - they are statistically indistinguishable from the reported 'winner' given 500 seeds, not genuinely worse.
+Best random-baseline: Mean Final Regret=0.0064, Mean AURC=0.0439
+Best overall combo:   Mean Final Regret=0.0023, Mean AURC=0.0326
+Best combo vs random baseline: WINS on final regret
+---------------------------------------------------------------------------------------------------------------------------------------
+Running Function 4: 42 samples, 4D -> n_init=5, 11 iterations (holdout_fraction=0.3, 26 points held out) x 500 seeds x 8 kernels x 4 strategies (16000 total rollouts)...
+=======================================================================================================================================
+        FUNCTION 4 — FULL JOINT KERNEL x ACQUISITION SWEEP (N_seeds=500, n_init=5)
+=======================================================================================================================================
+                                                            Kernel                  Acquisition Variant  Mean Final Regret  SEM (Final Regret)  95% CI Lower  95% CI Upper  Mean AURC (Convergence Speed)              Vs #1 Ranked
+   Ablation 6: RBF Isotropic (Shared Lengthscale 0.5) + WhiteNoise    Upper Confidence Bound (beta=0.5)             0.0035            0.001345      0.000837      0.006120                         6.3259            - (top ranked)
+Ablation 5: Matern 2.5 Isotropic (Shared Lengthscale) + WhiteNoise    Upper Confidence Bound (beta=0.5)             0.0043            0.001556      0.001211      0.007325                         6.5168 Tied with #1 (CI overlap)
+                       Ablation 3: Rational Quadratic + WhiteNoise    Upper Confidence Bound (beta=0.5)             0.0044            0.001482      0.001463      0.007287                         6.5528 Tied with #1 (CI overlap)
+                       Ablation 3: Rational Quadratic + WhiteNoise Probability of Improvement (xi=0.01)             0.0246            0.003342      0.017996      0.031130                         7.2496   Distinguishable from #1
+Ablation 5: Matern 2.5 Isotropic (Shared Lengthscale) + WhiteNoise Probability of Improvement (xi=0.01)             0.0355            0.014840      0.006367      0.064678                         7.1169   Distinguishable from #1
+   Ablation 6: RBF Isotropic (Shared Lengthscale 0.5) + WhiteNoise Probability of Improvement (xi=0.01)             0.0582            0.004549      0.049235      0.067109                         7.0440   Distinguishable from #1
+             Ablation 4: Matern 2.5 WITHOUT WhiteNoise (Noiseless)    Upper Confidence Bound (beta=0.5)             0.0614            0.023026      0.016138      0.106619                         9.2834   Distinguishable from #1
+               Ablation 1: Matern 1.5 + WhiteNoise (Rougher/Spiky)    Upper Confidence Bound (beta=0.5)             0.0774            0.029248      0.019919      0.134849                         9.3149   Distinguishable from #1
+         Ablation 7: RBF with Unit Lengthscales (ARD) + WhiteNoise    Upper Confidence Bound (beta=0.5)             0.0817            0.026257      0.030085      0.133262                        10.3483   Distinguishable from #1
+                           Baseline: Matern 2.5 + WhiteNoise (ARD)    Upper Confidence Bound (beta=0.5)             0.0960            0.033688      0.029782      0.162157                         9.2968   Distinguishable from #1
+(showing top 10 of 32 combos)
+  [NOTE] 2 of the top 10 combos have a 95% CI (final regret) overlapping the #1-ranked combo's CI - they are statistically indistinguishable from the reported 'winner' given 500 seeds, not genuinely worse.
+Best random-baseline: Mean Final Regret=0.3702, Mean AURC=12.1523
+Best overall combo:   Mean Final Regret=0.0035, Mean AURC=6.3259
+Best combo vs random baseline: WINS on final regret
+---------------------------------------------------------------------------------------------------------------------------------------
+  [DIAGNOSTIC] function_5: 3 of 32 points share the exact global max value - regret-based ranking will be much less discriminating here, since many strategies can 'find' the max just by chance.
+Running Function 5: 32 samples, 4D -> n_init=5, 4 iterations (holdout_fraction=0.15, 23 points held out) x 500 seeds x 8 kernels x 4 strategies (16000 total rollouts)...
+=======================================================================================================================================
+        FUNCTION 5 — FULL JOINT KERNEL x ACQUISITION SWEEP (N_seeds=500, n_init=5)
+=======================================================================================================================================
+                                                   Kernel                  Acquisition Variant  Mean Final Regret  SEM (Final Regret)  95% CI Lower  95% CI Upper  Mean AURC (Convergence Speed)              Vs #1 Ranked
+                  Baseline: Matern 2.5 + WhiteNoise (ARD)    Upper Confidence Bound (beta=0.5)            94.1450           14.924455     64.822437    123.467469                       778.8424            - (top ranked)
+Ablation 7: RBF with Unit Lengthscales (ARD) + WhiteNoise    Upper Confidence Bound (beta=0.5)            99.1335           15.569961     68.542781    129.724299                       771.8115 Tied with #1 (CI overlap)
+                  Baseline: Matern 2.5 + WhiteNoise (ARD) Probability of Improvement (xi=0.01)           105.5196           15.063106     75.924706    135.114559                       858.4746 Tied with #1 (CI overlap)
+      Ablation 1: Matern 1.5 + WhiteNoise (Rougher/Spiky)    Upper Confidence Bound (beta=0.5)           109.9972           16.384559     77.805992    142.188440                       791.0480 Tied with #1 (CI overlap)
+           Ablation 2: RBF + WhiteNoise (Smooth Gaussian)    Upper Confidence Bound (beta=0.5)           110.2974           16.623181     77.637355    142.957460                       799.7478 Tied with #1 (CI overlap)
+    Ablation 4: Matern 2.5 WITHOUT WhiteNoise (Noiseless)    Upper Confidence Bound (beta=0.5)           116.4002           16.273287     84.427612    148.372821                       789.7794 Tied with #1 (CI overlap)
+      Ablation 1: Matern 1.5 + WhiteNoise (Rougher/Spiky) Probability of Improvement (xi=0.01)           118.4068           17.503520     84.017153    152.796513                       861.1600 Tied with #1 (CI overlap)
+                  Baseline: Matern 2.5 + WhiteNoise (ARD)      Expected Improvement (xi=0.001)           118.4152           15.089346     88.768732    148.061694                       864.8132 Tied with #1 (CI overlap)
+Ablation 7: RBF with Unit Lengthscales (ARD) + WhiteNoise Probability of Improvement (xi=0.01)           129.4585           17.132879     95.797005    163.119949                       859.9639 Tied with #1 (CI overlap)
+      Ablation 1: Matern 1.5 + WhiteNoise (Rougher/Spiky)      Expected Improvement (xi=0.001)           130.7284           16.163532     98.971398    162.485331                       885.9345 Tied with #1 (CI overlap)
+(showing top 10 of 32 combos)
+  [NOTE] 9 of the top 10 combos have a 95% CI (final regret) overlapping the #1-ranked combo's CI - they are statistically indistinguishable from the reported 'winner' given 500 seeds, not genuinely worse.
+Best random-baseline: Mean Final Regret=251.096, Mean AURC=1050.3534
+Best overall combo:   Mean Final Regret=94.145, Mean AURC=778.8424
+Best combo vs random baseline: WINS on final regret
+---------------------------------------------------------------------------------------------------------------------------------------
+Running Function 6: 32 samples, 5D -> n_init=5, 8 iterations (holdout_fraction=0.3, 19 points held out) x 500 seeds x 8 kernels x 4 strategies (16000 total rollouts)...
+=======================================================================================================================================
+        FUNCTION 6 — FULL JOINT KERNEL x ACQUISITION SWEEP (N_seeds=500, n_init=5)
+=======================================================================================================================================
+                                                            Kernel                  Acquisition Variant  Mean Final Regret  SEM (Final Regret)  95% CI Lower  95% CI Upper  Mean AURC (Convergence Speed)              Vs #1 Ranked
+                       Ablation 3: Rational Quadratic + WhiteNoise    Upper Confidence Bound (beta=0.5)             0.0074            0.002761      0.001967      0.012815                         0.2672            - (top ranked)
+                       Ablation 3: Rational Quadratic + WhiteNoise Probability of Improvement (xi=0.01)             0.0075            0.002761      0.002076      0.012924                         0.2773 Tied with #1 (CI overlap)
+         Ablation 7: RBF with Unit Lengthscales (ARD) + WhiteNoise    Upper Confidence Bound (beta=0.5)             0.0078            0.001779      0.004338      0.011330                         0.4626 Tied with #1 (CI overlap)
+             Ablation 4: Matern 2.5 WITHOUT WhiteNoise (Noiseless)    Upper Confidence Bound (beta=0.5)             0.0082            0.002620      0.003089      0.013384                         0.4936 Tied with #1 (CI overlap)
+                           Baseline: Matern 2.5 + WhiteNoise (ARD)    Upper Confidence Bound (beta=0.5)             0.0098            0.002369      0.005179      0.014488                         0.4851 Tied with #1 (CI overlap)
+Ablation 5: Matern 2.5 Isotropic (Shared Lengthscale) + WhiteNoise    Upper Confidence Bound (beta=0.5)             0.0112            0.003412      0.004538      0.017946                         0.2553 Tied with #1 (CI overlap)
+               Ablation 1: Matern 1.5 + WhiteNoise (Rougher/Spiky)    Upper Confidence Bound (beta=0.5)             0.0113            0.003087      0.005188      0.017320                         0.4634 Tied with #1 (CI overlap)
+   Ablation 6: RBF Isotropic (Shared Lengthscale 0.5) + WhiteNoise    Upper Confidence Bound (beta=0.5)             0.0114            0.003405      0.004665      0.018043                         0.2800 Tied with #1 (CI overlap)
+Ablation 5: Matern 2.5 Isotropic (Shared Lengthscale) + WhiteNoise Probability of Improvement (xi=0.01)             0.0115            0.003415      0.004776      0.018195                         0.2641 Tied with #1 (CI overlap)
+   Ablation 6: RBF Isotropic (Shared Lengthscale 0.5) + WhiteNoise Probability of Improvement (xi=0.01)             0.0123            0.003420      0.005567      0.019005                         0.2916 Tied with #1 (CI overlap)
+(showing top 10 of 32 combos)
+  [NOTE] 9 of the top 10 combos have a 95% CI (final regret) overlapping the #1-ranked combo's CI - they are statistically indistinguishable from the reported 'winner' given 500 seeds, not genuinely worse.
+Best random-baseline: Mean Final Regret=0.0369, Mean AURC=0.6409
+Best overall combo:   Mean Final Regret=0.0074, Mean AURC=0.2672
+Best combo vs random baseline: WINS on final regret
+---------------------------------------------------------------------------------------------------------------------------------------
+Running Function 7: 42 samples, 6D -> n_init=6, 10 iterations (holdout_fraction=0.3, 26 points held out) x 500 seeds x 8 kernels x 4 strategies (16000 total rollouts)...
+=======================================================================================================================================
+        FUNCTION 7 — FULL JOINT KERNEL x ACQUISITION SWEEP (N_seeds=500, n_init=6)
+=======================================================================================================================================
+                                                            Kernel                  Acquisition Variant  Mean Final Regret  SEM (Final Regret)  95% CI Lower  95% CI Upper  Mean AURC (Convergence Speed)              Vs #1 Ranked
+Ablation 5: Matern 2.5 Isotropic (Shared Lengthscale) + WhiteNoise    Upper Confidence Bound (beta=0.5)             0.0230            0.007740      0.007782      0.038197                         2.7767            - (top ranked)
+Ablation 5: Matern 2.5 Isotropic (Shared Lengthscale) + WhiteNoise      Expected Improvement (xi=0.001)             0.0262            0.008652      0.009164      0.043162                         2.9989 Tied with #1 (CI overlap)
+Ablation 5: Matern 2.5 Isotropic (Shared Lengthscale) + WhiteNoise Probability of Improvement (xi=0.01)             0.0283            0.008889      0.010792      0.045722                         2.9232 Tied with #1 (CI overlap)
+                       Ablation 3: Rational Quadratic + WhiteNoise Probability of Improvement (xi=0.01)             0.0302            0.009081      0.012362      0.048047                         3.0053 Tied with #1 (CI overlap)
+   Ablation 6: RBF Isotropic (Shared Lengthscale 0.5) + WhiteNoise    Upper Confidence Bound (beta=0.5)             0.0316            0.009649      0.012599      0.050516                         2.8891 Tied with #1 (CI overlap)
+                       Ablation 3: Rational Quadratic + WhiteNoise      Expected Improvement (xi=0.001)             0.0342            0.009604      0.015303      0.053040                         3.2380 Tied with #1 (CI overlap)
+   Ablation 6: RBF Isotropic (Shared Lengthscale 0.5) + WhiteNoise Probability of Improvement (xi=0.01)             0.0351            0.010039      0.015340      0.054787                         3.0650 Tied with #1 (CI overlap)
+   Ablation 6: RBF Isotropic (Shared Lengthscale 0.5) + WhiteNoise      Expected Improvement (xi=0.001)             0.0359            0.010050      0.016136      0.055626                         3.2612 Tied with #1 (CI overlap)
+                       Ablation 3: Rational Quadratic + WhiteNoise    Upper Confidence Bound (beta=0.5)             0.0374            0.010635      0.016541      0.058330                         2.8428 Tied with #1 (CI overlap)
+         Ablation 7: RBF with Unit Lengthscales (ARD) + WhiteNoise    Upper Confidence Bound (beta=0.5)             0.0986            0.016256      0.066707      0.130584                         4.1802   Distinguishable from #1
+(showing top 10 of 32 combos)
+  [NOTE] 8 of the top 10 combos have a 95% CI (final regret) overlapping the #1-ranked combo's CI - they are statistically indistinguishable from the reported 'winner' given 500 seeds, not genuinely worse.
+Best random-baseline: Mean Final Regret=0.3558, Mean AURC=5.6438
+Best overall combo:   Mean Final Regret=0.023, Mean AURC=2.7767
+Best combo vs random baseline: WINS on final regret
+---------------------------------------------------------------------------------------------------------------------------------------
+Running Function 8: 52 samples, 8D -> n_init=8, 6 iterations (holdout_fraction=0.15, 38 points held out) x 500 seeds x 8 kernels x 4 strategies (16000 total rollouts)...
+=======================================================================================================================================
+        FUNCTION 8 — FULL JOINT KERNEL x ACQUISITION SWEEP (N_seeds=500, n_init=8)
+=======================================================================================================================================
+                                                            Kernel                  Acquisition Variant  Mean Final Regret  SEM (Final Regret)  95% CI Lower  95% CI Upper  Mean AURC (Convergence Speed)              Vs #1 Ranked
+               Ablation 1: Matern 1.5 + WhiteNoise (Rougher/Spiky)    Upper Confidence Bound (beta=0.5)             0.0087            0.001510      0.005709      0.011642                         0.2004            - (top ranked)
+             Ablation 4: Matern 2.5 WITHOUT WhiteNoise (Noiseless)    Upper Confidence Bound (beta=0.5)             0.0089            0.002449      0.004095      0.013718                         0.2224 Tied with #1 (CI overlap)
+               Ablation 1: Matern 1.5 + WhiteNoise (Rougher/Spiky) Probability of Improvement (xi=0.01)             0.0092            0.002020      0.005237      0.013175                         0.1927 Tied with #1 (CI overlap)
+         Ablation 7: RBF with Unit Lengthscales (ARD) + WhiteNoise    Upper Confidence Bound (beta=0.5)             0.0099            0.001998      0.006019      0.013869                         0.2043 Tied with #1 (CI overlap)
+Ablation 5: Matern 2.5 Isotropic (Shared Lengthscale) + WhiteNoise Probability of Improvement (xi=0.01)             0.0104            0.001547      0.007319      0.013399                         0.2092 Tied with #1 (CI overlap)
+                           Baseline: Matern 2.5 + WhiteNoise (ARD) Probability of Improvement (xi=0.01)             0.0111            0.002045      0.007119      0.015152                         0.2022 Tied with #1 (CI overlap)
+                           Baseline: Matern 2.5 + WhiteNoise (ARD)    Upper Confidence Bound (beta=0.5)             0.0114            0.003282      0.004907      0.017803                         0.2129 Tied with #1 (CI overlap)
+         Ablation 7: RBF with Unit Lengthscales (ARD) + WhiteNoise Probability of Improvement (xi=0.01)             0.0115            0.001677      0.008185      0.014776                         0.1991 Tied with #1 (CI overlap)
+Ablation 5: Matern 2.5 Isotropic (Shared Lengthscale) + WhiteNoise      Expected Improvement (xi=0.001)             0.0119            0.001593      0.008746      0.015004                         0.2319 Tied with #1 (CI overlap)
+Ablation 5: Matern 2.5 Isotropic (Shared Lengthscale) + WhiteNoise    Upper Confidence Bound (beta=0.5)             0.0121            0.002834      0.006579      0.017716                         0.2128 Tied with #1 (CI overlap)
+(showing top 10 of 32 combos)
+  [NOTE] 9 of the top 10 combos have a 95% CI (final regret) overlapping the #1-ranked combo's CI - they are statistically indistinguishable from the reported 'winner' given 500 seeds, not genuinely worse.
+Best random-baseline: Mean Final Regret=0.0503, Mean AURC=0.3793
+Best overall combo:   Mean Final Regret=0.0087, Mean AURC=0.2004
+Best combo vs random baseline: WINS on final regret
+---------------------------------------------------------------------------------------------------------------------------------------
+
+====================================================================================================
+ SUMMARY: BEST (KERNEL, ACQUISITION) COMBO PER FUNCTION — RANKED FOR GLOBAL MAXIMIZATION
+====================================================================================================
+FUNCTION_1: Ablation 7: RBF with Unit Lengthscales (ARD) + WhiteNoise + Upper Confidence Bound (beta=0.5)
+    Mean Best Value Found : 3.112182718226153e-11
+    Mean Final Regret     : 0.7612  (95% CI: [0.608409, 0.914088])
+    Mean AURC             : 42.3879
+    n_init / n_iterations : 4 / 10
+    n_seeds used          : 1000
+    Vs random baseline    : WINS on final regret
+    [NOTE] 2 other combo(s) are statistically indistinguishable from this 'winner' (overlapping 95% CI) - treat the ranking among them as uncertain, not a confirmed order.
+FUNCTION_2: Ablation 7: RBF with Unit Lengthscales (ARD) + WhiteNoise + Upper Confidence Bound (beta=0.5)
+    Mean Best Value Found : 0.7525
+    Mean Final Regret     : 0.0035  (95% CI: [0.002417, 0.004680])
+    Mean AURC             : 0.3457
+    n_init / n_iterations : 4 / 10
+    n_seeds used          : 1000
+    Vs random baseline    : WINS on final regret
+    [NOTE] 4 other combo(s) are statistically indistinguishable from this 'winner' (overlapping 95% CI) - treat the ranking among them as uncertain, not a confirmed order.
+FUNCTION_3: Ablation 1: Matern 1.5 + WhiteNoise (Rougher/Spiky) + Upper Confidence Bound (beta=0.5)
+    Mean Best Value Found : -0.0214
+    Mean Final Regret     : 0.0023  (95% CI: [0.001945, 0.002715])
+    Mean AURC             : 0.0326
+    n_init / n_iterations : 6 / 6
+    n_seeds used          : 500
+    Vs random baseline    : WINS on final regret
+    [NOTE] 4 other combo(s) are statistically indistinguishable from this 'winner' (overlapping 95% CI) - treat the ranking among them as uncertain, not a confirmed order.
+FUNCTION_4: Ablation 6: RBF Isotropic (Shared Lengthscale 0.5) + WhiteNoise + Upper Confidence Bound (beta=0.5)
+    Mean Best Value Found : 0.5667
+    Mean Final Regret     : 0.0035  (95% CI: [0.000837, 0.006120])
+    Mean AURC             : 6.3259
+    n_init / n_iterations : 5 / 11
+    n_seeds used          : 500
+    Vs random baseline    : WINS on final regret
+    [NOTE] 2 other combo(s) are statistically indistinguishable from this 'winner' (overlapping 95% CI) - treat the ranking among them as uncertain, not a confirmed order.
+FUNCTION_5: Baseline: Matern 2.5 + WhiteNoise (ARD) + Upper Confidence Bound (beta=0.5)
+    Mean Best Value Found : 2238.8619
+    Mean Final Regret     : 94.145  (95% CI: [64.822437, 123.467469])
+    Mean AURC             : 778.8424
+    n_init / n_iterations : 5 / 4
+    n_seeds used          : 500
+    Vs random baseline    : WINS on final regret
+    [NOTE] 14 other combo(s) are statistically indistinguishable from this 'winner' (overlapping 95% CI) - treat the ranking among them as uncertain, not a confirmed order.
+FUNCTION_6: Ablation 3: Rational Quadratic + WhiteNoise + Upper Confidence Bound (beta=0.5)
+    Mean Best Value Found : -0.1794
+    Mean Final Regret     : 0.0074  (95% CI: [0.001967, 0.012815])
+    Mean AURC             : 0.2672
+    n_init / n_iterations : 5 / 8
+    n_seeds used          : 500
+    Vs random baseline    : WINS on final regret
+    [NOTE] 16 other combo(s) are statistically indistinguishable from this 'winner' (overlapping 95% CI) - treat the ranking among them as uncertain, not a confirmed order.
+FUNCTION_7: Ablation 5: Matern 2.5 Isotropic (Shared Lengthscale) + WhiteNoise + Upper Confidence Bound (beta=0.5)
+    Mean Best Value Found : 2.9168
+    Mean Final Regret     : 0.023  (95% CI: [0.007782, 0.038197])
+    Mean AURC             : 2.7767
+    n_init / n_iterations : 6 / 10
+    n_seeds used          : 500
+    Vs random baseline    : WINS on final regret
+    [NOTE] 8 other combo(s) are statistically indistinguishable from this 'winner' (overlapping 95% CI) - treat the ranking among them as uncertain, not a confirmed order.
+FUNCTION_8: Ablation 1: Matern 1.5 + WhiteNoise (Rougher/Spiky) + Upper Confidence Bound (beta=0.5)
+    Mean Best Value Found : 9.9475
+    Mean Final Regret     : 0.0087  (95% CI: [0.005709, 0.011642])
+    Mean AURC             : 0.2004
+    n_init / n_iterations : 8 / 6
+    n_seeds used          : 500
+    Vs random baseline    : WINS on final regret
+    [NOTE] 16 other combo(s) are statistically indistinguishable from this 'winner' (overlapping 95% CI) - treat the ranking among them as uncertain, not a confirmed order.
+====================================================================================================
+Master plot successfully saved to 'week_13/diagnostics_results/full_joint_ablation_all_functions_legend.png'
+
+[SUCCESS] Joint kernel x acquisition ablation study complete!
+
+====================================================================================================
+ [STEP 2] Running K-Means Clustering Diagnostics (elbow method + best-cluster bounding box)...
+====================================================================================================
+==============================================================================================================
+ K-MEANS CLUSTERING DIAGNOSTICS: INPUT SPACE STRUCTURE + BEST-CLUSTER BOUNDING BOX
+==============================================================================================================
+
+FUNCTION_1 (22 samples, 2D): k values tried=[1, 2, 3, 4, 5, 6], elbow-selected k=3
+  Best cluster (containing the current best-observed point): cluster 1 (9 of 22 points)
+  Bounding box (original units, with 10% margin): min=[0.2393 0.6014], max=[0.8839 0.8799]
+
+FUNCTION_2 (22 samples, 2D): k values tried=[1, 2, 3, 4, 5, 6], elbow-selected k=3
+  Best cluster (containing the current best-observed point): cluster 1 (9 of 22 points)
+  Bounding box (original units, with 10% margin): min=[0.5042 0.5816], max=[0.8778 0.9266]
+
+FUNCTION_3 (27 samples, 3D): k values tried=[1, 2, 3, 4, 5, 6], elbow-selected k=3
+  Best cluster (containing the current best-observed point): cluster 1 (12 of 27 points)
+  Bounding box (original units, with 10% margin): min=[0.0786 0.5394 0.0661], max=[0.966  0.9414 0.6593]
+  PCA (for cluster-plot projection): using 3 component(s) (captures 100.0% of variance; threshold=80%) - see scree plot for full curve.
+
+FUNCTION_4 (42 samples, 4D): k values tried=[1, 2, 3, 4, 5, 6], elbow-selected k=3
+  Best cluster (containing the current best-observed point): cluster 1 (23 of 42 points)
+  Bounding box (original units, with 10% margin): min=[0.0378 0.0063 0.0422 0.0815], max=[0.7597 0.9196 0.7144 0.8855]
+  PCA (for cluster-plot projection): using 3 component(s) (captures 83.3% of variance; threshold=80%) - see scree plot for full curve.
+
+FUNCTION_5 (32 samples, 4D): k values tried=[1, 2, 3, 4, 5, 6], elbow-selected k=2
+  Best cluster (containing the current best-observed point): cluster 1 (14 of 32 points)
+  Bounding box (original units, with 10% margin): min=[0.1199 0.3367 0.2991 0.6516], max=[0.8365 0.8625 0.8795 0.9576]
+  PCA (for cluster-plot projection): using 3 component(s) (captures 86.7% of variance; threshold=80%) - see scree plot for full curve.
+
+FUNCTION_6 (32 samples, 5D): k values tried=[1, 2, 3, 4, 5, 6], elbow-selected k=3
+  Best cluster (containing the current best-observed point): cluster 1 (14 of 32 points)
+  Bounding box (original units, with 10% margin): min=[0.0217 0.1144 0.0385 0.5875 0.0049], max=[0.9577 0.9319 0.9788 0.9617 0.6868]
+  PCA (for cluster-plot projection): using 3 component(s) (captures 76.6% of variance; threshold=80%) - see scree plot for full curve.
+
+FUNCTION_7 (42 samples, 6D): k values tried=[1, 2, 3, 4, 5, 6], elbow-selected k=3
+  Best cluster (containing the current best-observed point): cluster 2 (16 of 42 points)
+  Bounding box (original units, with 10% margin): min=[0.0579 0.0118 0.1553 0.0737 0.0149 0.4269], max=[0.366  0.8179 0.9246 0.961  0.9987 0.951 ]
+  PCA (for cluster-plot projection): using 3 component(s) (captures 70.8% of variance; threshold=80%) - see scree plot for full curve.
+
+FUNCTION_8 (52 samples, 8D): k values tried=[1, 2, 3, 4, 5, 6], elbow-selected k=3
+  Best cluster (containing the current best-observed point): cluster 2 (15 of 52 points)
+  Bounding box (original units, with 10% margin): min=[0.0091 0.0034 0.0229 0.009  0.1286 0.0221 0.0359 0.042 ], max=[0.3737 0.7277 0.579  0.7026 0.9869 0.9513 0.6972 0.9888]
+  PCA (for cluster-plot projection): using 3 component(s) (captures 58.0% of variance; threshold=80%) - see scree plot for full curve.
+
+==============================================================================================================
+ SUMMARY: K-MEANS RESULTS PER FUNCTION
+==============================================================================================================
+FUNCTION_1: k=3, best cluster has 9 point(s)
+FUNCTION_2: k=3, best cluster has 9 point(s)
+FUNCTION_3: k=3, best cluster has 12 point(s)
+FUNCTION_4: k=3, best cluster has 23 point(s)
+FUNCTION_5: k=2, best cluster has 14 point(s)
+FUNCTION_6: k=3, best cluster has 14 point(s)
+FUNCTION_7: k=3, best cluster has 16 point(s)
+FUNCTION_8: k=3, best cluster has 15 point(s)
+==============================================================================================================
+
+Elbow plot grid saved to 'week_13/diagnostics_results/kmeans_elbow_grid.png'
+PCA scree plot grid saved to 'week_13/diagnostics_results/pca_scree_grid.png'
+Cluster assignment plot grid saved to 'week_13/diagnostics_results/kmeans_cluster_grid.png'
+
+[SUCCESS] K-means clustering diagnostics complete!
+
+====================================================================================================
+ [STEP 3] Executing Final HEBO-Based Next Query Predictions (global GP + density-matched combined Sobol pools)...
+====================================================================================================
+
+===================================================================================================================
+ COMPILING FINAL HEBO & SOBOL-BASED NEXT QUERY PREDICTIONS ACROSS FUNCTIONS 1-8
+===================================================================================================================
+  [LOCAL POOL] function_1: box occupies 27.9607% of the full-domain volume -> density-matched baseline would be 1145.3 candidates; using 8192 box candidates (~7.2x that baseline, i.e. genuinely ~7.2x denser than the full-domain pool, not the uncontrolled ~14x it would have been without density-matching), combined with 4096 full-domain candidates.
+  [POOL COMPARISON] function_1: best full-domain score=1.451796 | best local-box score=1.451930 | gap=+0.000134 (box pool wins)
+      [FULL-DOMAIN BEST CANDIDATE] coords=[0.830703 0.733728] | predicted value=8.297592609848481e-26 | predicted std (warped)=0.5618
+      [LOCAL-BOX BEST CANDIDATE] <-- WINNER coords=[0.587548 0.733603] | predicted value=8.374470483333721e-26 | predicted std (warped)=0.5618
+Function 1 | Next Query: [0.587548 0.733603] | Kernel: Ablation 7: RBF with Unit Lengthscales (ARD) + WhiteNoise | Acq: Upper Confidence Bound (beta=0.5) | Predicted Value: 0.000000 | Pred Std (warped): 0.5618 | Chosen from: local-box pool
+  [LOCAL POOL] function_2: box occupies 19.5282% of the full-domain volume -> density-matched baseline would be 799.9 candidates; using 4096 box candidates (~5.1x that baseline, i.e. genuinely ~5.1x denser than the full-domain pool, not the uncontrolled ~20x it would have been without density-matching), combined with 4096 full-domain candidates.
+  [POOL COMPARISON] function_2: best full-domain score=1.394303 | best local-box score=1.394305 | gap=+0.000001 (box pool wins)
+      [FULL-DOMAIN BEST CANDIDATE] coords=[0.70611  0.698624] | predicted value=0.630919 | predicted std (warped)=0.4641
+      [LOCAL-BOX BEST CANDIDATE] <-- WINNER coords=[0.706152 0.69881 ] | predicted value=0.630918 | predicted std (warped)=0.4641
+Function 2 | Next Query: [0.706152 0.69881 ] | Kernel: Ablation 7: RBF with Unit Lengthscales (ARD) + WhiteNoise | Acq: Upper Confidence Bound (beta=0.5) | Predicted Value: 0.630918 | Pred Std (warped): 0.4641 | Chosen from: local-box pool
+  [LOCAL POOL] function_3: box occupies 34.5011% of the full-domain volume -> density-matched baseline would be 1413.2 candidates; using 8192 box candidates (~5.8x that baseline, i.e. genuinely ~5.8x denser than the full-domain pool, not the uncontrolled ~12x it would have been without density-matching), combined with 4096 full-domain candidates.
+  [POOL COMPARISON] function_3: best full-domain score=1.345646 | best local-box score=1.345646 | gap=+0.000001 (box pool wins)
+      [FULL-DOMAIN BEST CANDIDATE] coords=[0.059915 0.419991 0.37687 ] | predicted value=-0.030769 | predicted std (warped)=0.2310
+      [LOCAL-BOX BEST CANDIDATE] <-- WINNER coords=[0.563226 0.731384 0.376916] | predicted value=-0.030768 | predicted std (warped)=0.2310
+Function 3 | Next Query: [0.563226 0.731384 0.376916] | Kernel: Ablation 1: Matern 1.5 + WhiteNoise (Rougher/Spiky) | Acq: Upper Confidence Bound (beta=0.5) | Predicted Value: -0.030768 | Pred Std (warped): 0.2310 | Chosen from: local-box pool
+  [LOCAL POOL] function_4: box occupies 49.9973% of the full-domain volume -> density-matched baseline would be 4095.8 candidates; using 16384 box candidates (~4.0x that baseline, i.e. genuinely ~4.0x denser than the full-domain pool, not the uncontrolled ~8x it would have been without density-matching), combined with 8192 full-domain candidates.
+  [POOL COMPARISON] function_4: best full-domain score=1.738181 | best local-box score=1.738825 | gap=+0.000644 (box pool wins)
+      [FULL-DOMAIN BEST CANDIDATE] coords=[0.387703 0.33963  0.347373 0.445793] | predicted value=-0.230986 | predicted std (warped)=0.1319
+      [LOCAL-BOX BEST CANDIDATE] <-- WINNER coords=[0.395637 0.403634 0.348991 0.393897] | predicted value=-0.209134 | predicted std (warped)=0.1236
+Function 4 | Next Query: [0.395637 0.403634 0.348991 0.393897] | Kernel: Ablation 6: RBF Isotropic (Shared Lengthscale 0.5) + WhiteNoise | Acq: Upper Confidence Bound (beta=0.5) | Predicted Value: -0.209134 | Pred Std (warped): 0.1236 | Chosen from: local-box pool
+  [LOCAL POOL] function_5: box occupies 16.1975% of the full-domain volume -> density-matched baseline would be 1326.9 candidates; using 8192 box candidates (~6.2x that baseline, i.e. genuinely ~6.2x denser than the full-domain pool, not the uncontrolled ~25x it would have been without density-matching), combined with 8192 full-domain candidates.
+  [POOL COMPARISON] function_5: best full-domain score=1.382184 | best local-box score=1.499467 | gap=+0.117283 (box pool wins)
+      [FULL-DOMAIN BEST CANDIDATE] coords=[0.764089 0.795694 0.80667  0.953609] | predicted value=1777.559342 | predicted std (warped)=0.0758
+      [LOCAL-BOX BEST CANDIDATE] <-- WINNER coords=[0.731133 0.854809 0.869497 0.950757] | predicted value=2149.029263 | predicted std (warped)=0.0429
+Function 5 | Next Query: [0.731133 0.854809 0.869497 0.950757] | Kernel: Baseline: Matern 2.5 + WhiteNoise (ARD) | Acq: Upper Confidence Bound (beta=0.5) | Predicted Value: 2149.029263 | Pred Std (warped): 0.0429 | Chosen from: local-box pool
+  [LOCAL POOL] function_6: box occupies 30.6506% of the full-domain volume -> density-matched baseline would be 2510.9 candidates; using 16384 box candidates (~6.5x that baseline, i.e. genuinely ~6.5x denser than the full-domain pool, not the uncontrolled ~13x it would have been without density-matching), combined with 8192 full-domain candidates.
+  [POOL COMPARISON] function_6: best full-domain score=1.585727 | best local-box score=1.654473 | gap=+0.068746 (box pool wins)
+      [FULL-DOMAIN BEST CANDIDATE] coords=[0.54369  0.348305 0.586042 0.758748 0.225452] | predicted value=-0.219717 | predicted std (warped)=0.0717
+      [LOCAL-BOX BEST CANDIDATE] <-- WINNER coords=[0.43744  0.413094 0.675725 0.82735  0.219763] | predicted value=-0.195810 | predicted std (warped)=0.1197
+Function 6 | Next Query: [0.43744  0.413094 0.675725 0.82735  0.219763] | Kernel: Ablation 3: Rational Quadratic + WhiteNoise | Acq: Upper Confidence Bound (beta=0.5) | Predicted Value: -0.195810 | Pred Std (warped): 0.1197 | Chosen from: local-box pool
+  [LOCAL POOL] function_7: box occupies 14.9594% of the full-domain volume -> density-matched baseline would be 2450.9 candidates; using 16384 box candidates (~6.7x that baseline, i.e. genuinely ~6.7x denser than the full-domain pool, not the uncontrolled ~27x it would have been without density-matching), combined with 16384 full-domain candidates.
+  [POOL COMPARISON] function_7: best full-domain score=1.776169 | best local-box score=1.762050 | gap=-0.014120 (full-domain pool wins)
+      [FULL-DOMAIN BEST CANDIDATE] <-- WINNER coords=[0.179463 0.222563 0.465699 0.256183 0.317335 0.629851] | predicted value=2.895122 | predicted std (warped)=0.1853
+      [LOCAL-BOX BEST CANDIDATE] coords=[0.204923 0.211174 0.405052 0.246375 0.380794 0.718252] | predicted value=3.033561 | predicted std (warped)=0.0975
+Function 7 | Next Query: [0.179463 0.222563 0.465699 0.256183 0.317335 0.629851] | Kernel: Ablation 5: Matern 2.5 Isotropic (Shared Lengthscale) + WhiteNoise | Acq: Upper Confidence Bound (beta=0.5) | Predicted Value: 2.895122 | Pred Std (warped): 0.1853 | Chosen from: full-domain pool
+  [LOCAL POOL] function_8: box occupies 7.1723% of the full-domain volume -> density-matched baseline would be 1175.1 candidates; using 8192 box candidates (~7.0x that baseline, i.e. genuinely ~7.0x denser than the full-domain pool, not the uncontrolled ~56x it would have been without density-matching), combined with 16384 full-domain candidates.
+  [POOL COMPARISON] function_8: best full-domain score=1.470444 | best local-box score=1.485707 | gap=+0.015262 (box pool wins)
+      [FULL-DOMAIN BEST CANDIDATE] coords=[0.118187 0.248323 0.204021 0.166771 0.858808 0.454545 0.359925 0.824918] | predicted value=9.932602 | predicted std (warped)=0.0391
+      [LOCAL-BOX BEST CANDIDATE] <-- WINNER coords=[0.122388 0.07591  0.146111 0.034777 0.864326 0.620542 0.287065 0.125307] | predicted value=9.950064 | predicted std (warped)=0.0367
+Function 8 | Next Query: [0.122388 0.07591  0.146111 0.034777 0.864326 0.620542 0.287065 0.125307] | Kernel: Ablation 1: Matern 1.5 + WhiteNoise (Rougher/Spiky) | Acq: Upper Confidence Bound (beta=0.5) | Predicted Value: 9.950064 | Pred Std (warped): 0.0367 | Chosen from: local-box pool
+===================================================================================================================
+
+====================================================================================================
+ FINAL NEXT-QUERY SUMMARY
+====================================================================================================
+FUNCTION_1:
+    Next Query Coordinates : [0.587548 0.733603]
+    Kernel Used            : Ablation 7: RBF with Unit Lengthscales (ARD) + WhiteNoise
+    Acquisition Used       : Upper Confidence Bound (beta=0.5)
+    Predicted Value        : 8.374470483333721e-26
+    Predicted Std (warped) : 0.5618
+    Chosen From Pool       : local-box (full-domain candidates: 4096, local-box candidates: 8192)
+    Box Volume Ratio       : 27.9607% of full domain
+    Best Score (full-domain / local-box): 1.451796 / 1.451930
+    Full-domain best candidate  : coords=[0.830703 0.733728] | predicted value=8.297592609848481e-26 | predicted std=0.5618
+    Local-box best candidate    : coords=[0.587548 0.733603] | predicted value=8.374470483333721e-26 | predicted std=0.5618
+----------------------------------------------------------------------------------------------------
+FUNCTION_2:
+    Next Query Coordinates : [0.706152 0.69881 ]
+    Kernel Used            : Ablation 7: RBF with Unit Lengthscales (ARD) + WhiteNoise
+    Acquisition Used       : Upper Confidence Bound (beta=0.5)
+    Predicted Value        : 0.6309183691645894
+    Predicted Std (warped) : 0.4641
+    Chosen From Pool       : local-box (full-domain candidates: 4096, local-box candidates: 4096)
+    Box Volume Ratio       : 19.5282% of full domain
+    Best Score (full-domain / local-box): 1.394303 / 1.394305
+    Full-domain best candidate  : coords=[0.70611  0.698624] | predicted value=0.630919 | predicted std=0.4641
+    Local-box best candidate    : coords=[0.706152 0.69881 ] | predicted value=0.630918 | predicted std=0.4641
+----------------------------------------------------------------------------------------------------
+FUNCTION_3:
+    Next Query Coordinates : [0.563226 0.731384 0.376916]
+    Kernel Used            : Ablation 1: Matern 1.5 + WhiteNoise (Rougher/Spiky)
+    Acquisition Used       : Upper Confidence Bound (beta=0.5)
+    Predicted Value        : -0.030768394189574222
+    Predicted Std (warped) : 0.2310
+    Chosen From Pool       : local-box (full-domain candidates: 4096, local-box candidates: 8192)
+    Box Volume Ratio       : 34.5011% of full domain
+    Best Score (full-domain / local-box): 1.345646 / 1.345646
+    Full-domain best candidate  : coords=[0.059915 0.419991 0.37687 ] | predicted value=-0.030769 | predicted std=0.2310
+    Local-box best candidate    : coords=[0.563226 0.731384 0.376916] | predicted value=-0.030768 | predicted std=0.2310
+----------------------------------------------------------------------------------------------------
+FUNCTION_4:
+    Next Query Coordinates : [0.395637 0.403634 0.348991 0.393897]
+    Kernel Used            : Ablation 6: RBF Isotropic (Shared Lengthscale 0.5) + WhiteNoise
+    Acquisition Used       : Upper Confidence Bound (beta=0.5)
+    Predicted Value        : -0.2091339721668546
+    Predicted Std (warped) : 0.1236
+    Chosen From Pool       : local-box (full-domain candidates: 8192, local-box candidates: 16384)
+    Box Volume Ratio       : 49.9973% of full domain
+    Best Score (full-domain / local-box): 1.738181 / 1.738825
+    Full-domain best candidate  : coords=[0.387703 0.33963  0.347373 0.445793] | predicted value=-0.230986 | predicted std=0.1319
+    Local-box best candidate    : coords=[0.395637 0.403634 0.348991 0.393897] | predicted value=-0.209134 | predicted std=0.1236
+----------------------------------------------------------------------------------------------------
+FUNCTION_5:
+    Next Query Coordinates : [0.731133 0.854809 0.869497 0.950757]
+    Kernel Used            : Baseline: Matern 2.5 + WhiteNoise (ARD)
+    Acquisition Used       : Upper Confidence Bound (beta=0.5)
+    Predicted Value        : 2149.029263365112
+    Predicted Std (warped) : 0.0429
+    Chosen From Pool       : local-box (full-domain candidates: 8192, local-box candidates: 8192)
+    Box Volume Ratio       : 16.1975% of full domain
+    Best Score (full-domain / local-box): 1.382184 / 1.499467
+    Full-domain best candidate  : coords=[0.764089 0.795694 0.80667  0.953609] | predicted value=1777.559342 | predicted std=0.0758
+    Local-box best candidate    : coords=[0.731133 0.854809 0.869497 0.950757] | predicted value=2149.029263 | predicted std=0.0429
+----------------------------------------------------------------------------------------------------
+FUNCTION_6:
+    Next Query Coordinates : [0.43744  0.413094 0.675725 0.82735  0.219763]
+    Kernel Used            : Ablation 3: Rational Quadratic + WhiteNoise
+    Acquisition Used       : Upper Confidence Bound (beta=0.5)
+    Predicted Value        : -0.19580987750130086
+    Predicted Std (warped) : 0.1197
+    Chosen From Pool       : local-box (full-domain candidates: 8192, local-box candidates: 16384)
+    Box Volume Ratio       : 30.6506% of full domain
+    Best Score (full-domain / local-box): 1.585727 / 1.654473
+    Full-domain best candidate  : coords=[0.54369  0.348305 0.586042 0.758748 0.225452] | predicted value=-0.219717 | predicted std=0.0717
+    Local-box best candidate    : coords=[0.43744  0.413094 0.675725 0.82735  0.219763] | predicted value=-0.195810 | predicted std=0.1197
+----------------------------------------------------------------------------------------------------
+FUNCTION_7:
+    Next Query Coordinates : [0.179463 0.222563 0.465699 0.256183 0.317335 0.629851]
+    Kernel Used            : Ablation 5: Matern 2.5 Isotropic (Shared Lengthscale) + WhiteNoise
+    Acquisition Used       : Upper Confidence Bound (beta=0.5)
+    Predicted Value        : 2.8951222827281167
+    Predicted Std (warped) : 0.1853
+    Chosen From Pool       : full-domain (full-domain candidates: 16384, local-box candidates: 16384)
+    Box Volume Ratio       : 14.9594% of full domain
+    Best Score (full-domain / local-box): 1.776169 / 1.762050
+    Full-domain best candidate  : coords=[0.179463 0.222563 0.465699 0.256183 0.317335 0.629851] | predicted value=2.895122 | predicted std=0.1853
+    Local-box best candidate    : coords=[0.204923 0.211174 0.405052 0.246375 0.380794 0.718252] | predicted value=3.033561 | predicted std=0.0975
+----------------------------------------------------------------------------------------------------
+FUNCTION_8:
+    Next Query Coordinates : [0.122388 0.07591  0.146111 0.034777 0.864326 0.620542 0.287065 0.125307]
+    Kernel Used            : Ablation 1: Matern 1.5 + WhiteNoise (Rougher/Spiky)
+    Acquisition Used       : Upper Confidence Bound (beta=0.5)
+    Predicted Value        : 9.950064040342362
+    Predicted Std (warped) : 0.0367
+    Chosen From Pool       : local-box (full-domain candidates: 16384, local-box candidates: 8192)
+    Box Volume Ratio       : 7.1723% of full domain
+    Best Score (full-domain / local-box): 1.470444 / 1.485707
+    Full-domain best candidate  : coords=[0.118187 0.248323 0.204021 0.166771 0.858808 0.454545 0.359925 0.824918] | predicted value=9.932602 | predicted std=0.0391
+    Local-box best candidate    : coords=[0.122388 0.07591  0.146111 0.034777 0.864326 0.620542 0.287065 0.125307] | predicted value=9.950064 | predicted std=0.0367
+----------------------------------------------------------------------------------------------------
+
+====================================================================================================
+                    WEEK 13 BBO PIPELINE: ALL TASKS COMPLETED SUCCESSFULLY
+====================================================================================================
