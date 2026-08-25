@@ -1,4 +1,4 @@
-**Next-Query PRedictions Submitted for Week 12 (Penultimate Week) of the Black-Box Optimisation Project**
+**Next-Query Predictions Submitted for Week 12 (Penultimate Week) of the Black-Box Optimisation Project**
 
 ```text
 ====================================================================================================
