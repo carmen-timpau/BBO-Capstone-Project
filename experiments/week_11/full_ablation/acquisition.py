@@ -10,7 +10,7 @@ combo's CI overlaps the #1-ranked combo's CI, so the ranking reflects statistica
 point-estimate comparison — surfacing when the reported "winner" is genuinely distinguishable from the runner-ups 
 versus merely ahead by an amount within noise. 
 
-Note: Compared to Week 10's BBO Full Joint Ablation, this version features a minor fix regarding "Mean Best Value Found" 
+!Note: Compared to Week 10's BBO Full Joint Ablation, this version features a minor fix regarding "Mean Best Value Found"
 of Function 1 printed in the generated report. This is now transformed back to original scale from log10-scale + unrounded.
 """
 
