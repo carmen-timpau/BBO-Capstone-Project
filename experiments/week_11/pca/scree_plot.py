@@ -1,9 +1,8 @@
 """ Scree Plotting Module
 -------------------------------------------------------------------------
-Generates Scree Plots to identify the optimal number of Principal Components (2 or 3), required 
-to represent the computed k-means clusters for each function in reduced dimensionality (2D/3D).
-
-Applied only to functions with input dimensionality greater than 2 (Functions 3–8, 3D–8D).
+Generates Scree Plots to visualise the Per-Component Explained Variance bars + Cumulative Variance line
+for each function with n_dims>2 (3-8), to rationalise the optimal number of Principal Components (2 or 3), 
+chosen and used to represent the computed k-means clusters for each function in reduced dimensionality (2D/3D). 
 """
 
 import os
@@ -14,9 +13,9 @@ def plot_pca_scree_grid(cluster_data_for_plot, variance_threshold=0.80,
                          output_dir="week_11/diagnostics_results",
                          filename="pca_scree_grid.png"):
     """
-    Scree plotting (per-component explained variance bars + cumulative variance line) for functions
-    with n_dims >= 3, to make the 2-vs-3-component choice used in the k-means cluster scatter grids. 
-    2D-input functions have no PCA to show (the input space is the plot) and are marked not applicable.
+    Scree plotting (per-component explained variance bars + cumulative variance line) for n_dims>2 functions, 
+    to visualise and rationalise the 2-vs-3 principal component choices used in the k-means cluster scatter grids. 
+    2D-input functions have no PCA to show (the input space is the plot) and are marked not applicable (N/A).
     """
     os.makedirs(output_dir, exist_ok=True)
     filepath = os.path.join(output_dir, filename)
