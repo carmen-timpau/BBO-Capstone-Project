@@ -253,6 +253,7 @@ def run_full_joint_ablation(data, n_init_base=5, init_per_dim=2, n_iterations=15
         # [DIAGNOSTIC] message: if multiple points share the exact max value in the dataset (Function 5), 
         # any strategy (including random) has a much higher chance of "finding" it trivially - 
         # this can produce degenerate zero regret across nearly every combo regardless of acquisition quality.
+        
         n_ties_at_max = int(np.sum(np.isclose(Y_target, true_global_max)))
         if n_ties_at_max > 1:
             print(f"  [DIAGNOSTIC] {fn_key}: {n_ties_at_max} of {n_samples} points share the exact "
@@ -270,6 +271,7 @@ def run_full_joint_ablation(data, n_init_base=5, init_per_dim=2, n_iterations=15
         # of already containing the max, making the eventual acquisition comparison less
         # informative - regret can hit 0 for nearly every combo simply because they all
         # inherited a lucky init, not because of what the acquisition strategy actually did.
+        
         init_fraction_of_pool = n_init / n_samples
         if init_fraction_of_pool > 0.25:
             print(f"  [DIAGNOSTIC] {fn_key}: n_init={n_init} is {init_fraction_of_pool:.0%} of the "
@@ -343,6 +345,7 @@ def run_full_joint_ablation(data, n_init_base=5, init_per_dim=2, n_iterations=15
             # small and rounding - even to 6 decimals - gives a meaningless '0.000000'.
       
             best_value_in_target_space = true_global_max - mean_final_regret
+            
             if fn_idx == 1:
                 mean_best_value_found = 10 ** best_value_in_target_space
             else:
