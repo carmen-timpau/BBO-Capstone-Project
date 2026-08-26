@@ -1,4 +1,6 @@
 """ Elbow Plotting Module
+------------------------------------------------------------------------------------------------------------------------
+Plots the Elbow curve (inertia vs. k) per function, marking the optimal, Elbow-selected number of clusters k per function.
 """
 
 import os
