@@ -1,4 +1,4 @@
-**Statistical Analysis of Final Function Datasets Post 13-Week Black-Box Optimisation**
+**Statistical Analysis of Final Function Datasets Post-completion of 13-Week Black-Box Optimisation**
 
 ```text
 Statistical analysis of Final Dataset of Function 1:
