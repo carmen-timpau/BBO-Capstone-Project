@@ -2,14 +2,12 @@
 --------------------------------------------------------------------------------------------
 Computes PCA-based dimensionality reduction statistics for all functions with n_dims>2 (3–8), 
 providing PCA coordinates, variance curves and the optimal number of Principal Components.
+Whese are then used by the Scree Plotting and the K‑Means Cluster Scatter Grid Plotting modules.
 
 This fits PCA once per function, evaluates the Per‑Component Explained Variance and Cumulative 
 Variance, and determines the smallest number of Principal Components (2 or 3) that captures at 
 least variance_threshold = 0.8 of the total variance. The #-of-PCs is capped at 3 even if the 
 variance threshold is not met, as a 4th+ axis isn't plottable anyway.
-
-The computed PCA coordinates and variance values are stored and later used 
-by the Scree Plotting and the K‑Means Cluster Scatter Grid Plotting modules.
 """"
 
 import numpy as np
