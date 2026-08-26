@@ -20,7 +20,7 @@ def compute_pca_projection(X_scaled, n_dims, variance_threshold=0.80,
     better captures the variance within the k-means cluster structures plotted for functions with n_dims>2.
 
     Returns: the full per-component/cumulative variance (for the Scree Plot, up to max_components_for_scree=6 
-    principal components to show a larger overview variance captured), the chosen component count for scatter 
+    principal components - to show a larger overview variance captured), the chosen component count for scatter 
     plotting, the cumulative variance captured at that count, and the PCA-transformed coordinates.
     """
                               
