@@ -17,6 +17,9 @@ of Function 1 printed in the generated report. This is now transformed back to o
 import os
 import warnings
 import pandas as pd
+import matplotlib.pyplot as plt
+from sklearn.preprocessing import StandardScaler
+from sklearn.gaussian_process import GaussianProcessRegressor
 from sklearn.exceptions import ConvergenceWarning
 from joblib import Parallel, delayed
 from scipy.stats import t as t_dist
@@ -28,9 +31,11 @@ from ..kernel_ablation.kernels import get_kernel_suite, get_kernel_suite_f1
 warnings.filterwarnings("ignore", category=ConvergenceWarning)
 warnings.filterwarnings("ignore", message="Predicted variances smaller than 0", category=UserWarning)
 
+
 def is_noiseless_kernel(kernel):
     """Returning True if the kernel has no WhiteKernel component."""
     return "WhiteKernel" not in str(kernel)
+
 
 def compute_effective_n_init(n_dims, n_samples, n_init_base=5, init_per_dim=2):
     """Scales the initial design size with dimensionality."""
