@@ -1,7 +1,7 @@
 """ Scree Plotting Module
 -------------------------------------------------------------------------
 Generates Scree Plots to visualise the Per-Component Explained Variance bars + Cumulative Variance line
-for each function with n_dims>2 (3-8), to rationalise the optimal number of Principal Components (2 or 3), 
+for each function with n_dims>2 (3-8) and to rationalise the optimal number of Principal Components (2 or 3), 
 chosen and used to represent the computed k-means clusters for each function in reduced dimensionality (2D/3D). 
 """
 
