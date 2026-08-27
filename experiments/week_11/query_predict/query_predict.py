@@ -16,7 +16,7 @@ full joint kernel x acquisition ablation study performed earlier in the pipeline
 
 4. Next‑query point prediction per function = argmax acquisition candidate, unwarped to original scale.
 
-Detailed diagnostics per function are reported, including best full‑domain score, best local‑box score,
+Additional diagnostics per function are reported, including best full‑domain score, best local‑box score,
 volume ratio, candidate counts, and predicted GP values/stds for the best candidate in each pool. 
 """
 
