@@ -161,10 +161,9 @@ def run_kmeans_clustering_diagnostics(data, k_range=None, box_margin_fraction=0.
 def plot_kmeans_cluster_grid(cluster_data_for_plot, output_dir="week_11/diagnostics_results",
                               filename="kmeans_cluster_grid.png"):
     """
-    Plotting K-means cluster assignments per function. n_dims=2 functions are plotted directly
-    in scaled input space (no projection needed). n_dims>2 functions are projected onto either 
-    2 or 3 principal components chosen per-function in 'compute_pca_projection', based on how
-    much variance is explained."""
+    Plotting K-means cluster assignments per function as a grid plot in 2D/3D. n_dims>2 functions are projected 
+    onto either 2 or 3 principal components chosen per-function in 'compute_pca_projection', based on explained 
+    variance. n_dims=2 functions are plotted directly in scaled input space (no projection needed)."""
                                 
     os.makedirs(output_dir, exist_ok=True)
     filepath = os.path.join(output_dir, filename)
