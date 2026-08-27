@@ -161,7 +161,7 @@ def run_next_query_prediction(
         x_grid_full = minimum + unit_samples_full * (maximum - minimum)
         full_domain_count = len(x_grid_full)
 
-        # Secondary pool: Generating density-matched Sobol candidates restricted to the best K-means
+        # Secondary pool: Generating initially density-matched Sobol candidates restricted to best K-means
         # cluster's bounding box, applied only if kmeans_results shows real cluster structure (best_k>1)
       
         n_candidates_box = 0
