@@ -1,4 +1,4 @@
-""" Week 11 Next Query Prediction Module
+""" Week 11 BBO Next Query Prediction Module
 --------------------------------------------------------------------------------------------------------
 Predicting the next query point for each function (1–8) using global GP modelling, acquisition‑function 
 scoring and a more advanced Sobol candidate sampling strategy, via sampling within both the full input 
