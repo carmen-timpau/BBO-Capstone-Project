@@ -1,4 +1,4 @@
-""" Scree Plotting Module [Same as in BBO Week 11]
+""" Scree Plotting Module [Same as in BBO Week 11 ML Pipeline]
 -------------------------------------------------------------------------
 Generates Scree Plots to visualise the Per-Component Explained Variance bars + Cumulative Variance line
 for each function with n_dims>2 (3-8) and to rationalise the optimal number of Principal Components (2 or 3), 
