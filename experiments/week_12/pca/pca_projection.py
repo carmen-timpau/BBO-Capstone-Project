@@ -1,4 +1,4 @@
-""" PCA Projection Computation Module [Same as in BBO Week 11]
+""" PCA Projection Computation Module [Same as in BBO Week 11 ML Pipeline]
 --------------------------------------------------------------------------------------------
 Computes PCA-based dimensionality reduction statistics for all functions with n_dims>2 (3–8), 
 providing PCA coordinates, variance curves and the optimal number of Principal Components.
