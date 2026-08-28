@@ -18,8 +18,8 @@ The **GP** was still **trained on the full dataset** for each function, but **th
 
 7. _Fixed 2 minor Function 1-specific reporting bugs from Week 10's pipeline_ stemming from Function 1's log10 pre-transform (Important: these 2 bugs did not impact next-query predictions or any downstream computation or decisions. They are only related to the scale and the non-ideal rounding of exactly 2 printed Function 1-related values within the generated report, which were included in the report for completeness and were not used to make any decisions):
 
-  - "Mean Best Value Found" in the ablation summary was reporting log10(value) directly instead of converting back to the original near-zero scale via 10**x. This is fixed in this pipeline, by back-transforming for Function 1. This was reported as unrounded, as the output values of Function 1 are specifically small and rounding even to 6 decimals prints '0.000000'.
-  - The next-query predicted output value reported for Function 1 was left unrounded, since the output values of Function 1 are specifically small and rounding even to 6 decimals prints '0.000000'. Function 1 now prints unrounded values in these diagnostics (for both candidate pools); Functions 2-8 kept the original formatting from before.
+    - "Mean Best Value Found" in the ablation summary was reporting log10(value) directly instead of converting back to the original near-zero scale via 10**x. This is fixed in this pipeline, by back-transforming for Function 1. This was reported as unrounded, as the output values of Function 1 are specifically small and rounding even to 6 decimals prints '0.000000'.
+    - The next-query predicted output value reported for Function 1 was left unrounded, since the output values of Function 1 are specifically small and rounding even to 6 decimals prints '0.000000'. Function 1 now prints unrounded values in these diagnostics (for both candidate pools); Functions 2-8 kept the original formatting from before.
 
 **<ins>Note 1:</ins>** As with prior weeks, next-query predictions are not guarantees for exceeding the current known maxima for the functions. 
 
