@@ -27,4 +27,4 @@ The **GP** was still **trained on the full dataset** for each function, but **th
 
 **Running the Script:** As implemented in Week 10, all prints are streamed to a log file (`execution_output.log`) instead of the browser console, to avoid progress loss mid-run due to browser crashing, as the pipeline is computationally and resource intensive.
 
-**<ins>Checking Obtained Results:</ins>** All results obtained for BBO Week 11 can be found in the `experiments/week_11/diagnostics_results/` subfolder within this repository.
+**Checking Obtained Results:** All results obtained for BBO Week 11 can be found in the `experiments/week_11/diagnostics_results/` subfolder within this repository.
