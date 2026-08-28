@@ -496,6 +496,7 @@ def run_full_joint_ablation(data, n_init_base=5, init_per_dim=2, n_iterations=15
                   f"them as uncertain, not a confirmed order.")
     print("=" * 100)
 
+    # Saving Checkpoint                             
     with open("week12_ablation_plot_data.pkl", "wb") as f:
         pickle.dump({"all_functions_regrets": all_functions_regrets,
                  "all_functions_full_tables": all_functions_full_tables}, f)
