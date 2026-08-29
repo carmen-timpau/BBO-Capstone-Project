@@ -1,4 +1,4 @@
-**Statistical Analysis of Final 8 Black-Box Function Datasets after Including Week 13's Obtained Query Outputs:**
+**Statistical Analysis of Final Datasets of the 8 Black-Box Functions after Including Week 13's Obtained Query Outputs:**
 
 ```text
 Statistical analysis of Final Dataset of Function 1:
