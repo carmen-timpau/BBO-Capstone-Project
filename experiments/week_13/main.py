@@ -1,9 +1,9 @@
 """ Main Execution Script: BBO Week 13 Full Highly-Exploitative Bayesian Optimisation ML Pipeline
 ------------------------------------------------------------------------------------------------------------
-1. Full Joint Kernel x Acquisition Rollout Ablation Study, with 95% CI uncertainty reporting on the Mean 
-   Simple Final Regret ranking, and adjusted per-function n_seeds, so that small-pool functions get enough 
-   seeds to meaningfully tighten their CIs for a more confident kernel x acquisition combo ranking for 
-   each 'Black-Box' function.
+1. Full Joint Kernel x Highly Exploitative Acquisition Rollout Ablation Study, with 95% CI uncertainty 
+   reporting on the Mean Simple Final Regret ranking, and adjusted per-function n_seeds, so that small-pool 
+   functions get enough seeds to meaningfully tighten their CIs for a more confident kernel x acquisition 
+   combo ranking for each 'Black-Box' function.
    
 2. Next Query Prediction (HEBO output warping, GP surrogate, Dynamic and more Advanced Sobol Sampling 
    (full-space + density-enhanced best KMeans cluster local-box sampling), jointly-chosen acquisition 
