@@ -9,6 +9,10 @@ t-distribution, computed per-seed across the n_seeds rollouts). A "Vs #1 Ranked"
 overlaps the #1-ranked combo's CI, so the ranking reflects statistical confidence rather than a bare point-estimate 
 comparison — surfacing when the reported "winner" is genuinely distinguishable from the runner-ups versus merely ahead 
 by an amount within noise. 
+
+!Note: For Week 13 (the final week) of the BBO project, this Full Joint Kernel x Acquisition Rollout Ablation utilises 
+only the highly-exploitative acquisition functions imported from week_13/full_ablation/acq_strategies.py to finally 
+leverage the most promising regions identified so far for each function.
 """
 
 import os
