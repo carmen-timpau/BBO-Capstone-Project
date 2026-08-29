@@ -1,6 +1,6 @@
 **BBO Week 12 - Bayesian Optimisation Strategy Summary**
 
-To predict the next queries for Week 12 (penultimate week) of the BBO project, the **BBO Week 11 - Bayesian Optimisation Pipeline** was deployed on Week 12 input data, as it is very robust and has been fully automated and optimised to generate the highest quality queries possible at this advanced stage of the project.
+To predict the next queries for Week 12 (penultimate week) of the BBO project, the **BBO Week 11 - Bayesian Optimisation Pipeline** was deployed on Week 12 input data, as this pipeline is very robust and has been fully automated and optimised to generate the highest quality queries possible at this advanced stage of the project.
 
 The specific details of this BO pipeline's structure can be accessed at `experiments/week_11/strategy_summary.md` within this repository.
 
