@@ -4,7 +4,7 @@ To predict the next queries for Week 13 (final week) of the BBO project, a **Hig
 
 The **BBO Week 13 - Bayesian Optimisation Pipeline** only differs from the **BBO Week 11 - Bayesian Optimisation Pipeline** in terms of the _acquisition functions that are being considered for the Full Joint Kernel x Acquisition Rollout Ablation_. For **Week 13**, a very limited list of **only 3 highly-exploitative acquisition functions** were employed, to leverage the most promising areas identified so far through both exploration and exploitation during the course of the previous 12 weeks of the BBO project.
 
-The specific details of the core structure of the Bayesian Optimisation pipeline deployed in Week 13 can be accessed at `experiments/week_11/strategy_summary.md` within this repository.
+The specific details of the **core structure** of the Bayesian Optimisation pipeline deployed in Week 13 can be accessed at `experiments/week_11/strategy_summary.md` within this repository.
 
 **<ins>Note:</ins>** The BBO Week 11 Full ML Bayesian Optimisation Pipeline is computationally heavy. Runtime to completion is expected to be around ~2.5h if 16 CPU cores are available (as used here), but it may take slightly/significantly longer if not.
 
