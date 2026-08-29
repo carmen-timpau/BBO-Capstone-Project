@@ -72,7 +72,7 @@ def main():
     )
 
     # Ablation Summary Saving Checkpoint
-    with open("week_full_ablation_summary.pkl", "wb") as f:
+    with open("week13_full_ablation_summary.pkl", "wb") as f:
         pickle.dump(sequential_ablation_summary, f)
     
     print("\n[SUCCESS] Joint kernel x acquisition ablation study complete!")
