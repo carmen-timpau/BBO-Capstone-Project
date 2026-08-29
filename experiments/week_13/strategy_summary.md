@@ -4,7 +4,7 @@ To predict the next queries for Week 13 (final week) of the BBO project, a **Hig
 
 The **BBO Week 13 - Bayesian Optimisation Pipeline** only differs from the **BBO Week 11 - Bayesian Optimisation Pipeline** in terms of the _acquisition functions that are being considered for the Full Joint Kernel x Acquisition Rollout Ablation_. For **Week 13**, a very limited list of **only 3 highly-exploitative acquisition functions** were employed, to leverage the most promising areas identified so far through both exploration and exploitation during the course of the previous 12 weeks of the BBO project.
 
-The specific details of the **core structure** of the **BBO Week 13 - Bayesian Optimisation pipeline**:
+**Core Structure Summary** of the **BBO Week 13 - Bayesian Optimisation pipeline**:
 
 1. A **Highly-Exploitative Variation** of the **Single Full Joint Kernel × Acquisition Rollout Ablation Study** was selected specifically for the final query predictions and makes use of the same 8 kernel variants from Week 10, and 3 **highly-exploitative** acquisition strategies plus Random Baseline (4 in total). Ranking is done using **Mean Final Simple Regret (primary metric)** and **AURC (secondary metric, tiebreaker)**, plus **SEM/95% CI uncertainty reporting** with a _Degenerate Regret Detection fallback to AURC's own 95% CI_ [preserved from Week 10].
 
