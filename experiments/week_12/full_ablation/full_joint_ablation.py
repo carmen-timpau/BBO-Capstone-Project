@@ -13,6 +13,7 @@ by an amount within noise.
 
 import os
 import warnings
+import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
 from sklearn.preprocessing import StandardScaler
@@ -21,9 +22,9 @@ from sklearn.exceptions import ConvergenceWarning
 from joblib import Parallel, delayed
 from scipy.stats import t as t_dist
 
-from .acq_strategies import acq_strategies
-from .acquisition import compute_acquisition_scores
-from ..kernel_ablation.kernels import get_kernel_suite, get_kernel_suite_f1 
+from full_ablation.acq_strategies import acq_strategies
+from full_ablation.acquisition import compute_acquisition_scores
+from full_ablation.kernels import get_kernel_suite, get_kernel_suite_f1 
 
 warnings.filterwarnings("ignore", category=ConvergenceWarning)
 warnings.filterwarnings("ignore", message="Predicted variances smaller than 0", category=UserWarning)
