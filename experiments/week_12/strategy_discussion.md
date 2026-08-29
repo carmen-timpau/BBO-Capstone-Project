@@ -8,7 +8,7 @@ For Function 1, Week 11's BBO ML pipeline predicted the eleventh input query whi
 
 For Function 2, Week 11's BBO ML pipeline predicted the eleventh input query which gave the following output: 0.654999069264761. This is fairly close to the current maximum within the dataset for this function (0.7560218355559285). While Week 11's pipeline is not setting a new maximum output value for this function, this fairly high result obtained shows that Week 11's BBO pipeline is performing equitably well for this function, predicting a reasonable good-quality next query point.
 
-For Function 3, Week 11's BBO ML pipeline predicted the eleventh input query which gave the following output: -0.01907237834718998. This is highest output value obtained so far for this function, indicating that Week 11's BBO ML pipeline worked very well for this function.
+For Function 3, Week 11's BBO ML pipeline predicted the eleventh input query which gave the following output: -0.01907237834718998. This is the highest output value obtained so far for this function, indicating that Week 11's BBO ML pipeline worked very well for this function.
 
 For Function 4, Week 11's BBO ML pipeline predicted the eleventh input query which gave the following output: 0.06888650585459688. This is not very close to the current maximum within the dataset for this function (0.5702077009884445), but it still represents a good-quality query prediction, as the dataset for Function 4 contains negative outputs as low as -32.625660215962455. While Week 11's pipeline is not setting a new maximum output value for this function, this obtained result shows that Week 11's BBO pipeline is performing reasonably well.
 
