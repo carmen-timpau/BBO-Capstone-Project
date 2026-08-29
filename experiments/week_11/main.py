@@ -45,38 +45,33 @@ def main():
     print("=" * 100) # Note that 'density-matched' refers to the *initial* density matching of the local pool with full-space
                      # implemented for a controlled following density enhancement of the local-box Sobol candidate pool
 
+    # Loading the unified input dataset snapshot
+    data_path = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', 'wk11_input_data.pkl'))
+    print(f"\n[INFO] Loading dataset from: {data_path}")
+    if not os.path.exists(data_path):
+        print(f"[ERROR] Dataset file not found at '{data_path}'. Please ensure 'wk11_input_data.pkl' is present.")
+        return
+    with open(data_path, "rb") as file:
+        data = pickle.load(file)
+    print("[INFO] Dataset successfully loaded into memory.")
+   
     print("\n" + "=" * 100)
     print(" [STEP 1] Running FULL JOINT Kernel x Acquisition Rollout Ablation Study...")
     print("=" * 100)
     sequential_ablation_summary = run_full_joint_ablation(
-        data=data,
-        n_init_base=5,
-        init_per_dim=2,
-        n_iterations=15,
-        n_seeds=500,
-        holdout_fraction=0.3,
-        n_init_base_overrides={
-            "function_1": 4, "function_2": 4
-        },
-        init_per_dim_overrides={
-            "function_4": 1, "function_5": 1, "function_6": 1,
-            "function_7": 1, "function_8": 1
-        },
-        holdout_fraction_overrides={
-            "function_1": 0.6,
-            "function_2": 0.6,
-            "function_5": 0.15,
-            "function_8": 0.15
-        },
-        n_seeds_overrides={
-            "function_1": 1000, "function_2": 1000,
-            "function_3": 500, "function_4": 500, "function_5": 500,
-            "function_6": 500, "function_7": 500, "function_8": 500
-        }
+    data=data,
+    n_init_base=n_init_base,
+    init_per_dim=init_per_dim,
+    n_iterations=n_iterations,
+    n_seeds=n_seeds,
+    holdout_fraction=holdout_fraction,
+    n_init_base_overrides=n_init_base_overrides,
+    init_per_dim_overrides=init_per_dim_overrides,
+    holdout_fraction_overrides=holdout_fraction_overrides,
+    n_seeds_overrides=n_seeds_overrides
     )
 
     # Ablation Summary Saving Checkpoint
-    import pickle
     with open("week11_full_ablation_summary.pkl", "wb") as f:
         pickle.dump(sequential_ablation_summary, f)
     
