@@ -1,21 +1,27 @@
 **Discussion of Week 13 (Final) Query Outcomes:**
 
-_The aim of this discussion is to reflect on the strategy employed in BBO Week 13 (the final week of the project)._
+_The aim of this discussion is to analyse the final query outputs obtained and reflect on the strategy employed in BBO Week 13 (the final week of the project)._
 
 --------------------------------------------------------------------------------------------------------------------------------------------
 
-For Function 1, Week 13's BBO ML pipeline predicted the final (13th) input query which gave the following output: 9.759713352189788e-11.
+For Function 1, Week 13's BBO ML pipeline predicted the final (13th) input query which gave the following output: 9.759713352189788e-11. This output value is very close to the current maximum achieved for this function so far (1.7960297527814237e-10). While Week 13's BBO ML pipeline did not set a new maximum output value for this function (which may likely be because this function may have already been successfully globally maximised), the fairly high result obtained shows that Week 13's BBO pipeline is performing equitably well for this function, predicting a reasonable good-quality next query point.
 
-For Function 2, Week 13's BBO ML pipeline predicted the final (13th) input query which gave the following output: 0.5807245237554814.
+For Function 2, Week 13's BBO ML pipeline predicted the final (13th) input query which gave the following output: 0.5807245237554814. This output value is fairly close to the current maximum achieved for this function so far (0.7560218355559285). While Week 13's BBO ML pipeline did not set a new maximum output value for this function (which may likely be because this function may have already been successfully globally maximised), the fairly high result obtained shows that Week 13's BBO pipeline is performing equitably well for this function, predicting a reasonable good-quality next query point.
 
-For Function 3, Week 13's BBO ML pipeline predicted the final (13th) input query which gave the following output: -0.031940687698141866.
+For Function 3, Week 13's BBO ML pipeline predicted the final (13th) input query which gave the following output: -0.031940687698141866. This output value is fairly close to the current maximum achieved for this function so far (-0.01907237834718998). While Week 13's BBO ML pipeline did not set a new maximum output value for this function (which may likely be because this function may have already been successfully globally maximised), the fairly high result obtained shows that Week 13's BBO pipeline is performing equitably well for this function, predicting a reasonable good-quality next query point.
 
-For Function 4, Week 13's BBO ML pipeline predicted the final (13th) input query which gave the following output: 0.3248322341545351.
+For Function 4, Week 13's BBO ML pipeline predicted the final (13th) input query which gave the following output: 0.3248322341545351. This output value is fairly close to the current maximum achieved for this function so far (0.5702077009884445). While Week 13's BBO ML pipeline did not set a new maximum output value for this function (which may likely be because this function may have already been successfully globally maximised), the fairly high result obtained shows that Week 13's BBO pipeline is performing equitably well for this function, predicting a reasonable good-quality next query point.
 
-For Function 5, Week 13's BBO ML pipeline predicted the final (13th) input query which gave the following output: 2142.109857908738.
+For Function 5, Week 13's BBO ML pipeline predicted the final (13th) input query which gave the following output: 2142.109857908738. This output value is fairly close to the current maximum achieved for this function so far (2333.006822317816). While Week 13's BBO ML pipeline did not set a new maximum output value for this function (which may likely be because this function may have already been successfully globally maximised), the fairly high result obtained shows that Week 13's BBO pipeline is performing equitably well for this function, predicting a reasonable good-quality next query point.
 
-For Function 6, Week 13's BBO ML pipeline predicted the final (13th) input query which gave the following output: -0.3430392036124704.
+For Function 6, Week 13's BBO ML pipeline predicted the final (13th) input query which gave the following output: -0.3430392036124704. This output value is fairly close to the current maximum achieved for this function so far (-0.17200299465050722). While Week 13's BBO ML pipeline did not set a new maximum output value for this function (which may likely be because this function may have already been successfully globally maximised), the fairly high result obtained shows that Week 13's BBO pipeline is performing equitably well for this function, predicting a reasonable good-quality next query point.
 
-For Function 7, Week 13's BBO ML pipeline predicted the final (13th) input query which gave the following output: 3.224459163536192.
+For Function 7, Week 13's BBO ML pipeline predicted the final (13th) input query which gave the following output: 3.224459163536192. This is the highest output value obtained so far for this function, indicating that Week 13's BBO ML pipeline worked very well for this function. 
 
-For Function 8, Week 13's BBO ML pipeline predicted the final (13th) input query which gave the following output: 9.9251599303431.
+For Function 8, Week 13's BBO ML pipeline predicted the final (13th) input query which gave the following output: 9.9251599303431. This output value is very close to the current maximum achieved for this function so far (9.9561276549796). While Week 13's BBO ML pipeline did not set a new maximum output value for this function (which may likely be because this function may have already been successfully globally maximised), the fairly high result obtained shows that Week 13's BBO pipeline is performing equitably well for this function, predicting a reasonable good-quality next query point.
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+**<ins>Discussion Summary:</ins>**
+
+At the end of the BBO capstone project, Week 13's Highly-Exploitative BBO ML Pipeline managed to further maximise 1 out of 8 Black-Box functions, specifically Function 7. Not further maximising the rest of the functions does not reflect on the quality or performance of the pipeline itself, as some/many (if not most) of these Black-Box functions may have already been globally maximised by now. In that case, there are no better points left to be identified through Bayesian Optimisation for those functions and therefore no next query predictions will be able to override the current already established (global) maxima, regardless of how rigorous and effective the pipeline has become.
