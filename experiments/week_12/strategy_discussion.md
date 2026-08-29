@@ -25,3 +25,5 @@ For Function 8, Week 11's BBO ML pipeline predicted the eleventh input query whi
 **<ins>Discussion Summary:</ins>**
 
 At this advanced stage in the BBO capstone project, Week 11's BBO ML Pipeline managed to further maximise 1 out of 8 Black-Box functions, specifically Function 3. Not further maximising the rest of the functions does not reflect on the quality or performance of the pipeline itself, as some (if not many) of these Black-Box functions may have already been globally maximised by now, in previous weeks. In that case, there would be no better points left to be identified through Bayesian Optimisation for those functions and therefore future next query predictions will not be able to override the current already established (global) maxima, regardless of how rigorous and effective the pipeline has become.
+
+As the current Week 11 BBO pipeline is very robust, it will be deployed to predict the next queries for all Black-Box functions during Week 12 (penultimate week) of the BBO project.
