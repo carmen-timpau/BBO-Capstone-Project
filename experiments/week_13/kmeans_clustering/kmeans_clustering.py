@@ -144,8 +144,6 @@ def run_kmeans_clustering_diagnostics(data, k_range=None, box_margin_fraction=0.
                              output_dir=plot_output_dir)
         plot_kmeans_cluster_grid(cluster_data_for_plot, output_dir=plot_output_dir)
 
-    import pickle
-
     checkpoint = {
         "kmeans_results": kmeans_results,
         "elbow_data_for_plot": elbow_data_for_plot,
