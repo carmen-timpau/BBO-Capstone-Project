@@ -110,8 +110,7 @@ def abbreviate_acq_name(acq_name):
     replacements = {
         "Upper Confidence Bound": "UCB",
         "Expected Improvement": "EI",
-        "Probability of Improvement": "PI",
-        "Thompson Sampling": "TS",
+        "Probability of Improvement": "PI"
     }
     for full, short in replacements.items():
         if acq_name.startswith(full):
