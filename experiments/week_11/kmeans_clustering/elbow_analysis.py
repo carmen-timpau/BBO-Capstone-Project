@@ -40,7 +40,8 @@ def find_elbow_k(k_values, inertias):
 
 def plot_elbow_grid(elbow_data_for_plot, output_dir="week_11/diagnostics_results",
                      filename="kmeans_elbow_grid.png"):
-    """Plotting the elbow curve (inertia vs. k) per function, marking the optimal, elbow-selected number of clusters k per function."""
+    """Plotting the elbow curve (inertia vs. k) per function, marking the optimal, 
+    elbow-selected number of clusters k per function."""
     os.makedirs(output_dir, exist_ok=True)
     filepath = os.path.join(output_dir, filename)
 
