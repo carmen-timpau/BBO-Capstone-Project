@@ -1,4 +1,4 @@
-**Maxima of 8 Given Black-Box Functions Identified _via_ 13-Week Iterative Bayesian Optimisation**
+**Maxima of All 8 Black-Box Functions Identified _via_ 13-Week Iterative Bayesian Optimisation**
 
 <ins>Function 1:</ins>
  - Input: `[0.584965, 0.733487]`
