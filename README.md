@@ -12,7 +12,7 @@ Every week, over a period of 13 weeks, each function can only be queried once. E
 
 <ins>⚙️**Bayesian Optimisation (BO) ML Pipelines**</ins>:
 
-This framework transitions the approach from manual, intuitive strategy tuning to fully automated, robust and optimised machine learning workflows. By leveraging state-of-the-art practices, like HEBO, the project delivers fast, reliable, and high-quality Bayesian Optimisation results to tackle expensive, opaque Black-Box process optimisation across various industries in as few attempts as possible.
+This framework transitions the approach from manual, intuitive strategy tuning to fully automated, robust and optimised machine learning workflows. By leveraging state-of-the-art practices, like HEBO, the project delivers fast, reliable, and high-quality Bayesian Optimisation results to tackle expensive, opaque Black-Box process optimisation across various industries within as few queries as possible.
 
 Functional research code is logged in `experiments/`, which is itself organised in separate directories for each week, documenting the evolution of the Bayesian Optimisation ML pipelines over time.
 
