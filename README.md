@@ -35,11 +35,19 @@ Research documentation and the dicussion of strategies used at each stage can be
 
 <br>
 
+<ins> **Foundational References** </ins> 
+
+1. C. E. Rasmussen and C. K. I. Williams. “Gaussian Processes for Machine Learning.” MIT Press,  doi:10.7551/MITPRESS/3206.001.0001, 2005.
+
+2. A. I. Cowen‑Rivers, W. Lyu, R. Tutunov, Z. Wang, A. Grosnit, R. R. Griffiths, A. M. Maraval, H. Jianye, J. Wang, J. Peters, and H. Bou Ammar. “HEBO: Pushing the Limits of Sample‑Efficient Hyperparameter Optimisation.” arXiv:2012.03826, 2022. 
+
+3. F. Zhang and Y. Chen. “Direct Regret Optimization in Bayesian Optimization.” arXiv:2507.06529, 2025. 
+
 ---------------------------------------------------------------------------------------------------------------------
 
 <br>
 
-🛠️ <ins> **Project Details:** </ins> 
+🛠️ <ins> **Project Development Details:** </ins> 
 
 The project was developed as part of the 6-month _Professional Certificate in Machine Learning & Artificial Intelligence_ joint programme at Imperial College London.
 
