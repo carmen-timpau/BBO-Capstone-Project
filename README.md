@@ -35,7 +35,7 @@ Research documentation and the dicussion of strategies used at each stage can be
 
 <br>
 
-<ins> **Foundational References** </ins> 
+<ins> **Foundational References:** </ins> 
 
 1. C. E. Rasmussen and C. K. I. Williams. “Gaussian Processes for Machine Learning.” MIT Press,  doi:10.7551/MITPRESS/3206.001.0001, 2005.
 
