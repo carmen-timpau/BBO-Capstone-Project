@@ -15,7 +15,7 @@ However, heteroscedasticity was not adressed this week, to allow the performance
 
 In this sense, for the functions found to be _heteroscedatic_, a **non-linear output warping strategy**<sup>1</sup> will be implemented in Week 7, as deployed by Noah's Ark Lab at Huawei, in their _Heteroscedastic Evolutionary Bayesian Optimization (HEBO)_ algorithm, to deal with non-constant noise variance (heteroscedasticity). This method was developed by the team as part of the _34<sup>th</sup> Conference on Neural Information Processing Systems (NeurIPS 2020)_ that took place in Vancouver, Canada in 2020.<sup>1,2</sup>
 
-<ins>References<ins>:
+<ins> **References:** <ins>
 
 1. A. I. Cowen‑Rivers, W. Lyu, R. Tutunov, Z. Wang, A. Grosnit, R. R. Griffiths, A. M. Maraval, H. Jianye, J. Wang, J. Peters, and H. Bou Ammar. “HEBO: Pushing the Limits of Sample‑Efficient Hyperparameter Optimisation.” arXiv:2012.03826, 2022.
 
