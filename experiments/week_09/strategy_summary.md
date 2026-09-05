@@ -12,7 +12,7 @@
 
 6. [!This feature is part of the Week 9 BO pipeline, but not used this week, as not required this time i.e. min_distance_to_existing = 0.0 was used to disable this. However, this feature was left and may be used if needed in future runs of this algorithm] Introduced a **Near-Duplicate Exclusion Filter** on next-query candidates, removing any Sobol candidate within a minimum distance (in standardised input space) of an already-evaluated point before acquisition scoring. This was added after observing that the pipeline could repeatedly re-suggest an already-measured point — the GP interpolates near-exactly through its own training data, so a high-value existing point could dominate the acquisition score indefinitely and provide zero new information if re-queried.
 
-7. Retained **HEBO-inspired Non-linear Output Warping** [2], including the Function 1-specific log10 pre-transform with data-driven clipping floor, and the corresponding reversal during output unwarping [unchanged from Week 8].
+7. Retained **HEBO-inspired Non-linear Output Warping** [2], including the Function 1-specific log10 pre-transform with data-driven clipping floor, and the corresponding reversal during output unwarping [preserved from Week 8].
 
 <ins>**Note**</ins>: The addition of a Random Baseline and the holdout-fraction were both introduced reactively, after inspecting intermediate results (plots, tied final-regret values, pool-exhaustion artefacts) in surfaced cases. 
 
