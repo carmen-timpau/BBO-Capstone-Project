@@ -30,7 +30,7 @@ The **BBO Week 13 - Bayesian Optimisation Pipeline** only differs from the **BBO
 
 **Checking Obtained Results:** All results obtained for BBO Week 13 can be found in the `experiments/week_13/diagnostics_results/` subfolder within this repository.
 
-<ins> **Reference:** </ins>
+<ins> **References:** </ins>
 
 1. F. Zhang and Y. Chen. “Direct Regret Optimization in Bayesian Optimization.” arXiv:2507.06529, 2025.
 2. A. I. Cowen‑Rivers, W. Lyu, R. Tutunov, Z. Wang, A. Grosnit, R. R. Griffiths, A. M. Maraval, H. Jianye, J. Wang, J. Peters, and H. Bou Ammar. “HEBO: Pushing the Limits of Sample‑Efficient Hyperparameter Optimisation.” arXiv:2012.03826, 2022.
