@@ -21,6 +21,8 @@ The **BBO Week 13 - Bayesian Optimisation Pipeline** only differs from the **BBO
    The **GP** was **trained on the full dataset** for each function, but **the final candidate was chosen by argmax over the combined Sobol pools**, so that _the most promising region (defined via the computed best K-Means cluster) gets denser candidate resolution without removing the rest of the domain from consideration_. In this way, the BO pipeline remains fully flexible and non-myopic to the full space, while leveraging the most promising regions that seem to be surrounding a maximum. This maximises the chances of predicting a very high-quality next query point per function and achieving the goal of efficient global function maximisation.
 
 6. **Per-Pool Best Candidate [Diagnostics]** report the **best acquisition score** achievable, as well as the **GP's predicted value and std** for each pool's (full-space and local-box) own best identified candidate. This ensures a **true and fair comparison** between selected candidates and their unchosen runner-ups can be made, enabling **full algorithmic transparency and interpretability**.
+   
+7. Kept **HEBO-style Non-Linear Output Warping** [2] unchanged, including the Function 1-specific log10 pre-transform with data-driven clipping floor and its reversal on unwarping [preserved from Week 8]. 
 
 **<ins>Note:</ins>** The BBO Week 11 Full ML Bayesian Optimisation Pipeline is computationally heavy. Runtime to completion is expected to be around ~2.5h if 16 CPU cores are available (as used here), but it may take slightly/significantly longer if not.
 
@@ -31,3 +33,4 @@ The **BBO Week 13 - Bayesian Optimisation Pipeline** only differs from the **BBO
 <ins> **Reference:** </ins>
 
 1. F. Zhang and Y. Chen. “Direct Regret Optimization in Bayesian Optimization.” arXiv:2507.06529, 2025.
+2. A. I. Cowen‑Rivers, W. Lyu, R. Tutunov, Z. Wang, A. Grosnit, R. R. Griffiths, A. M. Maraval, H. Jianye, J. Wang, J. Peters, and H. Bou Ammar. “HEBO: Pushing the Limits of Sample‑Efficient Hyperparameter Optimisation.” arXiv:2012.03826, 2022.
