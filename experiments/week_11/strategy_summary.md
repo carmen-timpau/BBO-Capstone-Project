@@ -16,7 +16,9 @@
 
 6. Introduced some additional printed **Per-Pool Best Candidate [Diagnostics]**, that report the **best acquisition score** achievable, as well as the **GP's predicted value and std** for each pool's (full-space and local-box) own best identified candidate. This ensures a **true and fair comparison** between selected candidates and their unchosen runner-ups can be made, enabling **full algorithmic transparency and interpretability**.
 
-7. _Fixed 2 minor Function 1-specific reporting bugs from Week 10's pipeline_ stemming from Function 1's log10 pre-transform (Important: these 2 bugs did not impact next-query predictions or any downstream computation or decisions. They are only related to the scale and the non-ideal rounding of exactly 2 printed Function 1-related values within the generated report, which were included in the report for completeness and were not used to make any decisions):
+7. Kept **HEBO-style Non-Linear Output Warping** [2] unchanged, including the Function 1-specific log10 pre-transform with data-driven clipping floor and its reversal on unwarping [preserved from Week 8].
+
+8. _Fixed 2 minor Function 1-specific reporting bugs from Week 10's pipeline_ stemming from Function 1's log10 pre-transform (Important: these 2 bugs did not impact next-query predictions or any downstream computation or decisions. They are only related to the scale and the non-ideal rounding of exactly 2 printed Function 1-related values within the generated report, which were included in the report for completeness and were not used to make any decisions):
 
     - "Mean Best Value Found" in the ablation summary was reporting log10(value) directly instead of converting back to the original near-zero scale via 10**x. This is fixed in this pipeline, by back-transforming for Function 1. This was reported as unrounded, as the output values of Function 1 are specifically small and rounding even to 6 decimals prints '0.000000'.
     - The next-query predicted output value reported for Function 1 was left unrounded, since the output values of Function 1 are specifically small and rounding even to 6 decimals prints '0.000000'. Function 1 now prints unrounded values in these diagnostics (for both candidate pools); Functions 2-8 kept the original formatting from before.
@@ -32,3 +34,4 @@
 <ins> **Reference:** </ins>
 
 1. F. Zhang and Y. Chen. “Direct Regret Optimization in Bayesian Optimization.” arXiv:2507.06529, 2025.
+2. A. I. Cowen‑Rivers, W. Lyu, R. Tutunov, Z. Wang, A. Grosnit, R. R. Griffiths, A. M. Maraval, H. Jianye, J. Wang, J. Peters, and H. Bou Ammar. “HEBO: Pushing the Limits of Sample‑Efficient Hyperparameter Optimisation.” arXiv:2012.03826, 2022.
