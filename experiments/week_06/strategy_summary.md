@@ -17,6 +17,6 @@ In this sense, for the functions found to be _heteroscedatic_, a **non-linear ou
 
 <ins>References<ins>:
 
-[1]. Cowen-Rivers, A. I., Lyu, W., Wang, Z., Tutunov, R., Jianye, H., Wang, J., & Ammar, H. B. (n.d.). HEBO: Heteroscedastic Evolutionary Bayesian Optimisation.
+1. A. I. Cowen‑Rivers, W. Lyu, R. Tutunov, Z. Wang, A. Grosnit, R. R. Griffiths, A. M. Maraval, H. Jianye, J. Wang, J. Peters, and H. Bou Ammar. “HEBO: Pushing the Limits of Sample‑Efficient Hyperparameter Optimisation.” arXiv:2012.03826, 2022.
 
-[2]. Mower, Christopher E., et al. HEBO: Bayesian Optimisation and Reinforcement Learning Library library developed by Huawei Noah's Ark Lab. v0.3.4, GitHub, 2020, https://github.com/huawei-noah/HEBO. 
+2. Mower, Christopher E., et al. HEBO: Bayesian Optimisation and Reinforcement Learning Library library developed by Huawei Noah's Ark Lab. v0.3.4, GitHub, 2020, https://github.com/huawei-noah/HEBO. 
