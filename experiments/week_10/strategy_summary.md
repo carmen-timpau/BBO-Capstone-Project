@@ -38,7 +38,7 @@ Added a **[Diagnostic] Flag for when n_init alone consumes a disproportionate sh
 
 **Technical Modification for Running Script:** Switched execution logging to stream all prints to a log file (execution_output.log) instead of the browser console, after prior runs crashed the browser tab and 2+ hours of progress were lost in pre-production before this change was implemented.
 
-<ins> **Reference:** </ins>
+<ins> **References:** </ins>
 
 1. F. Zhang and Y. Chen. “Direct Regret Optimization in Bayesian Optimization.” arXiv:2507.06529, 2025.
 2. A. I. Cowen‑Rivers, W. Lyu, R. Tutunov, Z. Wang, A. Grosnit, R. R. Griffiths, A. M. Maraval, H. Jianye, J. Wang, J. Peters, and H. Bou Ammar. “HEBO: Pushing the Limits of Sample‑Efficient Hyperparameter Optimisation.” arXiv:2012.03826, 2022.
