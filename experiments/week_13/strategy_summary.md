@@ -6,7 +6,7 @@ The **BBO Week 13 - Bayesian Optimisation Pipeline** only differs from the **BBO
 
 **Core Structure** of the **Week 13 Black-Box Optimisation ML Pipeline**:
 
-1. A **Highly-Exploitative Variation** of the **Single Full Joint Kernel × Acquisition Rollout Ablation Study** was selected specifically for the final query predictions and makes use of the same 8 kernel variants from Week 10, and 3 **highly-exploitative** acquisition strategies plus Random Baseline (4 in total). Ranking is done using **Mean Final Simple Regret (primary metric)** and **AURC (secondary metric, tiebreaker)**, plus **SEM/95% CI uncertainty reporting** with a _Degenerate Regret Detection fallback to AURC's own 95% CI_ [preserved from Week 10].
+1. A **Highly-Exploitative Variation** of the **Single Full Joint Kernel × Acquisition Rollout Ablation Study** [1] was selected specifically for the final query predictions and makes use of the same 8 kernel variants tested in Weeks 9-11, and 3 **highly-exploitative** acquisition strategies plus Random Baseline (4 in total). Ranking is done using **Mean Final Simple Regret (primary metric)** and **AURC (secondary metric, tiebreaker, capturing convergence speed)** [preserved from Week 9], plus **SEM/95% CI uncertainty reporting** with a _Degenerate Regret Detection fallback to AURC's own 95% CI_ [preserved from Week 10].
 
 2. **Gaussian Processes (GPs)** were used as the **surrogate model for all functions**, the Holdout Fraction Cap, all per-function overrides (n_init_base, init_per_dim, holdout_fraction, n_seeds), the n_init pool-fraction diagnostic, the exact-max-tie diagnostic, HEBO-style Output Warping with Function 1's log10 pre-transform, and the (unused but retained) Near-Duplicate Exclusion Filter — all unchanged [preserved from Week 10].
 
@@ -28,3 +28,6 @@ The **BBO Week 13 - Bayesian Optimisation Pipeline** only differs from the **BBO
 
 **Checking Obtained Results:** All results obtained for BBO Week 13 can be found in the `experiments/week_13/diagnostics_results/` subfolder within this repository.
 
+<ins> **Reference:** </ins>
+
+1. F. Zhang and Y. Chen. “Direct Regret Optimization in Bayesian Optimization.” arXiv:2507.06529, 2025.
