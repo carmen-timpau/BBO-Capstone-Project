@@ -1,6 +1,6 @@
 **BBO Week 10 - Bayesian Optimisation Strategy Summary**
 
-1. Kept the **single Full Joint Kernel × Acquisition Rollout Ablation Study** as the core of the pipeline — sweeping all 8 kernel variants against all 10 acquisition strategies plus a Random Baseline (88 kernel x acquisition combinations per function) _via_ **Robust Multi-Step Sequential Offline Bayesian Optimization Rollout**, rather than selecting kernel and acquisition separately [preserved from Week 9].
+1. Kept the **single Full Joint Kernel × Acquisition Rollout Ablation Study** [1] as the core of the pipeline — sweeping all 8 kernel variants against all 10 acquisition strategies plus a Random Baseline (88 kernel x acquisition combinations per function) _via_ **Robust Multi-Step Sequential Offline Bayesian Optimization Rollout**, rather than selecting kernel and acquisition separately [preserved from Week 9] [1].
 
 2. Kept **Gaussian Processes (GPs)** as the **surrogate models for all functions**, having previously already dropped the Deep Ensemble comparison, as it led to overparameterized models for such small sample sizes and thus poor generalisation [preserved from Week 9].
 
@@ -37,3 +37,7 @@ Added a **[Diagnostic] Flag for when n_init alone consumes a disproportionate sh
 **<ins>Note 2:</ins>** The BBO Week 10 Full ML Bayesian Optimisation Pipeline is **computationally heavy**. _Runtime to completion_ is expected to be around **~2h if 16 CPU cores are available** (as used here), but it may take slightly/significantly longer if not.
 
 **Technical Modification for Running Script:** Switched execution logging to stream all prints to a log file (execution_output.log) instead of the browser console, after prior runs crashed the browser tab and 2+ hours of progress were lost in pre-production before this change was implemented.
+
+<ins> **Reference:** </ins>
+
+1. F. Zhang and Y. Chen. “Direct Regret Optimization in Bayesian Optimization.” arXiv:2507.06529, 2025.
