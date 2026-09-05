@@ -22,7 +22,9 @@ The **BBO Week 13 - Bayesian Optimisation Pipeline** only differs from the **BBO
 
 6. **Per-Pool Best Candidate [Diagnostics]** report the **best acquisition score** achievable, as well as the **GP's predicted value and std** for each pool's (full-space and local-box) own best identified candidate. This ensures a **true and fair comparison** between selected candidates and their unchosen runner-ups can be made, enabling **full algorithmic transparency and interpretability**.
    
-7. Kept **HEBO-style Non-Linear Output Warping** [2] unchanged, including the Function 1-specific log10 pre-transform with data-driven clipping floor and its reversal on unwarping [preserved from Week 8]. 
+7. Kept **HEBO-style Non-Linear Output Warping** [2] unchanged, including the Function 1-specific log10 pre-transform with data-driven clipping floor and its reversal on unwarping [preserved from Week 8].
+
+8. Kept the _Near-Duplicate Exclusion Filter_ (currently disabled, min_distance_to_existing=0.0) for next-query candidate generation [preserved unused from Week 9]. This is maintained as it may be useful in future/other pipelines/implementations, but was not required here, after all.
 
 **<ins>Note:</ins>** The BBO Week 11 Full ML Bayesian Optimisation Pipeline is computationally heavy. Runtime to completion is expected to be around ~2.5h if 16 CPU cores are available (as used here), but it may take slightly/significantly longer if not.
 
