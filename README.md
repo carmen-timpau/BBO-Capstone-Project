@@ -37,9 +37,9 @@ Research documentation and the dicussion of strategies used at each stage can be
 
 <ins> **Foundational References:** </ins> 
 
-1. C. E. Rasmussen and C. K. I. Williams. “Gaussian Processes for Machine Learning.” MIT Press,  doi:10.7551/MITPRESS/3206.001.0001, 2005.
+1. C. E. Rasmussen and C. K. I. Williams. “Gaussian Processes for Machine Learning.” MIT Press,  DOI: https://doi.org/10.7551/mitpress/3206.001.0001, 2005.
 
-2. T. S. Breusch and A. R. Pagan. “A Simple Test for Heteroscedasticity and Random Coefficient Variation.” Econometrica, 47(5):1287–1294, https://doi.org/10.2307/1911963, 1979.
+2. T. S. Breusch and A. R. Pagan. “A Simple Test for Heteroscedasticity and Random Coefficient Variation.” Econometrica, 47(5):1287–1294, DOI: https://doi.org/10.2307/1911963, 1979.
 
 3. A. I. Cowen‑Rivers, W. Lyu, R. Tutunov, Z. Wang, A. Grosnit, R. R. Griffiths, A. M. Maraval, H. Jianye, J. Wang, J. Peters, and H. Bou Ammar. “HEBO: Pushing the Limits of Sample‑Efficient Hyperparameter Optimisation.” arXiv:2012.03826, 2022. 
 
