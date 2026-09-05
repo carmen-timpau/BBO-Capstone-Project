@@ -28,7 +28,7 @@ Added a **[Diagnostic] Flag for when n_init alone consumes a disproportionate sh
 
 8. Kept **Dynamic Sobol Sampling Resolution Scaled to Input Dimensionality** for continuous-domain next-query candidate generation, with the _Sobol seed tied to the current dataset size_ (rather than a fixed seed).
    
-9. Kept **HEBO-style Output Warping** [2] unchanged, including the Function 1-specific log10 pre-transform with data-driven clipping floor and its reversal on unwarping [preserved from Week 9].
+9. Kept **HEBO-style Non-Linear Output Warping** [2] unchanged, including the Function 1-specific log10 pre-transform with data-driven clipping floor and its reversal on unwarping [preserved from Week 8].
 
 10. Kept the _Near-Duplicate Exclusion Filter_ (currently disabled, min_distance_to_existing=0.0) for next-query candidate generation [preserved unused from Week 9]. This is maintained as it may be useful in future/other pipelines/implementations.
 
