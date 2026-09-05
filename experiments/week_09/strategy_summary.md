@@ -20,6 +20,6 @@ This joint ranking ML pipeline is intended to be more defensible for informing n
 
 <sup>*</sup>In Week 9, an enriched list of acquisition functions (10) was used for ablation robustness, compared to Week 8 when only 6 were used.
 
-References:
+<ins> **Reference:** </ins>
 
 1. F. Zhang and Y. Chen. “Direct Regret Optimization in Bayesian Optimization.” arXiv:2507.06529, 2025.
