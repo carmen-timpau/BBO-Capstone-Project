@@ -1,6 +1,6 @@
 **BBO Week 11 - Bayesian Optimisation Strategy Summary**
 
-1. Kept the **single Full Joint Kernel × Acquisition Rollout Ablation Study** as the core of the pipeline, unchanged from Week 10 — same 8 kernel variants, same selected 10 acquisition strategies plus Random Baseline (11 in total), same **ranking by Mean Final Simple Regret (primary metric)** and **AURC (secondary metric, tiebreaker)**, same **SEM/95% CI uncertainty reporting** with a _Degenerate Regret Detection fallback to AURC's own 95% CI_ [preserved from Week 10].
+1. Kept the **single Full Joint Kernel × Acquisition Rollout Ablation Study** [1] as the core of the pipeline, unchanged from Weeks 9 and 10 — same 8 kernel variants, same selected 10 acquisition strategies plus Random Baseline (11 in total) — 88 combinations, tested jointly per function via **Robust Multi-Step Sequential Offline Bayesian Optimization Rollout**. The same **ranking by Mean Final Simple Regret (primary metric)** and **AURC (secondary metric, tiebreaker, capturing convergence speed)** overall performance metrics were used [preserved from Week 9], and the same **SEM/95% CI uncertainty reporting** with a _Degenerate Regret Detection fallback to AURC's own 95% CI_ was used [preserved from Week 10].
 
 2. Kept **Gaussian Processes (GPs)** as the **surrogate model for all functions**, the Holdout Fraction Cap, all per-function overrides (n_init_base, init_per_dim, holdout_fraction, n_seeds), the n_init pool-fraction diagnostic, the exact-max-tie diagnostic, HEBO-style Output Warping with Function 1's log10 pre-transform, and the (unused but retained) Near-Duplicate Exclusion Filter — all unchanged [preserved from Week 10].
 
@@ -28,3 +28,7 @@
 **Running the Script:** As implemented in Week 10, all prints are streamed to a log file (`execution_output.log`) instead of the browser console, to avoid progress loss mid-run due to browser crashing, as the pipeline is computationally and resource intensive.
 
 **Checking Obtained Results:** All results obtained for BBO Week 11 can be found in the `experiments/week_11/diagnostics_results/` subfolder within this repository.
+
+<ins> **Reference:** </ins>
+
+1. F. Zhang and Y. Chen. “Direct Regret Optimization in Bayesian Optimization.” arXiv:2507.06529, 2025.
