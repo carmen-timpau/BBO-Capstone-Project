@@ -23,6 +23,8 @@
     - "Mean Best Value Found" in the ablation summary was reporting log10(value) directly instead of converting back to the original near-zero scale via 10**x. This is fixed in this pipeline, by back-transforming for Function 1. This was reported as unrounded, as the output values of Function 1 are specifically small and rounding even to 6 decimals prints '0.000000'.
     - The next-query predicted output value reported for Function 1 was left unrounded, since the output values of Function 1 are specifically small and rounding even to 6 decimals prints '0.000000'. Function 1 now prints unrounded values in these diagnostics (for both candidate pools); Functions 2-8 kept the original formatting from before.
 
+9. Kept the _Near-Duplicate Exclusion Filter_ (currently disabled, min_distance_to_existing=0.0) for next-query candidate generation [preserved unused from Week 9]. This is maintained as it may be useful in future/other pipelines/implementations.
+
 **<ins>Note 1:</ins>** As with prior weeks, next-query predictions are not guarantees for exceeding the current known maxima for the functions. 
 
 **<ins>Note 2:</ins>** The BBO Week 11 Full ML Bayesian Optimisation Pipeline is computationally heavy. Runtime to completion is expected to be around ~2.5h if 16 CPU cores are available (as used here), but it may take slightly/significantly longer if not.
