@@ -1,6 +1,6 @@
 **BBO Week 9 - Bayesian Optimisation Strategy Summary**
 
-1. Replaced the separate Week 8 Kernel Ablation Study and Acquisition Function Ablation Study with a **single Full Joint Kernel × Acquisition Rollout Ablation Study**, sweeping all 8 kernel variants against all 10<sup>*</sup> acquisition strategies (plus an added **Random Baseline**) — 88 combinations tested jointly, per function — via **Robust Multi-Step Sequential Offline Bayesian Optimization Rollout**. This replaced the Week 8 approach of selecting the kernel first (via LOOCV R²) and only ablating acquisition functions afterwards, using the 'winning' kernel, since _kernel and acquisition choices interact, and a kernel selected purely for regression fit quality is not guaranteed to pair best with the eventual acquisition strategy_, leading to less-than-optimal-quality query predictions.
+1. Replaced the separate Week 8 Kernel Ablation Study and Acquisition Function Ablation Study with a **single Full Joint Kernel × Acquisition Rollout Ablation Study** [1], sweeping all 8 kernel variants against all 10<sup>*</sup> acquisition strategies (plus an added **Random Baseline**) — 88 combinations tested jointly, per function — via **Robust Multi-Step Sequential Offline Bayesian Optimization Rollout**. This replaced the Week 8 approach of selecting the kernel first (via LOOCV R²) and only ablating acquisition functions afterwards, using the 'winning' kernel, since _kernel and acquisition choices interact, and a kernel selected purely for regression fit quality is not guaranteed to pair best with the eventual acquisition strategy_, leading to less-than-optimal-quality query predictions.[1]
 
 2. Used **Mean Final Simple Regret** as the _primary ranking metric_ (directly reflecting the global maximization goal, reported alongside "Mean Best Value Found" for interpretability), with **Area Under the Regret Curve (AURC)** as a _secondary tiebreaker capturing convergence speed_. A **Random Baseline** (uniform random candidate selection) was added to every function's ablation, to confirm whether the tested acquisition strategies meaningfully outperform blind search rather than assuming it, as it was done before.
 
@@ -19,3 +19,7 @@
 This joint ranking ML pipeline is intended to be more defensible for informing next-query predictions, although the final query predictions still remain (as is always the case for Bayesian Optimisation) estimates at deliberately exploratory points, _not guarantees of exceeding the current known maximum_ — the progress will continue to be monitored and documented as queries are evaluated in subsequent weeks and as new data-informed pipeline changes are being made.
 
 <sup>*</sup>In Week 9, an enriched list of acquisition functions (10) was used for ablation robustness, compared to Week 8 when only 6 were used.
+
+References:
+
+1. F. Zhang and Y. Chen. “Direct Regret Optimization in Bayesian Optimization.” arXiv:2507.06529, 2025.
