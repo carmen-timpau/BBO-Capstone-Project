@@ -28,36 +28,36 @@ The **structure**, **size** and **format** of this dataset (saved as a .pkl file
 [wk9_input_data.pkl](https://github.com/carmen-timpau/BBO-Capstone-Project/blob/main/experiments/week_9/wk9_input_data.pkl): dict
 ```text
 |── "function_1": dict
-|   |── "x”: np.ndarray, shape (19, 2)   # input coordinates
-|   └── "y”: np.ndarray, shape (19,)     # function outputs
+|   |── "x”: np.ndarray, shape (18, 2)   # input coordinates
+|   └── "y”: np.ndarray, shape (18,)     # function outputs
 |
 |── "function_2": dict
-|   |── "x”: np.ndarray, shape (19, 2)
-|   └── "y”: np.ndarray, shape (19,)
+|   |── "x”: np.ndarray, shape (18, 2)
+|   └── "y”: np.ndarray, shape (18,)
 |
 |── "function_3": dict
-|   |── "x”: np.ndarray, shape (24, 3)
-|   └── "y”: np.ndarray, shape (24,)
+|   |── "x”: np.ndarray, shape (23, 3)
+|   └── "y”: np.ndarray, shape (23,)
 |
 |── "function_4”: dict
-|   |── "x”: np.ndarray, shape (39, 4)
-|   └── "y”: np.ndarray, shape (39,)
+|   |── "x”: np.ndarray, shape (38, 4)
+|   └── "y”: np.ndarray, shape (38,)
 |
 |── "function_5”: dict
-|   |── "x”: np.ndarray, shape (29, 4)
-|   └── "y”: np.ndarray, shape (29,)
+|   |── "x”: np.ndarray, shape (28, 4)
+|   └── "y”: np.ndarray, shape (28,)
 |
 |── "function_6”: dict
-|    |── "x”: np.ndarray, shape (29, 5)
-|    └── "y”: np.ndarray, shape (29,)
+|    |── "x”: np.ndarray, shape (28, 5)
+|    └── "y”: np.ndarray, shape (28,)
 |
 |── "function_7”: dict
-|    |── "x”: np.ndarray, shape (39, 6)
-|    └── "y”: np.ndarray, shape (39,)
+|    |── "x”: np.ndarray, shape (38, 6)
+|    └── "y”: np.ndarray, shape (38,)
 |
 |── "function_8”: dict
-|    |── “x”: np.ndarray, shape (49, 8)
-|    └── "y”: np.ndarray, shape (49,)
+|    |── “x”: np.ndarray, shape (48, 8)
+|    └── "y”: np.ndarray, shape (48,)
 ```
 There are no gaps within this dataset.
 
