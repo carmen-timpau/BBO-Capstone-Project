@@ -20,6 +20,7 @@ This is now a static dataset saved as a .pkl file, which stores a weekly data sn
 The **structure**, **size** and **format** of this dataset (saved as a .pkl file) is as follows:
 
 [wk10_input_data.pkl](https://github.com/carmen-timpau/BBO-Capstone-Project/blob/main/experiments/week_10/wk10_input_data.pkl): dict
+```text
 |── "function_1": dict
 |   |── "x”: np.ndarray, shape (19, 2)   # input coordinates
 |   └── "y”: np.ndarray, shape (19,)     # function outputs
@@ -51,7 +52,7 @@ The **structure**, **size** and **format** of this dataset (saved as a .pkl file
 |── "function_8”: dict
 |    |── “x”: np.ndarray, shape (49, 8)
 |    └── "y”: np.ndarray, shape (49,)
-
+```
 There are no gaps within this dataset.
 
 
