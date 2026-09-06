@@ -21,7 +21,7 @@ A technical summary of the specific Bayesian Optimisation ML pipeline which used
 
 **Composition:**  
 
-This is now a static dataset saved as a .pkl file, which stores all [initial datasets](https://github.com/carmen-timpau/BBO-Capstone-Project/tree/main/data/baseline_data) that have been provided at the beginning of this project by Imperial College London for all 8 unknown objective functions to be maximised within the Black-Box Optimisation Challenge _via_ Bayesian Optimisation. This .pkl file contains the same data stored within the `data/dataset_datasheets` directory (original files provided by Imperial College London), but saved as a single dictionary for ease of use within the BO ML pipelines developed in this project.
+This is now a static dataset saved as a .pkl file, which stores all [initial datasets](https://github.com/carmen-timpau/BBO-Capstone-Project/tree/main/data/baseline_data) that have been provided at the beginning of this project by Imperial College London for all 8 unknown objective functions to be maximised within the Black-Box Optimisation Challenge _via_ Bayesian Optimisation. This .pkl file contains the same data stored within the [`data/dataset_datasheets`](https://github.com/carmen-timpau/BBO-Capstone-Project/tree/main/data/dataset_datasheets) directory (original files provided by Imperial College London), but saved as a single dictionary for ease of use within the BO ML pipelines developed in this project.
 
 The **structure**, **size** and **format** of this dataset (saved as a .pkl file) is as follows:
 
