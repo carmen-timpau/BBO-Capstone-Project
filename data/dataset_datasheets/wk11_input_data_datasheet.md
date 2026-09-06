@@ -14,7 +14,7 @@
 
 This dataset was created to serve as input for the [Main Execution Script of the BBO Week 11 Full ML Bayesian Optimisation Pipeline](https://github.com/carmen-timpau/BBO-Capstone-Project/blob/main/experiments/week_11/main.py), to generate the next query points predicted via a Bayesian Optimisation pipeline for submission during Week 11 of the BBO Capstone Project. This project represents my work as a participant in the Black-Box Optimisation Challenge hosted by Imperial College London Executive Education, as part of their 6-month Professional Certificate in Machine Learning and Artificial Intelligence joint programme, which took place between February – September 2026. The overarching aim of this project is to develop ML algorithms in Python that maximise the 8 expensive-to-query black-box functions.
 
-A technical summary of the specific Bayesian Optimisation ML pipeline which used this dataset as an input can be found in [BBO Week 10 - Bayesian Optimisation Strategy Summary](https://github.com/carmen-timpau/BBO-Capstone-Project/blob/main/experiments/week_10/strategy_summary.md).
+A technical summary of the specific Bayesian Optimisation ML pipeline which used this dataset as an input can be found in [BBO Week 11 - Bayesian Optimisation Strategy Summary](https://github.com/carmen-timpau/BBO-Capstone-Project/blob/main/experiments/week_11/strategy_summary.md).
 
 <br>
 
