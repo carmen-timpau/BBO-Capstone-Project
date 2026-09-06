@@ -21,7 +21,7 @@ A technical summary of the specific Bayesian Optimisation ML pipeline which used
 
 **Composition:**  
 
-This is now a static dataset saved as a .pkl file, which stores a weekly data snapshot of all 8 black-box functions’ datasets that have been collected so far after Week 1 of the Black-Box Optimisation Capstone Project. This includes all initial datasets that have been provided at the beginning of this project by Imperial College London for all 8 unknown objective functions. 
+This is now a static dataset saved as a .pkl file, which stores all initial datasets that have been provided at the beginning of this project by Imperial College London for all 8 unknown objective functions. 
 
 The **structure**, **size** and **format** of this dataset (saved as a .pkl file) is as follows:
 
