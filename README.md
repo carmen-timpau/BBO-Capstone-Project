@@ -41,9 +41,10 @@ Research documentation and the dicussion of strategies used at each stage can be
 <img width="6567" height="2951" alt="image" src="https://github.com/user-attachments/assets/ebbc344c-a7ff-4fb7-b38c-fd05c19652dc" />
 </p>
 
-<div align="center">
-**Figure 1.** _Weekly Bayesian Optimisation Outcomes, for each Black-Box Function investigated, showing progress over 13-Week optimisation period_ 
-</div>
+<p align="center">
+<strong>Figure 1.</strong> <em>Bayesian Optimisation Outcomes Landscape - showing the Progress over 13-Week Optimisation Period for each Black-Box Function investigated</em>
+</p>
+
 
 <ins> **Foundational References:** </ins> 
 
