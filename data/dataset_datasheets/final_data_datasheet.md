@@ -76,7 +76,7 @@ A technical summary of the specific Bayesian Optimisation ML pipeline deployed t
 
 No preprocessing transformations have been applied to the contents of this dataset. This dataset contains the raw data which was directly provided by Imperial College London. The data was obtained by querying the 8 black-box functions investigated in this project, at the respective high-dimensional input points to obtain their true output values and aid in Bayesian Optimisation pipeline developments as part of this BBO capstone project.
 
-As this is a static dataset now that the BBO capstone project has ended (September 2026), the intended further use of this dataset is only for reflection on the final Bayesian Optimisation strategy employed and concluding on the overall project. 
+As this is a static dataset now that the BBO capstone project has ended (September 2026), the intended use of this dataset is only for reflection purposes on the Bayesian Optimisation strategies deployed during the course of the project. 
 This dataset is inappropriate for use in any other projects, or in any other ways other the one stated above, as it is strictly relevant for these specific black-box functions investigated within this project.
 
 <br>
