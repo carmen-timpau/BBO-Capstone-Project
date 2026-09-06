@@ -16,7 +16,7 @@ This dataset was created to serve as input for the [Main Execution Script of the
 
 A technical summary of the specific Bayesian Optimisation ML pipeline which used this dataset as an input can be found in [BBO Week 10 - Bayesian Optimisation Strategy Summary](https://github.com/carmen-timpau/BBO-Capstone-Project/blob/main/experiments/week_10/strategy_summary.md).
 
-
+<br>
 
 
 **Composition:**  
@@ -61,7 +61,7 @@ The **structure**, **size** and **format** of this dataset (saved as a .pkl file
 ```
 There are no gaps within this dataset.
 
-
+<br>
 
 
 **Collection Process:**
@@ -70,7 +70,7 @@ The latest queries (1 query per function <=> the last datapoint in each function
 
 A technical summary of the specific Bayesian Optimisation ML pipeline employed to generate the latest set of points within this dataset (1 per function), can be found in [BBO Week 9 - Bayesian Optimisation Strategy Summary](https://github.com/carmen-timpau/BBO-Capstone-Project/blob/main/experiments/week_09/strategy_summary.md).
 
-
+<br>
 
 
 **Preprocessing and Uses:**
@@ -80,7 +80,7 @@ No preprocessing transformations have been applied to the contents of this datas
 As this is a static dataset now that the BBO capstone project has ended (September 2026), the intended further use of this dataset is only as an input dataset for ML pipeline validation purposes. 
 This dataset is inappropriate for use in any other projects, or in any other ways other the one stated above, as it is strictly relevant for these specific black-box functions investigated within this project, at the exact stage of this project (Week 10) when it was collected and used.
 
-
+<br>
 
 
 **Terms of Use, Distribution and Maintenance:** 
