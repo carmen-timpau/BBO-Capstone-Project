@@ -45,6 +45,7 @@ Research documentation and the dicussion of strategies used at each stage can be
 <strong>Figure 1.</strong> <em>Bayesian Optimisation Outcomes Landscape - Progress over 13-Week Optimisation Period for each Black-Box Function</em>
 </p>
 
+<br>
 
 <ins> **Foundational References:** </ins> 
 
