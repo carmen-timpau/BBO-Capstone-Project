@@ -35,6 +35,11 @@ Research documentation and the dicussion of strategies used at each stage can be
 
 <br>
 
+**Bayesian Optimisation Outcomes:**
+
+<img width="6567" height="2951" alt="image" src="https://github.com/user-attachments/assets/ebbc344c-a7ff-4fb7-b38c-fd05c19652dc" />
+
+
 <ins> **Foundational References:** </ins> 
 
 1. C. E. Rasmussen and C. K. I. Williams. “Gaussian Processes for Machine Learning.” _MIT Press_, 2005. https://doi.org/10.7551/mitpress/3206.001.0001
