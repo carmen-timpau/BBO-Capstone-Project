@@ -3,7 +3,7 @@
 <br>
 
 
-**Dataset File Name:** [wk1_input_data.pkl](https://github.com/carmen-timpau/BBO-Capstone-Project/blob/main/experiments/week_01/wk1_input_data.pkl)
+**Dataset File:** [`wk1_input_data.pkl`](https://github.com/carmen-timpau/BBO-Capstone-Project/blob/main/experiments/week_01/wk1_input_data.pkl)
 
 **Dataset Description:** BBO Capstone Week 1 Input Dataset = Initial Datasets provided for all 8 Black-Box Functions
 
