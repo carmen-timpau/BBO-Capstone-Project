@@ -23,9 +23,9 @@ The frameworks transition the approach from manual, intuitive strategy tuning to
 Functional research code is logged in `experiments/`, which is itself organised in separate directories for each week, documenting the evolution of the Bayesian Optimisation ML pipelines over time.
 
 
-**[Bayesian Optimisation ML Pipelines](https://github.com/carmen-timpau/BBO-Capstone-Project/tree/main/experiments)**
+🔩 **[Bayesian Optimisation ML Pipelines](https://github.com/carmen-timpau/BBO-Capstone-Project/tree/main/experiments)**
 
-**[Model Cards for Bayesian Optimisation ML Pipelines](https://github.com/carmen-timpau/BBO-Capstone-Project/blob/main/model_cards/model_cards_info.md)**
+📄 **[Model Cards for Bayesian Optimisation ML Pipelines](https://github.com/carmen-timpau/BBO-Capstone-Project/blob/main/model_cards/model_cards_info.md)**
 
 
 
