@@ -41,7 +41,7 @@
   - Identified in **Week 2**.
 
 
-| Function | Input | Output | # of Initial <br> Datapoints | # of Final <br> Datapoints | Initial <br> Maximum | Final <br> Maximum | Week <br> Optimised | Industry |
+| Function | Input | Output | # of Initial <br> Datapoints | # of Final <br> Datapoints | Initial <br> Maximum | Final <br> Maximum | Week <br> Optimised | Process/ <br> Industry |
 |----------|----------------------|-----------------------|-------------------------|-----------------------|-----------------------|-----------------------|-----------------------| -----------------------| 
 | <div align="center">1</div> | <div align="center">2D</div> | <div align="center">1D</div> | <div align="center">10</div> | <div align="center">23</div> | <div align="center">7.711e-16</div> | <div align="center">1.796e-10</div> |  <div align="center">**10**</div> | Radiation Detection |
 | <div align="center">2</div> | <div align="center">2D</div> | <div align="center">1D</div> | <div align="center">10</div> | <div align="center">23</div> | <div align="center">0.611</div> | <div align="center">0.756</div> | <div align="center">**6**</div> | Noisy Log-Likelihood <br> Optimisation |
