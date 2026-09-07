@@ -66,7 +66,7 @@ A dicussion of previous-week query output results and current week strategy summ
 
 <br>
 
-LICENSE: **[MIT License](https://github.com/carmen-timpau/BBO-Capstone-Project/blob/main/LICENSE)**
+<ins> **LICENSE:** </ins> **[MIT License](https://github.com/carmen-timpau/BBO-Capstone-Project/blob/main/LICENSE)**
 
 <br>
 
