@@ -35,7 +35,7 @@ Research documentation and the dicussion of strategies used at each stage can be
 
 <br>
 
-**Bayesian Optimisation Outcomes:**
+<ins> **Bayesian Optimisation Outcomes:** </ins>
 
 <p align="center">
 <img width="6563" height="2956" alt="image" src="https://github.com/user-attachments/assets/dc28b713-a3ba-4eb4-ae7c-585e90bf15cf" />
