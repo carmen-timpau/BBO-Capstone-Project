@@ -1,7 +1,7 @@
 **Datasets and their Datasheets**
 
 
-| **Dataset** | **Description** | **Datasheet Location** |
+| **Dataset File** | **Description** | **Datasheet Location** |
 |-----------------------|------------------------|-------------------------|
 |  [`wk8_input_data.pkl`](https://github.com/carmen-timpau/BBO-Capstone-Project/blob/main/data/weekly_processed/wk8_input_data.pkl) | BBO Capstone Week 8 Input Dataset | [`data/dataset_datasheets/wk8_input_data_datasheet.md`](https://github.com/carmen-timpau/BBO-Capstone-Project/blob/main/data/dataset_datasheets/wk8_input_data_datasheet.md)|
 |  [`wk9_input_data.pkl`](https://github.com/carmen-timpau/BBO-Capstone-Project/blob/main/data/weekly_processed/wk9_input_data.pkl) | BBO Capstone Week 9 Input Dataset | [`data/dataset_datasheets/wk9_input_data_datasheet.md`](https://github.com/carmen-timpau/BBO-Capstone-Project/blob/main/data/dataset_datasheets/wk9_input_data_datasheet.md)|
