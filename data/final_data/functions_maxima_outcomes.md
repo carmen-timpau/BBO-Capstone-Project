@@ -40,3 +40,7 @@
   - Output: `9.9561276549796`
   - Identified in **Week 2**.
 
+
+| Function | Input Dimensionality | Output Dimensionality | # of Initial Datapoints | # of Final Datapoints | 
+|----------|----------------------|-----------------------|-------------------------|-----------------------|
+| <div align="center">1</div> | 2D | 1D | 10 | 23 |
