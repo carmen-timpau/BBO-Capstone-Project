@@ -41,6 +41,6 @@
   - Identified in **Week 2**.
 
 
-| Function | Input Dimensionality | Output Dimensionality | # of Initial Datapoints | # of Final Datapoints | 
+| Function | Input <br> Dimensionality | Output Dimensionality | # of Initial Datapoints | # of Final Datapoints | 
 |----------|----------------------|-----------------------|-------------------------|-----------------------|
 | <div align="center">1</div> | <div align="center">2D</div> | <div align="center">1D</div> | <div align="center">10</div> | <div align="center">23</div> |
