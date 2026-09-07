@@ -61,7 +61,7 @@ A dicussion of previous-week query output results and current week strategy summ
 </p>
 
 <p align="center">
-<strong>Figure 1.</strong> **Bayesian Optimisation Outcomes Landscape** - Progress over 13-Week Optimisation Period for each Black-Box Function
+<strong>Figure 1. Bayesian Optimisation Outcomes Landscape</strong> - Progress over 13-Week Optimisation Period for each Black-Box Function
 </p>
 
 <br>
