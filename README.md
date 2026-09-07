@@ -41,6 +41,7 @@ A dicussion of previous-week query output results and current week strategy summ
 
 <ins>📈 **Bayesian Optimisation Outcomes:** </ins>
 
+During the 13-Week Black-Box Optimisation Challenge, all 8 unknown objective functions have been maximised beyond their initial maxima within the initial given datasets.
 <br>
 
 | Function | Input | Output | # of Initial <br> Datapoints | # of Final <br> Datapoints | Initial <br> Maximum | Final <br> Maximum | Week <br> Optimised | Process / Industry |
