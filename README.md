@@ -66,6 +66,10 @@ A dicussion of previous-week query output results and current week strategy summ
 
 <br>
 
+LICENSE: **[MIT License](https://github.com/carmen-timpau/BBO-Capstone-Project/blob/main/LICENSE)**
+
+<br>
+
 <ins> **Foundational References:** </ins> 
 
 1. C. E. Rasmussen and C. K. I. Williams. “Gaussian Processes for Machine Learning.” _MIT Press_, 2005. https://doi.org/10.7551/mitpress/3206.001.0001
