@@ -33,7 +33,7 @@ Functional research code is logged in [`experiments/`](https://github.com/carmen
 
 📑 <ins> **Weekly Query Results Discussion & Strategy Summary:** </ins> 
 
-The weekly Bayesian Optimisation ML strategies deployed have always been informed by the previous-week query output results.
+All weekly Bayesian Optimisation ML strategies deployed have always been informed by the previous-week query output results.
 
 A dicussion of previous-week query output results and current week strategy summaries can be found in `strategy_discussion.md` and `strategy_summary.md` files within each week's directory.
 
