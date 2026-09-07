@@ -10,9 +10,7 @@ Every week, over a period of 13 weeks, each function can only be queried once. E
 
 <br>
 
-📥 <ins> **Datasets:** </ins> 
-
-**[Datasets](https://github.com/carmen-timpau/BBO-Capstone-Project/tree/main/data/weekly_processed)**
+📥 **[Datasets](https://github.com/carmen-timpau/BBO-Capstone-Project/tree/main/data/weekly_processed)**
 
 **[Datasheets for Datasets](https://github.com/carmen-timpau/BBO-Capstone-Project/blob/main/data/weekly_processed/datasheets_info.md)**
 
