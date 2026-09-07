@@ -1,4 +1,4 @@
-**Bayesian Optimisation (BO) ML Models & their Model Cards**
+<ins>**Bayesian Optimisation (BO) ML Models & their Model Cards**</ins>
 
 | Bayesian Optimisation ML Model | Brief Model Description | Model Card |
 |--------------------------------|-------------------------|------------|
