@@ -2,7 +2,7 @@
 
 <br>
 
-📝 <ins> **Project Introduction:** </ins> 
+📝 <ins> **Project Description:** </ins> 
 
 Given an initial dataset of true datapoints describing 8 different, unrelated and unknown Black-Box functions of varying dimensionality (2D-8D), each modelling  real-world processes within various application industries, this project aims to apply and refine Bayesian Optimisation to identify the global maximum or maxima for each function.
 
@@ -18,22 +18,24 @@ Every week, over a period of 13 weeks, each function can only be queried once. E
 
 <ins>⚙️**Bayesian Optimisation (BO) ML Pipelines**</ins>:
 
-The frameworks transition the approach from manual, intuitive strategy tuning to fully automated, robust and optimised machine learning workflows. By leveraging state-of-the-art practices, like HEBO, the project delivers fast, reliable, and high-quality Bayesian Optimisation results to tackle expensive, opaque Black-Box process optimisation across various industries within as few queries as possible.
+The frameworks transition the approach from manual, data-driven and intuitive strategy tuning to fully automated, robust and optimised machine learning workflows. By leveraging state-of-the-art practices, like HEBO, the project delivers fast, reliable, and high-quality Bayesian Optimisation results to tackle expensive, opaque Black-Box process optimisation across various industries within as few queries as possible.
 
-Functional research code is logged in `experiments/`, which is itself organised in separate directories for each week, documenting the evolution of the Bayesian Optimisation ML pipelines over time.
+[Literature-Supported Bayesian Optimisation ML Pipeline Design Choices](https://github.com/carmen-timpau/BBO-Capstone-Project/blob/main/DESIGN_NOTES.md)
+
+Functional research code is logged in [`experiments/`](https://github.com/carmen-timpau/BBO-Capstone-Project/tree/main/experiments), which is itself organised in separate directories for each week, documenting the evolution of the Bayesian Optimisation ML pipelines over time.
 
 
 🔩 **[Bayesian Optimisation ML Pipelines](https://github.com/carmen-timpau/BBO-Capstone-Project/tree/main/experiments)**
 
 📄 **[Model Cards for Bayesian Optimisation ML Pipelines](https://github.com/carmen-timpau/BBO-Capstone-Project/blob/main/model_cards/model_cards_info.md)**
 
-
-
 <br>
 
-📑 <ins> **Research Documentation & Dicussion:** </ins> 
+📑 <ins> **Weekly Query Results Discussion & Strategy Summary:** </ins> 
 
-Research documentation and the dicussion of strategies used at each stage can be found in `strategy_discussion.md` and `strategy_summary.md` files within each week's directory.
+The weekly Bayesian Optimisation ML strategies deployed have always been informed by the previous-week query output results.
+
+A dicussion of previous-week query output results and current week strategy summaries can be found in `strategy_discussion.md` and `strategy_summary.md` files within each week's directory.
 
 <br>
 
