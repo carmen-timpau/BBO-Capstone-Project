@@ -22,9 +22,13 @@ Functional research code is logged in `experiments/`, which is itself organised 
 
 Initial datasets for all 8 Black-Box functions to be maximised can be found in the `initial_data/` folder attached to this repository as `.npy` files. Additionally, the full initial dataset formatted as a dictionary is accessible via `wk1_input_data.pkl` inside the same directory.
 
+**[Datasets](https://github.com/carmen-timpau/BBO-Capstone-Project/tree/main/data/weekly_processed)**
+
 **[Datasheets for Datasets](https://github.com/carmen-timpau/BBO-Capstone-Project/blob/main/data/weekly_processed/datasheets_info.md)**
 
-**[Model Cards for Bayesian Optimisation Pipelines](https://github.com/carmen-timpau/BBO-Capstone-Project/blob/main/model_cards/model_cards_info.md)**
+**[Model Cards for Bayesian Optimisation ML Pipelines](https://github.com/carmen-timpau/BBO-Capstone-Project/blob/main/model_cards/model_cards_info.md)**
+
+
 
 <br>
 
