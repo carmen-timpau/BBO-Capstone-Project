@@ -46,7 +46,7 @@ During the 13-week Black-Box Optimisation Challenge, all 8 unknown objective fun
 <br>
 
 <p align="center">
-<strong>Table 1.</strong> Summary of the Results Achieved for all 8 Black-Box Functions after the 13-week Bayesian Optimisation Challenge
+<strong>Table 1. Summary of the Results</strong> Achieved for all 8 Black-Box Functions after the 13-week Bayesian Optimisation Challenge
 </p>
 
 | Function | Input | Output | # of Initial <br> Datapoints | # of Final <br> Datapoints | Initial <br> Maximum | Final <br> Maximum | Week <br> Optimised | Process / Industry |
