@@ -3,7 +3,7 @@
 <br>
 
 
-**Dataset File Name:** [wk2_input_data.pkl](https://github.com/carmen-timpau/BBO-Capstone-Project/blob/main/experiments/week_02/wk2_input_data.pkl)
+**Dataset File:** [`wk2_input_data.pkl`](https://github.com/carmen-timpau/BBO-Capstone-Project/blob/main/experiments/week_02/wk2_input_data.pkl)
 
 **Dataset Description:** BBO Capstone Week 2 Input Dataset
 
