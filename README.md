@@ -56,7 +56,9 @@ During the 13-week Black-Box Optimisation Challenge, all 8 unknown objective fun
 | <div align="center">**7**</div> | <div align="center">6D</div> | <div align="center">1D</div> | <div align="center">30</div> | <div align="center">43</div> | <div align="center">1.365</div> | <div align="center">**3.224**</div> | <div align="center">**13**</div> | <div align="center">Machine Learning Model <br> Hyperparameter Tuning</div> |
 | <div align="center">**8**</div> | <div align="center">8D</div> | <div align="center">1D</div> | <div align="center">40</div> | <div align="center">53</div> | <div align="center">9.598</div> | <div align="center">**9.956**</div> | <div align="center">**2**</div> | <div align="center">Machine Learning Model <br> Hyperparameter Tuning</div> |
 
-**Table 1.** Summary of the Results achieved after the 13-week Bayesian Optimisation Challenge; Black-Box Function Maximisation
+<p align="center">
+**Table 1.** Summary of the Results Achieved after the 13-week Bayesian Optimisation Challenge; Black-Box Function Maximisation
+</p>
 
 <br>
 <br>
