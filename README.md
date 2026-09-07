@@ -34,7 +34,7 @@ Research documentation and the dicussion of strategies used at each stage can be
 <ins>📈 **Bayesian Optimisation Outcomes:** </ins>
 
 <br>
-<div style="zoom: 0.4;">
+<div style="font-size: 12px;">
 
 | Function | Input | Output | # of Initial <br> Datapoints | # of Final <br> Datapoints | Initial <br> Maximum | Final <br> Maximum | Week <br> Optimised | Process / Industry |
 |----------|----------------------|-----------------------|-------------------------|-----------------------|-----------------------|-----------------------|-----------------------| -----------------------| 
