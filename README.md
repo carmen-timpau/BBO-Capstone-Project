@@ -24,6 +24,8 @@ Initial datasets for all 8 Black-Box functions to be maximised can be found in t
 
 **[Datasheets for Datasets](https://github.com/carmen-timpau/BBO-Capstone-Project/blob/main/data/weekly_processed/datasheets_info.md)**
 
+**[Model Cards for Bayesian Optimisation Pipelines](https://github.com/carmen-timpau/BBO-Capstone-Project/blob/main/model_cards/model_cards_info.md)**
+
 <br>
 
 📑 <ins> **Research Documentation & Dicussion:** </ins> 
