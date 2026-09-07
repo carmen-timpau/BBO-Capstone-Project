@@ -22,10 +22,6 @@ Functional research code is logged in `experiments/`, which is itself organised 
 
 Initial datasets for all 8 Black-Box functions to be maximised can be found in the `initial_data/` folder attached to this repository as `.npy` files. Additionally, the full initial dataset formatted as a dictionary is accessible via `wk1_input_data.pkl` inside the same directory.
 
-<br>
-
-📈 <ins> **Individual Function Descriptions:** </ins>
-
 
 <br>
 
