@@ -41,7 +41,7 @@
   - Identified in **Week 2**.
 
 
-| Function | Input <br> Dimensionality | Output <br> Dimensionality | # of Initial <br> Datapoints | # of Final <br> Datapoints | Initial <br> Maximum | Final <br> Maximum |
+| Function | Input <br> Dimensionality | Output <br> Dimensionality | # of Initial <br> Datapoints | # of Final <br> Datapoints | Initial <br> Maximum | Final <br> Maximum | Week Optimised |
 |----------|----------------------|-----------------------|-------------------------|-----------------------|-----------------------|-----------------------|
-| <div align="center">1</div> | <div align="center">2D</div> | <div align="center">1D</div> | <div align="center">10</div> | <div align="center">23</div> | <div align="center">7.71e-16</div> | <div align="center">1.80e-10</div> |
-| <div align="center">2</div> | <div align="center">2D</div> | <div align="center">1D</div> | <div align="center">10</div> | <div align="center">23</div> | <div align="center">0.61</div> | <div align="center">0.76</div> |
+| <div align="center">1</div> | <div align="center">2D</div> | <div align="center">1D</div> | <div align="center">10</div> | <div align="center">23</div> | <div align="center">7.71e-16</div> | <div align="center">1.80e-10</div> |  **Week 10** |
+| <div align="center">2</div> | <div align="center">2D</div> | <div align="center">1D</div> | <div align="center">10</div> | <div align="center">23</div> | <div align="center">0.61</div> | <div align="center">0.76</div> | **Week 6** |
