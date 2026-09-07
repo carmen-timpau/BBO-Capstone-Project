@@ -3,7 +3,7 @@
 <br>
 
 
-**Dataset File Name:** [`final_data.pkl`](https://github.com/carmen-timpau/BBO-Capstone-Project/blob/main/experiments/week_13/diagnostics_results/final_data.pkl)
+**Dataset File:** [`final_data.pkl`](https://github.com/carmen-timpau/BBO-Capstone-Project/blob/main/experiments/week_13/diagnostics_results/final_data.pkl)
 
 **Dataset Description:** BBO Capstone Final Datasets obtained for all 8 Black-Box Functions
 
