@@ -86,7 +86,7 @@ A comparative summary of the initial functions' maxima and obtained post-BBO res
 
 <br>
 
-The 13-week landscape overview of the weekly progress achieved following the iterative and data-driven Bayesian Optimisation pipeline development is shown below (**Figure 1**) and the corresponding code used to compute this final analysis is logged in [`experiments/bayesopt_outcomes`](https://github.com/carmen-timpau/BBO-Capstone-Project/tree/main/experiments/bayesopt_outcomes) within this repository.
+The landscape overview of the weekly progress achieved during the 13-week project, following an iterative and data-driven Bayesian Optimisation pipeline development process is shown below (**Figure 1**), with the corresponding code used to compute this final analysis logged in [`experiments/bayesopt_outcomes`](https://github.com/carmen-timpau/BBO-Capstone-Project/tree/main/experiments/bayesopt_outcomes).
 
 <br>
 
