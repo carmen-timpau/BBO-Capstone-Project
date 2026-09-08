@@ -105,9 +105,9 @@ The landscape overview of the weekly progress achieved for each black-box functi
 
 1. <ins> **`scikit-learn`**</ins> - central to all ML frameworks developed in the BBO project:
 
-•	`sklearn.gaussian_process.GaussianProcessRegressor` - the core surrogate model
+•	`sklearn.gaussian_process.GaussianProcessRegressor` - the core surrogate model used in the project
 
-•	`sklearn.gaussian_process.kernels` - `Matern`, `RBF``, RationalQuadratic`, `WhiteKernel` (used for kernel ablation)
+•	`sklearn.gaussian_process.kernels` - `Matern`, `RBF`, RationalQuadratic`, `WhiteKernel` (used for kernel ablation)
 
 •	`sklearn.preprocessing` - StandardScaler (feature scaling) and PowerTransformer (Box-Cox/Yeo-Johnson output warping in HEBOStyleWarper)
 
