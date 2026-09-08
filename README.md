@@ -78,7 +78,7 @@ During the 13-week Black-Box Optimisation Challenge, all 8 unknown objective fun
 
 💻 <ins> **Coding Libraries & Packages:** </ins>
 
-1.	**`scikit-learn`** - central to all ML frameworks developed in the BBO project:
+1. <ins> **`scikit-learn`** </ins> - central to all ML frameworks developed in the BBO project:
 
 •	`sklearn.gaussian_process.GaussianProcessRegressor` - the core surrogate model
 
