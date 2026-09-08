@@ -26,6 +26,8 @@ Functional research code is logged in [`experiments/`](https://github.com/carmen
 
 For optimal navigability, _every week’s Bayesian Optimisation ML pipeline developed_ has been structured in packages (folders containing a blank `__init__.py` file, along with corresponding `.py` modules) and/or independent modules (`.py` files), as well as a master standalone `main.py` file, which calls all relevant modules from their corresponding locations in order to execute the respective full Bayesian Optimisation ML pipeline start-to-finish. This helps ensure an easier understanding of the flow and logic of each developed BO ML pipeline, while providing a clear and organised structure and allowing anyone to directly inspect integral modules/packages for further details on individual key coding blocks and their objectives.
 
+The outputs of each weekly BO ML pipeline are all logged in the `diagnostics_results` subfolder within each corresponding week's folder. 
+
 
 🔩 **[Bayesian Optimisation ML Pipelines](https://github.com/carmen-timpau/BBO-Capstone-Project/tree/main/experiments)**
 
@@ -92,9 +94,9 @@ During the 13-week Black-Box Optimisation Challenge, all 8 unknown objective fun
 
 •	`sklearn.exceptions.ConvergenceWarning` – warning suppression during GP fitting
 
-2. <ins>	**`NumPy`** </ins> – linear algebra, array operations, log/exponential transforms (for Function 1's log10 pre-transform), random number generation (`np.random.default_rng`), statistical aggregation (mean, std, median across seeds).
+2. <ins>	**`NumPy`**</ins> – linear algebra, array operations, log/exponential transforms (for Function 1's log10 pre-transform), random number generation (`np.random.default_rng`), statistical aggregation (mean, std, median across seeds).
 
-3.	<ins> **`SciPy`**: </ins>
+3.	<ins> **`SciPy`**:</ins>
 
 •	`scipy.stats.norm` - Gaussian CDF/PDF for EI/PI acquisition function calculations
 
@@ -104,7 +106,7 @@ During the 13-week Black-Box Optimisation Challenge, all 8 unknown objective fun
 
 •	`scipy.spatial.distance.cdist` - pairwise distance computation (used in the `min_distance_to_existing` duplicate exclusion filter - disabled feature) 
 
-4.	 <ins>**`pandas`** </ins> - building/sorting ablation results tables (`combo_df`, `all_functions_full_tables`);
+4.	 <ins>**`pandas`**</ins> - building/sorting ablation results tables (`combo_df`, `all_functions_full_tables`);
 
 5.	<ins> **`pickle`** </ins> - checkpointing results at various key pipeline stages (ablation summaries, k-means results, next-query predictions, importing input datasets for each new week’s pipeline);
 
@@ -112,11 +114,11 @@ During the 13-week Black-Box Optimisation Challenge, all 8 unknown objective fun
 
 7.	 <ins>**`joblib`** </ins> (`Parallel`, `delayed`) – seed parallelization across multiple (all available, `n_jobs=-1`) CPU cores in `run_full_joint_ablation` sweep
 
-8.	 <ins>**`os`** </ins> - directory creation for output paths
+8.	 <ins>**`os`**</ins> - directory creation for output paths
 
-9.	<ins> **`sys`** </ins> - stdout redirection to log files
+9.	<ins> **`sys`**</ins> - stdout redirection to log files
 
-10. <ins> **`warnings`** </ins> - suppressing convergence/variance warnings during fitting (after ensuring healthy behaviour)
+10. <ins> **`warnings`**</ins> - suppressing convergence/variance warnings during fitting (after ensuring healthy behaviour)
 
 <br>
 
