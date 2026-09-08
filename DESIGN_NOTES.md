@@ -1,3 +1,3 @@
-**DESIGN NOTES for Bayesian Optimisation Machine Learning Pipeline Development**
+**<p align="center">DESIGN NOTES for Data-Informed Iterative Bayesian Optimisation Machine Learning Pipeline Development</p>**
 
 
