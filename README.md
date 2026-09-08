@@ -74,7 +74,7 @@ During the 13-week Black-Box Optimisation Challenge, all 8 unknown objective fun
 
 <br>
 
-<ins> **Coding Libraries & Packages:** </ins>
+💻 <ins> **Coding Libraries & Packages:** </ins>
 
 1.	**`scikit-learn`** - central to all ML frameworks developed in the BBO project:
 •	`sklearn.gaussian_process.GaussianProcessRegressor` - the core surrogate model
@@ -106,6 +106,7 @@ During the 13-week Black-Box Optimisation Challenge, all 8 unknown objective fun
 
 10. **`warnings`** - suppressing convergence/variance warnings during fitting
 
+<br>
 
 ⚖️ **LICENSE:** **[MIT License](https://github.com/carmen-timpau/BBO-Capstone-Project/blob/main/LICENSE)**
 
