@@ -65,7 +65,7 @@ A dicussion of previous-week query output results and current week strategy summ
 
 During the 13-week Black-Box Optimisation Challenge, all 8 unknown objective functions have been maximised beyond their initial maxima within the initial given datasets. 
 
-A comparative summary of the initial functions' maxima and [obtained post-BBO results](https://github.com/carmen-timpau/BBO-Capstone-Project/blob/main/experiments/bayesopt_outcomes/bayesopt_functions_maxima.md) is shown in **Table 1.** below, which also highlights the exact Bayesian Optimisation ML pipeline which yielded the optimised maximum for each function (in the _'Week Optimised'_ column).
+A comparative summary of the initial functions' maxima and [obtained post-BBO results](https://github.com/carmen-timpau/BBO-Capstone-Project/blob/main/experiments/bayesopt_outcomes/bayesopt_functions_maxima.md) is shown in **Table 1.** below, which also highlights the exact Bayesian Optimisation ML pipeline which yielded the optimised maximum for each function (_'Week Optimised'_ column).
 
 <br>
 
