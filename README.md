@@ -6,6 +6,8 @@
 
 Given an initial dataset of true datapoints describing 8 different, unrelated and unknown Black-Box functions of varying dimensionality (2D-8D), each modelling  real-world processes within various application industries, this project aims to apply and refine Bayesian Optimisation to identify the global maximum or maxima for each function.
 
+Each of the 8 Black-Box functions were characterised only by an initial small-sized set of individual datapoints (between 10-40) provided by Imperial College London at the beginning of the challenge and the functions' internal processes are completely unknown. 
+
 Every week, over a period of 13 weeks, each function can only be queried once. Each full set of inputs (1 per function) are processed that same week and the outputs received help inform the coordinates of the next set of queries to be submitted for processing in the upcoming week, therefore leading to a refinement of the optimisation strategy for each of the 8 functions in a data-driven and personalised approach.
 
 <br>
