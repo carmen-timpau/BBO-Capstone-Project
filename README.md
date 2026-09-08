@@ -14,6 +14,7 @@ Every week, over a period of 13 weeks, each function can only be queried once. E
 📄 **[Datasheets for Datasets](https://github.com/carmen-timpau/BBO-Capstone-Project/blob/main/data/weekly_processed/datasheets_info.md)**
 
 <br>
+<br>
 
 <ins>⚙️**Bayesian Optimisation (BO) ML Pipelines**</ins>:
 
@@ -36,6 +37,7 @@ A comprehensive technical overview of the weekly BO ML pipeline results, documen
 📄 **[Technical Report for the 13-Week Black-Box Optimisation Challenge](https://github.com/carmen-timpau/BBO-Capstone-Project/blob/main/TECHNICAL_REPORT.md)**
 
 <br>
+<br>
 
 📁 <ins> **Discussion of Weekly Query Results & Data-Informed Strategy Summary:** </ins> 
 
@@ -43,6 +45,7 @@ All weekly Bayesian Optimisation ML strategies deployed have always been informe
 
 A dicussion of previous-week query output results and current week strategy summaries can be found in `strategy_discussion.md` and `strategy_summary.md` files within each week's directory.
 
+<br>
 <br>
 
 <ins>📈 **Bayesian Optimisation Outcomes:** </ins>
@@ -78,6 +81,7 @@ During the 13-week Black-Box Optimisation Challenge, all 8 unknown objective fun
 <strong>Figure 1. Bayesian Optimisation Outcomes Landscape</strong> - Progress over 13-Week Optimisation Period for each Black-Box Function
 </p>
 
+<br>
 <br>
 
 💻 <ins> **Coding Libraries & Packages:** </ins>
@@ -123,9 +127,11 @@ During the 13-week Black-Box Optimisation Challenge, all 8 unknown objective fun
 10. <ins> **`warnings`**</ins> - suppressing convergence/variance warnings during fitting (after ensuring healthy behaviour)
 
 <br>
+<br>
 
 ⚖️ **LICENSE:** **[MIT License](https://github.com/carmen-timpau/BBO-Capstone-Project/blob/main/LICENSE)**
 
+<br>
 <br>
 
 📖 <ins> **Foundational References:** </ins> 
