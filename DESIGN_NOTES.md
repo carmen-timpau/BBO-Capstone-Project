@@ -10,6 +10,10 @@ _Main Trade-off_: As no dedicated Bayesian Optimisation (BO) libraries like BoTo
 
 <br>
 
+_Software Architecture Decisions_
+
+<br>
+
 <ins> **Foundational References:** </ins> 
 
 1. C. E. Rasmussen and C. K. I. Williams. “Gaussian Processes for Machine Learning.” _MIT Press_, 2005. https://doi.org/10.7551/mitpress/3206.001.0001
