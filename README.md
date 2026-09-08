@@ -11,7 +11,7 @@ Every week, over a period of 13 weeks, each function can only be queried once. E
 <br>
 <br>
 
-<ins>**Black-Box Function Datasets:**</ins>
+📒 <ins>**Black-Box Function Datasets:**</ins>
 
 The [`BBO-Capstone-Project/data/`](https://github.com/carmen-timpau/BBO-Capstone-Project/tree/main/data) directory contains:
 
