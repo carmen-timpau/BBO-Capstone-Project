@@ -41,7 +41,7 @@ A comprehensive technical overview of the weekly BO ML pipeline results, documen
 
 📁 <ins> **Discussion of Weekly Query Results & Data-Informed Strategy Summary:** </ins> 
 
-All weekly Bayesian Optimisation ML strategies deployed have always been informed by the previous-week query output results.
+All weekly Bayesian Optimisation ML strategies deployed have been informed by previous-week query output results.
 
 A dicussion of previous-week query output results and current week strategy summaries can be found in `strategy_discussion.md` and `strategy_summary.md` files within each week's directory.
 
