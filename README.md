@@ -8,6 +8,16 @@ Given an initial dataset of true datapoints describing 8 different, unrelated an
 
 Every week, over a period of 13 weeks, each function can only be queried once. Each full set of inputs (1 per function) are processed that same week and the outputs received help inform the coordinates of the next set of queries to be submitted for processing in the upcoming week, therefore leading to a refinement of the optimisation strategy for each of the 8 functions in a data-driven and personalised approach.
 
+**Black-Box Function Datasets:**
+
+The [`BBO-Capstone-Project/data/`](https://github.com/carmen-timpau/BBO-Capstone-Project/tree/main/data) directory contains:
+
+•	A [`baseline_data/`](https://github.com/carmen-timpau/BBO-Capstone-Project/tree/main/data/baseline_data) subfolder containing the initial input-output datasets provided in original format by Imperial College London for each of the 8 Black-Box functions, along with a `stats.md` file which details a short initial statistical analysis for these.
+
+•	A [`weekly_processed/`](https://github.com/carmen-timpau/BBO-Capstone-Project/tree/main/data/weekly_processed) subfolder that stores the complete week‑by‑week evolution of each dataset as .pkl snapshots, from start (initial datasets) to finish (final datasets). Each .pkl file is structured as a top‑level dictionary with keys “function_1” through to “function_8”, where each entry contains a nested dictionary consisting of an “x” array of sampled inputs and a “y” array of corresponding function evaluations.
+
+•	A [`final_data/`](https://github.com/carmen-timpau/BBO-Capstone-Project/tree/main/data/final_data) subfolder containing the final data obtained after the completion of the 13-week capstone project as a .pkl file, a `stats.md` file with a short statistical analysis for each functions’ final dataset and a `functions_maxima_outcomes.md` file reporting the maximum output points identified for each Black-Box function as a result of the full work conducted for the BBO capstone project.
+
 
 📥 **[Datasets](https://github.com/carmen-timpau/BBO-Capstone-Project/tree/main/data/weekly_processed)**
 
