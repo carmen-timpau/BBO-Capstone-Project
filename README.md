@@ -105,29 +105,29 @@ The landscape overview of the weekly progress achieved for each black-box functi
 
 1. <ins> **`scikit-learn`**</ins> - central to all ML frameworks developed in the BBO project:
 
-      •	`sklearn.gaussian_process.GaussianProcessRegressor` - the core surrogate model used in the project
+            •	`sklearn.gaussian_process.GaussianProcessRegressor` - the core surrogate model used in the project
 
-      •	`sklearn.gaussian_process.kernels` - `Matern`, `RBF`, RationalQuadratic`, `WhiteKernel` (used for kernel ablation)
+            •	`sklearn.gaussian_process.kernels` - `Matern`, `RBF`, RationalQuadratic`, `WhiteKernel` (used for kernel ablation)
 
-      •	`sklearn.preprocessing` - StandardScaler (feature scaling) and PowerTransformer (Box-Cox/Yeo-Johnson output warping in HEBOStyleWarper)
+            •	`sklearn.preprocessing` - StandardScaler (feature scaling) and PowerTransformer (Box-Cox/Yeo-Johnson output warping in HEBOStyleWarper)
 
-      •	`sklearn.cluster.KMeans` - K-means clustering for targeted, local-box sampling
+            •	`sklearn.cluster.KMeans` - K-means clustering for targeted, local-box sampling
 
-      •	`sklearn.decomposition.PCA` - dimensionality reduction for cluster visualization
-
-      •	`sklearn.exceptions.ConvergenceWarning` – warning suppression during GP fitting
+            •	`sklearn.decomposition.PCA` - dimensionality reduction for cluster visualization
+      
+            •	`sklearn.exceptions.ConvergenceWarning` – warning suppression during GP fitting
 
 2. <ins>	**`NumPy`**</ins> – linear algebra, array operations, log/exponential transforms (for Function 1's log10 pre-transform), random number generation (`np.random.default_rng`), statistical aggregation (mean, std, median across seeds).
 
 3.	<ins> **`SciPy`**:</ins>
 
-      •	`scipy.stats.norm` - Gaussian CDF/PDF for EI/PI acquisition function calculations
+            •	`scipy.stats.norm` - Gaussian CDF/PDF for EI/PI acquisition function calculations
 
-      •	`scipy.stats.t` -  t-distribution for computing 95% confidence intervals (via `t.ppf`) for mean final regret, mean AURC
+            •	`scipy.stats.t` -  t-distribution for computing 95% confidence intervals (via `t.ppf`) for mean final regret, mean AURC
 
-      •	`scipy.stats.qmc.Sobol` - low-discrepancy Sobol sequence generation for quasi-random candidate pools (both the full-domain pool and the density-enhanced local-box pool)
+            •	`scipy.stats.qmc.Sobol` - low-discrepancy Sobol sequence generation for quasi-random candidate pools (both the full-domain pool and the density-enhanced local-box pool)
 
-      •	`scipy.spatial.distance.cdist` - pairwise distance computation (used in the `min_distance_to_existing` duplicate exclusion filter - disabled feature) 
+            •	`scipy.spatial.distance.cdist` - pairwise distance computation (used in the `min_distance_to_existing` duplicate exclusion filter - disabled feature) 
 
 4.	 <ins>**`pandas`**</ins> - building/sorting ablation results tables (`combo_df`, `all_functions_full_tables`);
 
