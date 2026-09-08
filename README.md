@@ -63,7 +63,9 @@ A dicussion of previous-week query output results and current week strategy summ
 
 <ins>📈 **Bayesian Optimisation Outcomes:** </ins>
 
-During the 13-week Black-Box Optimisation Challenge, all 8 unknown objective functions have been maximised beyond their initial maxima within the initial given datasets. A comparative summary of the initial functions' maxima and obtained post-BBO results is shown in **Table 1.** below, which also highlights the exact Bayesian Optimisation ML pipeline which yielded the optimised maximum for each function (in the _'Week Optimised'_ column).
+During the 13-week Black-Box Optimisation Challenge, all 8 unknown objective functions have been maximised beyond their initial maxima within the initial given datasets. 
+
+A comparative summary of the initial functions' maxima and obtained post-BBO results is shown in **Table 1.** below, which also highlights the exact Bayesian Optimisation ML pipeline which yielded the optimised maximum for each function (in the _'Week Optimised'_ column).
 
 <br>
 
@@ -85,6 +87,8 @@ During the 13-week Black-Box Optimisation Challenge, all 8 unknown objective fun
 
 <br>
 <br>
+
+The 13-week landscape overview of the weekly progress achieved following the iterative and data-driven Bayesian Optimisation pipeline development is shown below (**Figure 1**) and the corresponding code used to compute this final analysis is logged in [`experiments/bayesopt_outcomes`](https://github.com/carmen-timpau/BBO-Capstone-Project/tree/main/experiments/bayesopt_outcomes) within this repository.
 
 <p align="center">
 <img width="6563" height="2956" alt="image" src="https://github.com/user-attachments/assets/dc28b713-a3ba-4eb4-ae7c-585e90bf15cf" />
