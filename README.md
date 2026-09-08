@@ -26,12 +26,15 @@ Functional research code is logged in [`experiments/`](https://github.com/carmen
 
 For optimal navigability, _every week’s Bayesian Optimisation ML pipeline developed_ has been structured in packages (folders containing a blank `__init__.py` file, along with corresponding `.py` modules) and/or independent modules (`.py` files), as well as a master standalone `main.py` file, which calls all relevant modules from their corresponding locations in order to execute the respective full Bayesian Optimisation ML pipeline start-to-finish. This helps ensure an easier understanding of the flow and logic of each developed BO ML pipeline, while providing a clear and organised structure and allowing anyone to directly inspect integral modules/packages for further details on individual key coding blocks and their objectives.
 
-The outputs of each weekly BO ML pipeline are all logged in the `diagnostics_results` subfolder within each corresponding week's folder. 
-
-
 🔩 **[Bayesian Optimisation ML Pipelines](https://github.com/carmen-timpau/BBO-Capstone-Project/tree/main/experiments)**
 
 📄 **[Model Cards for Bayesian Optimisation ML Pipelines](https://github.com/carmen-timpau/BBO-Capstone-Project/blob/main/model_cards/model_cards_info.md)**
+
+The direct outputs of each weekly Bayesian Optimisation ML pipeline are all logged in the `diagnostics_results` subfolder within each corresponding week's folder. 
+
+A comprehensive technical overview of the weekly BO ML pipeline results, documenting the development and progression of their diagnostic and predictive complexity, robustness and performance can be found linked below. 
+
+**[Technical Report for the 13-Week Black-Box Optimisation Challenge](https://github.com/carmen-timpau/BBO-Capstone-Project/blob/main/TECHNICAL_REPORT.md)**
 
 <br>
 
