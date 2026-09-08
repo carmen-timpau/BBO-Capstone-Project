@@ -34,11 +34,11 @@ The direct outputs of each weekly Bayesian Optimisation ML pipeline are all logg
 
 A comprehensive technical overview of the weekly BO ML pipeline results, documenting the development and progression of their diagnostic and predictive complexity, robustness and performance can be found linked below. 
 
-**[Technical Report for the 13-Week Black-Box Optimisation Challenge](https://github.com/carmen-timpau/BBO-Capstone-Project/blob/main/TECHNICAL_REPORT.md)**
+📄 **[Technical Report for the 13-Week Black-Box Optimisation Challenge](https://github.com/carmen-timpau/BBO-Capstone-Project/blob/main/TECHNICAL_REPORT.md)**
 
 <br>
 
-📑 <ins> **Discussion of Weekly Query Results & Data-Informed Strategy Summary:** </ins> 
+📁 <ins> **Discussion of Weekly Query Results & Data-Informed Strategy Summary:** </ins> 
 
 All weekly Bayesian Optimisation ML strategies deployed have always been informed by the previous-week query output results.
 
@@ -129,7 +129,7 @@ During the 13-week Black-Box Optimisation Challenge, all 8 unknown objective fun
 
 <br>
 
-<ins> **Foundational References:** </ins> 
+📖 <ins> **Foundational References:** </ins> 
 
 1. C. E. Rasmussen and C. K. I. Williams. “Gaussian Processes for Machine Learning.” _MIT Press_, 2005. https://doi.org/10.7551/mitpress/3206.001.0001
 
