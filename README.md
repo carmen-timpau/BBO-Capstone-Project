@@ -35,7 +35,7 @@ The outputs of each weekly BO ML pipeline are all logged in the `diagnostics_res
 
 <br>
 
-📑 <ins> **Weekly Query Results Discussion & Strategy Summary:** </ins> 
+📑 <ins> **Discussion of Weekly Query Results & Data-Informed Strategy Summary:** </ins> 
 
 All weekly Bayesian Optimisation ML strategies deployed have always been informed by the previous-week query output results.
 
