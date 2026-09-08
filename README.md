@@ -29,9 +29,9 @@ The [`BBO-Capstone-Project/data/`](https://github.com/carmen-timpau/BBO-Capstone
 <br>
 <br>
 
-<ins>⚙️**Bayesian Optimisation (BO) ML Pipelines**</ins>:
+<ins>⚙️**Bayesian Optimisation ML Pipelines**</ins>:
 
-The frameworks transition the approach from manual, data-driven and intuitive strategy tuning to fully automated, robust and optimised machine learning workflows. By leveraging state-of-the-art practices, like HEBO, the project delivers fast, reliable, and high-quality Bayesian Optimisation results to tackle expensive, opaque Black-Box process optimisation across various industries within as few queries as possible.
+The Bayesian Optimisation (BO) frameworks transition the approach from manual, data-driven and intuitive strategy tuning to fully automated, robust and optimised machine learning (ML) workflows. By leveraging state-of-the-art practices, like HEBO [5,6], the project delivers fast, reliable, and high-quality Bayesian Optimisation results, alongside the development of end-to-end production-ready BO ML pipelines that tackle expensive and opaque (Black-Box) process optimisation across various industries (see **Table 1** below) within as few queries as possible, while balancing exploration with exploitation strategically according to the allowed budget.
 
 🔍 **[Literature-Supported Bayesian Optimisation ML Pipeline Design Choices](https://github.com/carmen-timpau/BBO-Capstone-Project/blob/main/DESIGN_NOTES.md)**
 
@@ -162,13 +162,15 @@ Progress over 13-Week Optimisation Period for each Black-Box Function
 
 4. T. S. Breusch and A. R. Pagan. “A Simple Test for Heteroscedasticity and Random Coefficient Variation.” _Econometrica_, 47(5):1287–1294, 1979. https://doi.org/10.2307/1911963
 
-5. A. I. Cowen‑Rivers, W. Lyu, R. Tutunov, Z. Wang, A. Grosnit, R. R. Griffiths, A. M. Maraval, H. Jianye, J. Wang, J. Peters, and H. Bou Ammar. “HEBO: Pushing the Limits of Sample‑Efficient Hyperparameter Optimisation.” arXiv:2012.03826, 2022. 
+5. A. I. Cowen‑Rivers, W. Lyu, Z. Wang, R. Tutunov, H. Jianye, J. Wang, and H. B. Ammar. “HEBO: Heteroscedastic Evolutionary Bayesian Optimisation.” Proceedings of the _34th Conference on Neural Information Processing Systems (NeurIPS)_, 2020.
 
-6. J.-H. Park, M. Cheon, and D.-Y. Koh. “BOOST: Bayesian Optimization with Optimal Kernel and Acquisition Function Selection Technique.” arXiv:2508.02332, 2025.
+6. A. I. Cowen‑Rivers, W. Lyu, R. Tutunov, Z. Wang, A. Grosnit, R. R. Griffiths, A. M. Maraval, H. Jianye, J. Wang, J. Peters, and H. Bou Ammar. “HEBO: Pushing the Limits of Sample‑Efficient Hyperparameter Optimisation.” arXiv:2012.03826, 2022. 
+
+7. J.-H. Park, M. Cheon, and D.-Y. Koh. “BOOST: Bayesian Optimization with Optimal Kernel and Acquisition Function Selection Technique.” arXiv:2508.02332, 2025.
    
-7. J.-H. Park, M. Cheon, J. Wi, and D.-Y. Koh. “BOOST: A Data-Driven Framework for the Automated Joint Selection of Kernel and Acquisition Functions in Bayesian Optimization.” arXiv:2508.02332, 2026.
+8. J.-H. Park, M. Cheon, J. Wi, and D.-Y. Koh. “BOOST: A Data-Driven Framework for the Automated Joint Selection of Kernel and Acquisition Functions in Bayesian Optimization.” arXiv:2508.02332, 2026.
 
-8. F. Zhang and Y. Chen. “Direct Regret Optimization in Bayesian Optimization.” arXiv:2507.06529, 2025. 
+9. F. Zhang and Y. Chen. “Direct Regret Optimization in Bayesian Optimization.” arXiv:2507.06529, 2025. 
 
 ---------------------------------------------------------------------------------------------------------------------
 
