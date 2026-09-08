@@ -6,7 +6,7 @@ _Choice of Main Machine Learning Library_
 
 The choice to focus preponderantly on leveraging scikit-learn’s ML tools instead of leveraging deep learning frameworks like PyTorch and TensorFlow for neural networks as part of this Black-Box Optimisation (BBO) Capstone Project was made based on the small sizes (10-40 initial datapoints) of the functions’ datasets. This aspect makes the employment of neural networks particularly unsuitable for modelling the unknown functions, as well as for effective classification purposes. This is because neural networks require massive datasets for effective training and to avoid overfitting and generalise well, while scikit-learn is best suited for small-sized datasets, like the ones available for this project.
 
-_Main Trade-off_: As no dedicated BO libraries like BoTorch or GPyTorch were used and instead all components of a BO pipeline were built from scratch, full visibility was achieved, as well as complete architectural and tuning control over every step within the developed ML pipelines, and no dependency on a framework’s internal assumptions, but at the expense of a larger codebase to build, develop and maintain.
+_Main Trade-off_: As no dedicated Bayesian Optimisation (BO) libraries like BoTorch or GPyTorch were used and instead all components of a BO pipeline were built from scratch, full visibility was achieved, as well as complete architectural and tuning control over every step within the developed ML pipelines, and no dependency on a framework’s internal assumptions, but at the expense of a larger codebase to build, develop and maintain.
 
 <br>
 
