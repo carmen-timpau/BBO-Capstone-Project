@@ -95,8 +95,12 @@ The landscape overview of the weekly progress achieved for each black-box functi
 </p>
 
 <p align="center">
-<strong>Figure 1. Bayesian Optimisation Outcomes Landscape</strong> - Progress over 13-Week Optimisation Period for each Black-Box Function
+<strong>Figure 1. Bayesian Optimisation Outcomes Landscape</strong> 
 </p>
+<p align="center">
+      _Progress over 13-Week Optimisation Period for each Black-Box Function_
+</p>
+
 
 <br>
 <br>
