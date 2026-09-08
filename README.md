@@ -92,9 +92,9 @@ During the 13-week Black-Box Optimisation Challenge, all 8 unknown objective fun
 
 •	`sklearn.exceptions.ConvergenceWarning` – warning suppression during GP fitting
 
-2.	**`NumPy`** – linear algebra, array operations, log/exponential transforms (for Function 1's log10 pre-transform), random number generation (`np.random.default_rng`), statistical aggregation (mean, std, median across seeds).
+2. <ins>	**`NumPy`** </ins> – linear algebra, array operations, log/exponential transforms (for Function 1's log10 pre-transform), random number generation (`np.random.default_rng`), statistical aggregation (mean, std, median across seeds).
 
-3.	**`SciPy`**:
+3.	<ins> **`SciPy`**: </ins>
 
 •	`scipy.stats.norm` - Gaussian CDF/PDF for EI/PI acquisition function calculations
 
@@ -104,19 +104,19 @@ During the 13-week Black-Box Optimisation Challenge, all 8 unknown objective fun
 
 •	`scipy.spatial.distance.cdist` - pairwise distance computation (used in the `min_distance_to_existing` duplicate exclusion filter - disabled feature) 
 
-4.	**`pandas`** - building/sorting ablation results tables (`combo_df`, `all_functions_full_tables`);
+4.	 <ins>**`pandas`** </ins> - building/sorting ablation results tables (`combo_df`, `all_functions_full_tables`);
 
-5.	**`pickle`** - checkpointing results at various key pipeline stages (ablation summaries, k-means results, next-query predictions, importing input datasets for each new week’s pipeline);
+5.	<ins> **`pickle`** </ins> - checkpointing results at various key pipeline stages (ablation summaries, k-means results, next-query predictions, importing input datasets for each new week’s pipeline);
 
-6.	**`Matplotlib`** (`matplotlib.pyplot`, `matplotlib.patches`), used for all plots: elbow curves, PCA scree plots, cluster scatter grids (including 3D plots via `projection='3d'` subplot mode), and convergence trajectories;
+6.	 <ins>**`Matplotlib`** </ins> (`matplotlib.pyplot`, `matplotlib.patches`), used for all plots: elbow curves, PCA scree plots, cluster scatter grids (including 3D plots via `projection='3d'` subplot mode), and convergence trajectories;
 
-7.	**`joblib`** (`Parallel`, `delayed`) – seed parallelization across multiple (all available, `n_jobs=-1`) CPU cores in `run_full_joint_ablation` sweep
+7.	 <ins>**`joblib`** </ins> (`Parallel`, `delayed`) – seed parallelization across multiple (all available, `n_jobs=-1`) CPU cores in `run_full_joint_ablation` sweep
 
-8.	**`os`** - directory creation for output paths
+8.	 <ins>**`os`** </ins> - directory creation for output paths
 
-9.	**`sys`** - stdout redirection to log files
+9.	<ins> **`sys`** </ins> - stdout redirection to log files
 
-10. **`warnings`** - suppressing convergence/variance warnings during fitting
+10. <ins> **`warnings`** </ins> - suppressing convergence/variance warnings during fitting (after ensuring healthy behaviour)
 
 <br>
 
