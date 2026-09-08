@@ -1,4 +1,4 @@
-**<ins> <p align="center">Bayesian Optimisation (BO) ML Pipelines and their Model Cards**</ins> </p>
+**<ins>Bayesian Optimisation (BO) ML Pipelines and their Model Cards**</ins>
 
 | BO ML Pipeline | Brief Model Description | Model Card |
 |--------------------------------|-------------------------|------------|
