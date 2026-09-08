@@ -84,11 +84,11 @@ A comparative summary of the initial functions' maxima and obtained post-BBO res
 | <div align="center">**7**</div> | <div align="center">6D</div> | <div align="center">1D</div> | <div align="center">30</div> | <div align="center">43</div> | <div align="center">1.365</div> | <div align="center">**3.224**</div> | <div align="center">**13**</div> | <div align="center">Machine Learning Model <br> Hyperparameter Tuning</div> |
 | <div align="center">**8**</div> | <div align="center">8D</div> | <div align="center">1D</div> | <div align="center">40</div> | <div align="center">53</div> | <div align="center">9.598</div> | <div align="center">**9.956**</div> | <div align="center">**2**</div> | <div align="center">Machine Learning Model <br> Hyperparameter Tuning</div> |
 
-
-<br>
 <br>
 
 The 13-week landscape overview of the weekly progress achieved following the iterative and data-driven Bayesian Optimisation pipeline development is shown below (**Figure 1**) and the corresponding code used to compute this final analysis is logged in [`experiments/bayesopt_outcomes`](https://github.com/carmen-timpau/BBO-Capstone-Project/tree/main/experiments/bayesopt_outcomes) within this repository.
+
+<br>
 
 <p align="center">
 <img width="6563" height="2956" alt="image" src="https://github.com/user-attachments/assets/dc28b713-a3ba-4eb4-ae7c-585e90bf15cf" />
