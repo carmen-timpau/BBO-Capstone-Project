@@ -156,7 +156,9 @@ Progress over 13-Week Optimisation Period for each Black-Box Function
 
 <ins> **Ethical Considerations:** </ins>
 
-The datasets used in this project contain no sensitive or personal information. The datasets may only be used for the purposes stated within the datasets' datasheets within this repository.
+No part of this project contains sensitive or personal information. 
+
+The initial datasets describing the 8 black-box functions, as well as the black-box functions themselves and all obtained weekly query outputs have been generated and provided by Imperial College London for use within the development of this capstone project for educational purposes only, as part of the 6-month Professional Certificate in Machine Learning and Artificial Intelligence course by Imperial College Executive Education. The intended use of the datasets within this repository is stated within their corresponding datasheets. 
 
 <br>
 <br>
