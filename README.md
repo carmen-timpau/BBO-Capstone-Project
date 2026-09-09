@@ -154,6 +154,11 @@ Progress over 13-Week Optimisation Period for each Black-Box Function
 <br>
 <br>
 
+**Ethical Considerations:** The datasets used in this project contain no sensitive or personal information. The datasets may only be used for the purposes stated within the datasets' datasheets within this repository.
+
+<br>
+<br>
+
 📖 <ins> **Foundational References:** </ins> 
 
 1. C. E. Rasmussen and C. K. I. Williams. “Gaussian Processes for Machine Learning.” _MIT Press_, 2005. https://doi.org/10.7551/mitpress/3206.001.0001
