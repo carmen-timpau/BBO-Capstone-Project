@@ -154,7 +154,9 @@ Progress over 13-Week Optimisation Period for each Black-Box Function
 <br>
 <br>
 
-**Ethical Considerations:** The datasets used in this project contain no sensitive or personal information. The datasets may only be used for the purposes stated within the datasets' datasheets within this repository.
+<ins> **Ethical Considerations:** </ins>
+
+The datasets used in this project contain no sensitive or personal information. The datasets may only be used for the purposes stated within the datasets' datasheets within this repository.
 
 <br>
 <br>
