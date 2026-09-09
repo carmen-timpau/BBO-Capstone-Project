@@ -33,7 +33,7 @@ The [`BBO-Capstone-Project/data/`](https://github.com/carmen-timpau/BBO-Capstone
 
 <ins>⚙️**Bayesian Optimisation ML Pipelines**</ins>:
 
-The Bayesian Optimisation (BO) frameworks transition the approach from manual, data-driven and intuitive strategy tuning to fully automated, robust and optimised machine learning (ML) workflows. By leveraging state-of-the-art practices, like HEBO [5,6], the project delivers fast, reliable, and high-quality Bayesian Optimisation results, alongside the development of end-to-end production-ready BO ML pipelines that tackle expensive and opaque (Black-Box) process optimisation across various industries (see **Table 1** below) within as few queries as possible, while balancing exploration with exploitation strategically according to the allowed budget.
+The Bayesian Optimisation (BO) frameworks transition the approach from manual, data-driven and intuitive strategy tuning to fully automated, robust and optimised machine learning (ML) workflows. The project develops end-to-end production-ready Bayesian Optimisation ML pipelines that support the iterative, data-driven optimisation of expensive and opaque (Black-Box) processes across various industries (see **Table 1** below), by leveraging small-datasets, offline testing and state-of-the-art BO practices, like Gaussian Process (GP) methodology [1], acquisition functions (UCB, EI, PI) [3] and HEBO output warping [5,6], while balancing exploration with exploitation strategically under limited budgets.
 
 🔍 **[Literature-Supported Bayesian Optimisation ML Pipeline Design Choices](https://github.com/carmen-timpau/BBO-Capstone-Project/blob/main/DESIGN_NOTES.md)**
 
