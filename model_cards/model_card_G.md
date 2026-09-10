@@ -30,7 +30,7 @@ The GP kernel and acquisition function pair and their hyperparameters to be used
 
 The performance metrics used in this ML model to rank the GP kernel-acqusition function pairs in the joint ablation study are **Mean Final Simple Regret**, used as the _primary performance metric_ and **Area Under the Regret Curve (AURC)** as the _secondary tiebreaker capturing convergence speed_. The kernel-acqusition function pair ranking algorithm computes the 95%CI/SEM uncertainty estimates for both metrics and takes them into account when establishing ties and making ranking decisions. When all metrics are tied, the ranking is based on the raw average value of the primary metric. The highest-ranking kernel-acqusition function pair for each function is then selected as the complete hyperparameter settings to be used for next-query point prediction via Bayesian Optimisation.
 
-A **Holdout Fraction Cap on Rollout Iterations** _ is used to stop every acqusition strategy (including random) from being forced to exhaust the candidate pool and collapse to an artificial 0.0 regret_. 
+A **Holdout Fraction Cap on Rollout Iterations** _ is used to stop every acqusition strategy (including random) from being forced to exhaust the candidate pool and collapse to an artificial 0.0 regret. 
 
 Pre-existing **Manually Tuned Per-function Overrides** from previous model:
 - init_per_dim was lowered (2→1) for Functions 4–8 to stop the initial draw from over-consuming higher-dimensional pools and lead to early pool exhaustion, i.e. 0.0 regret (which halts meaningful combo ranking);
