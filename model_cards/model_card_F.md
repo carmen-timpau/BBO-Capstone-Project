@@ -86,6 +86,8 @@ Figure 1 below illustrates an overview of the Single Full Joint GP Kernel-Acqusi
 
 **Figure 1.** Plotted Results of the Single Full Joint GP Kernel-Acqusition Function Ablation Study performed in Week 10 of the BBO Capstone Project via Bayesian Optimisation Model F Deployment. Highlighted trajectories represent the rollout next-query selection performance of top 5 kernel-acqusition function pairs which ranked highest based on the performance metrics used in the study (see below).
 
+<br> 
+<br> 
 
 <ins> **Assumptions:** </ins>
 
