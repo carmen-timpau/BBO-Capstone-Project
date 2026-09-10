@@ -217,6 +217,8 @@ python main.py
 
 These are dependent on the specific BO ML model employed. The assumptions, limitations, and biases of the different models developed as part of this capstone project have been included in their respective [Model Cards](https://github.com/carmen-timpau/BBO-Capstone-Project/blob/main/model_cards/model_cards_info.md).
 
+<br>
+<br>
 
 <ins> **Ethical Considerations:** </ins>
 
