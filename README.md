@@ -213,6 +213,11 @@ python main.py
 <br>
 <br>
 
+<ins> **Assumptions, Limitations & Biases:** </ins> 
+
+These are dependent on the specific BO ML model employed. The assumptions, limitations, and biases of the different models developed as part of this capstone project have been included in their respective [Model Cards](https://github.com/carmen-timpau/BBO-Capstone-Project/blob/main/model_cards/model_cards_info.md).
+
+
 <ins> **Ethical Considerations:** </ins>
 
 No part of this project contains sensitive or personal information. 
