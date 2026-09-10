@@ -182,11 +182,11 @@ pip install -r requirements.txt
 
 4. Choose a pipeline version to run
    
-Each `week_XX/` directory is self-contained with its own `main.py`.
+Each `week_XX/` directory within the `experiments/` directory is self-contained with its own `main.py`.
 Navigate into the desired week (`week_01`, ..., `week_13`).
 
 ```bash
-cd week_13
+cd experiments/week_13
 ```
 
 5. Input data
