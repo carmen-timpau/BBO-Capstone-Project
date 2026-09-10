@@ -40,7 +40,7 @@ The weekly Bayesian Optimisation (BO) machine learning (ML) frameworks logged in
 
 🔍 **[Literature-Supported Bayesian Optimisation ML Pipeline Design Choices](https://github.com/carmen-timpau/BBO-Capstone-Project/blob/main/DESIGN_NOTES.md)**
 
-Functional research code is logged in [`experiments/`](https://github.com/carmen-timpau/BBO-Capstone-Project/tree/main/experiments), which is itself organised in separate directories for each week, documenting the evolution of the Bayesian Optimisation ML pipelines over time.
+The [`BBO-Capstone-Project/experiments/`](https://github.com/carmen-timpau/BBO-Capstone-Project/tree/main/experiments) folder is itself organised in separate directories for each week `BBO-Capstone-Project/experiments/week_XX/`, documenting the self‑contained implementation and evolution of each week’s Bayesian Optimisation ML pipeline used to generate the next query predictions over 13 weeks.
 
 For optimal navigability, _every week’s Bayesian Optimisation ML pipeline developed_ has been structured in packages (folders containing a blank `__init__.py` file, along with corresponding `.py` modules) and/or independent modules (`.py` files), as well as a master standalone `main.py` file, which calls all relevant modules from their corresponding locations in order to execute the respective full Bayesian Optimisation ML pipeline start-to-finish. This helps ensure an easier understanding of the flow and logic of each developed BO ML pipeline, while providing a clear and organised structure and allowing anyone to directly inspect integral modules/packages for further details on individual key coding blocks and their objectives.
 
@@ -49,6 +49,8 @@ For optimal navigability, _every week’s Bayesian Optimisation ML pipeline deve
 📄 **[Model Cards for Bayesian Optimisation ML Pipelines](https://github.com/carmen-timpau/BBO-Capstone-Project/blob/main/model_cards/model_cards_info.md)**
 
 The direct outputs of each weekly Bayesian Optimisation ML pipeline are all logged in the `diagnostics_results` subfolder within each corresponding week's folder. 
+
+Similarly, a `queries/` subfolder within in each week’s folder keeps track of the input query points submitted for every unknown function each week - stored in a `input_queries.md` file - along with the corresponding obtained outputs - stored in a `query_outputs.md` file. A `stats.md` file details the statistical analysis of the full dataset for each function _after_ the addition of the new query point added that respective week. 
 
 A comprehensive technical overview of the weekly BO ML pipeline results, documenting the development and progression of their diagnostic and predictive complexity, robustness and performance can be found linked below. 
 
