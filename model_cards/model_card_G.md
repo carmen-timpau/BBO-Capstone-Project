@@ -101,11 +101,7 @@ Not further maximising the rest of the functions does not reflect on the quality
 
 <ins>**Representative Model Outputs:** </ins>
 
-Full execution output results produced by this ML model obtained post-deployment on [`wk11_input_data.pkl`]( https://github.com/carmen-timpau/BBO-Capstone-Project/blob/main/experiments/week_11/wk11_input_data.pkl) input data in Week 11 of the BBO capstone project can be accessed at: [`experiments/week_11/diagnostics_results/execution_output.log`]( https://github.com/carmen-timpau/BBO-Capstone-Project/blob/main/experiments/week_11/diagnostics_results/execution_output.log). Plots are also available in [`experiments/week_11/diagnostics_results`]( https://github.com/carmen-timpau/BBO-Capstone-Project/tree/main/experiments/week_11/diagnostics_results).
-
-Full execution output results produced by this ML model obtained post-deployment on [`wk12_input_data.pkl`]( https://github.com/carmen-timpau/BBO-Capstone-Project/blob/main/experiments/week_12/wk12_input_data.pkl) input data in Week 12 of the BBO capstone project can be accessed at: [`experiments/week_12/diagnostics_results/execution_output.log`]( https://github.com/carmen-timpau/BBO-Capstone-Project/blob/main/experiments/week_12/diagnostics_results/execution_output.log). Plots are also available in [`experiments/week_12/diagnostics_results`]( https://github.com/carmen-timpau/BBO-Capstone-Project/tree/main/experiments/week_12/diagnostics_results).
-
-**Figure 1** below illustrates an overview of the Single Full Joint GP Kernel-Acqusition Function Ablation Study performed in Week 11 of the BBO Capstone Project to select the ‘winning’ kernel-acqusition function pairs to be used in next-query prediction for each function via deployment of Bayesian Optimisation ML Model G.
+Full execution output results produced by this ML model obtained post-deployment on [`wk11_input_data.pkl`]( https://github.com/carmen-timpau/BBO-Capstone-Project/blob/main/experiments/week_11/wk11_input_data.pkl) input data in Week 11 of the BBO capstone project can be accessed at: [`experiments/week_11/diagnostics_results/execution_output.log`]( https://github.com/carmen-timpau/BBO-Capstone-Project/blob/main/experiments/week_11/diagnostics_results/execution_output.log). Plots are shown below, but also available at [`experiments/week_11/diagnostics_results`]( https://github.com/carmen-timpau/BBO-Capstone-Project/tree/main/experiments/week_11/diagnostics_results).
  
 <img width="6569" height="3247" alt="full_joint_ablation_all_functions_legend" src="https://github.com/user-attachments/assets/87f24bd2-7011-43bc-9c7d-208ab0941475" />
 
@@ -124,6 +120,9 @@ Full execution output results produced by this ML model obtained post-deployment
  <img width="7166" height="3543" alt="kmeans_cluster_grid" src="https://github.com/user-attachments/assets/f9ca3211-55db-410e-b75a-52b319237428" />
 
 **Figure 4.** K-Means Cluster Assignments per Function (best cluster outlined in black). Computed in Week 11 of the BBO Capstone Project. A higher resolution Sobol search was performed in the local-box defined by the best K-Means cluster identified for each function to better inform next-query point prediction, while maintaining normal-resolution full-space Sobol search for best outcomes.
+
+
+Similarly, full execution output results produced by this ML model obtained post-deployment on [`wk12_input_data.pkl`]( https://github.com/carmen-timpau/BBO-Capstone-Project/blob/main/experiments/week_12/wk12_input_data.pkl) input data in Week 12 of the BBO capstone project can be accessed at: [`experiments/week_12/diagnostics_results/execution_output.log`]( https://github.com/carmen-timpau/BBO-Capstone-Project/blob/main/experiments/week_12/diagnostics_results/execution_output.log). Plots are also available in [`experiments/week_12/diagnostics_results`]( https://github.com/carmen-timpau/BBO-Capstone-Project/tree/main/experiments/week_12/diagnostics_results).
 
 <br> 
 <br> 
