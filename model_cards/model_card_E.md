@@ -51,7 +51,7 @@ Introduced a Holdout Fraction (30%) Cap on Rollout Iterations, preventing the ro
 
 The addition of a Random Baseline and the holdout-fraction were both introduced reactively, after inspecting intermediate results (plots, tied final-regret values, pool-exhaustion artefacts) in surfaced cases.
 
-Started to tie the _Sobol seed to the current dataset size_ (rather than a fixed seed), as for Function 5, the same query was continuously being predicted in Weeks 6-8.
+Started to tie the _Sobol seed to the current dataset size_ (rather than a fixed seed), as for Function 5, the same query was continuously being predicted, as in Weeks 6-8.
 
 Introduced a _Near-Duplicate Exclusion Filter_ (currently disabled feature in this model, min_distance_to_existing=0.0) for next-query candidate generation may be used in future/other pipelines/implementations to prevent the BO model from predicting next-query points which are too close to (or the same as) existing datapoints.
 
