@@ -69,11 +69,7 @@ At the stage of Week 9 in the BBO capstone project, Function 1 remains the only 
 
 Full execution output results produced by this ML model obtained post-deployment on [`wk9_input_data.pkl`]( https://github.com/carmen-timpau/BBO-Capstone-Project/blob/main/experiments/week_09/wk9_input_data.pkl) input data in Week 9 of the BBO capstone project can be accessed at: [`experiments/week_09/diagnostics_results/full_joint_ablation_results.md`](https://github.com/carmen-timpau/BBO-Capstone-Project/blob/main/experiments/week_09/diagnostics_results/full_joint_ablation_results.md) and [`experiments/week_09/diagnostics_results/wk9_query_predictions.md`]( https://github.com/carmen-timpau/BBO-Capstone-Project/blob/main/experiments/week_09/diagnostics_results/wk9_query_predictions.md).
 
-**Figure 1** below illustrates an overview of the Single Full Joint GP Kernel-Acqusition Function Ablation Study performed in Week 9 of the BBO Capstone Project to select the ‘winning’ kernel-acqusition function pairs to be used in next-query prediction for each function via deployment of Bayesian Optimisation ML Model E.
-
-![Uploading full_joint_ablation_all_functions_legend.png…]()
-
-**Figure 1.** Plotted Results of the Single Full Joint GP Kernel-Acqusition Function Ablation Study performed in Week 9 of the BBO Capstone Project via Bayesian Optimisation Model E Deployment. Highlighted trajectories represent the rollout next-query selection performance of top 5 kernel-acqusition function pairs which ranked highest based on the performance metrics used in the study (see below).
+Plotted Results of the Single Full Joint GP Kernel-Acqusition Function Ablation Study performed in Week 9 of the BBO Capstone Project via Bayesian Optimisation Model E Deployment can be accessed here: [`experiments/week_09/diagnostics_results/full_joint_ablation_all_functions_legend.png`](https://github.com/carmen-timpau/BBO-Capstone-Project/blob/main/experiments/week_09/diagnostics_results/full_joint_ablation_all_functions_legend.png).
 
 <br> 
 <br> 
