@@ -1,6 +1,6 @@
 **<ins>Bayesian Optimisation (BO) ML Pipelines and their Model Cards**</ins>
 
-| BO ML Pipeline | Main Bayesian Optimisation ML Model Features | Model Card |
+| BO ML Pipeline | Main Features of Bayesian Optimisation ML Model  | Model Card |
 |--------------------------------|-------------------------|------------|
 |<p align="center">[`Week 1 BO Pipeline`](https://github.com/carmen-timpau/BBO-Capstone-Project/tree/main/experiments/week_01) | <p align="center">Manual, Data-Driven Kernel and Acquisition Function Optimisation </p>| [Model Card A](https://github.com/carmen-timpau/BBO-Capstone-Project/blob/main/model_cards/model_card_A.md)</p> | 
 |<p align="center">[`Week 2 BO Pipeline`](https://github.com/carmen-timpau/BBO-Capstone-Project/tree/main/experiments/week_02) | <p align="center">Manual, Data-Driven Kernel and Acquisition Function Optimisation </p>| [Model Card A](https://github.com/carmen-timpau/BBO-Capstone-Project/blob/main/model_cards/model_card_A.md)</p> | 
