@@ -9,7 +9,7 @@
 
 **Model Location:** [`experiments/week_08`](https://github.com/carmen-timpau/BBO-Capstone-Project/tree/main/experiments/week_08)
 
-**Model Description:** Reproducible, Transparent, Interpretable & Automated Surrogate Model Selection (GP/Deep Ensemble of MLPs) and Sequential Kernel and Acquisition Function-Informed Bayesian Optimisation 
+**Model Description:** Reproducible, Transparent, Interpretable & Automated Surrogate Model Selection (GP/Deep Ensemble of MLPs) and Sequential Standalone Kernel and Acquisition Function-Informed Bayesian Optimisation 
 
 <br> 
 <br> 
