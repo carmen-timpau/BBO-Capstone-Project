@@ -128,6 +128,7 @@ Full execution output results produced by this ML model obtained post-deployment
 
 **Figure 4.** _K-Means Cluster Assignments per Function (best cluster outlined in black). _Computed in Week 11 of the BBO Capstone Project. A higher resolution Sobol search was performed in the local-box defined by the best K-Means cluster identified for each function to better inform next-query point prediction, while maintaining normal-resolution full-space Sobol search for best outcomes.
 
+<br>
 
 Similarly, full execution output results produced by this ML model obtained post-deployment on [`wk12_input_data.pkl`]( https://github.com/carmen-timpau/BBO-Capstone-Project/blob/main/experiments/week_12/wk12_input_data.pkl) input data in Week 12 of the BBO capstone project can be accessed at: [`experiments/week_12/diagnostics_results/execution_output.log`]( https://github.com/carmen-timpau/BBO-Capstone-Project/blob/main/experiments/week_12/diagnostics_results/execution_output.log). Plots are also available in [`experiments/week_12/diagnostics_results`]( https://github.com/carmen-timpau/BBO-Capstone-Project/tree/main/experiments/week_12/diagnostics_results).
 
