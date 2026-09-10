@@ -86,11 +86,14 @@ This model also fixes _ 2 minor Function 1-specific reporting bugs from Week 10'
 <ins>**Performance Results:** </ins> 
 
 The model outputs an in-depth well-structured and clear written report detailing the key aspects of the joint kernel-acqusition function ablation study, elbow-heuristic computation, K-Means clustering computation, best cluster selection, scree-plot computation and cluster plotting in PC reduced dimensionality space, followed by in-depth metrics about the highest scoring Sobol candidates from each candidate pool (full-space, local-box) for interpretability and transparency purposes.
+
 Right at the end of the execution log file, for each function, a concise summary of the next-query point input coordinates, along with the selected GP kernel and acqusition function used is printed, as well as the predicted output value and standard deviation. The summary table also mentions for each function, from which Sobol  pool the final candidate was chosen (full-space or best K-Means cluster-informed local-box), and specifies exactly what the acqusition scores were for the best candidates from each pool (full-space vs local-box), as well as their input coordinates to increase trustworthiness in the model, transparency, interpretability by enabling candidate comparison and decision rationalisation.
-The model also outputs a series of plots with the results of the joint kernel ablation study (Figure 1), the Elbow plot (Figure 2), the PCA scree plot (Figure 3) and the final K-Means cluster plot for each function (Figure 4), as shown in the section below.
+
+The model also outputs a series of plots with the results of the joint kernel ablation study (**Figure 1**), the Elbow plot (**Figure 2**), the PCA scree plot (**Figure 3**) and the final K-Means cluster plot for each function (**Figure 4**), as shown in the section below. These plots help with model transparency and interpretability.
 
 This BO ML model, when deployed in Week 11 of the BBO capstone, it managed to further maximise 1 out of 8 Black-Box functions, specifically Function 3. 
 As the current Week 11 BBO pipeline is very robust, it was also deployed to predict the next queries for all Black-Box functions during Week 12 (penultimate week) of the BBO project, when it managed to further maximise another 1 out of 8 Black-Box functions, specifically Function 6.
+
 Not further maximising the rest of the functions does not reflect on the quality or performance of the pipeline itself, as some (if not many) of these Black-Box functions may have already been maximised by now (within the initial dataset-restricted input space investigated, see limitation (1) below), in previous weeks. In that case, there would be no better points left to be identified through Bayesian Optimisation for those functions and therefore future next query predictions would not be able to override the current already established (global) maxima, regardless of how rigorous and effective the pipeline has become.
 
 <br> 
