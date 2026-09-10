@@ -52,10 +52,6 @@ The direct outputs of each weekly Bayesian Optimisation ML pipeline are all logg
 
 A `queries/` subfolder within in each week’s folder keeps track of the input query points generated and submitted for every unknown function each week - stored in `input_queries.md` - along with the corresponding obtained outputs - stored in `query_outputs.md`. `stats.md` details the statistical analysis of the full incumbent dataset for each function _after_ the addition of the new query point of that respective week. 
 
-A comprehensive technical overview of the weekly BO ML pipeline results, documenting the development and progression of their diagnostic and predictive complexity, robustness and performance can be found linked below. 
-
-📄 **[Technical Report for the 13-Week Black-Box Optimisation Challenge](https://github.com/carmen-timpau/BBO-Capstone-Project/blob/main/TECHNICAL_REPORT.md)**
-
 <br>
 <br>
 
