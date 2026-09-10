@@ -149,7 +149,7 @@ Progress over 13-Week Optimisation Period for each Black-Box Function
 <br>
 <br>
 
-<ins> **Installation & Running the Project:** </ins>
+🚀 <ins> **Installation & Running the Project:** </ins>
 
 Prerequisites: 
 - Python 3.13
