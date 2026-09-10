@@ -78,9 +78,11 @@ Full execution output results produced by this ML model obtained post-deployment
 **Figure 1** below illustrates an overview of the Single Full Joint GP Kernel-Acqusition Function Ablation Study performed in Week 9 of the BBO Capstone Project to select the ‘winning’ kernel-acqusition function pairs to be used in next-query prediction for each function _via_ deployment of Bayesian Optimisation ML Model E.
 
 <br> 
+
 <img width="6569" height="3247" alt="full_joint_ablation_all_functions_legend" src="https://github.com/user-attachments/assets/1903104e-192e-4d65-860b-157de19551cb" />
 
 <br>
+
 **Figure 1.** _Plotted Results of the Single Full Joint GP Kernel-Acqusition Function Ablation Study performed in Week 9 of the BBO Capstone Project _via_ Bayesian Optimisation Model E Deployment._ Highlighted trajectories represent the rollout next-query selection performance of top 5 kernel-acqusition function pairs which ranked highest based on the performance metrics used in the study (see below).
 
 <br> 
