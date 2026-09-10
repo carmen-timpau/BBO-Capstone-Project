@@ -250,7 +250,7 @@ The initial datasets describing the 8 black-box functions, as well as the black-
 
 🛠️ <ins> **Project Development Details:** </ins> 
 
-The project was developed as part of the 6-month _Professional Certificate in Machine Learning & Artificial Intelligence_ joint programme at Imperial College London.
+The project was developed as part of the 6-month _Professional Certificate in Machine Learning & Artificial Intelligence_ joint programme at Imperial College London, during its second half - between June and August 2026.
 
 <br>
 
