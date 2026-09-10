@@ -26,7 +26,7 @@ The **BBO Week 13 - Bayesian Optimisation Pipeline** only differs from the **BBO
 
 8. Kept the _Near-Duplicate Exclusion Filter_ (currently disabled, min_distance_to_existing=0.0) for next-query candidate generation [preserved unused from Week 9]. This is maintained as it may be useful in future/other pipelines/implementations, but was not required here, after all.
 
-**<ins>Note:</ins>** The BBO Week 11 Full ML Bayesian Optimisation Pipeline is computationally heavy. Runtime to completion is expected to be around ~2.5h if 16 CPU cores are available (as used here), but it may take slightly/significantly longer if not.
+**<ins>Note:</ins>** The BBO Week 13 Full ML Bayesian Optimisation Pipeline is computationally heavy. Runtime to completion is expected to be around ~2.5h if 16 CPU cores are available (as used here), but it may take slightly/significantly longer if not.
 
 **Running the Script:** As implemented in Week 10, all prints are streamed to a log file (`execution_output.log`) instead of the browser console, to avoid progress loss mid-run due to browser crashing, as the pipeline is computationally and resource intensive.
 
