@@ -50,7 +50,7 @@ For optimal navigability, _every week’s Bayesian Optimisation ML pipeline deve
 
 The direct outputs of each weekly Bayesian Optimisation ML pipeline are all logged in the `diagnostics_results` subfolder within each corresponding week's folder. 
 
-Similarly, a `queries/` subfolder within in each week’s folder keeps track of the input query points submitted for every unknown function each week - stored in a `input_queries.md` file - along with the corresponding obtained outputs - stored in a `query_outputs.md` file. A `stats.md` file details the statistical analysis of the full dataset for each function _after_ the addition of the new query point added that respective week. 
+A `queries/` subfolder within in each week’s folder keeps track of the input query points submitted for every unknown function each week - stored in a `input_queries.md` file - along with the corresponding obtained outputs - stored in a `query_outputs.md` file. A `stats.md` file details the statistical analysis of the full dataset for each function _after_ the addition of the new query point added that respective week. 
 
 A comprehensive technical overview of the weekly BO ML pipeline results, documenting the development and progression of their diagnostic and predictive complexity, robustness and performance can be found linked below. 
 
