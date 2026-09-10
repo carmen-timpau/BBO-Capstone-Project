@@ -1,5 +1,5 @@
 <br>
- <p align="center"> <strong> Black-Box Optimisation (BBO) Capstone Project</strong> </p> 
+ <p align="center"> <strong> Black-Box Optimisation (BBO) Capstone Project</strong>  (June-August 2026)</p> 
   <p align="center"> <em> Iterative, Data-Driven Bayesian Optimisation Machine Learning Pipeline Development</em> </p> 
 
 <br>
