@@ -1,6 +1,6 @@
 <br>
  <p align="center"> <strong> Black-Box Optimisation (BBO) Capstone Project</strong> </p> 
-  <p align="center"> <em> Iterative Data-Driven Bayesian Optimisation Machine Learning Pipeline Development</em> </p> 
+  <p align="center"> <em> Iterative, Data-Driven Bayesian Optimisation Machine Learning Pipeline Development</em> </p> 
 
 <br>
 <br>
