@@ -149,7 +149,7 @@ The first limitation (1) contributes to a real bias in the possible optimisation
 
 Because of these limitations, and despite the assumptions made that are stated above, the resulting next-query predictions remain exploratory estimates, not guarantees of beating the current known maximum for each function. The 95% CI/SEM uncertainty reporting is meant to make explicit how much uncertainty still surrounds the "winning" GP kernel-acquisition function pair per function, rather than presenting a single point-estimate ranking as more settled than it is, therefore enhancing the transparency and interpretability of the model.
 
-These limitations, while very real and likely to have prevented the pipeline to perform at its absolute best performance, have not prevented the BO ML model to further maximise the outputs of black-box functions and achieve significant progress, as well as an important milestone (maximising the very-challenging-to-model-and-optimise black-box Function 1 for the first time in the project).
+These limitations, while very real and likely to have prevented the pipeline to perform at its absolute best performance, have not prevented the BO ML model to further maximise the outputs of black-box functions and achieve significant progress.
 
 <br> 
 <br> 
