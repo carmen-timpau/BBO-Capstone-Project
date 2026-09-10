@@ -1,4 +1,4 @@
- **Black-Box Optimisation (BBO) Capstone Project - Bayesian Optimisation**
+ <p align="center"> **Black-Box Optimisation (BBO) Capstone Project - Bayesian Optimisation** </p>
 
 <br>
 
