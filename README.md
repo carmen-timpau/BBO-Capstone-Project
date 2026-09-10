@@ -149,6 +149,64 @@ Progress over 13-Week Optimisation Period for each Black-Box Function
 <br>
 <br>
 
+<ins> **Installation & Running the Project:** </ins>
+
+Prerequisites: 
+- Python 3.13
+- `git`
+
+1. Clone the repository
+
+```bash
+git clone https://github.com/<carmen-timpau>/<BBO-Capstone-Project>.git
+cd <BBO-Capstone-Project>
+```
+
+2. Create and activate a virtual environment
+
+```bash
+python -m venv venv
+source venv/bin/activate      # Windows: venv\Scripts\activate
+```
+
+3. Install dependencies
+
+```bash
+pip install -r requirements.txt
+```
+
+4. Choose a pipeline version to run
+   
+Each `week_XX/` directory is self-contained with its own `main.py`.
+Navigate into the desired week (`week_01`, ..., `week_13`).
+
+```bash
+cd week_13
+```
+
+5. Input data
+   
+Each `week_XX/` directory already includes its corresponding dataset (e.g. `wk1_input_data.pkl`, ..., `wk13_input_data.pkl`, `final_data.pkl`) committed alongside `main.py` — no setup needed. Data is structured as:
+
+```python
+data = {
+    "function_1": {"x": np.ndarray of shape (n_samples, n_dims), "y": np.ndarray of shape (n_samples,)},
+    ...
+    "function_8": {"x": ..., "y": ...},
+}
+```
+
+6. Run the pipeline
+   
+```bash
+python main.py
+```
+
+<ins>Note:</ins> Runtime is computationally heavy for later versions - expect roughly 2-2.5 hours to completion with 16 CPU cores available (longer with fewer cores). Outputs are streamed to `execution_output.log` rather than the console for later versions.
+
+<br>
+<br>
+
 ⚖️ **LICENSE:** **[MIT License](https://github.com/carmen-timpau/BBO-Capstone-Project/blob/main/LICENSE)**
 
 <br>
