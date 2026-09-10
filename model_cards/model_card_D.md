@@ -106,13 +106,15 @@ The main limitations of this BO ML model are:
 
 **(1)** the Sobol candidate generation across the high-dimensional input space was restricted by the per-dimension minimum and maximum values observed in the initial dataset for each black-box function, meaning that the search was only conducted within the bounding box defined by the initial datapoints for each black-box function; and 
 
-**(2)** the post-kernel ablation Breusch-Pagan-style analysis study performed does not output statistically valid p-values, as the residuals plotted are not OLS residuals, but computed using surrogate model predictions. This adapted study was not performed to achieve full statistical certainty over black-box function behaviour, but only to visually reveal and monitor homo-/heteroscedasticity in the black-box functions’ behaviour, based on the scattered residuals’ shape in the plots.  
+**(2)** the 'best' kernel and acquisition function pair to be used for next-query prediction for each function are computed separately, via standalone ablation studies, which completely disregard their direct and intrinsic interaction in Bayesian Optimisation.
+
+**(3)** the post-kernel ablation Breusch-Pagan-style analysis study performed does not output statistically valid p-values, as the residuals plotted are not OLS residuals, but computed using surrogate model predictions. This adapted study was not performed to achieve full statistical certainty over black-box function behaviour, but only to visually reveal and monitor homo-/heteroscedasticity in the black-box functions’ behaviour, based on the scattered residuals’ shape in the plots.  
 
 The first limitation (1) contributes to a real bias in the possible optimisation results obtained, as potential function maximisation results will always be bounded to the high-dimensional space restricted by the given initial dataset for each function. A potential failure mode of this BO ML pipeline resulting directly from limitation (1) is when applied to black-box functions which do not contain any further maxima within the area restricted by their input datasets' coordinates, other than the ones given in their initial datasets, in which case the model will perpetually fail to predict a higher-outputting input query point for those functions. 
 
 Because of these limitations, and despite the assumptions made that are stated above, the resulting next-query predictions remain exploratory estimates, not guarantees of beating the current known maximum for each function. 
 
-These limitations have likely prevented the pipeline to perform at its absolute best performance, have not prevented the BO ML model to further maximise the outputs of black-box functions and achieve significant progress.
+These limitations are real. Limitations (1) and (2), specifically, may have likely severely prevented the pipeline to perform at its absolute best performance, by delivering suboptimal results.
 
 <br> 
 <br> 
