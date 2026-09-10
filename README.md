@@ -1,5 +1,7 @@
+<br>
  <p align="center"> <strong> Black-Box Optimisation (BBO) Capstone Project - Bayesian Optimisation</strong> </p> 
 
+<br>
 <br>
 
 📝 <ins> **Project Description:** </ins> 
