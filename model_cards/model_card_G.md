@@ -9,7 +9,7 @@
 
 **Model Locations:** [`experiments/week_11`](https://github.com/carmen-timpau/BBO-Capstone-Project/tree/main/experiments/week_11); [`experiments/week_12`](https://github.com/carmen-timpau/BBO-Capstone-Project/tree/main/experiments/week_12).
 
-**Model Description:** Statistically Reliable, Reproducible, Transparent, Interpretable, Robust & Automated Joint Kernel-Acquisition Function Ablation Optimisation with Density-Enhanced K-Means Cluster Local-Box Sobol Search
+**Model Description:** Statistically Reliable, Reproducible, Transparent, Interpretable, Robust & Automated Joint Kernel-Acquisition Function Ablation Hyperparameter Optimisation with Density-Enhanced Best K-Means Cluster-Informed Local-Box Sobol Candidate Search-Driven Bayesian Optimisation
 
 <br> 
 <br> 
