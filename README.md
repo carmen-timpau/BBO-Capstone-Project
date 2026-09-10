@@ -48,9 +48,9 @@ For optimal navigability, _every week’s Bayesian Optimisation ML pipeline deve
 
 📄 **[Model Cards for Bayesian Optimisation ML Pipelines](https://github.com/carmen-timpau/BBO-Capstone-Project/blob/main/model_cards/model_cards_info.md)**
 
-The direct outputs of each weekly Bayesian Optimisation ML pipeline are all logged in the `diagnostics_results` subfolder within each corresponding week's folder. 
+The direct outputs of each weekly Bayesian Optimisation ML pipeline are all logged in the `diagnostics_results` subfolder within each corresponding week's folder for Weeks 6-13. For Weeks 1-5, the sole output of the pipeline was the next query prediction generated for each black-box function, which have been saved in the `queries/input_queries.md` file within each week's folder, as also described right below.
 
-A `queries/` subfolder within in each week’s folder keeps track of the input query points generated and submitted for every unknown function each week - stored in `input_queries.md` - along with the corresponding obtained outputs - stored in `query_outputs.md`. `stats.md` details the statistical analysis of the full incumbent dataset for each function _after_ the addition of the new query point of that respective week. 
+The `queries/` subfolder within in each week’s folder keeps track of the input query points generated and submitted for every unknown function each week - stored in `input_queries.md` - along with the corresponding obtained outputs - stored in `query_outputs.md`. `stats.md` details the statistical analysis of the full incumbent dataset for each function _after_ the addition of the new query point of that respective week. 
 
 <br>
 <br>
