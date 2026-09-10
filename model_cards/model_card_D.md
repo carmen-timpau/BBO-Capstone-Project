@@ -34,7 +34,7 @@ A grid-search style **standalone acquisition function ablation study** performed
 
 **HEBO-style Non-Linear Output Warping** [2] is implemented to handle function heteroscedasticities, which is accompanied by appropriate unwarping. Function 1 requires a specific log10 pre-transform with **data-driven clipping** floor and reversal to original scales on unwarping.
 
-**Dynamic Sobol Sampling Resolution Scaled to Input Dimensionality** is used for continuous-domain next-query candidate generation, with a fixed _Sobol seed.
+**Dynamic Sobol Sampling Resolution Scaled to Input Dimensionality** is used for continuous-domain next-query candidate generation, with a fixed Sobol seed.
 
 <br> 
 <br> 
