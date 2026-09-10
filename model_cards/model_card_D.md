@@ -114,7 +114,7 @@ The first limitation (1) contributes to a real bias in the possible optimisation
 
 Because of these limitations, and despite the assumptions made that are stated above, the resulting next-query predictions remain exploratory estimates, not guarantees of beating the current known maximum for each function. 
 
-These limitations are real. Limitations (1) and (2), specifically, may have likely severely prevented the pipeline to perform at its absolute best performance, by delivering suboptimal results.
+These limitations are real. Limitations (2) specifically may have likely severely prevented the pipeline to perform at its absolute best performance, by delivering suboptimal results.
 
 <br> 
 <br> 
@@ -125,7 +125,8 @@ This BO ML pipeline is fully reproducible across identical hardware configuratio
 
 By compiling the results in [`diagnostics_results`]( https://github.com/carmen-timpau/BBO-Capstone-Project/tree/main/experiments/week_08/diagnostics_results) in a detailed yet clear, concise and well-structured way, the key results of the BO ML model used for decision-making, as well as any relevant predicted next query values, the pipeline is highly transparent and easily interpretable. Transparency helps to also validate the reproducibility of the results generated using this ML model.
 
-Due to its reproducibility, transparency, interpretability, robustness and statistical reliability, this ML model or its core strategic principles may be adapted for responsible use in real-world Bayesian Optimisation problems.
+Due to its reproducibility, transparency, interpretability, robustness and statistical reliability, this ML model or its core strategic principles may be adapted for responsible use in real-world Bayesian Optimisation problems. However, because this ML model did not perform as desired (due to limitation (2) mentioned above, most likely), there are several other BO ML models developed within this capstone project (Model Cards E, F, G, H), which may be much more helpful, suitable and effective for such an application.
+
 This ML model does not make use of or produce any sensitive or personal information.
 
 <br> 
