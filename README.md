@@ -7,7 +7,7 @@
 
 📝 <ins> **Project Description:** </ins> 
 
-Given an initial dataset of true datapoints describing 8 different, unrelated and unknown Black-Box functions of varying dimensionality (2D-8D), each modelling  real-world processes within various application industries, this project aims to apply and refine Bayesian Optimisation to iteratively maximise each function over a period of 13 weeks of ML pipeline design and development.
+Given an initial dataset of true datapoints describing 8 different, unrelated and unknown Black-Box functions of varying dimensionality (2D-8D), each modelling  real-world processes within various application industries, this project aims to apply and refine Bayesian Optimisation to iteratively maximise each function over a period of 13 weeks of informed ML pipeline design and development.
 
 Each of the 8 Black-Box functions were characterised only by an initial small-sized set of individual datapoints (between 10-40) provided by Imperial College London at the beginning of the challenge and the functions' internal processes are completely unknown. 
 
