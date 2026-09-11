@@ -249,7 +249,14 @@ The initial datasets describing the 8 black-box functions, as well as the black-
 
 9. F. Zhang and Y. Chen. “Direct Regret Optimization in Bayesian Optimization.” arXiv:2507.06529, 2025. 
 
----------------------------------------------------------------------------------------------------------------------
+<br>
+<br>
+
+<ins> **Acknowledgements:** </ins> 
+
+I would like to express my sincere gratitude to the entire teaching faculty within the Executive Education programme at Imperial College London for their exceptional expertise and guidance. I would also like to recognize and particularly thank Vikesh Koul and Pulkit Saraf for their significant weekly insights and specialized industry expertise, which were instrumental to my progress.
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 <br>
 
