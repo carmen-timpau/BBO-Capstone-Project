@@ -23,6 +23,10 @@ Use cases to be avoided include the optimisation of unknown, black-box functions
 <br> 
 <br> 
 
+<ins>**Performance Results:** </ins> 
+
+Week 7's BBO ML Pipeline did not manage to further maximise any of the Black-Box functions.
+
 <br> 
 <br> 
 
