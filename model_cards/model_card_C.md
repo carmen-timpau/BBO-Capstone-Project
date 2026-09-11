@@ -16,7 +16,7 @@
 
 <ins> **Intended Use:** </ins>
 
-This Bayesian Optimisation ML model was developed and is intended for use as part of the Black-Box Optimisation (BBO) Challenge, during Week 7 of 13, for next-query prediction generation for each of the 7 given black-box functions. 
+This Bayesian Optimisation ML model was developed and is intended for use as part of the Black-Box Optimisation (BBO) Challenge, during Week 7 of 13, for next-query prediction generation for each of the 8 given black-box functions. 
 
 Use cases to be avoided include the optimisation of unknown, black-box functions which do not form part of this specific capstone project. In those cases, slight modifications are required to ensure that the number of functions investigated is appropriately matched within loops and any function-specific pre-processing is adapted to the new function(s)’ specific requirements (similar to the log10-transform of function 1’s very small outputs).
 
