@@ -44,7 +44,7 @@ The first limitation (1) contributes to a real bias in the possible optimisation
 
 Because of these limitations, and despite the assumptions made that are stated above, the resulting next-query predictions remain exploratory estimates, not guarantees of beating the current known maximum for each function. 
 
-These limitations are real. Limitation (2) specifically may have likely severely prevented the pipeline to perform at its absolute best performance, by delivering suboptimal results.
+These limitations, while very real and likely to have prevented the pipeline to perform at its absolute best performance, have not prevented the BO ML model to further maximise the outputs of black-box functions and achieve significant progress.
 
 <br> 
 <br> 
