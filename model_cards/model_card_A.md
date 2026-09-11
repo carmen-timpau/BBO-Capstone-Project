@@ -5,7 +5,7 @@
 
 **Week(s) of Deployment in BBO Capstone Project:** Weeks 1-5
 
-**Model Versions and Locations:** 
+**Model Versions & Locations:** 
 
 - **Version A.1.:** [`experiments/week_01`](https://github.com/carmen-timpau/BBO-Capstone-Project/tree/main/experiments/week_01)
 - **Version A.2.:** [`experiments/week_02`](https://github.com/carmen-timpau/BBO-Capstone-Project/tree/main/experiments/week_02)
