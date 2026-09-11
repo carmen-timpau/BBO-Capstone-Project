@@ -1,5 +1,7 @@
 **Model Card A**
 
+<br>
+<br>
 
 **Model Title:** BBO Initial Phase (Weeks 1-5) Full Bayesian Optimisation ML Pipeline
 
@@ -16,7 +18,6 @@
 **Model Description:** Manual, Data-Driven Kernel and Acquisition Function Hyperparameter Tuning-Informed Bayesian Optimisation
 
 <br>
-
 <br>
 
 <ins> **Ethical Considerations:** </ins>
