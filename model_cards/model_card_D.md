@@ -106,7 +106,7 @@ The main limitations of this BO ML model are:
 
 **(1)** the Sobol candidate generation across the high-dimensional input space was restricted by the per-dimension minimum and maximum values observed in the initial dataset for each black-box function, meaning that the search was only conducted within the bounding box defined by the initial datapoints for each black-box function; and 
 
-**(2)** the 'best' kernel and acquisition function pair to be used for next-query prediction for each black-box function are computed separately in this model, _via_ two sequential, standalone ablation studies, which completely disregard the direct and intrinsic interaction between the kernel and the acquisition function [1] in Bayesian Optimisation, and consequently their performance as a whole. By firstly selecting the kernel _via_ ablation and fixing it in place for each black-box function, to only then go on and perform an acquisition function ablation study in search for the 'best' acquisition function for each objective using only that fixed-in-place kernel chosen prior to this, the model may very likely deliver suboptimal results (hyperparameter settings), by being prevented to even test the performance of several kernel-acquisition function combinations as a whole; and
+**(2)** the 'best' kernel and acquisition function pair to be used for next-query prediction for each black-box function is computed separately in this model, _via_ two sequential, standalone ablation studies, which completely disregard the direct and intrinsic interaction between the kernel and the acquisition function [1] in Bayesian Optimisation, and consequently their performance as a whole. By firstly selecting the kernel _via_ ablation and fixing it in place for each black-box function, to only then go on and perform an acquisition function ablation study in search for the 'best' acquisition function for each objective using only that fixed-in-place kernel chosen prior to this, the model may very likely deliver suboptimal results (hyperparameter settings), by being prevented to even test the performance of several kernel-acquisition function combinations as a whole; and
 
 **(3)** the post-kernel ablation Breusch-Pagan-style analysis study performed does not output statistically valid p-values, as the residuals plotted are not OLS residuals, but computed using surrogate model predictions. This adapted study was not performed to achieve full statistical certainty over black-box function behaviour, but only to visually reveal and monitor homo-/heteroscedasticity in the black-box functions’ behaviour, based on the scattered residuals’ shape in the plots.  
 
@@ -114,7 +114,7 @@ The first limitation (1) contributes to a real bias in the possible optimisation
 
 Because of these limitations, and despite the assumptions made that are stated above, the resulting next-query predictions remain exploratory estimates, not guarantees of beating the current known maximum for each function. 
 
-These limitations are real. Limitations (2) specifically may have likely severely prevented the pipeline to perform at its absolute best performance, by delivering suboptimal results.
+These limitations are real. Limitation (2) specifically may have likely severely prevented the pipeline to perform at its absolute best performance, by delivering suboptimal results.
 
 <br> 
 <br> 
