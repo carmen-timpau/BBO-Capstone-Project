@@ -9,7 +9,7 @@
 
 **Model Location:** [`experiments/week_07`](https://github.com/carmen-timpau/BBO-Capstone-Project/tree/main/experiments/week_07)
 
-**Model Description:** Reproducible, Transparent, Interpretable & Automated Surrogate Model Selection (GP/Deep Ensemble of MLPs) and Sequential Standalone Kernel and Acquisition Function-Informed Bayesian Optimisation with Classifier-Informed (SVC/MLP) Acquisition Filtering
+**Model Description:** Reproducible, Transparent, Interpretable & Automated Surrogate Model Selection (GP/Deep Ensemble of MLPs) and Sequential Standalone Kernel and Acquisition Function Ablation Study-Informed Bayesian Optimisation with Classifier-Informed (SVC/MLP) Acquisition Filtering
 
 <br> 
 <br> 
