@@ -25,6 +25,8 @@ Use cases to be avoided include the optimisation of unknown, black-box functions
 
 <ins>**Performance Results:** </ins> 
 
+For each function, a complete summary of GP kernel ablation study results was printed, followed by the surrogate model architecture (GP/deep ensemble of MLPs) selection study results, the multi-step rollout acquisition ablation study results, and the NuSVM vs MLP classifier study results. This was finally followed by a printed summary with the next-query point input coordinates, along with the selected GP kernel, acqusition function used, as well as the chosen classifier (SVM/MLP) used for strict acquisition filtering. This makes the ML model highly transparent and interpretable, as all decision can be justified based on chosen performance/ranking metrics and the results obtained. The key study outputs of this BO ML pipeline are also plotted, as shown in the section below (_'Representative Model Outputs'_). 
+
 Week 7's BBO ML Pipeline did not manage to further maximise any of the Black-Box functions.
 
 <br> 
