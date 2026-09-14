@@ -55,7 +55,7 @@ This BO ML pipeline is fully reproducible across identical hardware configuratio
 
 By compiling the results in [`diagnostics_results`]( https://github.com/carmen-timpau/BBO-Capstone-Project/tree/main/experiments/week_06/diagnostics_results) in a detailed yet clear, concise and well-structured way, the key results of the BO ML model used for decision-making, as well as any relevant predicted next query values, the pipeline is highly transparent and easily interpretable. Transparency helps to also validate the reproducibility of the results generated using this ML model.
 
-Due to its reproducibility, transparency, interpretability, robustness and statistical reliability, this ML model or its core strategic principles may be adapted for responsible use in real-world Bayesian Optimisation problems. However, because this ML model did not perform as desired (due to limitation (2) mentioned above, most likely), there are several other BO ML models developed within this capstone project (Model Cards E, F, G, H), which may be much more helpful, suitable and effective for such an application.
+Due to its reproducibility, transparency, interpretability, robustness and statistical reliability, this ML model or its core strategic principles may be adapted for responsible use in real-world Bayesian Optimisation problems. However, there are several other more advanced BO ML models developed within this capstone project (Model Cards E, F, G, H), which may be much more helpful, suitable and effective for such an application.
 
 This ML model does not make use of or produce any sensitive or personal information.
 
