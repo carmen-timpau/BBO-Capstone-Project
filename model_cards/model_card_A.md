@@ -15,7 +15,7 @@
 - **Version A.4.:** [`experiments/week_04`](https://github.com/carmen-timpau/BBO-Capstone-Project/tree/main/experiments/week_04)
 - **Version A.5.:** [`experiments/week_05`](https://github.com/carmen-timpau/BBO-Capstone-Project/tree/main/experiments/week_05)
 
-**Model Description:** Manual, Data-Driven Kernel and Acquisition Function Hyperparameter Tuning-Informed Bayesian Optimisation
+**Model Description:** Manual, Iterative and Data-Driven Kernel and Acquisition Function Hyperparameter Tuning-Informed Bayesian Optimisation
 
 <br>
 <br>
