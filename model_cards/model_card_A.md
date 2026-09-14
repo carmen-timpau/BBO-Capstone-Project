@@ -29,6 +29,23 @@ Use cases to be avoided include the optimisation of unknown, black-box functions
 <br>
 <br>
 
+<br> 
+<br> 
+
+<ins> **Assumptions:** </ins>
+
+The main assumption that underlies this BO ML model is: 
+
+**(1)** that the hyperparameters of the GP kernels and acquisition functions employed for each function within each consecutive version (A.1-A.5) of this manually-tuned BO ML pipeline reflect incremental data-driven improvements for each function that aim to increase the quality of the next query predictions over time (Weeks 1-5 of the capstone project). 
+
+The above is considered an assumption, because it cannot be guaranteed that the week-by-week incremental BO ML model version (function-specific) tuning automatically leads to improvements, but they are intended to, based on previously obtained results, thus being a data-driven, manually tuned pipeline.
+In retrospect, considering the limited and expensive budget available for this project, this initial phase (Week 1-5) could have been shortened, to allow for a richer implementation of automated, offline testing and statistically-reliable ML models to be developed later on.
+Nonetheless, this model and its component versions (A.1-A.5) represent the initial phase of the capstone project which helped explore, reveal and document the black-box functions’ behaviour in response to different kernel and acqusition function hyperparameter settings. 
+
+<br> 
+<br> 
+
+
 <ins> **Ethical Considerations:** </ins>
 
 This ML model does not make use of or produce any sensitive or personal information.
