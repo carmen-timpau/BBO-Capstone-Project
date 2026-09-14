@@ -38,6 +38,18 @@ Function 1 required a specific log10 output pre-transform with a **1e-300 clippi
 <br> 
 <br> 
 
+<ins> **Additions to Previous Version:** </ins>
+
+In addition to the ML model deployed in Week 5 of the BBO capstone project, which is represented by the previous version of this model, described in [Model Card A](https://github.com/carmen-timpau/BBO-Capstone-Project/blob/main/model_cards/model_card_A.md), this model brings with it the following improvements:
+
+The Kernel and Acquisition Ablation Studies using Leave-One-Out Cross-Validation (LOOCV) performed to identify the (**assumed**, see _’Assumptions'_ section below) optimal GP kernel and acquisition method for each black-box function.
+
+Breusch-Pagan-style testing was performed both pre- (using GPs deployed during Week 5 query generation for each function) and post-Kernel Ablation Studies to assess the homo/heteroscedasticity of the Black-Box functions. This analysis was performed both pre- and post-Kernel Ablation Studies for comparative purposes, but only post-ablation results were taken into account.
+
+<br> 
+<br> 
+
+
 <ins>**Performance Results:** </ins> 
 
 For each function, a complete summary of GP kernel ablation study results was printed, followed a complete summary of acquisition ablation study results and finally a printed summary with the next-query point input coordinates, along with the selected GP kernel, acqusition function used. This makes the ML model highly transparent and interpretable, as all decision can be justified based on chosen performance/ranking metrics and the results obtained. 
