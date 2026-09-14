@@ -13,8 +13,6 @@ from sklearn.metrics import root_mean_squared_error, r2_score
 from sklearn.preprocessing import StandardScaler
 from statsmodels.stats.diagnostic import het_breuschpagan
 from sklearn.exceptions import ConvergenceWarning
-
-# Directly import the kernel suites at the top of the module
 from kernels import get_kernel_suite, get_kernel_suite_f1
 
 warnings.filterwarnings("ignore", category=ConvergenceWarning)
@@ -22,7 +20,7 @@ warnings.filterwarnings("ignore", category=ConvergenceWarning)
 
 def run_post_bp(data, top_kernels_summary):
     """
-    Runing post-ablation diagnostics, Breusch-Pagan tests, and generates a 2x4 master grid 
+    Runing post-ablation diagnostics, Breusch-Pagan tests, and generating a 2x4 master grid 
     residual plot for Functions 1 through 8 using winning kernel configurations.
     """
     script_dir = os.path.dirname(os.path.abspath(__file__))
