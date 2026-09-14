@@ -20,6 +20,15 @@
 <br>
 <br>
 
+<ins> **Intended Use:** </ins>
+
+This Bayesian Optimisation overall ML model design and its individual (specific) versions A.1-A.5 were developed and are intended for use as part of the Black-Box Optimisation (BBO) Challenge, during Weeks 1-5 of 13, for weekly next-query prediction generation for each of the 8 given black-box functions. 
+
+Use cases to be avoided include the optimisation of unknown, black-box functions which do not form part of this specific capstone project. In those cases, slight modifications are required to ensure that the number of functions investigated is appropriately matched within loops and any required function-specific pre-processing is added to the pipeline to satisfy all of the new function(s)’ specific requirements.
+
+<br>
+<br>
+
 <ins> **Ethical Considerations:** </ins>
 
 This ML model does not make use of or produce any sensitive or personal information.
