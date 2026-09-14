@@ -25,7 +25,7 @@ Use cases to be avoided include the optimisation of unknown, black-box functions
 
 <ins> **Model Characteristics:** </ins>
 
-This Bayesian Optimisation ML model makes use of Gaussian Processes (GPs) to perform surrogate modelling for each of the 8 black-box functions investigated in this capstone project, and uses acquisition functions (UCB, EI, PI) to predict the next-query point to be submitted for the expensive execution of the real functions for Week 6.
+This Bayesian Optimisation ML model makes use of Gaussian Processes (GPs) to perform surrogate modelling of each of the 8 black-box functions investigated in this capstone project, and uses acquisition functions (UCB, EI, PI) to predict the next-query point to be submitted for the expensive execution of the real functions for Week 6.
 
 <br> 
 <br> 
