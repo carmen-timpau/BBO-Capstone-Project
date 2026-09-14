@@ -50,4 +50,9 @@ Nonetheless, this model and its component versions (A.1-A.5) represent the initi
 
 <ins> **Ethical Considerations:** </ins>
 
+This BO ML pipeline lacks reproducibility in its generated next-query predictions, as no random_state variables were specified for any pseudo-random number generation instances, in any of the deployed versions (A.1-A.5), leaving all stochastic components uncontrolled. As noted in the section addressing the limitations of this model above, this aspect significantly impacts the model’s trustworthiness and reproducibility, key ethical considerations that have been fully addressed in subsequent BO ML models developed as part of this project (Model Cards B-H).
+
+Due to its uncontrolled stochastic behaviour - which reduces the trustworthiness and reproducibility of this ML model - and the absence of built-in statistically reliable hyperparameter optimisation methods - which can lead to suboptimal performance and an inefficient use of the limited evaluation budget typical of BO settings), this BO ML model is not recommended for real-world Bayesian Optimisation problems. However, more advanced BO ML models developed later in this capstone project (Model Cards E, F, G, H), completely address these issues and are fully reproducible, statistically reliable and much more helpful, suitable and effective for such applications.
+
 This ML model does not make use of or produce any sensitive or personal information.
+
