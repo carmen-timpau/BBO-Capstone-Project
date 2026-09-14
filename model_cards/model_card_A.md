@@ -38,12 +38,12 @@ This BO ML model deployed in Weeks 1-5 of the BBO capstone project, by employing
 
 |<p align="center"> Model Version </p>   | <p align="center"> Week Deployed  </p>  | <p align="center"> Functions Further Maximised </p> |  <p align="center"> # of Functions Further Maximised. </p>|
 |----------------------------------------|-----------------------------------------|-----------------------------------------------------|-----------------------------------|
-| <p align="center"> A.1. </p>           |  <p align="center">   Week 1 </p>       |  <p align="center">   Function 8    </p>            |  <p align="center"> 1 </p>        |
-| <p align="center"> A.2. </p>           |  <p align="center">   Week 2 </p>       |  <p align="center">  Functions 4, 8 </p>            |  <p align="center"> 2 </p>        |
-| <p align="center"> A.3. </p>           |  <p align="center">   Week 3 </p>       |  <p align="center">   - </p>                        |  <p align="center"> 0 </p>        |
-| <p align="center"> A.4. </p>           |  <p align="center">   Week 4 </p>       |  <p align="center">   Functions 6, 7 </p>           |  <p align="center"> 2 </p>        |
-| <p align="center"> A.5. </p>           |  <p align="center">   Week 5 </p>       |  <p align="center">   Functions 2, 4, 5, 6, 7 </p>  |  <p align="center"> 5 </p>        |
-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+| <p align="center"> **A.1.** </p>           |  <p align="center">   Week 1 </p>       |  <p align="center">   Function 8    </p>            |  <p align="center"> 1 </p>        |
+| <p align="center"> **A.2.** </p>           |  <p align="center">   Week 2 </p>       |  <p align="center">  Functions 4, 8 </p>            |  <p align="center"> 2 </p>        |
+| <p align="center"> **A.3.** </p>           |  <p align="center">   Week 3 </p>       |  <p align="center">   - </p>                        |  <p align="center"> 0 </p>        |
+| <p align="center"> **A.4.** </p>           |  <p align="center">   Week 4 </p>       |  <p align="center">   Functions 6, 7 </p>           |  <p align="center"> 2 </p>        |
+| <p align="center"> **A.5**. </p>           |  <p align="center">   Week 5 </p>       |  <p align="center">   Functions 2, 4, 5, 6, 7 </p>  |  <p align="center"> 5 </p>        |
+
 
 <br> 
 <br> 
