@@ -29,6 +29,22 @@ Use cases to be avoided include the optimisation of unknown, black-box functions
 <br>
 <br>
 
+
+<ins>**Performance Results:** </ins> 
+
+This ML model only outputs, for each function, the predicted next-query point input coordinates. Considering that the BO hyperparameters are already defined within each version A.1-A.5 for each black-box function (and therefore they are clearly known), this ML model is, through its simplicity, highly transparent. It lacks reproducibility, however, which is a limitation discussed further in the corresponding section below.
+
+This BO ML model deployed in Weeks 1-5 of the BBO capstone project, by employing versions A.1 through to A.5, managed to further maximise different black-box functions, based on the version used at each point in time, as detailed below. 
+
+|<p align="center"> Model Version </p>   | <p align="center"> Week Deployed  </p>  | <p align="center"> Functions Further Maximised </p> |  <p align="center"> # of Functions Further Maximised. </p>|
+|----------------------------------------|-----------------------------------------|-----------------------------------------------------|-----------------------------------|
+| <p align="center"> A.1. </p>           |  <p align="center">   Week 1 </p>       |  <p align="center">   Function 8    </p>            |  <p align="center"> 1 </p>        |
+| <p align="center"> A.2. </p>           |  <p align="center">   Week 2 </p>       |  <p align="center">  Functions 4, 8 </p>            |  <p align="center"> 2 </p>        |
+| <p align="center"> A.3. </p>           |  <p align="center">   Week 3 </p>       |  <p align="center">   - </p>                        |  <p align="center"> 0 </p>        |
+| <p align="center"> A.4. </p>           |  <p align="center">   Week 4 </p>       |  <p align="center">   Functions 6, 7 </p>           |  <p align="center"> 2 </p>        |
+| <p align="center"> A.5. </p>           |  <p align="center">   Week 5 </p>       |  <p align="center">   Functions 2, 4, 5, 6, 7 </p>  |  <p align="center"> 5 </p>        |
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
 <br> 
 <br> 
 
