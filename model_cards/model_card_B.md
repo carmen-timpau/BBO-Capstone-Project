@@ -32,6 +32,11 @@ This BO ML model deployed in Week 6 of the BBO capstone project managed to furth
 <br> 
 <br> 
 
+<ins>**Representative Model Outputs:** </ins>
+
+The execution output results produced by this ML model post-deployment on [`wk6_input_data.pkl`]( https://github.com/carmen-timpau/BBO-Capstone-Project/blob/main/experiments/week_06/wk6_input_data.pkl) input data in Week 6 of the BBO capstone project can be accessed at: [`experiments/week_06/diagnostics_results`]( https://github.com/carmen-timpau/BBO-Capstone-Project/tree/main/experiments/week_06/diagnostics_results).
+
+
 <ins> **Limitations, Biases & Potential Failure Modes:** </ins>
 
 The main limitations of this BO ML model are:
