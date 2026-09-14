@@ -25,7 +25,7 @@ Use cases to be avoided include the optimisation of unknown, black-box functions
 
 <ins> **Model Characteristics:** </ins>
 
-This Bayesian Optimisation ML model makes use of Gaussian Processes (GPs) to perform surrogate modelling for each of the 8 black-box functions investigated in this capstone project, and uses acquisition functions (UCB, EI, PI) to predict the next-query point to be submitted for the expensive execution of the real functions for Week 7.
+This Bayesian Optimisation ML model makes use of Gaussian Processes (GPs) or Deep Ensembles of Neural Networks (Multi-Layered Perceptrons, MLPs) to perform surrogate modelling for each of the 8 black-box functions investigated in this capstone project, and uses acquisition functions (UCB, EI, PI) to predict the next-query point to be submitted for the expensive execution of the real functions for Week 7.
 
 The GP kernels and related hyperparameters to be used for predicting the next query point for each black-box function in next-query prediction is selected _via_ a grid-search style **Standalone GP Kernel Ablation Study** for surrogate model hyperparameter optimisation. This is performed individually for each black-box function, using **Leave-One-Out Cross-Validation (LOOCV) R²** as an out-of-sample (generalization) predictive performance metric to rank the fitting performance of the [6 tested kernels]( https://github.com/carmen-timpau/BBO-Capstone-Project/blob/main/experiments/week_07/kernel_ablation/kernels.py) on the unknown functions.
 
