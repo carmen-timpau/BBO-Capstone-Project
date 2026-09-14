@@ -25,10 +25,10 @@ Kernel and Acquisition Ablation Studies using Leave-One-Out Cross-Validation (LO
 
 Pre- and Post-Kernel Ablation Studies Breusch-Pagan testing was performed to assess the homo/heteroscedasticity of the Black-Box functions. The obtained results are summarised below:
 
-Breusch Pagan testing (pre-kernel ablation) using GPs deployed during Week 5 query generation for each function (the strategy itself was manually optimised up until that point) showed that Functions 2, 3 and 4 are Heteroscedastic and may require targeted algorthm modifications in the future for overcome the limitations of classical Bayesian Optimisation and Gaussian Processes (which assumes homoscedasticity). Function 2 also showed a strong linear pattern for the residuals plot vs the ML model predictions, indicating the model is strongly biased and therefore a kernel ablation study is required to properly optimise the GP and remove any pre-existing bias to ensure accurate query predictions in the future.
+Breusch-Pagan-style testing (pre-kernel ablation) using GPs deployed during Week 5 query generation for each function (the strategy itself was manually optimised up until that point) showed that Functions 2, 3 and 4 are Heteroscedastic and may require targeted algorthm modifications in the future for overcome the limitations of classical Bayesian Optimisation and Gaussian Processes (which assumes homoscedasticity). Function 2 also showed a strong linear pattern for the residuals plot vs the ML model predictions, indicating the model is strongly biased and therefore a kernel ablation study is required to properly optimise the GP and remove any pre-existing bias to ensure accurate query predictions in the future.
 
-Breusch Pagan testing post-kernel ablation studies concluded that Functions 3, 4 and 5 are Heteroscedastic.
+Breusch-Pagan-style testing post-kernel ablation studies concluded that Functions 3, 4 and 5 are Heteroscedastic.
 
-The Breusch-Pagan testing was performed both Pre- and Post-Kernel Ablation Studies for comparative purposes, but onlu post-ablation results will be taken into account.
+The Breusch-Pagan-style testing was performed both Pre- and Post-Kernel Ablation Studies for comparative purposes, but only post-ablation results will be taken into account.
 
 Heteroscedasticity will not be adressed this week, as knowing which functions are heteroscedastic before tackling this problem will allow the performance of fully ablated models to be assessed independently of noise variance-adressing methods, which will reveal important insights. However, function heteroscedasticity will be dealt with immediately after, in Week 7.
