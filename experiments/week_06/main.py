@@ -10,13 +10,13 @@ def main():
     with open("wk6_input_data.pkl", "rb") as file:
         data = pickle.load(file) 
 
-    print("\n[STEP 1] Running Pre-Kernel Ablation Breusch-Pagan Test...")
+    print("\n[STEP 1] Running Pre-Kernel Ablation Breusch-Pagan-like Test...")
     run_pre_bp(data)
 
     print("\n[STEP 2] Running Kernel Ablation Study...")
     top_kernels = run_kernel_ablation(data)
 
-    print("\n[STEP 3] Running Post-Kernel Ablation Breusch-Pagan Test...")
+    print("\n[STEP 3] Running Post-Kernel Ablation Breusch-Pagan-like Test...")
     run_post_bp(data, top_kernels)
 
     print("\n[STEP 4] Running Acquisition Ablation Study...")
