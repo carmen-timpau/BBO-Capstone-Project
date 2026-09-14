@@ -31,6 +31,10 @@ The GP kernels and related hyperparameters to be used for predicting the next qu
 
 A grid-search style **Standalone Acquisition Function Ablation Study** using a list of [5 acquisition strategies](https://github.com/carmen-timpau/BBO-Capstone-Project/blob/main/experiments/week_06/acq_strategies.py), is performed to select the acquisition function to use in next-query prediction. The **mean leave-one-out cross-validation (LOOCV) rank‑percentile metric** is implemented as the performance metric used for ranking. The best-performing GP kernel for each function identified in the ablation study conducted prior (see above) is selected to model the black-box functions during this ablation study for each unknown function. 
 
+**Dynamic Sobol Sampling Resolution Scaled to Input Dimensionality** is used for continuous-domain next-query candidate generation, with a fixed Sobol seed.
+
+Function 1 required a specific log10 output pre-transform with a **1e-300 clipping** floor.
+
 <br> 
 <br> 
 
