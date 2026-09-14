@@ -29,6 +29,8 @@ This Bayesian Optimisation ML model makes use of Gaussian Processes (GPs) to per
 
 The GP kernels and related hyperparameters to be used for predicting the next query point for each black-box function in next-query prediction is selected _via_ a grid-search style **Standalone GP Kernel Ablation Study** for surrogate model hyperparameter optimisation. This is performed individually for each black-box function, using **Leave-One-Out Cross-Validation (LOOCV) R²** as an out-of-sample (generalization) predictive performance metric to rank the fitting performance of the [6 tested kernels]( https://github.com/carmen-timpau/BBO-Capstone-Project/blob/main/experiments/week_06/kernels.py) on the unknown functions.
 
+Breusch-Pagan-style testing is performed both pre- (using GP kernels employed during Week 5 query generation for each function) and post-Kernel Ablation Studies to assess the homo/heteroscedasticity of the black-box functions.
+
 A grid-search style **Standalone Acquisition Function Ablation Study** using a list of [5 acquisition strategies](https://github.com/carmen-timpau/BBO-Capstone-Project/blob/main/experiments/week_06/acq_strategies.py), is performed to select the acquisition function to use in next-query prediction. The **mean leave-one-out cross-validation (LOOCV) rank‑percentile metric** is implemented as the performance metric used for ranking. The best-performing GP kernel for each function identified in the ablation study conducted prior (see above) is selected to model the black-box functions during this ablation study for each unknown function. 
 
 **Dynamic Sobol Sampling Resolution Scaled to Input Dimensionality** is used for continuous-domain next-query candidate generation, with a fixed Sobol seed.
