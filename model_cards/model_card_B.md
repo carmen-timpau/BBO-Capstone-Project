@@ -60,7 +60,7 @@ The main assumptions that underlie this strategy are:
 
 **(1)** that the sets of 6 kernels and 5 acquisition functions implemented within the sequential, standalone kernel and function ablation studies conducted in this BO ML pipeline are overarching and exhaustive enough to truly identify the best performing GP kernel and acquisition function pair to use for each function to predict the highest-quality next query; and
 
-**(2)** that using leave-one-out cross-validation (LOOCV) R² as the performance metric used for ranking to identify the best-performing GP kernel for each black-box function directly translates into the kernel-acquisition function pair which would generate the highest-quality predicted next query point _via_ Bayesian Optimisation; and
+**(2)** that using leave-one-out cross-validation (LOOCV) R² as the performance metric used for ranking to identify the best-performing GP kernel for surrogate modelling of each black-box function directly translates into the kernel-acquisition function pair which would generate the highest-quality predicted next query point _via_ Bayesian Optimisation; and
 
 **(3)** that using the mean leave-one-out cross-validation (LOOCV) rank‑percentile as the performance metric used for ranking to identify the best-performing acquisition function for each black-box function directly translates into the kernel-acquisition function pair which would generate the highest-quality predicted next query point _via_ Bayesian Optimisation. 
 
