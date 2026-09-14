@@ -72,6 +72,9 @@ The post-kernel ablation Breusch-Pagan-style residuals analysis plot generated b
 
 <img width="5963" height="2952" alt="post_ablation_residuals_plots" src="https://github.com/user-attachments/assets/82e78085-d087-4a17-9f39-61186cf613e8" />
 
+<br> 
+<br> 
+
 **Figure 1.** _Standalone* Post-Kernel Ablation Residuals Plot to Inform Homo-/Heteroscedastic Behaviour of the 8 Unknown, Black-Box Functions._ GP predictions were used; therefore, this is only an informational Breusch-Pagan-style analysis study, that may point towards function homo/heteroscedasticity, but where the p-value is strictly not statistically valid. For the latter to be the case, the residuals must be ordinary least squares (OLS) residuals [3], not calculated using surrogate models. This adapted study was not performed to achieve full statistical certainty over black-box function behaviour, but only to visually reveal and monitor homo-/heteroscedasticity in the black-box functions’ behaviour, based on the scattered residuals’ shape in the plots.  
 
 <br> 
