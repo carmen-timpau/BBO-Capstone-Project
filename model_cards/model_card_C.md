@@ -23,6 +23,37 @@ Use cases to be avoided include the optimisation of unknown, black-box functions
 <br> 
 <br> 
 
+<ins> **Model Characteristics:** </ins>
+
+This Bayesian Optimisation ML model makes use of Gaussian Processes (GPs) to perform surrogate modelling for each of the 8 black-box functions investigated in this capstone project, and uses acquisition functions (UCB, EI, PI) to predict the next-query point to be submitted for the expensive execution of the real functions for Week 7.
+
+The GP kernels and related hyperparameters to be used for predicting the next query point for each black-box function in next-query prediction is selected _via_ a grid-search style **Standalone GP Kernel Ablation Study** for surrogate model hyperparameter optimisation. This is performed individually for each black-box function, using **Leave-One-Out Cross-Validation (LOOCV) R²** as an out-of-sample (generalization) predictive performance metric to rank the fitting performance of the [6 tested kernels]( https://github.com/carmen-timpau/BBO-Capstone-Project/blob/main/experiments/week_07/kernel_ablation/kernels.py) on the unknown functions.
+
+A **Surrogate Model Architecture Comparison Study** is then performed as part of this pipeline to evaluate whether a _Gaussian Process_ or _Deep Ensemble of Neural Networks_ (Multi-Layer Perceptrons, MLPs) better models each of the Black-Box functions (performed individually for each function), using **Root Mean Squared Error (RMSE)** as a surrogate model performance metric, evaluated out-of-sample _via_ **Leave-One-Out Cross-Validation (LOOCV)**.
+
+A grid-search style **Standalone Acquisition Function Ablation Study** using a list of [5 acquisition strategies](https://github.com/carmen-timpau/BBO-Capstone-Project/blob/main/experiments/week_07/acquisition_ablation/acq_strategies.py), is performed _via_ a **Multi-Step Sequential Offline Bayesian Optimization Rollout** to select the acquisition function to use in next-query prediction. The **Area Under the Regret Curve (AURC)** is implemented as the performance metric used for ranking, capturing convergence speed (i.e. long-term cumulative regret). The best-performing surrogate model for each function identified from the studies conducted prior (see above) is selected to model the black-box functions during this ablation study for each unknown function. 
+A **Binary Classifier Architecture Comparison Study** then benchmarks NuSVC against MLP, using the out-of-sample stratified 3-fold cross validation Receiver Operating Characteristic - Area Under the Curve (ROC-AUC) scores to assess their performance at correctly classifying the top-25% highest-output datapoints within the dataset of each Black-Box function. The best-performing classifier for each function was used to conduct a **Classifier-informed Space Reduction and Acquisition Filtering** during next-query prediction (implemented to enhance the quality of the predicted query based on past best-outputting data of each function) using the surrogate model, kernel - if using GP - and acquisition function selected for each of the 8 black-box functions in the 3 studies already described above.
+
+**HEBO-style Non-Linear Output Warping** [2] is implemented to handle function heteroscedasticities, which is accompanied by appropriate unwarping at the end - function 1 required a specific log10 output pre-transform with a **1e-300 clipping** floor prior to the HEBO-inspired warping.
+
+**Dynamic Sobol Sampling Resolution Scaled to Input Dimensionality** is used for continuous-domain next-query candidate generation, with a fixed Sobol seed.
+
+<br> 
+<br> 
+
+<ins> **Additions to Previous Version:** </ins>
+
+In addition to the ML model deployed in Week 6 of the BBO capstone project, which is represented by the previous version of this model, described in [Model Card B](https://github.com/carmen-timpau/BBO-Capstone-Project/blob/main/model_cards/model_card_B.md), this model brings with it the following improvements:
+
+The Surrogate Model Architecture Comparison Study was added this week to the pipeline to evaluate whether a _Gaussian Process_ or _Deep Ensemble of Neural Networks_ (Multi-Layer Perceptrons, MLPs) better models each of the Black-Box functions.
+The acquisition ablation study was improved from the previous week, by using a different, better performance metric to rank the acqusition functions based on the overall goal of the capstone project of global function maximisation. Instead of using the mean leave-one-out cross validation (LOOCV) rank‑percentile metric used in Week 6 (not ideal for achieving the projects’ goal), the long-term cumulative regret (Area Under the Regret Curve, AURC) was used instead in Week 7 to prevent suboptimal ablation study results.
+The Binary Classifier Architecture Comparison Study was also implemented this week to benchmark NuSVC against MLP to assess their performance at correctly classifying the top-25% highest-output datapoints within the dataset of each Black-Box function. The best-performing classifier for each function was used to conduct a **Classifier-informed Space Reduction and Acquisition Filtering** during next-query prediction in an attempt to improve their quality.
+In response to previously identifying heteroscedastic behaviour within some of the 8 black-box functions during a Breusch-Pagan-style analysis performed in Week 6, **HEBO-style Non-Linear Output Warping** [2] was implemented for the first time this week to handle function heteroscedasticities and ensure that the GP (expecting homoscedastic behaviour only) models the unknown functions well. Function 1 required a specific log10 output pre-transform with a **1e-300 clipping** floor prior to the HEBO-inspired warping.
+
+<br> 
+<br> 
+
+
 <ins>**Performance Results:** </ins> 
 
 For each function, a complete summary of GP kernel ablation study results was printed, followed by the surrogate model architecture (GP/deep ensemble of MLPs) selection study results, the multi-step rollout acquisition ablation study results, and the NuSVM vs MLP classifier study results. This was finally followed by a printed summary with the next-query point input coordinates, along with the selected GP kernel, acqusition function used, as well as the chosen classifier (SVM/MLP) used for strict acquisition filtering. This makes the ML model highly transparent and interpretable, as all decision can be justified based on chosen performance/ranking metrics and the results obtained. The key study outputs of this BO ML pipeline are also plotted, as shown in the section below (_'Representative Model Outputs'_). 
