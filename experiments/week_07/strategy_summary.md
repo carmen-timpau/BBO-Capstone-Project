@@ -10,5 +10,5 @@
    
 5. Used **Dynamic Sobol Sampling Resolution strategy based on dimensionality** to ensure high candidate resolution for high-dimensional spaces.
 
-6. Implemented **HEBO-inspired Non-linear Output Warping** for all functions to stabilize target variance and mitigate heteroscedasticity, improving the surrogate model's predictive accuracy during hyperparameter optimization - function 1 required a specific log10 output pre-transform with a **1e-300 clipping** floor prior to the HEBO-inspured warping.
+6. Implemented **HEBO-inspired Non-linear Output Warping** for all functions to stabilize target variance and mitigate heteroscedasticity, improving the surrogate model's predictive accuracy during hyperparameter optimization - function 1 required a specific log10 output pre-transform with a **1e-300 clipping** floor prior to the HEBO-inspired warping.
 
