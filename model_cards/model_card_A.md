@@ -36,7 +36,7 @@ This ML model only outputs, for each function, the predicted next-query point in
 
 This BO ML model deployed in Weeks 1-5 of the BBO capstone project, by employing versions A.1 through to A.5, managed to further maximise different black-box functions, based on the version used at each point in time, as detailed below. 
 
-|<p align="center"> Model Version </p>   | <p align="center"> Week Deployed  </p>  | <p align="center"> Functions Further Maximised </p> |  <p align="center"> # of Functions Further Maximised. </p>|
+|<p align="center"> Model Version </p>   | <p align="center"> Week Deployed  </p>  | <p align="center"> Functions Further Maximised </p> |  <p align="center"> # of Functions Further Maximised </p>|
 |----------------------------------------|-----------------------------------------|-----------------------------------------------------|-----------------------------------|
 | <p align="center"> **A.1.** </p>           |  <p align="center">   Week 1 </p>       |  <p align="center">   Function 8    </p>            |  <p align="center"> 1 </p>        |
 | <p align="center"> **A.2.** </p>           |  <p align="center">   Week 2 </p>       |  <p align="center">  Functions 4, 8 </p>            |  <p align="center"> 2 </p>        |
