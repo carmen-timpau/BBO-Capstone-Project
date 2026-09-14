@@ -32,12 +32,14 @@ Use cases to be avoided include the optimisation of unknown, black-box functions
 
 <ins> **Model Characteristics:** </ins>
 
-This Bayesian Optimisation ML model makes use of Gaussian Processes (GPs) to perform surrogate modelling of each of the 8 black-box functions investigated in this capstone project, and uses acquisition functions (UCB, EI, PI) to predict the next-query point to be submitted for the expensive execution of the real functions in Week 6.
+This Bayesian Optimisation ML model makes use of Gaussian Processes (GPs) to perform surrogate modelling of each of the 8 black-box functions investigated in this capstone project, and uses acquisition functions (UCB, EI, PI) to predict the next-query point to be submitted for the expensive execution of the real functions between Weeks 1-5. **Sobol Sampling** is used for continuous-domain next-query candidate generation.
 
 The GP kernel, acquisition function and their corresponding hyperparameters to be used for predicting the next query point for each black-box function are selected manually following an iterative (over the initial 5-week phase of the capstone project), data-driven strategy, meant to freely explore each functions’ behaviour under various Bayesian Optimisation hyperparameter settings. These are shown in **Table 1** below:
 
 <p align="center"> <strong>Table 1.</strong> Performance of ML Model A Versions A.1. - A.5. Based on the Number of Functions Maximised Each Week </p>
 
+<div align="center">
+  
 |<p align="center"> Model Version </p>   | <p align="center"> Week Deployed  </p>  |  <p align="center"> Location </p> |  <p align="center"> Per-Function Hyperparameter Configurations </p> | 
 |----------------------------------------|-----------------------------------------|-----------------------------------------------------|-----------------------------------|
 | <p align="center"> **A.1.** </p>       |  <p align="center">   Week 1 </p>       |  <p align="center">   [`week_01/main.py`](https://github.com/carmen-timpau/BBO-Capstone-Project/blob/main/experiments/week_01/main.py)    </p>            |  <p align="center"> [`week_01/config.py`](https://github.com/carmen-timpau/BBO-Capstone-Project/blob/main/experiments/week_01/config.py)  </p>        |
@@ -46,8 +48,7 @@ The GP kernel, acquisition function and their corresponding hyperparameters to b
 | <p align="center"> **A.4.** </p>       |  <p align="center">   Week 4 </p>       |  <p align="center">   [`week_04/main.py`](https://github.com/carmen-timpau/BBO-Capstone-Project/blob/main/experiments/week_04/main.py)    </p>            |  <p align="center"> [`week_04/config.py`](https://github.com/carmen-timpau/BBO-Capstone-Project/blob/main/experiments/week_04/config.py)  </p>        |
 | <p align="center"> **A.5.** </p>       |  <p align="center">   Week 5 </p>       |  <p align="center">   [`week_05/main.py`](https://github.com/carmen-timpau/BBO-Capstone-Project/blob/main/experiments/week_05/main.py)    </p>            |  <p align="center"> [`week_05/config.py`](https://github.com/carmen-timpau/BBO-Capstone-Project/blob/main/experiments/week_05/config.py)  </p>        |
 
-
-**Sobol Sampling** is used for continuous-domain next-query candidate generation.
+</div>
 
 <br> 
 <br> 
@@ -60,6 +61,9 @@ This ML model only outputs, for each function, the predicted next-query point in
 This BO ML model deployed in Weeks 1-5 of the BBO capstone project, by employing versions A.1 through to A.5, managed to further maximise different black-box functions, based on the version used at each point in time, as detailed below in **Table 2**. 
 
 <p align="center"> <strong>Table 2.</strong> Performance of ML Model A Versions A.1. - A.5., Based on the Number of Functions Maximised Each Week </p>p>
+
+<div align="center">
+  
 |<p align="center"> Model Version </p>   | <p align="center"> Week Deployed  </p>  | <p align="center"> Functions Further Maximised </p> |  <p align="center"> # of Functions Further Maximised </p>|
 |----------------------------------------|-----------------------------------------|-----------------------------------------------------|-----------------------------------|
 | <p align="center"> **A.1.** </p>           |  <p align="center">   Week 1 </p>       |  <p align="center">   Function 8    </p>            |  <p align="center"> 1 </p>        |
@@ -68,6 +72,7 @@ This BO ML model deployed in Weeks 1-5 of the BBO capstone project, by employing
 | <p align="center"> **A.4.** </p>           |  <p align="center">   Week 4 </p>       |  <p align="center">   Functions 6, 7 </p>           |  <p align="center"> 2 </p>        |
 | <p align="center"> **A.5**. </p>           |  <p align="center">   Week 5 </p>       |  <p align="center">   Functions 2, 4, 5, 6, 7 </p>  |  <p align="center"> 5 </p>        |
 
+</div>
 
 <br> 
 <br> 
