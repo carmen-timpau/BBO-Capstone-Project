@@ -36,7 +36,7 @@ This Bayesian Optimisation ML model makes use of Gaussian Processes (GPs) to per
 
 The GP kernel, acquisition function and their corresponding hyperparameters to be used for predicting the next query point for each black-box function are selected manually following an iterative (over the initial 5-week phase of the capstone project), data-driven strategy, meant to freely explore each functions’ behaviour under various Bayesian Optimisation hyperparameter settings. These are shown in **Table 1** below:
 
-<p align="center"> <strong>Table 1.</strong> Performance of ML Model A Versions A.1. - A.5. Based on the Number of Functions Maximised Each Week </p>p>
+<p align="center"> <strong>Table 1.</strong> Performance of ML Model A Versions A.1. - A.5. Based on the Number of Functions Maximised Each Week </p>
 
 |<p align="center"> Model Version </p>   | <p align="center"> Week Deployed  </p>  |  <p align="center"> Location </p> |  <p align="center"> Per-Function Hyperparameter Configurations </p> | 
 |----------------------------------------|-----------------------------------------|-----------------------------------------------------|-----------------------------------|
