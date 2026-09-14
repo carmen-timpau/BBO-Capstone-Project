@@ -25,6 +25,8 @@ Use cases to be avoided include the optimisation of unknown, black-box functions
 
 <ins>**Performance Results:** </ins> 
 
+For each function, a complete summary of GP kernel ablation study results was printed, followed a complete summary of acquisition ablation study results and finally a printed summary with the next-query point input coordinates, along with the selected GP kernel, acqusition function used. This makes the ML model highly transparent and interpretable, as all decision can be justified based on chosen performance/ranking metrics and the results obtained. 
+
 This BO ML model deployed in Week 6 of the BBO capstone project managed to further maximise 4 out of 8 black-box functions, specifically Functions 2, 4, 5, 6.
 
 <br> 
