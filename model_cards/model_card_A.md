@@ -40,7 +40,7 @@ The GP kernel, acquisition function and their corresponding hyperparameters to b
 
 <div align="center">
   
-|<p align="center"> BO ML Model Version </p>   | <p align="center"> Week Deployed  </p>  |  <p align="center"> Location </p> |  <p align="center"> Per-Function Hyperparameter Configurations </p> | 
+|<p align="center"> BO ML Model Version </p>   | <p align="center"> Week Deployed  </p>  |  <p align="center"> Model Version Location </p> |  <p align="center"> Per-Function Hyperparameter Configurations </p> | 
 |----------------------------------------|-----------------------------------------|-----------------------------------------------------|-----------------------------------|
 | <p align="center"> **A.1.** </p>       |  <p align="center">   Week 1 </p>       |  <p align="center">   [`week_01/main.py`](https://github.com/carmen-timpau/BBO-Capstone-Project/blob/main/experiments/week_01/main.py)    </p>            |  <p align="center"> [`week_01/config.py`](https://github.com/carmen-timpau/BBO-Capstone-Project/blob/main/experiments/week_01/config.py)  </p>        |
 | <p align="center"> **A.2.** </p>       |  <p align="center">   Week 2 </p>       |  <p align="center">   [`week_02/main.py`](https://github.com/carmen-timpau/BBO-Capstone-Project/blob/main/experiments/week_02/main.py)    </p>            |  <p align="center"> [`week_02/config.py`](https://github.com/carmen-timpau/BBO-Capstone-Project/blob/main/experiments/week_02/config.py)  </p>        |
