@@ -1,6 +1,7 @@
 # Week 6 BBO - Breusch-Pagan Homoscedasticity Analysis & Diagnostics for Functions 1-8
 # Using the winning kernel objects dynamically retrieved from the previously completed Kernel Ablation Study
 
+import os
 import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
@@ -8,22 +9,36 @@ import statsmodels.api as sm
 import warnings
 
 from sklearn.gaussian_process import GaussianProcessRegressor
-from sklearn.gaussian_process.kernels import Matern, RBF, RationalQuadratic, WhiteKernel
 from sklearn.metrics import root_mean_squared_error, r2_score
 from sklearn.preprocessing import StandardScaler
 from statsmodels.stats.diagnostic import het_breuschpagan
 from sklearn.exceptions import ConvergenceWarning
 
+# Directly import the kernel suites at the top of the module
 from kernels import get_kernel_suite, get_kernel_suite_f1
 
 warnings.filterwarnings("ignore", category=ConvergenceWarning)
 
+
 def run_post_bp(data, top_kernels_summary):
-    # Running Diagnostics and Breusch-Pagan Test across Functions 1 to 8
+    """
+    Runing post-ablation diagnostics, Breusch-Pagan tests, and generates a 2x4 master grid 
+    residual plot for Functions 1 through 8 using winning kernel configurations.
+    """
+    script_dir = os.path.dirname(os.path.abspath(__file__))
+    output_dir = os.path.join(script_dir, "diagnostics_results")
+    os.makedirs(output_dir, exist_ok=True)
+    save_path = os.path.join(output_dir, "post_ablation_residuals_plots.png")
+
+    fig, axes = plt.subplots(2, 4, figsize=(20, 10))
+    axes_flat = axes.flatten()
+
     for fn_idx in range(1, 9):
         fn_key = f"function_{fn_idx}"
+        ax = axes_flat[fn_idx - 1]
 
-        if fn_key not in data:
+        if fn_key not in data or fn_key not in top_kernels_summary:
+            ax.axis('off')
             continue
 
         # Extracting Data
@@ -41,7 +56,7 @@ def run_post_bp(data, top_kernels_summary):
         # Retrieving the winning kernel variant name stored in top_kernels_summary
         winning_variant_name = top_kernels_summary[fn_key]["Best Variant"]
 
-        # Re-instantiating a fresh instance of the winning kernel configuration from the suite
+        # Directly calling the imported kernel suite functions
         kernel_suite = get_kernel_suite_f1(n_dims) if fn_idx == 1 else get_kernel_suite(n_dims)
         best_kernel = kernel_suite[winning_variant_name]
 
@@ -103,35 +118,31 @@ def run_post_bp(data, top_kernels_summary):
             fn_residuals, X_test_matrix
         )
 
-        # Plotting Residuals vs GP Predictions
-        plt.figure(figsize=(8, 5))
-        plt.scatter(
+        # Plotting the corresponding 2x4 grid subplot
+        ax.scatter(
             fn_predictions,
             fn_residuals,
             color="darkviolet",
             alpha=0.7,
             edgecolors="k",
-            s=50,
+            s=40,
             zorder=2,
         )
-        plt.axhline(y=0, color="black", linestyle="--", linewidth=2, zorder=1)
+        ax.axhline(y=0, color="black", linestyle="--", linewidth=1.5, zorder=1)
 
-        title_target_label = "\hat{y}" if fn_idx != 1 else "\hat{\log_{10}(y)}"
+        title_target_label = r"$\hat{y}$" if fn_idx != 1 else r"$\hat{\log_{10}(y)}$"
         ylabel_target = "Residual ($y - \hat{y}$)" if fn_idx != 1 else "Residual ($\log_{10}(y) - \hat{\log_{10}(y)}$)"
 
-        plt.title(
-            f"Function {fn_idx}, Week 5: LOOCV Residuals vs. Predictions (N={n_samples})\n"
-            f"RMSE: {fn_rmse:.4f} | LOOCV R-squared Score: {fn_r2:.4f} | Breusch-Pagan p-value: {p_value:.5f}",
-            fontsize=11,
+        ax.set_title(
+            f"Function {fn_idx} (N={n_samples})\n"
+            f"RMSE: {fn_rmse:.4f} | $R^2$: {fn_r2:.4f} | BP p: {p_value:.5f}",
+            fontsize=9,
             fontweight="bold",
         )
-        plt.xlabel(f"Predicted Value (${title_target_label}$)", fontsize=10)
-        plt.ylabel(ylabel_target, fontsize=10)
-        plt.grid(True, linestyle=":", alpha=0.6)
-        plt.tight_layout()
-        plt.show()
+        ax.set_xlabel(f"Predicted Value ({title_target_label})", fontsize=8)
+        ax.set_ylabel(ylabel_target, fontsize=8)
+        ax.grid(True, linestyle=":", alpha=0.6)
 
-        # Formatting display title for winning variant
         winning_title = (
             winning_variant_name.split(":")[1].strip().upper()
             if ":" in winning_variant_name
@@ -139,36 +150,25 @@ def run_post_bp(data, top_kernels_summary):
         )
 
         # Printing Diagnostics and Results
-        print(
-            "=========================================================================="
-        )
-        print(
-            f"     FUNCTION {fn_idx} DIAGNOSTICS — WINNING CONFIG: {winning_title}"
-        )
-        print(
-            "=========================================================================="
-        )
-        print(f"Full Dataset Log Marginal Likelihood (LML) : {full_lml:.3f}")
-        print(f"Mean LOOCV Fold Log Marginal Likelihood    : {mean_loocv_lml:.3f}")
-        print(f"LOOCV Root Mean Squared Error (RMSE)       : {fn_rmse:.4f}")
-        print(f"LOOCV R-squared Score                      : {fn_r2:.4f}")
-        print(f"Breusch-Pagan Test p-value                 : {p_value:.5f}")
-        print(
-            "--------------------------------------------------------------------------"
-        )
+        print("==========================================================================")
+        print(f"     FUNCTION {fn_idx} DIAGNOSTICS — WINNING CONFIG: {winning_title}")
+        print("==========================================================================")
+        print(f"Full Dataset Log Marginal Likelihood (LML)   : {full_lml:.3f}")
+        print(f"Mean LOOCV Fold Log Marginal Likelihood      : {mean_loocv_lml:.3f}")
+        print(f"LOOCV Root Mean Squared Error (RMSE)         : {fn_rmse:.4f}")
+        print(f"LOOCV R-squared Score                        : {fn_r2:.4f}")
+        print(f"Breusch-Pagan-like p-value (not stat. valid) : {p_value:.5f}")
+        print("--------------------------------------------------------------------------")
         print(f"Learned Kernel Parameters:\n{gp_full.kernel_}")
-        print(
-            "--------------------------------------------------------------------------"
-        )
+        print("--------------------------------------------------------------------------")
 
         if p_value < 0.05:
-            print(
-                f"Verdict for Function {fn_idx} ({n_samples} datapoints, Week 5): Statistically HETEROSCEDASTIC"
-            )
+            print(f"Verdict for Function {fn_idx} ({n_samples} datapoints, Week 5): HETEROSCEDASTIC")
         else:
-            print(
-                f"Verdict for Function {fn_idx} ({n_samples} datapoints, Week 5): Statistically HOMOSCEDASTIC"
-            )
-        print(
-            "==========================================================================\n"
-        )
+            print(f"Verdict for Function {fn_idx} ({n_samples} datapoints, Week 5): HOMOSCEDASTIC")
+        print("==========================================================================\n")
+
+    plt.tight_layout()
+    plt.savefig(save_path, dpi=300, bbox_inches="tight")
+    plt.show()
+    print(f"Master grid plot successfully saved to {save_path}")
