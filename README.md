@@ -70,10 +70,14 @@ During the 13-week Black-Box Optimisation Challenge, all 8 unknown objective fun
 
 <br>
 
-<img width="7124" height="3579" alt="gp_surface_grid_final" src="https://github.com/user-attachments/assets/631da1d1-daf2-4b89-bd25-0c4789fe36a7" />
+<img width="7124" height="3579" alt="GP_surface_grids_final" src="https://github.com/user-attachments/assets/3f2b0617-1ecb-4838-b463-1d9bfdbc7a99" />
+
+<br>
+
+<img width="7121" height="3579" alt="GP_surface_grids_final_flat_view" src="https://github.com/user-attachments/assets/ce6760bb-2c76-4264-b02a-c21e9c5888e4" />
 
 <p align="center">
-<strong>Figure 1.</strong> <em>GP-Predicted Surfaces (HEBO-warped fitting, LOOCV R^2-selected kernel per function)</em>
+<strong>Figure 1.</strong> <em>GP-Predicted Surfaces (HEBO-warped fitting, LOOCV R^2-selected kernel per function); Angled vs Flat View</em>
  <br> 2D Functions (1-2): real input domain, std contours overlaid. 3D+ Functions (3-8): PCA reconstruction anchored at the true maximum output. Gold Star = Global Maximum Output Observed.
 </p>
 
