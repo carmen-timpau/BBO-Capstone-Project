@@ -68,6 +68,16 @@ A dicussion of previous-week query output results and current week strategy summ
 
 During the 13-week Black-Box Optimisation Challenge, all 8 unknown objective functions have been maximised beyond their initial maxima within the initial given datasets. 
 
+<br>
+
+<img width="7140" height="3579" alt="gp_surface_grid_final" src="https://github.com/user-attachments/assets/eb9ed29d-15fd-449f-88da-cb2c27c60c87" />
+
+<p align="center">
+<strong>Figure 1. 
+</p>
+
+<br>
+
 A comparative summary of the initial functions' maxima and [obtained post-BBO results](https://github.com/carmen-timpau/BBO-Capstone-Project/blob/main/experiments/bayesopt_outcomes/bayesopt_functions_maxima.md) is shown in **Table 1.** below, which also highlights the exact Bayesian Optimisation ML pipeline which yielded the optimised maximum for each function (_'Week Optimised'_ column).
 
 <br>
@@ -89,7 +99,7 @@ A comparative summary of the initial functions' maxima and [obtained post-BBO re
 
 <br>
 
-The landscape overview of the weekly progress achieved for each black-box function during the 13-week project, following an iterative and data-driven Bayesian Optimisation ML pipeline development process is shown below (**Figure 1**). The corresponding code used to compute this final analysis is logged in [`experiments/bayesopt_outcomes`](https://github.com/carmen-timpau/BBO-Capstone-Project/tree/main/experiments/bayesopt_outcomes).
+The landscape overview of the weekly progress achieved for each black-box function during the 13-week project, following an iterative and data-driven Bayesian Optimisation ML pipeline development process is shown below (**Figure 2**). The corresponding code used to compute this final analysis is logged in [`experiments/bayesopt_outcomes`](https://github.com/carmen-timpau/BBO-Capstone-Project/tree/main/experiments/bayesopt_outcomes).
 
 <br>
 
@@ -98,7 +108,7 @@ The landscape overview of the weekly progress achieved for each black-box functi
 </p>
 
 <p align="center">
-<strong>Figure 1. Bayesian Optimisation Outcomes Landscape</strong> <br>
+<strong>Figure 2. Bayesian Optimisation Outcomes Landscape</strong> <br>
 Progress over 13-Week Optimisation Period for each Black-Box Function
 </p>
 
