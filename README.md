@@ -66,7 +66,7 @@ A dicussion of previous-week query output results and current week strategy summ
 
 <ins>📈 **Bayesian Optimisation Outcomes:** </ins>
 
-During the 13-week Black-Box Optimisation Challenge, all 8 unknown objective functions have been maximised beyond their initial maxima within the initial given datasets. The GP-predicted 2D contour heatmap plots (Functions 1-2) and PCA surface plots (Functions 3-8) of the 8 black-box functions are shown below in **Figure 1**, where the maximum point observed (predicted via Bayesian Optimisation) is marked with a gold star.
+During the 13-week Black-Box Optimisation Challenge, all 8 unknown objective functions have been maximised beyond their initial maxima within the initial given datasets. The GP-predicted 2D contour heatmap plots (Functions 1-2) and PCA surface plots (Functions 3-8) of the 8 black-box functions are shown below in **Figure 1**, where the maximum point observed (predicted _via_ Bayesian Optimisation) is marked with a gold star.
 
 <br>
 
