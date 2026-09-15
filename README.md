@@ -74,8 +74,7 @@ During the 13-week Black-Box Optimisation Challenge, all 8 unknown objective fun
 
 <p align="center">
 <strong>Figure 1.</strong>strong> <em>GP-Predicted Surfaces (HEBO-warped fitting, LOOCV R^2-selected kernel per function)</em>
- <br> 2D Functions (1-2): real input domain, std contours overlaid. 3D+ Functions (3-8): PCA reconstruction anchored at the true maximum output
- <br> Gold Star = Global Maximum Output Observed.
+ <br> 2D Functions (1-2): real input domain, std contours overlaid. 3D+ Functions (3-8): PCA reconstruction anchored at the true maximum output. Gold Star = Global Maximum Output Observed.
 </p>
 
 <br>
