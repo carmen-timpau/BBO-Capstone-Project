@@ -70,7 +70,7 @@ During the 13-week Black-Box Optimisation Challenge, all 8 unknown objective fun
 
 <br>
 
-<img width="7140" height="3579" alt="gp_surface_grid_final" src="https://github.com/user-attachments/assets/eb9ed29d-15fd-449f-88da-cb2c27c60c87" />
+<img width="7124" height="3579" alt="gp_surface_grid_final" src="https://github.com/user-attachments/assets/631da1d1-daf2-4b89-bd25-0c4789fe36a7" />
 
 <p align="center">
 <strong>Figure 1.</strong> <em>GP-Predicted Surfaces (HEBO-warped fitting, LOOCV R^2-selected kernel per function)</em>
