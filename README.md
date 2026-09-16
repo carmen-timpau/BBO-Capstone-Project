@@ -84,7 +84,7 @@ During the 13-week Black-Box Optimisation Challenge, all 8 unknown objective fun
 
 <br>
 
-A comparative summary of the initial functions' maxima and [obtained post-BBO results](https://github.com/carmen-timpau/BBO-Capstone-Project/blob/main/experiments/bayesopt_outcomes/bayesopt_functions_maxima.md) is shown in **Table 1** below, which also highlights the exact Bayesian Optimisation ML pipeline which yielded the optimised maximum for each function (_'Week Optimised'_ column).
+A comparative summary of the initial functions' maxima and [obtained post-BBO results](https://github.com/carmen-timpau/BBO-Capstone-Project/blob/main/experiments/bayesopt_outcomes/bayesopt_functions_maxima.md) is shown in **Table 1** below, which also highlights the exact Bayesian Optimisation ML pipeline which yielded the optimised maximum for each function (_'Week Optimised'_ column) and corresponding ML Model Card (_'ML Model'_ column).
 
 <br>
 
