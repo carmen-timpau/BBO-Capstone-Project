@@ -203,7 +203,7 @@ cd experiments/week_13
 
 5. Input data
    
-Each `week_XX/` directory already includes its corresponding dataset (e.g. `wk1_input_data.pkl`, ..., `wk13_input_data.pkl`, `final_data.pkl`) committed alongside `main.py` — no setup needed. Data is structured as:
+Each `week_XX/` directory already includes its corresponding input dataset (e.g. `wk1_input_data.pkl`, ..., `wk13_input_data.pkl`, `final_data.pkl`) committed alongside `main.py` - no setup needed. Data is structured as:
 
 ```python
 data = {
